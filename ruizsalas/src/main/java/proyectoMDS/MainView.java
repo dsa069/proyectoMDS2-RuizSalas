@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * A sample Vaadin view class.
  * <p>
+ * 
  * To implement a Vaadin view just extend any Vaadin component and
  * use @Route annotation to announce it in a URL as a Spring managed
  * bean.
