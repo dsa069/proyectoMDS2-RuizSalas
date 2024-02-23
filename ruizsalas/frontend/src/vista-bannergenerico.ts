@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-bannergenerico')
 export class VistaBannergenerico extends LitElement {
@@ -25,6 +25,7 @@ export class VistaBannergenerico extends LitElement {
   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 15%;">
    <iron-icon icon="lumo:plus"></iron-icon>
   </vaadin-button>
+  <vaadin-vertical-layout theme="spacing" style="width: 10%; height: 100%; flex-shrink: 0; align-items: flex-end;"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
