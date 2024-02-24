@@ -19,13 +19,16 @@ export class VistaBannergenerico extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: var(--lumo-contrast-10pct); padding: var(--lumo-space-m);">
-  <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 15%;">
-   <iron-icon icon="lumo:plus"></iron-icon>
-  </vaadin-button>MOMAZOS DIEGO 
-  <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 15%;">
-   <iron-icon icon="lumo:plus"></iron-icon>
-  </vaadin-button>
-  <vaadin-vertical-layout theme="spacing" style="width: 10%; height: 100%; flex-shrink: 0; align-items: flex-end;"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="flex-grow: 1; height: 100%;">
+   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 15%; padding: var(--lumo-space-m);">
+    <iron-icon icon="lumo:plus"></iron-icon>
+   </vaadin-button>
+  </vaadin-vertical-layout>MOMAZOS DIEGO 
+  <vaadin-vertical-layout style="flex-grow: 1; height: 100%;">
+   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 1; flex-shrink: 0; height: 100%; width: 15%; align-self: flex-end; padding: var(--lumo-space-m);">
+    <iron-icon icon="lumo:plus"></iron-icon>
+   </vaadin-button>
+  </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
