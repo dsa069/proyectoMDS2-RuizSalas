@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-bannergenerico")
 @JsModule("./src/vista-bannergenerico.ts")

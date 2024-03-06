@@ -3,12 +3,87 @@ package vistas;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-usuario")
 @JsModule("./src/vista-usuario.ts")
 public class VistaUsuario extends LitTemplate {
 
-    public VistaUsuario() {
+    @Id("RevisarNoticias")
+	private Button revisarNoticias;
+	@Id("VerPeriodistas")
+	private Button verPeriodistas;
+	@Id("MisNoticias")
+	private Button misNoticias;
+	@Id("IniciarSesion")
+	private Button iniciarSesion;
+	@Id("Suscribirse")
+	private Button suscribirse;
+	
+	public Button getRevisarNoticias() {
+		return revisarNoticias;
+	}
+
+	public void setRevisarNoticias(Button revisarNoticias) {
+		this.revisarNoticias = revisarNoticias;
+	}
+
+	public Button getVerPeriodistas() {
+		return verPeriodistas;
+	}
+
+	public void setVerPeriodistas(Button verPeriodistas) {
+		this.verPeriodistas = verPeriodistas;
+	}
+
+	public Button getMisNoticias() {
+		return misNoticias;
+	}
+
+	public void setMisNoticias(Button misNoticias) {
+		this.misNoticias = misNoticias;
+	}
+
+	public Button getIniciarSesion() {
+		return iniciarSesion;
+	}
+
+	public void setIniciarSesion(Button iniciarSesion) {
+		this.iniciarSesion = iniciarSesion;
+	}
+
+	public Button getSuscribirse() {
+		return suscribirse;
+	}
+
+	public void setSuscribirse(Button suscribirse) {
+		this.suscribirse = suscribirse;
+	}
+
+	public Element getZonaAnuncios2() {
+		return zonaAnuncios2;
+	}
+
+	public void setZonaAnuncios2(Element zonaAnuncios2) {
+		this.zonaAnuncios2 = zonaAnuncios2;
+	}
+
+	public Element getZonaAnuncios() {
+		return zonaAnuncios;
+	}
+
+	public void setZonaAnuncios(Element zonaAnuncios) {
+		this.zonaAnuncios = zonaAnuncios;
+	}
+
+	@Id("ZonaAnuncios2")
+	private Element zonaAnuncios2;
+	@Id("ZonaAnuncios")
+	private Element zonaAnuncios;
+
+	public VistaUsuario() {
         // You can initialise any data required for the connected UI components here.
     }
 
