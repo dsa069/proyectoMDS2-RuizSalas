@@ -1,9 +1,8 @@
 package interfaz;
-import proyectoMDS.*;
 //import basededatos.iUsuario_No_Registrado;
 
 public class Usuario_No_Registrado extends Usuario {
-	public Usuario_No_Registrado (MainView mainView){
+	public Usuario_No_Registrado (proyectoMDS.MainView mainView){
 		super(mainView);
 
 		this.getMisNoticias().setVisible(false);

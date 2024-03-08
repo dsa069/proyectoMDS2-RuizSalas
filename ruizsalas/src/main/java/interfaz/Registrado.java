@@ -1,9 +1,8 @@
 package interfaz;
-import proyectoMDS.*;
 //import basededatos.iRegistrado;
 
 public class Registrado extends Usuario {
-	public Registrado (MainView mainView){
+	public Registrado (proyectoMDS.MainView mainView){
 		super(mainView);
 		
 		this.getZonaAnuncios().setVisible(false);

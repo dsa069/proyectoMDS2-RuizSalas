@@ -1,11 +1,8 @@
 package interfaz;
-
-import proyectoMDS.MainView;
-
 //import basededatos.iPeriodista.;
 
 public class Periodista extends Registrado {
-	public Periodista (MainView mainView){
+	public Periodista (proyectoMDS.MainView mainView){
 		super(mainView);
 		
 		this.getRevisarNoticias().setVisible(false);
