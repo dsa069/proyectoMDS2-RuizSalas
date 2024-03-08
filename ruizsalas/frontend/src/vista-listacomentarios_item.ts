@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 
-@customElement('vista-listacomentarios')
-export class VistaListacomentarios extends LitElement {
+@customElement('vista-listacomentarios_item')
+export class VistaListacomentarios_item extends LitElement {
   static get styles() {
     return css`
       :host {

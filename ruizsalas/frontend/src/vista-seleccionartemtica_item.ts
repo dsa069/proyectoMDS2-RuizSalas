@@ -1,7 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 
-@customElement('vista-seleccionartemtica')
-export class VistaSeleccionartemtica extends LitElement {
+@customElement('vista-seleccionartemtica_item')
+export class VistaSeleccionartemtica_item extends LitElement {
   static get styles() {
     return css`
       :host {
