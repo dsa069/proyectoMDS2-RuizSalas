@@ -19,7 +19,7 @@ export class VistaBannergenerico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="height: 100%;" id="bannergenerico">
- <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); padding: var(--lumo-space-m); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end;">
+ <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-m);">
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; justify-content: flex-start; width: 100px; align-self: center;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct);" id="botonpaginainicio">
     <img src="https://i.imgflip.com/6q57vm.png?a473472" width="90" height="90">
