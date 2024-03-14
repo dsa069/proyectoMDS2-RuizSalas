@@ -1,7 +1,13 @@
-//package interfaz;
-//
-//public class Listar_Secciones_item {
-//	private JLabel _nombre;
-//	public Listar_Secciones _listar_Secciones;
-//	public Listar_noticias _contiene;
-//}
+package interfaz;
+import vistas.*;
+
+public class Listar_Secciones_item extends VistaListarsecciones_item {
+	//private JLabel _nombre;
+	public Listar_Secciones _listar_Secciones;
+	//public Listar_noticias _contiene;
+	
+	public Listar_Secciones_item(Listar_Secciones _listar_Secciones) {
+	super();
+	this._listar_Secciones = _listar_Secciones;
+	}
+}
