@@ -1,4 +1,5 @@
 package interfaz;
+import vistas.*;
 
 public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	//private JButton _quitar_noticia_de_seccion;
@@ -7,6 +8,7 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	public Lista_noticas_Editor_item(Listar_noticias padre) {
 		super(padre);
 		//this.getMarcar().setVisible(false);
+		this.getQuitarNoticiaDeSeccion().setVisible(true);
 	}
 	
 	public void quitar_noticia_de_seccion() {

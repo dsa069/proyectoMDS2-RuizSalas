@@ -13,7 +13,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public Lista_Comentarios_UR(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
-		//this.getOcultar().setVisible(false);
+		this.getEscribirComentario().setVisible(true);
 		}
 
 	public void escribir_comentario() {

@@ -9,5 +9,6 @@ public class Listar_Secciones_item extends VistaListarsecciones_item {
 	public Listar_Secciones_item(Listar_Secciones _listar_Secciones) {
 	super();
 	this._listar_Secciones = _listar_Secciones;
+	this.getBorrarSeccion().setVisible(false);
 	}
 }

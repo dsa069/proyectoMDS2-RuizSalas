@@ -1,7 +1,7 @@
 package interfaz;
 import vistas.*;
 
-public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico {
+public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_item {
 //	private JButton _acceder_a_noticia;
 //	private JLabel _imagen_principal;
 //	private JLabel _titulo;

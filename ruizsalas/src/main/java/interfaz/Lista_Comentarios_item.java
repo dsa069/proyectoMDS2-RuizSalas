@@ -10,5 +10,8 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 	public Lista_Comentarios_item(Lista_Comentarios _lista_Comentarios) {
 		super();
 		this._lista_Comentarios = _lista_Comentarios;
+		this.getValorarComentarioNegativamente().setVisible(false);
+		this.getValorarComentarioPositivamente().setVisible(false);
+		this.getBorrarComentario().setVisible(false);
 	}
 }

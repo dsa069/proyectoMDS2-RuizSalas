@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+import vistas.*;
 
 public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	//private JTextField _barra_de_busqueda;
@@ -11,5 +12,7 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	public Seleccion_de_secciones(Usuario _usuario) {
 		super(_usuario);
 		this._usuario = _usuario;
+		this.getBarraDeBusqueda().setVisible(true);
+		this.getEditarTexto().setVisible(false);
 	}
 }

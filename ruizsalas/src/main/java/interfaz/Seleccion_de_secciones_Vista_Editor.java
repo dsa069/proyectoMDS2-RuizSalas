@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+import vistas.*;
 
 public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones {
 	//private JButton _editar_secciones;
@@ -11,5 +12,6 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	public Seleccion_de_secciones_Vista_Editor(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
+		this.getBotonEditarSecciones().setVisible(true);
 	}
 }

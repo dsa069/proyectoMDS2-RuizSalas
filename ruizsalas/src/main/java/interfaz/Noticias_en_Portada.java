@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+import vistas.*;
 
 public class Noticias_en_Portada extends Listar_noticias {
 //	private JButton _acceder__a_noticia;
@@ -15,5 +16,6 @@ public class Noticias_en_Portada extends Listar_noticias {
 	public Noticias_en_Portada(Usuario _usuario) {
 		super(_usuario);
 		this._usuario = _usuario;
+		this.getPortada().setVisible(true);
 	}
 }

@@ -7,9 +7,10 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 	
 	public Lista_Comentarios_UR_item(Lista_Comentarios padre) {
 		super(padre);
-		//this.getMarcar().setVisible(false);
+		this.getValorarComentarioNegativamente().setVisible(true);
+		this.getValorarComentarioPositivamente().setVisible(true);
 	}
-
+	
 	public void valorar_comentario() {
 		throw new UnsupportedOperationException();
 	}

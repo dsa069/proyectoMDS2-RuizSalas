@@ -1,4 +1,5 @@
 package interfaz;
+import vistas.*;
 
 public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 //	private JButton _borrar_seccion;
@@ -7,7 +8,7 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 
 	public Lista_secciones_Editor_item(Listar_Secciones padre) {
 		super(padre);
-		//this.getMarcar().setVisible(false);
+		this.getBorrarSeccion().setVisible(true);
 	}
 	
 	public void borrar_seccion() {

@@ -12,18 +12,19 @@ import com.vaadin.flow.component.textfield.TextField;
 @JsModule("./src/vista-seleccindeseccionesgenerico.ts")
 public class VistaSeleccindeseccionesgenerico extends LitTemplate {
 
-    @Id("vaadinHorizontalLayout")
-	private HorizontalLayout vaadinHorizontalLayout;
 	@Id("BotonEditarSecciones")
 	private Button botonEditarSecciones;
+	public HorizontalLayout getEditarTexto() {
+		return editarTexto;
+	}
+	public void setEditarTexto(HorizontalLayout editarTexto) {
+		this.editarTexto = editarTexto;
+	}
 	@Id("BarraDeBusqueda")
 	private TextField barraDeBusqueda;
-	public HorizontalLayout getVaadinHorizontalLayout() {
-		return vaadinHorizontalLayout;
-	}
-	public void setVaadinHorizontalLayout(HorizontalLayout vaadinHorizontalLayout) {
-		this.vaadinHorizontalLayout = vaadinHorizontalLayout;
-	}
+	@Id("EditarTexto")
+	private HorizontalLayout editarTexto;
+
 	public Button getBotonEditarSecciones() {
 		return botonEditarSecciones;
 	}

@@ -11,25 +11,24 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 @JsModule("./src/vista-listarnoticiasgenerico_item.ts")
 public class VistaListarnoticiasgenerico_item extends LitTemplate {
 
-    @Id("EditarNoticia")
-	private Button editarNoticia;
 	@Id("EliminarNoticiaPropia")
 	private Button eliminarNoticiaPropia;
-	@Id("NoAgregarNoticia")
-	private Button noAgregarNoticia;
+	@Id("EditarNoticia")
+	private Button editarNoticia;
 	@Id("AgregarNoticia")
 	private Button agregarNoticia;
+	@Id("NoAgregarNoticia")
+	private Button noAgregarNoticia;
 	@Id("ZonaDeAutorYVersionDeNoticia")
 	private HorizontalLayout zonaDeAutorYVersionDeNoticia;
 	@Id("Titular1")
 	private Button titular1;
-	public Button getEditarNoticia() {
-		return editarNoticia;
-	}
-
-	public void setEditarNoticia(Button editarNoticia) {
-		this.editarNoticia = editarNoticia;
-	}
+	@Id("Titular2")
+	private Button titular2;
+	@Id("VerValoracion")
+	private HorizontalLayout verValoracion;
+	@Id("QuitarNoticiaDeSeccion")
+	private Button quitarNoticiaDeSeccion;
 
 	public Button getEliminarNoticiaPropia() {
 		return eliminarNoticiaPropia;
@@ -39,12 +38,12 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 		this.eliminarNoticiaPropia = eliminarNoticiaPropia;
 	}
 
-	public Button getNoAgregarNoticia() {
-		return noAgregarNoticia;
+	public Button getEditarNoticia() {
+		return editarNoticia;
 	}
 
-	public void setNoAgregarNoticia(Button noAgregarNoticia) {
-		this.noAgregarNoticia = noAgregarNoticia;
+	public void setEditarNoticia(Button editarNoticia) {
+		this.editarNoticia = editarNoticia;
 	}
 
 	public Button getAgregarNoticia() {
@@ -53,6 +52,14 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 
 	public void setAgregarNoticia(Button agregarNoticia) {
 		this.agregarNoticia = agregarNoticia;
+	}
+
+	public Button getNoAgregarNoticia() {
+		return noAgregarNoticia;
+	}
+
+	public void setNoAgregarNoticia(Button noAgregarNoticia) {
+		this.noAgregarNoticia = noAgregarNoticia;
 	}
 
 	public HorizontalLayout getZonaDeAutorYVersionDeNoticia() {
@@ -94,13 +101,6 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	public void setQuitarNoticiaDeSeccion(Button quitarNoticiaDeSeccion) {
 		this.quitarNoticiaDeSeccion = quitarNoticiaDeSeccion;
 	}
-
-	@Id("Titular2")
-	private Button titular2;
-	@Id("VerValoracion")
-	private HorizontalLayout verValoracion;
-	@Id("QuitarNoticiaDeSeccion")
-	private Button quitarNoticiaDeSeccion;
 
 	public VistaListarnoticiasgenerico_item() {
         // You can initialise any data required for the connected UI components here.

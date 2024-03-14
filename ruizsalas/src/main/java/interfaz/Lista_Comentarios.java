@@ -11,5 +11,6 @@ public class Lista_Comentarios extends VistaListacomentarios {
 	public Lista_Comentarios(Usuario usuario) {
 		super();
 		this.usuario = usuario;
+		this.getEscribirComentario().setVisible(false);
 		}
 }
