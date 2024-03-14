@@ -1,5 +1,6 @@
 package proyectoMDS;
 
+import interfaz.*;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -32,7 +33,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport("./styles/shared-styles.css")
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
-
+	
+//	Usuario a = new Usuario(this);
+//add(a);
     /**
      * Construct a new Vaadin view.
      * <p>

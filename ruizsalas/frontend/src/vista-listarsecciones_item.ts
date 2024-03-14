@@ -17,13 +17,13 @@ export class VistaListarsecciones_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
- <vaadin-horizontal-layout style="justify-content: space-between; width: 60%; height: 7%; font-size: 32px; align-items: center;">
+ <vaadin-horizontal-layout style="justify-content: space-between; width: 100%; height: 7%; font-size: 32px; align-items: center;">
    Sección 
-  <vaadin-button theme="icon" aria-label="Add new" style="height: 80%; width: 6%; background-color: var(--lumo-contrast-0pct);">
+  <vaadin-button theme="icon" aria-label="Add new" style="height: 80%; width: 6%; background-color: var(--lumo-contrast-0pct);" id="BorrarSeccion">
    <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" width="60" height="60">
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 60%; justify-content: space-between; height: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; height: 100%;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }
