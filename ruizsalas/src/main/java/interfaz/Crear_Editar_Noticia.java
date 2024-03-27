@@ -1,15 +1,15 @@
 package interfaz;
 
 public class Crear_Editar_Noticia extends Banner_Periodista {
-	private JButton _eliminar_cambios_noticia;
-	private JButton _guardar_cambios_noticia;
-	private JTextField _imagen_principal;
-	private JTextField _ubicacion;
-	private JTextField _fecha;
-	private JTextField _titulo;
-	private JTextField _texto_corto;
-	private JTextField _texto_largo;
-	private JScrollPanel _scroll_textfield;
+//	private JButton _eliminar_cambios_noticia;
+//	private JButton _guardar_cambios_noticia;
+//	private JTextField _imagen_principal;
+//	private JTextField _ubicacion;
+//	private JTextField _fecha;
+//	private JTextField _titulo;
+//	private JTextField _texto_corto;
+//	private JTextField _texto_largo;
+//	private JScrollPanel _scroll_textfield;
 	public Periodista _unnamed_Periodista_;
 	public Seleccionar_Tematica _contiene;
 

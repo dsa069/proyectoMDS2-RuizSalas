@@ -3,7 +3,7 @@ import vistas.*;
 
 import java.util.Vector;
 
-public class Listar_tematicas extends VistaListartemticas {
+public class Listar_tematicas extends VistaListartematicas {
 //	private JLabel _tematicas;
 //	public Noticia _unnamed_Noticia_;
 	public Vector<Listar_tematicas_item> _item = new Vector<Listar_tematicas_item>();

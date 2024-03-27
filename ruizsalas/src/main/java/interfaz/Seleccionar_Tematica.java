@@ -3,7 +3,7 @@ import vistas.*;
 
 import java.util.Vector;
 
-public class Seleccionar_Tematica extends VistaSeleccionartemtica {
+public class Seleccionar_Tematica extends VistaSeleccionartematica {
 //	private JLabel _tematicas;
 //	public Crear_Editar_Noticia _unnamed_Crear_Editar_Noticia_;
 //	public Noticia_Vista_Editor _unnamed_Noticia_Vista_Editor_;

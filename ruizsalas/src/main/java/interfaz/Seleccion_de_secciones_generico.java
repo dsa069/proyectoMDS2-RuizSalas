@@ -1,9 +1,9 @@
 package interfaz;
 
 import java.util.Vector;
-import vistas.VistaSeleccindeseccionesgenerico;
+import vistas.VistaSelecciondeseccionesgenerico;
 
-;public class Seleccion_de_secciones_generico extends VistaSeleccindeseccionesgenerico{
+public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesgenerico{
 //	private JLabel _editar_secciones_text;
 //	public Listar_noticias _unnamed_Listar_noticias_;
 	public Vector<Seleccion_de_secciones_generico_item> _item = new Vector<Seleccion_de_secciones_generico_item>();
