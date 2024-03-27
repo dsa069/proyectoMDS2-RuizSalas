@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
 
-@customElement('vista-seleccionartemtica_item')
-export class VistaSeleccionartemtica_item extends LitElement {
+@customElement('vista-seleccionartematica_item')
+export class VistaSeleccionartematica_item extends LitElement {
   static get styles() {
     return css`
       :host {

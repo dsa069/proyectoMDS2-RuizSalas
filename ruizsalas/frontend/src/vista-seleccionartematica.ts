@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-@customElement('vista-seleccionartemtica')
-export class VistaSeleccionartemtica extends LitElement {
+@customElement('vista-seleccionartematica')
+export class VistaSeleccionartematica extends LitElement {
   static get styles() {
     return css`
       :host {

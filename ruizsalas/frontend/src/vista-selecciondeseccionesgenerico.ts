@@ -4,8 +4,8 @@ import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
-@customElement('vista-seleccindeseccionesgenerico')
-export class VistaSeleccindeseccionesgenerico extends LitElement {
+@customElement('vista-selecciondeseccionesgenerico')
+export class VistaSelecciondeseccionesgenerico extends LitElement {
   static get styles() {
     return css`
       :host {

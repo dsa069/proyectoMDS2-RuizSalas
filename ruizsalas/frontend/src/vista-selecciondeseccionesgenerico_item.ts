@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
-@customElement('vista-seleccindeseccionesgenerico_item')
-export class VistaSeleccindeseccionesgenerico_item extends LitElement {
+@customElement('vista-selecciondeseccionesgenerico_item')
+export class VistaSelecciondeseccionesgenerico_item extends LitElement {
   static get styles() {
     return css`
       :host {

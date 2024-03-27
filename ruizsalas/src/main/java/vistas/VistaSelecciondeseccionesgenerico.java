@@ -8,9 +8,9 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
 
-@Tag("vista-seleccindeseccionesgenerico")
-@JsModule("./src/vista-seleccindeseccionesgenerico.ts")
-public class VistaSeleccindeseccionesgenerico extends LitTemplate {
+@Tag("vista-selecciondeseccionesgenerico")
+@JsModule("./src/vista-selecciondeseccionesgenerico.ts")
+public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 
 	@Id("BotonEditarSecciones")
 	private Button botonEditarSecciones;
@@ -37,7 +37,7 @@ public class VistaSeleccindeseccionesgenerico extends LitTemplate {
 	public void setBarraDeBusqueda(TextField barraDeBusqueda) {
 		this.barraDeBusqueda = barraDeBusqueda;
 	}
-	public VistaSeleccindeseccionesgenerico() {
+	public VistaSelecciondeseccionesgenerico() {
         // You can initialise any data required for the connected UI components here.
     }
 
