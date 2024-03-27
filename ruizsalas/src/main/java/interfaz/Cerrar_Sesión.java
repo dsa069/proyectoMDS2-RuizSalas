@@ -1,4 +1,4 @@
-//package interfaz;
-//
-//public class Cerrar_Sesiï¿½n {
-//}
+package interfaz;
+
+public class Cerrar_Sesión {
+}
