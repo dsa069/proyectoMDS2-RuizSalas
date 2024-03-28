@@ -25,15 +25,15 @@ export class VistaIntroducirdatos extends LitElement {
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="height: 100%; width: 50%; justify-content: center;" theme="spacing">
-  <vaadin-text-field label="Email" placeholder="Email" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
-  <vaadin-text-field label="Contraseña" placeholder="Contraseña" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
+  <vaadin-text-field label="Email" placeholder="Email" style="width: 90%; flex-shrink: 0;"></vaadin-text-field>
+  <vaadin-text-field label="Contraseña" placeholder="Contraseña" style="width: 90%; flex-shrink: 0;"></vaadin-text-field>
   <vaadin-vertical-layout theme="spacing" id="zonaRegistrarPeriodista" style="flex-shrink: 0; width: 100%; flex-grow: 0;">
-   <vaadin-text-field label="Apodo" placeholder="Apodo" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
-   <vaadin-text-field label="DNI" placeholder="DNI" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
-   <vaadin-text-field label="Foto" placeholder="Foto" style="width: 100%; flex-shrink: 0;" id="fotoTexto"></vaadin-text-field>
+   <vaadin-text-field label="Apodo" placeholder="Apodo" style="width: 90%; flex-shrink: 0;"></vaadin-text-field>
+   <vaadin-text-field label="DNI" placeholder="DNI" style="width: 90%; flex-shrink: 0;"></vaadin-text-field>
+   <vaadin-text-field label="Foto" placeholder="Foto" style="width: 90%; flex-shrink: 0;" id="fotoTexto"></vaadin-text-field>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="datosRegistro" style="width: 100%; flex-shrink: 0;">
-   <vaadin-text-field label="Tarjeta de crédito" placeholder="Tarjeta de crédito" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
+   <vaadin-text-field label="Tarjeta de crédito" placeholder="Tarjeta de crédito" style="width: 90%; flex-shrink: 0;"></vaadin-text-field>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
