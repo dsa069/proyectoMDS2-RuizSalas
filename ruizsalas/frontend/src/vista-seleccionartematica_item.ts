@@ -15,10 +15,10 @@ export class VistaSeleccionartematica_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 60px;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 60px; align-items: stretch;">
  <hr style="width: 90%;">
  <vaadin-checkbox style="align-self: center; width: 80%;">
-  Text
+   Text 
  </vaadin-checkbox>
 </vaadin-vertical-layout>
 `;

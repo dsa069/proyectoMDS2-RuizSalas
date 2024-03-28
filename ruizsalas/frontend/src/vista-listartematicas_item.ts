@@ -14,7 +14,7 @@ export class VistaListartematicas_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start; font-size: 60px; padding-left: 80px; padding-right: 80px;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch; font-size: 60px; padding-left: 80px; padding-right: 80px;">
  <hr style="width: 100%;">Text 
 </vaadin-vertical-layout>
 `;

@@ -16,7 +16,7 @@ export class VistaListarsecciones_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch;">
  <vaadin-horizontal-layout style="justify-content: space-between; width: 100%; height: 7%; font-size: 32px; align-items: center;">
    Sección 
   <vaadin-button theme="icon" aria-label="Add new" style="height: 80%; width: 6%; background-color: var(--lumo-contrast-0pct);" id="BorrarSeccion">

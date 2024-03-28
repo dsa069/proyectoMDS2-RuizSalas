@@ -16,7 +16,7 @@ export class VistaSelecciondeseccionesgenerico_item extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; font-size: 60px;">
- Sección1
+  Sección1 
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;"></vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

@@ -14,7 +14,7 @@ export class VistaVervaloracion extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout style="width: 100%; height: 100%; position: absolute;">
  <vaadin-horizontal-layout style="font-size: 250px; width: 100%; height: 100%; flex-shrink: 0; flex-grow: 0; align-items: center;" id="VerValoracion">
    20 
   <img src="https://cdn.icon-icons.com/icons2/37/PNG/512/percentage_3155.png" width="300" height="300" style="flex-grow: 0; flex-shrink: 0; align-self: center;">
