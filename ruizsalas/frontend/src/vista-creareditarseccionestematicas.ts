@@ -18,7 +18,7 @@ export class VistaCreareditarseccionestematicas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute">
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; flex-shrink: 0; align-items: center; font-size: 40px; justify-content: center;">
    Crear temática 
   <vaadin-text-field label="" placeholder="Introducir nombre temática" style="align-self: center; flex-shrink: 0; width: 60%;"></vaadin-text-field>
@@ -28,6 +28,9 @@ export class VistaCreareditarseccionestematicas extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout style="width: 100%; height: 70%; flex-shrink: 0;"></vaadin-vertical-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 20%; flex-shrink: 0; align-items: center; justify-content: center;">
+  <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%;">
+   <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" style="height: 20%; width: 20%;">
+  </vaadin-button>
   <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%;">
    <img src="https://cdn-icons-png.flaticon.com/512/109/109617.png" style="height: 20%; width: 20%;">
   </vaadin-button>
