@@ -15,9 +15,9 @@ export class VistaSeleccionartematica extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; position: absolute;">
  <vaadin-vertical-layout style="align-self: flex-start; align-items: center; width: 100%; font-size: 60px;">
-  Temáticas
+   Temáticas 
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

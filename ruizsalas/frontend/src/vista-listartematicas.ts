@@ -15,7 +15,7 @@ export class VistaListartematicas extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; align-items: flex-start; justify-content: center;">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; align-items: flex-start; justify-content: center; position: absolute;">
  <vaadin-vertical-layout theme="spacing-xs" style="flex-grow: 0; flex-shrink: 1; align-self: flex-start; width: 100%; align-items: center; font-size: 60px;">
    Temáticas 
  </vaadin-vertical-layout>

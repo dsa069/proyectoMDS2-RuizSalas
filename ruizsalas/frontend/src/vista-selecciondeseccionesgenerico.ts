@@ -17,7 +17,7 @@ export class VistaSelecciondeseccionesgenerico extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; position: absolute;">
  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-grow: 0; font-size: 28px; padding: var(--lumo-space-m);">
   <vaadin-horizontal-layout style="flex-shrink: 0;" id="EditarTexto">
     EDITAR 
