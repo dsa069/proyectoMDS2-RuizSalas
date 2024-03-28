@@ -24,6 +24,8 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	private TextField barraDeBusqueda;
 	@Id("EditarTexto")
 	private HorizontalLayout editarTexto;
+	@Id("MsgError")
+	private HorizontalLayout msgError;
 
 	public Button getBotonEditarSecciones() {
 		return botonEditarSecciones;
@@ -36,6 +38,12 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	}
 	public void setBarraDeBusqueda(TextField barraDeBusqueda) {
 		this.barraDeBusqueda = barraDeBusqueda;
+	}
+	public HorizontalLayout getMsgError() {
+		return msgError;
+	}
+	public void setMsgError(HorizontalLayout msgError) {
+		this.msgError = msgError;
 	}
 	public VistaSelecciondeseccionesgenerico() {
         // You can initialise any data required for the connected UI components here.

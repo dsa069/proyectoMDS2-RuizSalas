@@ -16,5 +16,6 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	this.usuario = usuario;
 	this.getBarraDeBusqueda().setVisible(false);
 	this.getBotonEditarSecciones().setVisible(false);
+	this.getMsgError().setVisible(false);
 		}
 }
