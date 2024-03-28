@@ -17,7 +17,7 @@ export class VistaDarsedebaja extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: center; position: absolute;">
- <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 30%; width: 20%; background-color: var(--lumo-contrast-0pct); overflow: hidden; align-self: center;">
+ <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 20%; width: 15%; background-color: var(--lumo-contrast-0pct); overflow: hidden; align-self: center;">
   <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS-QIMY_z_DvWGkbi_SldK1F2BZHLcnemkGsKGakuapRFadyJbN" style="height: 100%; width: 100%;">
  </vaadin-button>
 </vaadin-vertical-layout>

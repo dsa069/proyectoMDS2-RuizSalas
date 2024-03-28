@@ -18,14 +18,7 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; font-size: 32px; align-items: center;" id="ZonaDeAutorYVersionDeNoticia">
-  <vaadin-button theme="icon" aria-label="Add new" style="background-color: var(--lumo-contrast-0pct); height: 100%; width: 5%; flex-grow: 0;">
-   <iron-icon style="width: 100%; height: 100%;" src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png"></iron-icon>
-  </vaadin-button>Autor 
-  <vaadin-horizontal-layout style="flex-grow: 0; flex-shrink: 0; width: 19%;">
-    ‎ 
-  </vaadin-horizontal-layout>Versión Notica 
- </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; font-size: 32px; align-items: center;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 57%;">
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">
    <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 1; width: 33%; height: 100%;">
