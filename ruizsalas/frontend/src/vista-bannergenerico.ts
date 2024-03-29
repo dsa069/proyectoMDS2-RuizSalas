@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-bannergenerico')
@@ -43,47 +43,100 @@ export class VistaBannergenerico extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: center;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%; height: 100%;">
-  <vaadin-button style="height: 100%; width: 100%;background-color: var(--lumo-contrast-0pct);">
-    ‎ 
-  </vaadin-button>
- </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 1; height: 100%; width: 100%;">
-  <vaadin-vertical-layout style="width: 10%; height: 100%; align-self: flex-end; flex-shrink: 0;" id="ZonaAnuncios">
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; overflow: hidden; height: 35%; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://i.pinimg.com/originals/46/f3/18/46f318120f97b7f472ecbb43ac2ef20e.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: center;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 20%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://i.redd.it/el59y0snhf0a1.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: center;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 17%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://pbs.twimg.com/media/EyzRrIPWgAgnRSS.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: center;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 30%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://pbs.twimg.com/media/F8UzfyjWIAEB0E6.jpg" style="width: 90%; height: 75%; display: block;">
-   </vaadin-button>
+  <vaadin-vertical-layout style="width: 10%; height: 100%; align-self: flex-end; flex-shrink: 0;" id="ZonaAnuncios"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;">
+   <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;">
+    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
+       Registrarse 
+     </vaadin-horizontal-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 22px;">
+       ¿Ya tienes cuenta? 
+     </vaadin-horizontal-layout>
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Cancelar 
+      </vaadin-button>
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Iniciar Sesión 
+      </vaadin-button>
+      <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;">
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 32px;">
+       Iniciar Sesión 
+     </vaadin-horizontal-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Cancelar 
+      </vaadin-button>
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Confirmar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;"></vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;">
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct);">
+       <iron-icon style="width: 100%; height: 100%;" src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png"></iron-icon>
+      </vaadin-button>
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct);">
+       <iron-icon style="width: 100%; height: 100%;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1aasFk2CpyAtSah2dIdd6b7uLMDLhA4Zs5Jx7XqFzgQ_NFs_4"></iron-icon>
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;">
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; font-size:32px; align-items: center;">
+       Historial de noticias 
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">
+       <iron-icon style="width: 100%; height: 100%;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1aasFk2CpyAtSah2dIdd6b7uLMDLhA4Zs5Jx7XqFzgQ_NFs_4"></iron-icon>
+      </vaadin-button>
+     </vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%; font-size: 32px; align-items: center;">
+       Revisar Noticias 
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">
+       <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 100%; width: 100%;">
+      </vaadin-button>
+     </vaadin-vertical-layout>
+    </vaadin-vertical-layout>
+    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;">
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; font-size: 32px; align-items: center;">
+      Añadir Periodista
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;"></vaadin-vertical-layout>
+     <vaadin-horizontal-layout style="flex-shrink: 0; width: 100%; justify-content: space-between;">
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Cancelar 
+      </vaadin-button>
+      <vaadin-button style="flex-shrink: 0; color: black;">
+        Confirmar 
+      </vaadin-button>
+     </vaadin-horizontal-layout>
+    </vaadin-vertical-layout>
+   </vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout style="width: 10%; flex-shrink: 0; height: 100%; align-self: flex-end;" id="ZonaAnuncios2">
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; overflow: hidden; height: 25%; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://ih1.redbubble.net/image.5246978255.5442/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" style="width: 90%; height: 75%; display: block;">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: flex-start;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 25%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://i.etsystatic.com/44859972/r/il/d48ada/5367489789/il_fullxfull.5367489789_kiu9.jpg" style="width: 90%; height: 75%; display: block;">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: flex-start;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 25%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://img.kwcdn.com/product/open/2023-07-26/1690338503239-6829046ed5684659927d56e426e160a0-goods.jpeg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" style="width: 90%; height: 75%; display: block;">
-   </vaadin-button>
-   <vaadin-horizontal-layout style="background-color: #28a9fa; flex-shrink: 0; height: 0.5%; width: 90%; align-self: flex-start;"></vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 37%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGVaFDrwHfevaBkNmOp8bLf31q6QbOBTUpz8WGjOVv0w&amp;s" style="width: 90%; height: 75%; display: block;">
-   </vaadin-button>
-  </vaadin-vertical-layout>
+  <vaadin-vertical-layout style="width: 10%; flex-shrink: 0; height: 100%; align-self: flex-end;" id="ZonaAnuncios2"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
