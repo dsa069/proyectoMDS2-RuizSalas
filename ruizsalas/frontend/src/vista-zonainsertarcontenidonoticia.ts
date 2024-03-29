@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 @customElement('vista-zonainsertarcontenidonoticia')
@@ -18,7 +19,7 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" theme="spacing-xl">
  <vaadin-horizontal-layout theme="" style="width: 100%; height: 20%; flex-shrink: 0; justify-content: space-between;">
   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 20%; flex-shrink: 0;">
    <iron-icon icon="lumo:plus"></iron-icon>
@@ -33,10 +34,10 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
   <vaadin-text-field placeholder="Insertar Título" style="width: 100%;"></vaadin-text-field>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 20%; flex-shrink: 0;">
-  <vaadin-text-field placeholder="Insertar contenido de notica corto" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
+  <vaadin-text-area placeholder="Insertar contenido de notica corto" style="width: 100%; flex-shrink: 0;"></vaadin-text-area>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 45%; flex-shrink: 0;">
-  <vaadin-text-field placeholder="Insertar contenido de noticia completo" style="width: 100%; flex-shrink: 0;"></vaadin-text-field>
+  <vaadin-text-area placeholder="Insertar contenido de noticia completo" style="width: 100%; flex-shrink: 0; height: 69%;"></vaadin-text-area>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
