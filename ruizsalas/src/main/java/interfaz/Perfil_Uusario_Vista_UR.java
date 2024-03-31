@@ -12,4 +12,10 @@ public class Perfil_Uusario_Vista_UR extends Perfil_Usuario {
 	public void cancelar_cobro_suscripcion() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Usuario_Registardo _usuarioRegistrado;
+	public Perfil_Uusario_Vista_UR(Usuario_Registardo _usuarioRegistrado) {
+		super(_usuarioRegistrado);
+		this._usuarioRegistrado = _usuarioRegistrado;
+	}
 }

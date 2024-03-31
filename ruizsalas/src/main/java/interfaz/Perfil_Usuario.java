@@ -11,6 +11,12 @@ public class Perfil_Usuario extends Banner_suscrito {
 //	private JLabel _contrasena;
 //	private JLabel _tarjeta;
 	public Registrado _unnamed_Registrado_;
+	
+	public Registrado _registrado;
+	public Perfil_Usuario(Registrado _registrado) {
+		super(_registrado);
+		this._registrado = _registrado;
+	}
 
 	public void cerrar_sesion() {
 		throw new UnsupportedOperationException();

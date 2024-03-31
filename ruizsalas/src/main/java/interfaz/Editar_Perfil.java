@@ -8,4 +8,10 @@ public class Editar_Perfil extends Banner_suscrito {
 	public void guardar_cambios() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Registrado _registrado;
+	public Editar_Perfil(Registrado _registrado) {
+		super(_registrado);
+		this._registrado = _registrado;
+	}
 }
