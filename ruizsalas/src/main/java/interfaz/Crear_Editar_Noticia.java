@@ -20,4 +20,10 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 	public void guardar_cambios_noticia() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Periodista _periodista;
+	public Crear_Editar_Noticia(Periodista _periodista) {
+		super(_periodista);
+		this._periodista = _periodista;
+	}
 }

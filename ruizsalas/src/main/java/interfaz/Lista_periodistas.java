@@ -5,4 +5,10 @@ public class Lista_periodistas extends Banner_Editor {
 //	private JScrollPanel _scroll;
 	public Editor _accede;
 	public Periodistas _unnamed_Periodistas_;
+	
+	public Editor _editor;
+	public Lista_periodistas(Editor _editor) {
+		super(_editor);
+		this._editor = _editor;
+	}
 }

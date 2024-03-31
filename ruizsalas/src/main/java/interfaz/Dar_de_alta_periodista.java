@@ -8,4 +8,10 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	public void registrar_periodista() {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Editor _editor;
+	public Dar_de_alta_periodista(Editor _editor) {
+		super(_editor);
+		this._editor = _editor;
+	}
 }
