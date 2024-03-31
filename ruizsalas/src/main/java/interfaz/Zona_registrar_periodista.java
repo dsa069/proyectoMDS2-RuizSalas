@@ -1,6 +1,6 @@
 package interfaz;
-
-public class Zona_registrar_periodista {
+import vistas.*;
+public class Zona_registrar_periodista extends Introducir_Datos{
 //	private JTextField _apodoTF;
 //	private JTextField _fotoTF;
 //	private JTextField _dniTF;
