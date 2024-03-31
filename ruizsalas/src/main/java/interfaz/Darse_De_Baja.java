@@ -8,9 +8,9 @@ public class Darse_De_Baja extends VistaDarsedebaja{
 		throw new UnsupportedOperationException();
 	}
 	
-	public Registrado registrado;
-	public Darse_De_Baja(Registrado registrado) {
+	public Usuario_Registardo usuarioRegistrado;
+	public Darse_De_Baja(Usuario_Registardo usuarioRegistrado) {
 		super();
-		this.registrado = registrado;
+		this.usuarioRegistrado = usuarioRegistrado;
 	}
 }

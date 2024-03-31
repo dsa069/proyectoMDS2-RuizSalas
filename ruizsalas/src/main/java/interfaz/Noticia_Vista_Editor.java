@@ -7,9 +7,9 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	//public Lista_Secciones_noticia _contiene;
 	//public Eliminar_noticia _contiene_la_opcion_de;
 	
-	public Registrado _registrado;
-	public Noticia_Vista_Editor(Registrado _registrado) {
-		super(_registrado);
-		this._registrado = _registrado;
+	public Editor _editor;
+	public Noticia_Vista_Editor(Editor _editor) {
+		super(_editor);
+		this._editor = _editor;
 	}
 }
