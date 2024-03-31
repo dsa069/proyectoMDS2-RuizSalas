@@ -8,5 +8,13 @@ public class Noticia {
 	//private JLabel _ubicacion;
 	//private JLabel _titulo;
 	//private JLabel _valoracion;
-	public Lista_Comentarios _contiene;
+	//public Lista_Comentarios _contiene;
+	
+	public Usuario usuario;
+	public Noticia(Usuario usuario) {
+		super();
+	this.usuario = usuario;
+	//this.getBarraDeBusqueda().setVisible(false);
+
+		}
 }
