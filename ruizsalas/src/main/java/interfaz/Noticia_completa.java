@@ -11,6 +11,11 @@ public class Noticia_completa extends Banner_suscrito {
 	public Noticia_completa(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
+		this.getNoticiaEditorLayout().setVisible(false);
+		this.getTextoPerfil().setVisible(false);
+		this.getPerfilUsuarioLayout().setVisible(false);
+		this.getDarseDeBajaLayout().setVisible(false);
+		this.getEditarPerfilLayout().setVisible(false);
 	}
 
 	public void valorar_noticia() {

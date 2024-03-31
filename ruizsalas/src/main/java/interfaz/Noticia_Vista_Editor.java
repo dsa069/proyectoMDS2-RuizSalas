@@ -11,5 +11,8 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	public Noticia_Vista_Editor(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
+		this.getNoticiaEditorLayout().setVisible(true);
+		this.getNoticiaLayout().setVisible(false);
+		this.getBotonHistorialNoticia().setVisible(false);
 	}
 }

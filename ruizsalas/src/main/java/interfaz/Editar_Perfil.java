@@ -13,5 +13,10 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Editar_Perfil(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
+		this.getNoticiaEditorLayout().setVisible(false);
+		this.getNoticiaLayout().setVisible(false);
+		this.getNoticiaLayoutGenerico().setVisible(false);
+		this.getPerfilUsuarioLayout().setVisible(false);
+		this.getDarseDeBajaLayout().setVisible(false);
 	}
 }

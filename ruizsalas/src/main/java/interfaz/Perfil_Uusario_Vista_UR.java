@@ -17,5 +17,9 @@ public class Perfil_Uusario_Vista_UR extends Perfil_Usuario {
 	public Perfil_Uusario_Vista_UR(Usuario_Registardo _usuarioRegistrado) {
 		super(_usuarioRegistrado);
 		this._usuarioRegistrado = _usuarioRegistrado;
+		this.getDarseDeBajaLayout().setVisible(true);
+		this.getBotonHistorialNoticia().setVisible(false);
+		this.getBotonIrAPeriodistas().setVisible(false);
+		this.getBotonRevisarNoticia().setVisible(false);
 	}
 }

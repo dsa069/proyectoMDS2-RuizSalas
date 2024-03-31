@@ -16,6 +16,11 @@ public class Perfil_Usuario extends Banner_suscrito {
 	public Perfil_Usuario(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
+		this.getNoticiaEditorLayout().setVisible(false);
+		this.getNoticiaLayout().setVisible(false);
+		this.getNoticiaLayoutGenerico().setVisible(false);
+		this.getEditarPerfilLayout().setVisible(false);
+		this.getDarseDeBajaLayout().setVisible(false);
 	}
 
 	public void cerrar_sesion() {
