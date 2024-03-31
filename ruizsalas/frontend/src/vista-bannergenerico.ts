@@ -26,7 +26,7 @@ export class VistaBannergenerico extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>MOMAZOS DIEGO 
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100px; align-self: center; justify-content: flex-end;">
-   <vaadin-button theme="icon" aria-label="Add new" id="RevisarNoticias" style="align-self: center; flex-grow: 0; flex-shrink: 0; height: 100%; background-color: var(--lumo-contrast-0pct);" dir="botonRevisarNoticiaGenerico">
+   <vaadin-button theme="icon" aria-label="Add new" id="botonRevisarNoticiaGenerico" style="align-self: center; flex-grow: 0; flex-shrink: 0; height: 100%; background-color: var(--lumo-contrast-0pct);">
     <img src="https://cdn-icons-png.flaticon.com/512/6848/6848160.png" width="63" height="63">
    </vaadin-button>
    <vaadin-button theme="icon" aria-label="Add new" id="botonVerPeriodistasGenerico" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct); align-self: center;">

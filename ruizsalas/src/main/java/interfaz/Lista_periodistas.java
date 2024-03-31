@@ -10,5 +10,6 @@ public class Lista_periodistas extends Banner_Editor {
 	public Lista_periodistas(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
+		this.getPeriodistaLayout1().setVisible(true);
 	}
 }

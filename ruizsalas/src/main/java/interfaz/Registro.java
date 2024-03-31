@@ -14,5 +14,9 @@ public class Registro extends Banner_no_registrado {
 	public Registro(Usuario_No_Registrado _usuarioNoRegistrado) {
 		super(_usuarioNoRegistrado);
 		this._usuarioNoRegistrado = _usuarioNoRegistrado;
+		this.getRegistroLayout().setVisible(true);
+		this.getZonaAnunciosLayout1().setVisible(false);
+		this.getZonaAnunciosLayout2().setVisible(false);
 	}
+	
 }

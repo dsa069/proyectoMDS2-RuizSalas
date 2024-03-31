@@ -11,15 +11,13 @@ import com.vaadin.flow.dom.Element;
 @Tag("vista-bannergenerico")
 @JsModule("./src/vista-bannergenerico.ts")
 public class VistaBannergenerico extends LitTemplate {
-
-    @Id("RevisarNoticias")
-	private Button revisarNoticias;
-	@Id("Suscribirse")
-	private Button suscribirse;
 	@Id("ZonaAnunciosLayout1")
 	private Element zonaAnunciosLayout1;
 	@Id("ZonaAnunciosLayout2")
+	
 	private Element zonaAnunciosLayout2;
+	@Id("botonRevisarNoticiaGenerico")
+	private Button botonRevisarNoticiaGenerico;
 	@Id("botonVerPeriodistasGenerico")
 	private Button botonVerPeriodistasGenerico;
 	@Id("botonMisNoticiasGenerico")
@@ -28,37 +26,29 @@ public class VistaBannergenerico extends LitTemplate {
 	private Button botonIniciarSesionGenerico;
 	@Id("botonSuscribirseGenerico")
 	private Button botonSuscribirseGenerico;
+	
 	@Id("registroLayout")
 	private Element registroLayout;
 	@Id("iniciarSesionLayout")
 	private Element iniciarSesionLayout;
 	@Id("noticiaUsuarioNoRegistradoLayout")
 	private Element noticiaUsuarioNoRegistradoLayout;
+	
 	@Id("crearEditarNoticiaLayout")
 	private Element crearEditarNoticiaLayout;
 	@Id("historialNoticiasLayout")
 	private Element historialNoticiasLayout;
+	
 	@Id("revisarNoticiasLayout")
 	private Element revisarNoticiasLayout;
 	@Id("periodistaLayout1")
 	private Element periodistaLayout1;
 	@Id("altaPeriodistaLayout")
 	private Element altaPeriodistaLayout;
+
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
     }
-	public Button getRevisarNoticias() {
-		return revisarNoticias;
-	}
-	public void setRevisarNoticias(Button revisarNoticias) {
-		this.revisarNoticias = revisarNoticias;
-	}
-	public Button getSuscribirse() {
-		return suscribirse;
-	}
-	public void setSuscribirse(Button suscribirse) {
-		this.suscribirse = suscribirse;
-	}
 	public Element getZonaAnunciosLayout1() {
 		return zonaAnunciosLayout1;
 	}
@@ -70,6 +60,12 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setZonaAnunciosLayout2(Element zonaAnunciosLayout2) {
 		this.zonaAnunciosLayout2 = zonaAnunciosLayout2;
+	}
+	public Button getBotonRevisarNoticiaGenerico() {
+		return botonRevisarNoticiaGenerico;
+	}
+	public void setBotonRevisarNoticiaGenerico(Button botonRevisarNoticiaGenerico) {
+		this.botonRevisarNoticiaGenerico = botonRevisarNoticiaGenerico;
 	}
 	public Button getBotonVerPeriodistasGenerico() {
 		return botonVerPeriodistasGenerico;

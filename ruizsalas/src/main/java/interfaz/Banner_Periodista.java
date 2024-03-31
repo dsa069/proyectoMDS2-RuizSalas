@@ -8,5 +8,7 @@ public class Banner_Periodista extends Banner_registrado {
 	public Banner_Periodista(Periodista _periodista) {
 		super(_periodista);
 		this._periodista = _periodista;
+		this.getBotonRevisarNoticiaGenerico().setVisible(false);
+		this.getBotonVerPeriodistasGenerico().setVisible(false);
 	}
 }

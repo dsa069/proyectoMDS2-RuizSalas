@@ -9,5 +9,6 @@ public class Revisar_noticias extends Banner_Editor {
 	public Revisar_noticias(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
+		this.getRevisarNoticiasLayout().setVisible(true);
 	}
 }

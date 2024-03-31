@@ -8,5 +8,8 @@ public class Banner_registrado extends Banner_generico {
 	public Banner_registrado(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
+		this.getBotonSuscribirseGenerico().setVisible(false);
+		this.getZonaAnunciosLayout1().setVisible(false);
+		this.getZonaAnunciosLayout2().setVisible(false);
 	}
 }

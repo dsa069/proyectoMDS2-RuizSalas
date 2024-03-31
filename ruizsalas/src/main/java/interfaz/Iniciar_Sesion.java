@@ -13,5 +13,8 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	public Iniciar_Sesion(Usuario_No_Registrado _usuarioNoRegistrado) {
 		super(_usuarioNoRegistrado);
 		this._usuarioNoRegistrado = _usuarioNoRegistrado;
+		this.getIniciarSesionLayout().setVisible(true);
+		this.getZonaAnunciosLayout1().setVisible(false);
+		this.getZonaAnunciosLayout2().setVisible(false);
 	}
 }

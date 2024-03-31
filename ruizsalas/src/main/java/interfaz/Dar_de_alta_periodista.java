@@ -13,5 +13,6 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	public Dar_de_alta_periodista(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
+		this.getAltaPeriodistaLayout().setVisible(true);
 	}
 }

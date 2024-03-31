@@ -9,5 +9,9 @@ public class Banner_no_registrado extends Banner_generico {
 	public Banner_no_registrado(Usuario_No_Registrado _usuarioNoRegistrado) {
 		super(_usuarioNoRegistrado);
 		this._usuarioNoRegistrado = _usuarioNoRegistrado;
+		this.getBotonRevisarNoticiaGenerico().setVisible(false);
+		this.getBotonIniciarSesionGenerico().setVisible(false);
+		this.getBotonMisNoticiasGenerico().setVisible(false);
+		this.getBotonVerPeriodistasGenerico().setVisible(false);
 	}
 }

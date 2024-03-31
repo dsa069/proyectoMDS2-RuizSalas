@@ -11,5 +11,6 @@ public class Historial_noticias extends Banner_Periodista {
 	public Historial_noticias(Periodista _periodista) {
 		super(_periodista);
 		this._periodista = _periodista;
+		this.getHistorialNoticiasLayout().setVisible(true);
 	}
 }
