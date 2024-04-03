@@ -45,7 +45,7 @@ export class VistaBannergenerico extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 1; height: 100%; width: 100%;">
   <vaadin-vertical-layout style="width: 10%; height: 100%; align-self: flex-end; flex-shrink: 0;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;">
+  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;" id="ContenidoBanner">
    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="noRegistradoLayout">
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="registroLayout">
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">

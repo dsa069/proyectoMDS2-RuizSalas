@@ -61,6 +61,8 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element listaPeriodistaEstatico;
 	@Id("datosPeriodistaAñadirEstatico")
 	private Element datosPeriodistaAñadirEstatico;
+	@Id("ContenidoBanner")
+	private Element contenidoBanner;
 
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
@@ -202,6 +204,12 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setDatosPeriodistaAñadirEstatico(Element datosPeriodistaAñadirEstatico) {
 		this.datosPeriodistaAñadirEstatico = datosPeriodistaAñadirEstatico;
+	}
+	public Element getContenidoBanner() {
+		return contenidoBanner;
+	}
+	public void setContenidoBanner(Element contenidoBanner) {
+		this.contenidoBanner = contenidoBanner;
 	}
 
 }
