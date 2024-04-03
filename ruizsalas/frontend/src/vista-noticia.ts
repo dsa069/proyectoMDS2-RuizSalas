@@ -37,7 +37,7 @@ export class VistaNoticia extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 10%; flex-shrink: 0; font-size: 50px; align-items: center; justify-content: space-between;">
    Humillación sin precedentes al Barcelona 
-  <vaadin-horizontal-layout style="width: 15%; height: 60%; flex-shrink: 0;"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 15%; height: 60%; flex-shrink: 0;" id="verValoracionEstatico"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="height: 60%; width: 10%;" id="valorarNoticia">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 60%;">
@@ -63,7 +63,7 @@ export class VistaNoticia extends LitElement {
     SUSCRIBIRSE 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="comentariosEstaticos"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }

@@ -32,6 +32,10 @@ public class VistaBannersuscrito extends LitTemplate {
 	private Button botonIrAPeriodistas;
 	@Id("botonHistorialNoticia")
 	private Button botonHistorialNoticia;
+	@Id("verDatosEstaticos")
+	private HorizontalLayout verDatosEstaticos;
+	@Id("editarDatosEstaticos")
+	private HorizontalLayout editarDatosEstaticos;
 
 	public VistaBannersuscrito() {
         // You can initialise any data required for the connected UI components here.

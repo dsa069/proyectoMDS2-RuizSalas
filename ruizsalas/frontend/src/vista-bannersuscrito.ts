@@ -26,7 +26,7 @@ export class VistaBannersuscrito extends LitElement {
   <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0;" id="noticiaEditorLayout"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="height: 25%; width: 100%; flex-shrink: 0;" id="perfilUsuarioLayout">
-  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; height: 50%;"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; height: 50%;" id="verDatosEstaticos"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0; justify-content: space-between;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct); width: 20%;">
     <iron-icon style="width: 100%; height: 90px;" src="https://cdn-icons-png.flaticon.com/128/660/660350.png"></iron-icon>
@@ -38,7 +38,7 @@ export class VistaBannersuscrito extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="width: 100%; height: 25%; flex-shrink: 0;" id="editarPerfilLayout">
-  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0;"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0;" id="editarDatosEstaticos"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0; justify-content: space-between; padding: var(--lumo-space-m);">
    <vaadin-button style="color: black; flex-shrink: 1; flex-grow: 0; align-self: center; font-size: 25px;">
      Cancelar 

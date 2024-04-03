@@ -82,6 +82,8 @@ public class VistaUsuario extends LitTemplate {
 	private Element zonaAnuncios2;
 	@Id("ZonaAnuncios")
 	private Element zonaAnuncios;
+	@Id("bannerGenericoEstatico")
+	private Element bannerGenericoEstatico;
 
 	public VistaUsuario() {
         // You can initialise any data required for the connected UI components here.

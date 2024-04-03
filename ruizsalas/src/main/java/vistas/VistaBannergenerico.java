@@ -45,6 +45,22 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element periodistaLayout1;
 	@Id("altaPeriodistaLayout")
 	private Element altaPeriodistaLayout;
+	@Id("datosRegistroEstatico")
+	private Element datosRegistroEstatico;
+	@Id("botonConfirmarRegistroEstatico")
+	private HorizontalLayout botonConfirmarRegistroEstatico;
+	@Id("datosIniciarSesionEstaticos")
+	private Element datosIniciarSesionEstaticos;
+	@Id("crearEditarNoticiaEstatico")
+	private Element crearEditarNoticiaEstatico;
+	@Id("historialNoticiasEstatico")
+	private Element historialNoticiasEstatico;
+	@Id("revisarNoticiasEstatico")
+	private Element revisarNoticiasEstatico;
+	@Id("listaPeriodistaEstatico")
+	private Element listaPeriodistaEstatico;
+	@Id("datosPeriodistaAñadirEstatico")
+	private Element datosPeriodistaAñadirEstatico;
 
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.

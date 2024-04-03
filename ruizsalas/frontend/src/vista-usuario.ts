@@ -16,7 +16,7 @@ export class VistaUsuario extends LitElement {
 
    render() {
     return html`
-<vaadin-vertical-layout style="height: 100%;" id="bannergenerico"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="height: 100%;" id="bannerGenericoEstatico"></vaadin-vertical-layout>
 `;
   }
 

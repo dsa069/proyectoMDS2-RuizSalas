@@ -18,7 +18,7 @@ export class VistaSeccionesperiodico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute;">
- <vaadin-vertical-layout style="width: 100%; height: 80%; flex-shrink: 0;"></vaadin-vertical-layout>
+ <vaadin-vertical-layout style="width: 100%; height: 80%; flex-shrink: 0;" id="listaNoticiasEstatica"></vaadin-vertical-layout>
  <vaadin-horizontal-layout style="flex-shrink: 0; width: 100%; height: 20%; align-items: center; justify-content: center;">
   <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%;">
    <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png" style="height: 20%; width: 20%;">

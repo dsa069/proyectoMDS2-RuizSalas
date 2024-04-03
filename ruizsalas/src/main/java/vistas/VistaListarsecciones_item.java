@@ -5,6 +5,7 @@ import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 
 @Tag("vista-listarsecciones_item")
 @JsModule("./src/vista-listarsecciones_item.ts")
@@ -20,6 +21,8 @@ public class VistaListarsecciones_item extends LitTemplate {
 
 	@Id("BorrarSeccion")
 	private Button borrarSeccion;
+	@Id("listaDeNoticiasEstatico")
+	private HorizontalLayout listaDeNoticiasEstatico;
 
 	public VistaListarsecciones_item() {
         // You can initialise any data required for the connected UI components here.

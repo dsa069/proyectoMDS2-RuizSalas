@@ -23,7 +23,7 @@ export class VistaListarsecciones_item extends LitElement {
    <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" width="50" height="50">
   </vaadin-button>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; height: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="width: 100%; justify-content: space-between; height: 100%;" id="listaDeNoticiasEstatico"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

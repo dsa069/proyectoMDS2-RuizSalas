@@ -28,6 +28,10 @@ public class VistaNoticia extends LitTemplate {
 	private Element noticiaCompleta;
 	@Id("botonSuscribirse")
 	private Element botonSuscribirse;
+	@Id("comentariosEstaticos")
+	private Element comentariosEstaticos;
+	@Id("verValoracionEstatico")
+	private HorizontalLayout verValoracionEstatico;
 	public VistaNoticia() {
         // You can initialise any data required for the connected UI components here.
     }

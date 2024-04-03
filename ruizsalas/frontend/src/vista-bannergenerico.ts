@@ -51,7 +51,7 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
        Registrarse 
      </vaadin-horizontal-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="datosRegistroEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 22px;">
        ¿Ya tienes cuenta? 
      </vaadin-horizontal-layout>
@@ -62,14 +62,14 @@ export class VistaBannergenerico extends LitElement {
       <vaadin-button style="flex-shrink: 0; color: black;">
         Iniciar Sesión 
       </vaadin-button>
-      <vaadin-horizontal-layout theme="spacing"></vaadin-horizontal-layout>
+      <vaadin-horizontal-layout theme="spacing" id="botonConfirmarRegistroEstatico"></vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="iniciarSesionLayout">
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 32px;">
        Iniciar Sesión 
      </vaadin-horizontal-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="datosIniciarSesionEstaticos"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
       <vaadin-button style="flex-shrink: 0; color: black;">
         Cancelar 
@@ -83,7 +83,7 @@ export class VistaBannergenerico extends LitElement {
    </vaadin-vertical-layout>
    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="periodistaLayout">
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="crearEditarNoticiaLayout">
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="crearEditarNoticiaEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
       <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct);">
        <iron-icon style="width: 100%; height: 100%;" src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png"></iron-icon>
@@ -97,7 +97,7 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; font-size:32px; align-items: center;">
        Historial de noticias 
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="historialNoticiasEstatico"></vaadin-vertical-layout>
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;">
       <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">
        <iron-icon style="width: 100%; height: 100%;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1aasFk2CpyAtSah2dIdd6b7uLMDLhA4Zs5Jx7XqFzgQ_NFs_4"></iron-icon>
@@ -110,10 +110,10 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%; font-size: 32px; align-items: center;">
        Revisar Noticias 
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="revisarNoticiasEstatico"></vaadin-vertical-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="periodistaLayout1">
-     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="listaPeriodistaEstatico"></vaadin-vertical-layout>
      <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%;">
       <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">
        <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 100%; width: 100%;">
@@ -124,7 +124,7 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; font-size: 32px; align-items: center;">
        Añadir Periodista 
      </vaadin-vertical-layout>
-     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="datosPeriodistaAñadirEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="flex-shrink: 0; width: 100%; justify-content: space-between;">
       <vaadin-button style="flex-shrink: 0; color: black;">
         Cancelar 
