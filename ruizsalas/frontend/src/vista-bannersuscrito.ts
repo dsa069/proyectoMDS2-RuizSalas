@@ -78,3 +78,4 @@ export class VistaBannersuscrito extends LitElement {
     return this;
   }
 }
+
