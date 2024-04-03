@@ -1,5 +1,8 @@
 package interfaz;
 import vistas.VistaUsuario;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import proyectoMDS.*;
 //import basededatos.iUsuario;
 
@@ -22,5 +25,9 @@ public class Usuario extends VistaUsuario {
 //	public void Busqueda() {
 //
 //	}
+	public Banner_generico banner;
+	public void Banner() {
+		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner);
+		}
 }
 
