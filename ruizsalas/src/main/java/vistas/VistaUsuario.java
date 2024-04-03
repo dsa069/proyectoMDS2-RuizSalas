@@ -22,6 +22,14 @@ public class VistaUsuario extends LitTemplate {
 	@Id("Suscribirse")
 	private Button suscribirse;
 	
+	public Element getBannerGenericoEstatico() {
+		return bannerGenericoEstatico;
+	}
+
+	public void setBannerGenericoEstatico(Element bannerGenericoEstatico) {
+		this.bannerGenericoEstatico = bannerGenericoEstatico;
+	}
+
 	public Button getRevisarNoticias() {
 		return revisarNoticias;
 	}

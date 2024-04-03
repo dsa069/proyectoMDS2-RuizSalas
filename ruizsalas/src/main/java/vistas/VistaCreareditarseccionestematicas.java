@@ -13,6 +13,14 @@ public class VistaCreareditarseccionestematicas extends LitTemplate {
     @Id("listaSeccionesEstaticas")
 	private Element listaSeccionesEstaticas;
 
+	public Element getListaSeccionesEstaticas() {
+		return listaSeccionesEstaticas;
+	}
+
+	public void setListaSeccionesEstaticas(Element listaSeccionesEstaticas) {
+		this.listaSeccionesEstaticas = listaSeccionesEstaticas;
+	}
+
 	public VistaCreareditarseccionestematicas() {
         // You can initialise any data required for the connected UI components here.
     }

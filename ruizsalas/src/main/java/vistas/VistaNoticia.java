@@ -83,5 +83,17 @@ public class VistaNoticia extends LitTemplate {
 	public void setBotonSuscribirse(Element botonSuscribirse) {
 		this.botonSuscribirse = botonSuscribirse;
 	}
+	public Element getComentariosEstaticos() {
+		return comentariosEstaticos;
+	}
+	public void setComentariosEstaticos(Element comentariosEstaticos) {
+		this.comentariosEstaticos = comentariosEstaticos;
+	}
+	public HorizontalLayout getVerValoracionEstatico() {
+		return verValoracionEstatico;
+	}
+	public void setVerValoracionEstatico(HorizontalLayout verValoracionEstatico) {
+		this.verValoracionEstatico = verValoracionEstatico;
+	}
 
 }

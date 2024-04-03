@@ -19,6 +19,14 @@ public class VistaListarsecciones_item extends LitTemplate {
 		this.borrarSeccion = borrarSeccion;
 	}
 
+	public HorizontalLayout getListaDeNoticiasEstatico() {
+		return listaDeNoticiasEstatico;
+	}
+
+	public void setListaDeNoticiasEstatico(HorizontalLayout listaDeNoticiasEstatico) {
+		this.listaDeNoticiasEstatico = listaDeNoticiasEstatico;
+	}
+
 	@Id("BorrarSeccion")
 	private Button borrarSeccion;
 	@Id("listaDeNoticiasEstatico")

@@ -155,5 +155,53 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setAltaPeriodistaLayout(Element altaPeriodistaLayout) {
 		this.altaPeriodistaLayout = altaPeriodistaLayout;
 	}
+	public Element getDatosRegistroEstatico() {
+		return datosRegistroEstatico;
+	}
+	public void setDatosRegistroEstatico(Element datosRegistroEstatico) {
+		this.datosRegistroEstatico = datosRegistroEstatico;
+	}
+	public HorizontalLayout getBotonConfirmarRegistroEstatico() {
+		return botonConfirmarRegistroEstatico;
+	}
+	public void setBotonConfirmarRegistroEstatico(HorizontalLayout botonConfirmarRegistroEstatico) {
+		this.botonConfirmarRegistroEstatico = botonConfirmarRegistroEstatico;
+	}
+	public Element getDatosIniciarSesionEstaticos() {
+		return datosIniciarSesionEstaticos;
+	}
+	public void setDatosIniciarSesionEstaticos(Element datosIniciarSesionEstaticos) {
+		this.datosIniciarSesionEstaticos = datosIniciarSesionEstaticos;
+	}
+	public Element getCrearEditarNoticiaEstatico() {
+		return crearEditarNoticiaEstatico;
+	}
+	public void setCrearEditarNoticiaEstatico(Element crearEditarNoticiaEstatico) {
+		this.crearEditarNoticiaEstatico = crearEditarNoticiaEstatico;
+	}
+	public Element getHistorialNoticiasEstatico() {
+		return historialNoticiasEstatico;
+	}
+	public void setHistorialNoticiasEstatico(Element historialNoticiasEstatico) {
+		this.historialNoticiasEstatico = historialNoticiasEstatico;
+	}
+	public Element getRevisarNoticiasEstatico() {
+		return revisarNoticiasEstatico;
+	}
+	public void setRevisarNoticiasEstatico(Element revisarNoticiasEstatico) {
+		this.revisarNoticiasEstatico = revisarNoticiasEstatico;
+	}
+	public Element getListaPeriodistaEstatico() {
+		return listaPeriodistaEstatico;
+	}
+	public void setListaPeriodistaEstatico(Element listaPeriodistaEstatico) {
+		this.listaPeriodistaEstatico = listaPeriodistaEstatico;
+	}
+	public Element getDatosPeriodistaAñadirEstatico() {
+		return datosPeriodistaAñadirEstatico;
+	}
+	public void setDatosPeriodistaAñadirEstatico(Element datosPeriodistaAñadirEstatico) {
+		this.datosPeriodistaAñadirEstatico = datosPeriodistaAñadirEstatico;
+	}
 
 }

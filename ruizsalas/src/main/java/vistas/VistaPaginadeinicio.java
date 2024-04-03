@@ -13,6 +13,14 @@ public class VistaPaginadeinicio extends LitTemplate {
     @Id("listaPortadaEstatica")
 	private Element listaPortadaEstatica;
 
+	public Element getListaPortadaEstatica() {
+		return listaPortadaEstatica;
+	}
+
+	public void setListaPortadaEstatica(Element listaPortadaEstatica) {
+		this.listaPortadaEstatica = listaPortadaEstatica;
+	}
+
 	public VistaPaginadeinicio() {
         // You can initialise any data required for the connected UI components here.
     }

@@ -13,6 +13,14 @@ public class VistaSeccionesperiodico extends LitTemplate {
     @Id("listaNoticiasEstatica")
 	private Element listaNoticiasEstatica;
 
+	public Element getListaNoticiasEstatica() {
+		return listaNoticiasEstatica;
+	}
+
+	public void setListaNoticiasEstatica(Element listaNoticiasEstatica) {
+		this.listaNoticiasEstatica = listaNoticiasEstatica;
+	}
+
 	public VistaSeccionesperiodico() {
         // You can initialise any data required for the connected UI components here.
     }

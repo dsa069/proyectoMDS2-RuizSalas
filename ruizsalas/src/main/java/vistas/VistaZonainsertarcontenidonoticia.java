@@ -17,4 +17,12 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
         // You can initialise any data required for the connected UI components here.
     }
 
+	public Element getSeleccionarTematicasEstatico() {
+		return seleccionarTematicasEstatico;
+	}
+
+	public void setSeleccionarTematicasEstatico(Element seleccionarTematicasEstatico) {
+		this.seleccionarTematicasEstatico = seleccionarTematicasEstatico;
+	}
+
 }

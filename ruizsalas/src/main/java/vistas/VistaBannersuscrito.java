@@ -121,4 +121,20 @@ public class VistaBannersuscrito extends LitTemplate {
 		this.botonHistorialNoticia = botonHistorialNoticia;
 	}
 
+	public HorizontalLayout getVerDatosEstaticos() {
+		return verDatosEstaticos;
+	}
+
+	public void setVerDatosEstaticos(HorizontalLayout verDatosEstaticos) {
+		this.verDatosEstaticos = verDatosEstaticos;
+	}
+
+	public HorizontalLayout getEditarDatosEstaticos() {
+		return editarDatosEstaticos;
+	}
+
+	public void setEditarDatosEstaticos(HorizontalLayout editarDatosEstaticos) {
+		this.editarDatosEstaticos = editarDatosEstaticos;
+	}
+
 }
