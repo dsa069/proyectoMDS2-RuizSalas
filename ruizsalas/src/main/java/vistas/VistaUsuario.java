@@ -10,17 +10,6 @@ import com.vaadin.flow.dom.Element;
 @Tag("vista-usuario")
 @JsModule("./src/vista-usuario.ts")
 public class VistaUsuario extends LitTemplate {
-
-    @Id("RevisarNoticias")
-	private Button revisarNoticias;
-	@Id("VerPeriodistas")
-	private Button verPeriodistas;
-	@Id("MisNoticias")
-	private Button misNoticias;
-	@Id("IniciarSesion")
-	private Button iniciarSesion;
-	@Id("Suscribirse")
-	private Button suscribirse;
 	
 	public Element getBannerGenericoEstatico() {
 		return bannerGenericoEstatico;
@@ -28,46 +17,6 @@ public class VistaUsuario extends LitTemplate {
 
 	public void setBannerGenericoEstatico(Element bannerGenericoEstatico) {
 		this.bannerGenericoEstatico = bannerGenericoEstatico;
-	}
-
-	public Button getRevisarNoticias() {
-		return revisarNoticias;
-	}
-
-	public void setRevisarNoticias(Button revisarNoticias) {
-		this.revisarNoticias = revisarNoticias;
-	}
-
-	public Button getVerPeriodistas() {
-		return verPeriodistas;
-	}
-
-	public void setVerPeriodistas(Button verPeriodistas) {
-		this.verPeriodistas = verPeriodistas;
-	}
-
-	public Button getMisNoticias() {
-		return misNoticias;
-	}
-
-	public void setMisNoticias(Button misNoticias) {
-		this.misNoticias = misNoticias;
-	}
-
-	public Button getIniciarSesion() {
-		return iniciarSesion;
-	}
-
-	public void setIniciarSesion(Button iniciarSesion) {
-		this.iniciarSesion = iniciarSesion;
-	}
-
-	public Button getSuscribirse() {
-		return suscribirse;
-	}
-
-	public void setSuscribirse(Button suscribirse) {
-		this.suscribirse = suscribirse;
 	}
 
 	public Element getZonaAnuncios2() {

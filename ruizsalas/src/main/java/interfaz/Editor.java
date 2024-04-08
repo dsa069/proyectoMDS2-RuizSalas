@@ -7,7 +7,5 @@ public class Editor extends Registrado {
 	public Editor (proyectoMDS.MainView mainView){
 		super(mainView);
 
-		this.getRevisarNoticias().setVisible(false);
-		this.getVerPeriodistas().setVisible(false);
 	} 
 }

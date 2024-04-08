@@ -8,9 +8,6 @@ public class Usuario_Registardo extends Registrado {
 	public Usuario_Registardo(proyectoMDS.MainView mainView){
 		super(mainView);
 		
-		this.getMisNoticias().setVisible(false);
-		this.getRevisarNoticias().setVisible(false);
-		this.getVerPeriodistas().setVisible(false);
 	} 
 	
 }

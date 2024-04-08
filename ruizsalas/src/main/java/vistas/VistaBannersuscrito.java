@@ -26,12 +26,7 @@ public class VistaBannersuscrito extends LitTemplate {
 	private HorizontalLayout darseDeBajaLayout;
 	@Id("editarPerfilLayout")
 	private Element editarPerfilLayout;
-	@Id("botonRevisarNoticia")
-	private Button botonRevisarNoticia;
-	@Id("botonIrAPeriodistas")
-	private Button botonIrAPeriodistas;
-	@Id("botonHistorialNoticia")
-	private Button botonHistorialNoticia;
+
 	@Id("verDatosEstaticos")
 	private HorizontalLayout verDatosEstaticos;
 	@Id("editarDatosEstaticos")
@@ -97,29 +92,6 @@ public class VistaBannersuscrito extends LitTemplate {
 		this.editarPerfilLayout = editarPerfilLayout;
 	}
 
-	public Button getBotonRevisarNoticia() {
-		return botonRevisarNoticia;
-	}
-
-	public void setBotonRevisarNoticia(Button botonRevisarNoticia) {
-		this.botonRevisarNoticia = botonRevisarNoticia;
-	}
-
-	public Button getBotonIrAPeriodistas() {
-		return botonIrAPeriodistas;
-	}
-
-	public void setBotonIrAPeriodistas(Button botonIrAPeriodistas) {
-		this.botonIrAPeriodistas = botonIrAPeriodistas;
-	}
-
-	public Button getBotonHistorialNoticia() {
-		return botonHistorialNoticia;
-	}
-
-	public void setBotonHistorialNoticia(Button botonHistorialNoticia) {
-		this.botonHistorialNoticia = botonHistorialNoticia;
-	}
 
 	public HorizontalLayout getVerDatosEstaticos() {
 		return verDatosEstaticos;

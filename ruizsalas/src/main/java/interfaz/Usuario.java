@@ -11,6 +11,8 @@ public class Usuario extends VistaUsuario {
 	public MainView mainView;
 	public Usuario(MainView MainView) {
 		this.mainView = MainView;
+		
+		this.Banner();
 	}
 	//	public iUsuario _iUsuario;
 	//	public Busqueda _accede;
@@ -27,7 +29,8 @@ public class Usuario extends VistaUsuario {
 //	}
 	public Banner_generico banner;
 	public void Banner() {
-		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner);
+		this.banner = new Banner_generico(this);
+		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.banner);
 		}
 }
 

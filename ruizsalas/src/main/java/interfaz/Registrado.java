@@ -6,7 +6,6 @@ public class Registrado extends Usuario {
 		super(mainView);
 		
 		this.getZonaAnuncios().setVisible(false);
-		this.getSuscribirse().setVisible(false);
 		this.getZonaAnuncios2().setVisible(false);
 	}
 //	public iRegistrado _iRegistrado;
