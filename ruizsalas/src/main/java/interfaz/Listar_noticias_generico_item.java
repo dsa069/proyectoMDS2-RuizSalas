@@ -1,4 +1,6 @@
 package interfaz;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.*;
 
 public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_item {
@@ -11,5 +13,19 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	public Listar_noticias_generico_item(Listar_noticias_generico _listar_noticias_generico) {
 		super();
 		this._listar_noticias_generico = _listar_noticias_generico;
+		this.Zona_De_Autor_Y_Version_De_Noticia();
+		this.Ver_Valoracion();
+	}
+	
+	public Zona_de_autor_y_version_de_noticia zonaAutorYVersionDeNoticia;
+	public void Zona_De_Autor_Y_Version_De_Noticia() {
+		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(null);
+		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
+	}
+
+	public ver_valoracion verValoracion;
+	public void Ver_Valoracion() {
+		this.verValoracion = new ver_valoracion(null);
+		this.getVerValoracion().add(this.verValoracion);
 	}
 }
