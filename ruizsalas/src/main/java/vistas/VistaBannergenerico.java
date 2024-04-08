@@ -45,6 +45,7 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element periodistaLayout1;
 	@Id("altaPeriodistaLayout")
 	private Element altaPeriodistaLayout;
+	
 	@Id("datosRegistroEstatico")
 	private Element datosRegistroEstatico;
 	@Id("botonConfirmarRegistroEstatico")
