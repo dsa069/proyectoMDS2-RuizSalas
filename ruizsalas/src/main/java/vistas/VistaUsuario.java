@@ -19,26 +19,6 @@ public class VistaUsuario extends LitTemplate {
 		this.bannerGenericoEstatico = bannerGenericoEstatico;
 	}
 
-	public Element getZonaAnuncios2() {
-		return zonaAnuncios2;
-	}
-
-	public void setZonaAnuncios2(Element zonaAnuncios2) {
-		this.zonaAnuncios2 = zonaAnuncios2;
-	}
-
-	public Element getZonaAnuncios() {
-		return zonaAnuncios;
-	}
-
-	public void setZonaAnuncios(Element zonaAnuncios) {
-		this.zonaAnuncios = zonaAnuncios;
-	}
-
-	@Id("ZonaAnuncios2")
-	private Element zonaAnuncios2;
-	@Id("ZonaAnuncios")
-	private Element zonaAnuncios;
 	@Id("bannerGenericoEstatico")
 	private Element bannerGenericoEstatico;
 
