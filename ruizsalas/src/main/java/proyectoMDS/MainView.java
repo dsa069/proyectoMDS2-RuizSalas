@@ -34,7 +34,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
 	
-	Usuario_No_Registrado usuario_No_Registrado;
+	Usuario usuario;
 	
     /**
      * Construct a new Vaadin view.
@@ -45,8 +45,8 @@ public class MainView extends VerticalLayout {
      */
     public MainView(@Autowired GreetService service) {
 
-    	usuario_No_Registrado = new Usuario_No_Registrado(this);
-    	add(usuario_No_Registrado);
+    	usuario = new Usuario(this);
+    	add(usuario);
 //        // Use TextField for standard text input
 //        TextField textField = new TextField("Your name");
 //        textField.addThemeName("bordered");

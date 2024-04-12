@@ -21,7 +21,7 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 		this.editarTexto = editarTexto;
 	}
 	@Id("BarraDeBusqueda")
-	private TextField barraDeBusqueda;
+	private HorizontalLayout barraDeBusqueda;
 	@Id("EditarTexto")
 	private HorizontalLayout editarTexto;
 	@Id("MsgError")
@@ -33,10 +33,10 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	public void setBotonEditarSecciones(Button botonEditarSecciones) {
 		this.botonEditarSecciones = botonEditarSecciones;
 	}
-	public TextField getBarraDeBusqueda() {
+	public HorizontalLayout getBarraDeBusqueda() {
 		return barraDeBusqueda;
 	}
-	public void setBarraDeBusqueda(TextField barraDeBusqueda) {
+	public void setBarraDeBusqueda(HorizontalLayout barraDeBusqueda) {
 		this.barraDeBusqueda = barraDeBusqueda;
 	}
 	public HorizontalLayout getMsgError() {

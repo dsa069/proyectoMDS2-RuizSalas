@@ -1,6 +1,8 @@
 package interfaz;
 
-public class Mensaje_de_error {
+import vistas.VistaMensajedeerror;
+
+public class Mensaje_de_error extends VistaMensajedeerror {
 	public Usuario usuario;
 	public Mensaje_de_error(Usuario usuario) {
 		super();

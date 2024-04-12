@@ -25,12 +25,12 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Barra_de_busqueda buscar;
 	public void barraBusqueda() {
 		this.buscar = new Barra_de_busqueda(null);
-	//	this.getBarraDeBusqueda().as(VerticalLayout.class).add(this.buscar);
+		this.getBarraDeBusqueda().add(this.buscar);
 	}
 	
 	public Mensaje_de_error msgError;
 	public void Msg_De_Error() {
 		this.msgError = new Mensaje_de_error(null);
-	//	this.getMsgError().as(VerticalLayout.class).add(this.msgError);
+		this.getMsgError().add(this.msgError);
 	}
 }
