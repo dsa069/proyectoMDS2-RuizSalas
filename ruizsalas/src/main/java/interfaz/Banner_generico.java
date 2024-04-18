@@ -27,8 +27,8 @@ public class Banner_generico extends VistaBannergenerico{
 		this.Datos_Registro();
 		this.Confirmar();
 		this.Datos_Iniciar_Sesion();
-//		this.Noticia_UNR();
-//		this.C_E_Noticia();
+		this.Noticia_UNR();
+		this.C_E_Noticia();
 		this.Mis_Noticias();
 		this.Revision_Noticias();
 		this.Dar_Baja_Periodistas();
@@ -72,15 +72,15 @@ public class Banner_generico extends VistaBannergenerico{
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this.Datil);
 		}
 	
-	public Noticia_Vista_UNR Noticia;
+	public Contenido_cortado_noticia Noticia;
 	public void Noticia_UNR() {
-		this.Noticia = new Noticia_Vista_UNR(null);
+		this.Noticia = new Contenido_cortado_noticia(null);
 		this.getNoticiaUsuarioNoRegistradoLayout().as(VerticalLayout.class).add(this.Noticia);
 		}
 	
-	public Crear_Editar_Noticia CENoticia;
+	public Zona_insertar_contenido_noticia CENoticia;
 	public void C_E_Noticia() {
-		this.CENoticia = new Crear_Editar_Noticia(null);
+		this.CENoticia = new Zona_insertar_contenido_noticia(null);
 		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
 		}
 	
