@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Historial_noticias extends Banner_Periodista {
 //	private JButton _crear_noticia;
 //	private JScrollPanel _scroll;
@@ -13,5 +15,14 @@ public class Historial_noticias extends Banner_Periodista {
 		this._periodista = _periodista;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getHistorialNoticiasLayout().setVisible(true);
+		
+		this.getBotonCrearNoticia().addClickListener(event->ConectorCrearNoticia());
 	}
+	
+	public Crear_Editar_Noticia CENoticia;
+	public void ConectorCrearNoticia() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		CENoticia = new Crear_Editar_Noticia(null);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
+		}
 }

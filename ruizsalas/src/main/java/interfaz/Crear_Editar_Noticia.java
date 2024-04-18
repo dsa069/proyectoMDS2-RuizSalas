@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Crear_Editar_Noticia extends Banner_Periodista {
 //	private JButton _eliminar_cambios_noticia;
 //	private JButton _guardar_cambios_noticia;
@@ -27,5 +29,18 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		this._periodista = _periodista;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getCrearEditarNoticiaLayout().setVisible(true);
+		
+		this.getBotonEliminarNoticiaPropia().addClickListener(event->EliminarNoticia());
+		this.getBotonConfirmarModificaciónNoticia().addClickListener(event->ConductorMisNoticias());
 	}
+	
+	public void EliminarNoticia() {
+		//Operacion eliminar
+		this.ConductorMisNoticias();
+		}
+	
+	public void ConfirmarModificacionNoticia() {
+		//Operacion guardar cambios
+		this.ConductorMisNoticias();
+		}
 }

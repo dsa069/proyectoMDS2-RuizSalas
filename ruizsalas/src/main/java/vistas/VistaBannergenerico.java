@@ -85,6 +85,18 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("BotonCancelarSesion")
 	private Button botonCancelarSesion;
 
+	@Id("botonpaginainicio")
+	private Button botonpaginainicio;
+
+	@Id("BotonCrearNoticia")
+	private Button botonCrearNoticia;
+
+	@Id("BotonConfirmarModificaciónNoticia")
+	private Button botonConfirmarModificaciónNoticia;
+
+	@Id("BotonEliminarNoticiaPropia")
+	private Button botonEliminarNoticiaPropia;
+
 
 
 	public VistaBannergenerico() {
@@ -282,6 +294,30 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setEditorLayout(Element editorLayout) {
 		this.editorLayout = editorLayout;
+	}
+	public Button getBotonpaginainicio() {
+		return botonpaginainicio;
+	}
+	public void setBotonpaginainicio(Button botonpaginainicio) {
+		this.botonpaginainicio = botonpaginainicio;
+	}
+	public Button getBotonCrearNoticia() {
+		return botonCrearNoticia;
+	}
+	public void setBotonCrearNoticia(Button botonCrearNoticia) {
+		this.botonCrearNoticia = botonCrearNoticia;
+	}
+	public Button getBotonConfirmarModificaciónNoticia() {
+		return botonConfirmarModificaciónNoticia;
+	}
+	public void setBotonConfirmarModificaciónNoticia(Button botonConfirmarModificaciónNoticia) {
+		this.botonConfirmarModificaciónNoticia = botonConfirmarModificaciónNoticia;
+	}
+	public Button getBotonEliminarNoticiaPropia() {
+		return botonEliminarNoticiaPropia;
+	}
+	public void setBotonEliminarNoticiaPropia(Button botonEliminarNoticiaPropia) {
+		this.botonEliminarNoticiaPropia = botonEliminarNoticiaPropia;
 	}
 
 }

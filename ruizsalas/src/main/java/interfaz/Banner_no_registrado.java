@@ -26,12 +26,4 @@ public class Banner_no_registrado extends Banner_generico {
 		this.getBannergenericolayout().as(VerticalLayout.class).add(registro);
 		}
 	
-	public Banner_no_registrado noRegistro;
-	public void ConductorPortadaBanner() {
-		this.getRegistroLayout().setVisible(false);
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		noRegistro = new Banner_no_registrado(null);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
-		}
-	
 }

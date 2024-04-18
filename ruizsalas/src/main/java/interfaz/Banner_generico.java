@@ -36,14 +36,22 @@ public class Banner_generico extends VistaBannergenerico{
 		
 		this.InicioPortada();
 		
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
+		
 	}
-
+	
+	public Banner_no_registrado noRegistro;
+	public void ConductorPortadaBanner() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		noRegistro = new Banner_no_registrado(null);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
+		}
+	
 	public Pagina_de_inicio PP;
 	public void InicioPortada() {
 		this.PP = new Pagina_de_inicio(null);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.PP);
 		}
-	
 	
 	public Zona_Anuncios Anuncio;
 	public Zona_Anuncios Anuncio2;
