@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Editar_Perfil extends Banner_suscrito {
 	//private JButton _guardar_cambios;
 	public Registrado _unnamed_Registrado_;
@@ -8,7 +10,7 @@ public class Editar_Perfil extends Banner_suscrito {
 	public void guardar_cambios() {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	public Registrado _registrado;
 	public Editar_Perfil(Registrado _registrado) {
 		super(_registrado);
@@ -18,5 +20,20 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getNoticiaLayoutGenerico().setVisible(false);
 		this.getPerfilUsuarioLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
+
+		this.getBotonGuardarEditarPerfil().addClickListener(event->ConductorGuardarCambios());
+		this.getBotonCancelarEditarPerfil().addClickListener(event->ConductorPerfilSuscrito());
+	}
+
+	public Perfil_Usuario perfil;
+	public void ConductorGuardarCambios() { //PERFIL UR???????????????????????????????????????????????????????????
+		//Operacion de guardar
+		this.ConductorPerfilSuscrito();
+	}
+	
+	public void ConductorPerfilSuscrito() {
+		this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
+		perfil = new Perfil_Usuario(null);
+		this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil);
 	}
 }

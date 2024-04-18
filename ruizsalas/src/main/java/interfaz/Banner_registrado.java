@@ -17,11 +17,11 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUNR());
 	}
 	
-	public Perfil_Uusario_Vista_UR PerfilURN;
+	public Perfil_Uusario_Vista_UR PerfilUR;
 	public void ConductorPerfilUNR() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		PerfilURN = new Perfil_Uusario_Vista_UR(null);
-		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilURN);
+		PerfilUR = new Perfil_Uusario_Vista_UR(null);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 		}
 	
 	public Perfil_Usuario Perfil;

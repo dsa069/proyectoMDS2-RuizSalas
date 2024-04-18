@@ -31,6 +31,56 @@ public class VistaBannersuscrito extends LitTemplate {
 	private HorizontalLayout verDatosEstaticos;
 	@Id("editarDatosEstaticos")
 	private HorizontalLayout editarDatosEstaticos;
+	@Id("botonCerrarSesion")
+	private Button botonCerrarSesion;
+	@Id("botonEditarDatosDelPerfil")
+	private Button botonEditarDatosDelPerfil;
+	@Id("botonGuardarEditarPerfil")
+	private Button botonGuardarEditarPerfil;
+	@Id("botonCancelarEditarPerfil")
+	private Button botonCancelarEditarPerfil;
+	@Id("layoutBannerSuscrito")
+	private Element layoutBannerSuscrito;
+	
+	public Element getLayoutBannerSuscrito() {
+		return layoutBannerSuscrito;
+	}
+
+	public void setLayoutBannerSuscrito(Element layoutBannerSuscrito) {
+		this.layoutBannerSuscrito = layoutBannerSuscrito;
+	}
+
+	public Button getBotonCerrarSesion() {
+		return botonCerrarSesion;
+	}
+
+	public void setBotonCerrarSesion(Button botonCerrarSesion) {
+		this.botonCerrarSesion = botonCerrarSesion;
+	}
+
+	public Button getBotonEditarDatosDelPerfil() {
+		return botonEditarDatosDelPerfil;
+	}
+
+	public void setBotonEditarDatosDelPerfil(Button botonEditarDatosDelPerfil) {
+		this.botonEditarDatosDelPerfil = botonEditarDatosDelPerfil;
+	}
+
+	public Button getBotonGuardarEditarPerfil() {
+		return botonGuardarEditarPerfil;
+	}
+
+	public void setBotonGuardarEditarPerfil(Button botonGuardarEditarPerfil) {
+		this.botonGuardarEditarPerfil = botonGuardarEditarPerfil;
+	}
+
+	public Button getBotonCancelarEditarPerfil() {
+		return botonCancelarEditarPerfil;
+	}
+
+	public void setBotonCancelarEditarPerfil(Button botonCancelarEditarPerfil) {
+		this.botonCancelarEditarPerfil = botonCancelarEditarPerfil;
+	}
 
 	public VistaBannersuscrito() {
         // You can initialise any data required for the connected UI components here.
