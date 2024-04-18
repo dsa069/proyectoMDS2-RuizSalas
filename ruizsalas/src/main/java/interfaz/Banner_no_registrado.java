@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Banner_no_registrado extends Banner_generico {
 //	private JLabel _zona_Anuncios;
 //	private JButton _boton_Subscribirse;
@@ -13,5 +15,23 @@ public class Banner_no_registrado extends Banner_generico {
 		this.getBotonIniciarSesionGenerico().setVisible(false);
 		this.getBotonMisNoticiasGenerico().setVisible(false);
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
+		
+		this.getBotonSuscribirseGenerico().addClickListener(event->ConductorRegistro());
 	}
+	
+	public Registro registro;
+	public void ConductorRegistro() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		registro = new Registro(null);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(registro);
+		}
+	
+	public Banner_no_registrado noRegistro;
+	public void ConductorPortadaBanner() {
+		this.getRegistroLayout().setVisible(false);
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		noRegistro = new Banner_no_registrado(null);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
+		}
+	
 }

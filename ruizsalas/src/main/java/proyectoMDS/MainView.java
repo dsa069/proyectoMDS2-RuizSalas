@@ -34,8 +34,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
 	
-	Usuario usuario;
-	
+	Usuario_No_Registrado usuario;
+
     /**
      * Construct a new Vaadin view.
      * <p>
@@ -43,10 +43,14 @@ public class MainView extends VerticalLayout {
      *
      * @param service The message service. Automatically injected Spring managed bean.
      */
-    public MainView(@Autowired GreetService service) {
+	public MainView() {
+		usuario = new Usuario_No_Registrado(this);
+		add(usuario);
+		
+		
+	}
 
-    	usuario = new Usuario(this);
-    	add(usuario);
+
 //        // Use TextField for standard text input
 //        TextField textField = new TextField("Your name");
 //        textField.addThemeName("bordered");
@@ -67,6 +71,6 @@ public class MainView extends VerticalLayout {
 //        addClassName("centered-content");
 //
 //        add(textField, button);
-    }
+
 
 }

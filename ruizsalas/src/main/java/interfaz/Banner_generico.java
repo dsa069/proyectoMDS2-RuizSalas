@@ -33,7 +33,17 @@ public class Banner_generico extends VistaBannergenerico{
 		this.Revision_Noticias();
 		this.Dar_Baja_Periodistas();
 		this.Dar_Alta_Periodistas();
+		
+		this.InicioPortada();
+		
 	}
+
+	public Pagina_de_inicio PP;
+	public void InicioPortada() {
+		this.PP = new Pagina_de_inicio(null);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.PP);
+		}
+	
 	
 	public Zona_Anuncios Anuncio;
 	public void Zona_Anuncio() {

@@ -16,7 +16,7 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 		this.usuario = usuario;
 		this.getZonaRegistrarPeriodista().setVisible(false);
 		this.getDatosRegistro().setVisible(false);
-		this.getFotoTexto().setVisible(false);
+		this.getFotoTextamen().setVisible(false);
 		this.getEditarPerfil().setVisible(false);
 	}
 }

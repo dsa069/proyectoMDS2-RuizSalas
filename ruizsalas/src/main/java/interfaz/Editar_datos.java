@@ -7,7 +7,7 @@ public class Editar_datos extends Introducir_datos_registro {
 	public Editar_datos(Registrado registrado) {
 		super(registrado);
 		this.registrado = registrado;
-		this.getFotoTexto().setVisible(false);
+		this.getFotoTextamen().setVisible(false);
 		this.getEditarPerfil().setVisible(true);
 	}
 }

@@ -30,7 +30,7 @@ export class VistaZonadeautoryversiondenoticia extends LitElement {
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;
-  }https://cdn-icons-png.flaticon.com/512/5987/5987462.png
+  }
 
   // Remove this method to render the contents of this view inside Shadow DOM
   createRenderRoot() {

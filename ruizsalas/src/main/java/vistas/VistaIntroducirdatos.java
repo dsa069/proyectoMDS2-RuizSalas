@@ -17,9 +17,9 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private Element datosRegistro;
 	@Id("editarPerfil")
 	private Element editarPerfil;
-	@Id("fotoTexto")
-	private TextField fotoTexto;
-
+	@Id("FotoTextamen")
+	private Element fotoTextamen;
+	
 	public VistaIntroducirdatos() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -48,12 +48,12 @@ public class VistaIntroducirdatos extends LitTemplate {
 		this.editarPerfil = editarPerfil;
 	}
 
-	public TextField getFotoTexto() {
-		return fotoTexto;
+	public Element getFotoTextamen() {
+		return fotoTextamen;
 	}
 
-	public void setFotoTexto(TextField fotoTexto) {
-		this.fotoTexto = fotoTexto;
+	public void setFotoTextamen(Element fotoTextamen) {
+		this.fotoTextamen = fotoTextamen;
 	}
 
 }

@@ -14,6 +14,6 @@ public class Zona_registrar_periodista extends Introducir_Datos{
 		super(usuario);
 		this.usuario = usuario;
 		this.getZonaRegistrarPeriodista().setVisible(true);
-		this.getFotoTexto().setVisible(true);
+		this.getFotoTextamen().setVisible(true);
 	}
 }

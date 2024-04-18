@@ -108,5 +108,4 @@ public class VistaBannersuscrito extends LitTemplate {
 	public void setEditarDatosEstaticos(HorizontalLayout editarDatosEstaticos) {
 		this.editarDatosEstaticos = editarDatosEstaticos;
 	}
-
 }

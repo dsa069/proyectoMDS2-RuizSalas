@@ -64,7 +64,20 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element datosPeriodistaAñadirEstatico;
 	@Id("ContenidoBanner")
 	private Element contenidoBanner;
-
+	
+	@Id("BotonIniciarSesion")
+	private Button botonIniciarSesion;
+	@Id("BotonCancelarRegistro")
+	private Button botonCancelarRegistro;
+	@Id("BotonCancelarSesion")
+	private Button botonCancelarSesion;
+	@Id("BotonConfirmarSesion")
+	private Button botonConfirmarSesion;
+	
+	@Id("bannergenericolayout")
+	private Element bannergenericolayout;
+	@Id("LayoutGenericoVistaGenerica")
+	private Element layoutGenericoVistaGenerica;
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -211,6 +224,42 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setContenidoBanner(Element contenidoBanner) {
 		this.contenidoBanner = contenidoBanner;
+	}
+	public Button getBotonIniciarSesion() {
+		return botonIniciarSesion;
+	}
+	public void setBotonIniciarSesion(Button botonIniciarSesion) {
+		this.botonIniciarSesion = botonIniciarSesion;
+	}
+	public Button getBotonCancelarRegistro() {
+		return botonCancelarRegistro;
+	}
+	public void setBotonCancelarRegistro(Button botonCancelarRegistro) {
+		this.botonCancelarRegistro = botonCancelarRegistro;
+	}
+	public Button getBotonCancelarSesion() {
+		return botonCancelarSesion;
+	}
+	public void setBotonCancelarSesion(Button botonCancelarSesion) {
+		this.botonCancelarSesion = botonCancelarSesion;
+	}
+	public Button getBotonConfirmarSesion() {
+		return botonConfirmarSesion;
+	}
+	public void setBotonConfirmarSesion(Button botonConfirmarSesion) {
+		this.botonConfirmarSesion = botonConfirmarSesion;
+	}
+	public Element getBannergenericolayout() {
+		return bannergenericolayout;
+	}
+	public void setBannergenericolayout(Element bannergenericolayout) {
+		this.bannergenericolayout = bannergenericolayout;
+	}
+	public Element getLayoutGenericoVistaGenerica() {
+		return layoutGenericoVistaGenerica;
+	}
+	public void setLayoutGenericoVistaGenerica(Element layoutGenericoVistaGenerica) {
+		this.layoutGenericoVistaGenerica = layoutGenericoVistaGenerica;
 	}
 
 }
