@@ -11,22 +11,28 @@ import com.vaadin.flow.dom.Element;
 @Tag("vista-bannergenerico")
 @JsModule("./src/vista-bannergenerico.ts")
 public class VistaBannergenerico extends LitTemplate {
+	
+	@Id("bannergenericolayout")
+	private Element bannergenericolayout;
+	
 	@Id("ZonaAnunciosLayout1")
 	private Element zonaAnunciosLayout1;
 	@Id("ZonaAnunciosLayout2")
-	
 	private Element zonaAnunciosLayout2;
-	@Id("botonRevisarNoticiaGenerico")
-	private Button botonRevisarNoticiaGenerico;
-	@Id("botonVerPeriodistasGenerico")
-	private Button botonVerPeriodistasGenerico;
-	@Id("botonMisNoticiasGenerico")
-	private Button botonMisNoticiasGenerico;
-	@Id("botonIniciarSesionGenerico")
-	private Button botonIniciarSesionGenerico;
+	
 	@Id("botonSuscribirseGenerico")
 	private Button botonSuscribirseGenerico;
-	
+	@Id("botonIniciarSesionGenerico")
+	private Button botonIniciarSesionGenerico;
+	@Id("botonMisNoticiasGenerico")
+	private Button botonMisNoticiasGenerico;
+	@Id("botonVerPeriodistasGenerico")
+	private Button botonVerPeriodistasGenerico;
+	@Id("botonRevisarNoticiaGenerico")
+	private Button botonRevisarNoticiaGenerico;
+
+	@Id("noRegistradoLayout")
+	private Element noRegistradoLayout;
 	@Id("registroLayout")
 	private Element registroLayout;
 	@Id("iniciarSesionLayout")
@@ -34,22 +40,29 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("noticiaUsuarioNoRegistradoLayout")
 	private Element noticiaUsuarioNoRegistradoLayout;
 	
+	@Id("periodistaLayout")
+	private Element periodistaLayout;
 	@Id("crearEditarNoticiaLayout")
 	private Element crearEditarNoticiaLayout;
 	@Id("historialNoticiasLayout")
 	private Element historialNoticiasLayout;
 	
+	@Id("editorLayout")
+	private Element editorLayout;
 	@Id("revisarNoticiasLayout")
 	private Element revisarNoticiasLayout;
-	@Id("periodistaLayout1")
-	private Element periodistaLayout1;
+	@Id("ListarPeriodistaLayout")
+	private Element listarPeriodistaLayout;
 	@Id("altaPeriodistaLayout")
 	private Element altaPeriodistaLayout;
 	
+	@Id("LayoutGenericoVistaGenerica")
+	private Element layoutGenericoVistaGenerica;
+
 	@Id("datosRegistroEstatico")
 	private Element datosRegistroEstatico;
-	@Id("botonConfirmarRegistroEstatico")
-	private HorizontalLayout botonConfirmarRegistroEstatico;
+	@Id("botonConfirmarRegistroEstaticoLayout")
+	private Element botonConfirmarRegistroEstaticoLayout;
 	@Id("datosIniciarSesionEstaticos")
 	private Element datosIniciarSesionEstaticos;
 	@Id("crearEditarNoticiaEstatico")
@@ -62,22 +75,18 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element listaPeriodistaEstatico;
 	@Id("datosPeriodistaAñadirEstatico")
 	private Element datosPeriodistaAñadirEstatico;
-	@Id("ContenidoBanner")
-	private Element contenidoBanner;
 	
 	@Id("BotonIniciarSesion")
 	private Button botonIniciarSesion;
 	@Id("BotonCancelarRegistro")
 	private Button botonCancelarRegistro;
-	@Id("BotonCancelarSesion")
-	private Button botonCancelarSesion;
 	@Id("BotonConfirmarSesion")
 	private Button botonConfirmarSesion;
-	
-	@Id("bannergenericolayout")
-	private Element bannergenericolayout;
-	@Id("LayoutGenericoVistaGenerica")
-	private Element layoutGenericoVistaGenerica;
+	@Id("BotonCancelarSesion")
+	private Button botonCancelarSesion;
+
+
+
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -159,11 +168,12 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setRevisarNoticiasLayout(Element revisarNoticiasLayout) {
 		this.revisarNoticiasLayout = revisarNoticiasLayout;
 	}
-	public Element getPeriodistaLayout1() {
-		return periodistaLayout1;
+
+	public Element getListarPeriodistaLayout() {
+		return listarPeriodistaLayout;
 	}
-	public void setPeriodistaLayout1(Element periodistaLayout1) {
-		this.periodistaLayout1 = periodistaLayout1;
+	public void setListarPeriodistaLayout(Element listarPeriodistaLayout) {
+		this.listarPeriodistaLayout = listarPeriodistaLayout;
 	}
 	public Element getAltaPeriodistaLayout() {
 		return altaPeriodistaLayout;
@@ -177,11 +187,11 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setDatosRegistroEstatico(Element datosRegistroEstatico) {
 		this.datosRegistroEstatico = datosRegistroEstatico;
 	}
-	public HorizontalLayout getBotonConfirmarRegistroEstatico() {
-		return botonConfirmarRegistroEstatico;
+	public Element getBotonConfirmarRegistroEstaticoLayout() {
+		return botonConfirmarRegistroEstaticoLayout;
 	}
-	public void setBotonConfirmarRegistroEstatico(HorizontalLayout botonConfirmarRegistroEstatico) {
-		this.botonConfirmarRegistroEstatico = botonConfirmarRegistroEstatico;
+	public void setBotonConfirmarRegistroEstaticoLayout(Element botonConfirmarRegistroEstaticoLayout) {
+		this.botonConfirmarRegistroEstaticoLayout = botonConfirmarRegistroEstaticoLayout;
 	}
 	public Element getDatosIniciarSesionEstaticos() {
 		return datosIniciarSesionEstaticos;
@@ -219,12 +229,6 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setDatosPeriodistaAñadirEstatico(Element datosPeriodistaAñadirEstatico) {
 		this.datosPeriodistaAñadirEstatico = datosPeriodistaAñadirEstatico;
 	}
-	public Element getContenidoBanner() {
-		return contenidoBanner;
-	}
-	public void setContenidoBanner(Element contenidoBanner) {
-		this.contenidoBanner = contenidoBanner;
-	}
 	public Button getBotonIniciarSesion() {
 		return botonIniciarSesion;
 	}
@@ -260,6 +264,24 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setLayoutGenericoVistaGenerica(Element layoutGenericoVistaGenerica) {
 		this.layoutGenericoVistaGenerica = layoutGenericoVistaGenerica;
+	}
+	public Element getNoRegistradoLayout() {
+		return noRegistradoLayout;
+	}
+	public void setNoRegistradoLayout(Element noRegistradoLayout) {
+		this.noRegistradoLayout = noRegistradoLayout;
+	}
+	public Element getPeriodistaLayout() {
+		return periodistaLayout;
+	}
+	public void setPeriodistaLayout(Element periodistaLayout) {
+		this.periodistaLayout = periodistaLayout;
+	}
+	public Element getEditorLayout() {
+		return editorLayout;
+	}
+	public void setEditorLayout(Element editorLayout) {
+		this.editorLayout = editorLayout;
 	}
 
 }

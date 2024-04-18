@@ -11,6 +11,6 @@ public class Lista_periodistas extends Banner_Editor {
 		super(_editor);
 		this._editor = _editor;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
-		this.getPeriodistaLayout1().setVisible(true);
+		this.getListarPeriodistaLayout().setVisible(true);
 	}
 }

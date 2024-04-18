@@ -44,10 +44,11 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-		usuario = new Usuario_No_Registrado(this);
-		add(usuario);
+		//usuario = new Usuario_No_Registrado(this);
+		//add(usuario);
 		
-		
+		Banner_generico prueba = new Banner_generico(null);
+        add(prueba);
 	}
 
 

@@ -2,8 +2,8 @@ import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-bannergenerico')
 export class VistaBannergenerico extends LitElement {
@@ -19,7 +19,7 @@ export class VistaBannergenerico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="height: 100%;" id="bannergenericolayout">
- <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-m);">
+ <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-m); align-self: stretch;">
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; justify-content: flex-start; width: 100px; align-self: center;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct);" id="botonpaginainicio">
     <img src="https://i.imgflip.com/6q57vm.png?a473472" width="90" height="90">
@@ -45,7 +45,7 @@ export class VistaBannergenerico extends LitElement {
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 1; height: 100%; width: 100%;">
   <vaadin-vertical-layout style="width: 10%; height: 100%; align-self: flex-end; flex-shrink: 0;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;" id="ContenidoBanner">
+  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;">
    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="noRegistradoLayout">
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="registroLayout">
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
@@ -62,7 +62,7 @@ export class VistaBannergenerico extends LitElement {
       <vaadin-button style="flex-shrink: 0; color: black;" id="BotonIniciarSesion">
         Iniciar Sesión 
       </vaadin-button>
-      <vaadin-horizontal-layout theme="spacing" id="botonConfirmarRegistroEstatico"></vaadin-horizontal-layout>
+      <vaadin-vertical-layout theme="spacing" id="botonConfirmarRegistroEstaticoLayout" style="flex-shrink: 1;"></vaadin-vertical-layout>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="iniciarSesionLayout">
@@ -112,7 +112,7 @@ export class VistaBannergenerico extends LitElement {
      </vaadin-vertical-layout>
      <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="revisarNoticiasEstatico"></vaadin-vertical-layout>
     </vaadin-vertical-layout>
-    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="periodistaLayout1">
+    <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="ListarPeriodistaLayout">
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="listaPeriodistaEstatico"></vaadin-vertical-layout>
      <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%;">
       <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">

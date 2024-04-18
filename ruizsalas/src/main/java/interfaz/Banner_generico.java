@@ -20,15 +20,15 @@ public class Banner_generico extends VistaBannergenerico{
 		this.getCrearEditarNoticiaLayout().setVisible(false);
 		this.getHistorialNoticiasLayout().setVisible(false);
 		this.getRevisarNoticiasLayout().setVisible(false);
-		this.getPeriodistaLayout1().setVisible(false);
+		this.getListarPeriodistaLayout().setVisible(false);
 		this.getAltaPeriodistaLayout().setVisible(false);
 		
 		this.Zona_Anuncio();
 		this.Datos_Registro();
 		this.Confirmar();
 		this.Datos_Iniciar_Sesion();
-		this.Noticia_UNR();
-		this.C_E_Noticia();
+//		this.Noticia_UNR();
+//		this.C_E_Noticia();
 		this.Mis_Noticias();
 		this.Revision_Noticias();
 		this.Dar_Baja_Periodistas();
@@ -46,10 +46,12 @@ public class Banner_generico extends VistaBannergenerico{
 	
 	
 	public Zona_Anuncios Anuncio;
+	public Zona_Anuncios Anuncio2;
 	public void Zona_Anuncio() {
 		this.Anuncio = new Zona_Anuncios(null);
+		this.Anuncio2 = new Zona_Anuncios(null);
 		this.getZonaAnunciosLayout1().as(VerticalLayout.class).add(this.Anuncio);
-		this.getZonaAnunciosLayout2().as(VerticalLayout.class).add(this.Anuncio);
+		this.getZonaAnunciosLayout2().as(VerticalLayout.class).add(this.Anuncio2);
 		}
 	
 	public Introducir_datos_registro Datos;
@@ -61,7 +63,7 @@ public class Banner_generico extends VistaBannergenerico{
 	public Confirmar_Registro Boton;
 	public void Confirmar() {
 		this.Boton = new Confirmar_Registro(null);
-		this.getBotonConfirmarRegistroEstatico().add(this.Boton);
+		this.getBotonConfirmarRegistroEstaticoLayout().as(VerticalLayout.class).add(this.Boton);
 		}
 	
 	public Introducir_Datos Datil;
