@@ -115,7 +115,7 @@ export class VistaBannergenerico extends LitElement {
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="ListarPeriodistaLayout">
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="listaPeriodistaEstatico"></vaadin-vertical-layout>
      <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%;">
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="BotonAnadirPeriodista">
        <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 100%; width: 100%;">
       </vaadin-button>
      </vaadin-vertical-layout>
@@ -126,10 +126,10 @@ export class VistaBannergenerico extends LitElement {
      </vaadin-vertical-layout>
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="datosPeriodistaAñadirEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="flex-shrink: 0; width: 100%; justify-content: space-between;">
-      <vaadin-button style="flex-shrink: 0; color: black;">
+      <vaadin-button style="flex-shrink: 0; color: black;" id="BotonCancelarAnadirPeriodista">
         Cancelar 
       </vaadin-button>
-      <vaadin-button style="flex-shrink: 0; color: black;">
+      <vaadin-button style="flex-shrink: 0; color: black;" id="BotonConfirmarAnadirPeriodista">
         Confirmar 
       </vaadin-button>
      </vaadin-horizontal-layout>

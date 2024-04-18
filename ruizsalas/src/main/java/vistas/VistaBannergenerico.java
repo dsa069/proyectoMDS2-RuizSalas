@@ -97,6 +97,15 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("BotonEliminarNoticiaPropia")
 	private Button botonEliminarNoticiaPropia;
 
+	@Id("BotonCancelarAnadirPeriodista")
+	private Button botonCancelarAnadirPeriodista;
+
+	@Id("BotonConfirmarAnadirPeriodista")
+	private Button botonConfirmarAnadirPeriodista;
+
+	@Id("BotonAnadirPeriodista")
+	private Button botonAnadirPeriodista;
+
 
 
 	public VistaBannergenerico() {
@@ -318,6 +327,24 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setBotonEliminarNoticiaPropia(Button botonEliminarNoticiaPropia) {
 		this.botonEliminarNoticiaPropia = botonEliminarNoticiaPropia;
+	}
+	public Button getBotonCancelarAnadirPeriodista() {
+		return botonCancelarAnadirPeriodista;
+	}
+	public void setBotonCancelarAnadirPeriodista(Button botonCancelarAnadirPeriodista) {
+		this.botonCancelarAnadirPeriodista = botonCancelarAnadirPeriodista;
+	}
+	public Button getBotonConfirmarAnadirPeriodista() {
+		return botonConfirmarAnadirPeriodista;
+	}
+	public void setBotonConfirmarAnadirPeriodista(Button botonConfirmarAnadirPeriodista) {
+		this.botonConfirmarAnadirPeriodista = botonConfirmarAnadirPeriodista;
+	}
+	public Button getBotonAnadirPeriodista() {
+		return botonAnadirPeriodista;
+	}
+	public void setBotonAnadirPeriodista(Button botonAnadirPeriodista) {
+		this.botonAnadirPeriodista = botonAnadirPeriodista;
 	}
 
 }

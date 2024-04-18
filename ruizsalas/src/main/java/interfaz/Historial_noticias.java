@@ -16,11 +16,11 @@ public class Historial_noticias extends Banner_Periodista {
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getHistorialNoticiasLayout().setVisible(true);
 		
-		this.getBotonCrearNoticia().addClickListener(event->ConectorCrearNoticia());
+		this.getBotonCrearNoticia().addClickListener(event->ConductorCrearNoticia());
 	}
 	
 	public Crear_Editar_Noticia CENoticia;
-	public void ConectorCrearNoticia() {
+	public void ConductorCrearNoticia() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		CENoticia = new Crear_Editar_Noticia(null);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
