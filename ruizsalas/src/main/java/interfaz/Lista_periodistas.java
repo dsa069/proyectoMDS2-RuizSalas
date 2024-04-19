@@ -7,8 +7,9 @@ public class Lista_periodistas extends Banner_Editor {
 	//	private JScrollPanel _scroll;
 	public Editor _accede;
 	public Periodistas _unnamed_Periodistas_;
-
 	public Editor _editor;
+	public Dar_de_alta_periodista Ananin;
+	
 	public Lista_periodistas(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
@@ -17,7 +18,7 @@ public class Lista_periodistas extends Banner_Editor {
 
 		this.getBotonAnadirPeriodista().addClickListener(event->ConductorDarAltaPeriodista());
 	}
-	public Dar_de_alta_periodista Ananin;
+	
 	public void ConductorDarAltaPeriodista() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		Ananin = new Dar_de_alta_periodista(null);
