@@ -14,7 +14,6 @@ export class VistaNoticia extends LitElement {
       }
       `;
   }
-  
 
   render() {
     return html`
