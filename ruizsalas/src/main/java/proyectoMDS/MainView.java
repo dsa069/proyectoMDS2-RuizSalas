@@ -35,7 +35,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MainView extends VerticalLayout {
 	
 	public Usuario usuario;
-	public Usuario_No_Registrado URNNN;
+	public Usuario_No_Registrado URN;
+	public Usuario_Registardo UR;
+	public Editor E;
+	public Periodista P;
 
     /**
      * Construct a new Vaadin view.
@@ -45,11 +48,11 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-		URNNN = new Usuario_No_Registrado(this);
-		add(URNNN);
+//		URN = new Usuario_No_Registrado(this);
+//		add(URN);
 		
-//		Banner_no_registrado prueba = new Banner_no_registrado(null);
-//        add(prueba);
+		Noticia prueba = new Noticia(null);
+        add(prueba);
 	}
 
 

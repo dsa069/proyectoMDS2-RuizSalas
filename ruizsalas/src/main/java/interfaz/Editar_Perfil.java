@@ -17,17 +17,12 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getPerfilUsuarioLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
 
-		this.getBotonGuardarEditarPerfil().addClickListener(event->ConductorGuardarCambios());
+		this.getBotonGuardarEditarPerfil().addClickListener(event->guardar_cambios());
 		this.getBotonCancelarEditarPerfil().addClickListener(event->ConductorPerfilSuscrito());
 	}
 
 	public Perfil_Usuario perfil;
-	public void ConductorGuardarCambios() { //PERFIL UR???????????????????????????????????????????????????????????
-		
-	
-	}
-	
-	public void guardar_cambios() {
+	public void guardar_cambios() {//CUANDO TENGAMOS LA BASE DE DATOS PONER DISTINCION ENTRE UR Y DEMAS
 		//Operacion de guardar
 		this.ConductorPerfilSuscrito();
 		//throw new UnsupportedOperationException();
