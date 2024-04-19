@@ -1,6 +1,8 @@
 package proyectoMDS;
 
 import interfaz.*;
+import vistas.VistaNoticia;
+
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -35,7 +37,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class MainView extends VerticalLayout {
 	
 	public Usuario usuario;
-	public Usuario_No_Registrado URN;
+	public Registrado R;
+	public Usuario_No_Registrado UNR;
 	public Usuario_Registardo UR;
 	public Editor E;
 	public Periodista P;
@@ -48,11 +51,12 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-//		URN = new Usuario_No_Registrado(this);
-//		add(URN);
+		UR = new Usuario_Registardo(this);
+		UNR = new Usuario_No_Registrado(this);
+		add(UNR);
 		
-		Noticia prueba = new Noticia(null);
-        add(prueba);
+//		VistaNoticia prueba = new VistaNoticia();
+//        add(prueba);
 	}
 
 
