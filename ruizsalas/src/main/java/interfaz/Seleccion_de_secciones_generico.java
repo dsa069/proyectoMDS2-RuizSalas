@@ -15,6 +15,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Usuario usuario;
 	public Barra_de_busqueda buscar;
 	public Mensaje_de_error msgError;
+	public Pagina_de_inicio pagInicio;
 	
 	public Seleccion_de_secciones_generico(Usuario usuario) {
 		super();
@@ -22,15 +23,12 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBarraDeBusqueda().setVisible(false);
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
+		
+		this.InicioPortada();
 	}
 	
-	public void barraBusqueda() {
-		this.buscar = new Barra_de_busqueda(null);
-		this.getBarraDeBusqueda().add(this.buscar);
-	}
-	
-	public void Msg_De_Error() {
-		this.msgError = new Mensaje_de_error(null);
-		this.getMsgError().add(this.msgError);
+	public void InicioPortada() {
+		this.pagInicio = new Pagina_de_inicio(this.usuario);
+		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
 	}
 }

@@ -16,8 +16,8 @@ export class VistaBarradebusqueda extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: space-evenly;">
- <vaadin-text-field placeholder="Search" style="flex-shrink: 0; width: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center; justify-content: space-evenly;" id="layoutGenericoDeBuscarNoticia">
+ <vaadin-text-field placeholder="Search" style="flex-shrink: 0; width: 100%;" id="barraBuscarNoticia">
   <iron-icon icon="lumo:search" slot="prefix"></iron-icon>
  </vaadin-text-field>
 </vaadin-vertical-layout>
