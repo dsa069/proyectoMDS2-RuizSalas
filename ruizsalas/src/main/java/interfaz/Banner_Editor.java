@@ -37,13 +37,13 @@ public class Banner_Editor extends Banner_registrado {
 	
 	public void ConductorRevisarNoticias() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		Revision = new Revisar_noticias(null);
+		Revision = new Revisar_noticias(this._editor);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(Revision);
 	}
 
 	public void ConductorListaPeriodistas() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		ListaPeriodistica = new Lista_periodistas(null);
+		ListaPeriodistica = new Lista_periodistas(this._editor);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(ListaPeriodistica);
 	}
 }

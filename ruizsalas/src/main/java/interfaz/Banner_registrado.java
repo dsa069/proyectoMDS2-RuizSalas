@@ -29,7 +29,7 @@ public class Banner_registrado extends Banner_generico {
 
 	public void ConductorPerfilUNR() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		PerfilUR = new Perfil_Uusario_Vista_UR(null);
+		PerfilUR = new Perfil_Uusario_Vista_UR(null);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 	}
 

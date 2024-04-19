@@ -5,13 +5,12 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class Noticia_Vista_UNR extends Banner_no_registrado {
 	//private JButton _subscribirse;
 	//private JLabel _contenido_cortado_noticia;
-	//public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
-	public Usuario_No_Registrado _usuarioNoRegistrado;
+	public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
 	public Contenido_cortado_noticia Noticia;
 
 	public Noticia_Vista_UNR(Usuario_No_Registrado _usuarioNoRegistrado) {
 		super(_usuarioNoRegistrado);
-		this._usuarioNoRegistrado = _usuarioNoRegistrado;
+		this._unnamed_Usuario_No_Registrado_ = _usuarioNoRegistrado;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getNoticiaUsuarioNoRegistradoLayout().setVisible(true);
 		
@@ -19,7 +18,7 @@ public class Noticia_Vista_UNR extends Banner_no_registrado {
 	}
 	
 	public void Noticia_UNR() {
-		this.Noticia = new Contenido_cortado_noticia(this._usuarioNoRegistrado);
+		this.Noticia = new Contenido_cortado_noticia(this._unnamed_Usuario_No_Registrado_);
 		this.getNoticiaUsuarioNoRegistradoLayout().as(VerticalLayout.class).add(this.Noticia);
 	}
 }

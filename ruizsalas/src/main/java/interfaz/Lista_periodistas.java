@@ -7,21 +7,27 @@ public class Lista_periodistas extends Banner_Editor {
 	//	private JScrollPanel _scroll;
 	public Editor _accede;
 	public Periodistas _unnamed_Periodistas_;
-	public Editor _editor;
 	public Dar_de_alta_periodista Ananin;
 	
 	public Lista_periodistas(Editor _editor) {
 		super(_editor);
-		this._editor = _editor;
+		this._accede = _editor;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getListarPeriodistaLayout().setVisible(true);
 
+		this.Dar_Baja_Periodistas();
+		
 		this.getBotonAnadirPeriodista().addClickListener(event->ConductorDarAltaPeriodista());
+	}
+	
+	public void Dar_Baja_Periodistas() {
+		this._unnamed_Periodistas_ = new Periodistas(this._accede);
+		this.getListaPeriodistaEstatico().as(VerticalLayout.class).add(this._unnamed_Periodistas_);
 	}
 	
 	public void ConductorDarAltaPeriodista() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		Ananin = new Dar_de_alta_periodista(null);
+		Ananin = new Dar_de_alta_periodista(this._accede);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(Ananin);
 	}
 }

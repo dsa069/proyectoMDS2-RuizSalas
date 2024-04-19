@@ -58,7 +58,7 @@ public class MainView extends VerticalLayout {
 		P = new Periodista(this);
 		E = new Editor(this);
 		
-		add(E);
+		add(UR);
 		
 //		VistaNoticia prueba = new VistaNoticia();
 //        add(prueba);

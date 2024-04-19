@@ -16,10 +16,10 @@ public class Perfil_Usuario extends Banner_suscrito {
 //	private JLabel _tarjeta;
 	public Registrado _unnamed_Registrado_;
 	public Editar_Perfil editarPerfil;
+	public Ver_datos_perfil Datos;
 	
 	public Perfil_Usuario(Registrado _registrado) {
 		super(_registrado);
-		//this._registrado = _registrado;
 		this._unnamed_Registrado_ = _registrado;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
@@ -27,10 +27,16 @@ public class Perfil_Usuario extends Banner_suscrito {
 		this.getEditarPerfilLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
 		
+		this.Ver_Datos();
+		
 		this.getBotonCerrarSesion().addClickListener(event->cerrar_sesion());
 		this.getBotonEditarDatosDelPerfil().addClickListener(event->ConductorEditarPerfil());
 	}
 
+	public void Ver_Datos() {
+		this.Datos = new Ver_datos_perfil(this._unnamed_Registrado_);
+		this.getVerDatosEstaticos().add(this.Datos);
+	}
 	
 	public void cerrar_sesion() { 
 		//Notification.show("le he dado al boton");
@@ -42,7 +48,7 @@ public class Perfil_Usuario extends Banner_suscrito {
 	
 	public void ConductorEditarPerfil() {
 		this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-		editarPerfil = new Editar_Perfil(null);
+		editarPerfil = new Editar_Perfil(this._unnamed_Registrado_);
 		this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.editarPerfil);
 	}
 }
