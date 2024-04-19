@@ -36,7 +36,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
 public class MainView extends VerticalLayout {
 	
-	public Usuario usuario;
+	public Usuario U;
 	public Registrado R;
 	public Usuario_No_Registrado UNR;
 	public Usuario_Registardo UR;
@@ -51,10 +51,14 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-		UR = new Usuario_Registardo(this);
-		R = new Registrado(this);
+		U = new Usuario(this);
 		UNR = new Usuario_No_Registrado(this);
-		add(UNR);
+		R = new Registrado(this);
+		UR = new Usuario_Registardo(this);
+		P = new Periodista(this);
+		E = new Editor(this);
+		
+		add(E);
 		
 //		VistaNoticia prueba = new VistaNoticia();
 //        add(prueba);

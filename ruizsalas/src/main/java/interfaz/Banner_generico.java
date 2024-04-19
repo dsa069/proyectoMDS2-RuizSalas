@@ -10,7 +10,7 @@ public class Banner_generico extends VistaBannergenerico{
 	//	private JLabel _nombre_del_periodico;
 
 	public Usuario usuario;
-	public Pagina_de_inicio PP;
+	public Seleccion_de_secciones SS;
 	public Zona_Anuncios Anuncio;
 	public Zona_Anuncios Anuncio2;
 	public Introducir_datos_registro Datos;
@@ -49,8 +49,8 @@ public class Banner_generico extends VistaBannergenerico{
 	}
 
 	public void InicioPortada() {
-		this.PP = new Pagina_de_inicio(null);
-		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.PP);
+		this.SS = new Seleccion_de_secciones(this.usuario);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 
 	public void Zona_Anuncio() {

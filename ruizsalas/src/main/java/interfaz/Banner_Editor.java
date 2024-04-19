@@ -10,6 +10,7 @@ public class Banner_Editor extends Banner_registrado {
 	public Revisar_noticias Revision;
 	public Lista_periodistas ListaPeriodistica;
 	public Banner_Editor BananaEditor;
+	public Seleccion_de_secciones_Vista_Editor SSE;
 	
 	public Banner_Editor(Editor _editor) {
 		super(_editor);
@@ -20,6 +21,12 @@ public class Banner_Editor extends Banner_registrado {
 		this.getBotonVerPeriodistasGenerico().addClickListener(event->ConductorListaPeriodistas());
 		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerE());
+	}
+	
+	@Override
+	public void InicioPortada() {
+		this.SSE = new Seleccion_de_secciones_Vista_Editor(this._editor);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SSE);
 	}
 
 	public void ConductorPortadaBannerE() {
