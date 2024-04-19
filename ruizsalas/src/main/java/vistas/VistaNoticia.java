@@ -32,9 +32,16 @@ public class VistaNoticia extends LitTemplate {
 	private Element comentariosEstaticos;
 	@Id("verValoracionEstatico")
 	private HorizontalLayout verValoracionEstatico;
+	@Id("BotonSuscribirseNoticia")
+	private Button botonSuscribirseNoticia;
+	@Id("BotonLikeNoticia")
+	private Button botonLikeNoticia;
+//	@Id("BotonDislikeNoticia")
+//	private Button botonDislikeNoticia;
 	public VistaNoticia() {
         // You can initialise any data required for the connected UI components here.
     }
+
 	public Element getTematicas() {
 		return tematicas;
 	}
@@ -95,5 +102,29 @@ public class VistaNoticia extends LitTemplate {
 	public void setVerValoracionEstatico(HorizontalLayout verValoracionEstatico) {
 		this.verValoracionEstatico = verValoracionEstatico;
 	}
+
+	public Button getBotonSuscribirseNoticia() {
+		return botonSuscribirseNoticia;
+	}
+
+	public void setBotonSuscribirseNoticia(Button botonSuscribirseNoticia) {
+		this.botonSuscribirseNoticia = botonSuscribirseNoticia;
+	}
+
+	public Button getBotonLikeNoticia() {
+		return botonLikeNoticia;
+	}
+
+	public void setBotonLikeNoticia(Button botonLikeNoticia) {
+		this.botonLikeNoticia = botonLikeNoticia;
+	}
+
+//	public Button getBotonDislikeNoticia() {
+//		return botonDislikeNoticia;
+//	}
+//
+//	public void setBotonDislikeNoticia(Button botonDislikeNoticia) {
+//		this.botonDislikeNoticia = botonDislikeNoticia;
+//	}
 
 }

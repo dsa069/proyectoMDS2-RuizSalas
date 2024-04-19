@@ -3,8 +3,10 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import proyectoMDS.MainView;
+
 public class Periodista extends Registrado {
-	public Periodista (proyectoMDS.MainView mainView){
+	public Periodista (MainView mainView){
 		super(mainView);
 		
 		this.Banner_P_Inico();

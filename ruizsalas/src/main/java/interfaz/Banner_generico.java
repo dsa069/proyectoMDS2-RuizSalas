@@ -10,14 +10,12 @@ public class Banner_generico extends VistaBannergenerico{
 	//	private JLabel _nombre_del_periodico;
 
 	public Usuario usuario;
-	public Banner_no_registrado noRegistro;
 	public Pagina_de_inicio PP;
 	public Zona_Anuncios Anuncio;
 	public Zona_Anuncios Anuncio2;
 	public Introducir_datos_registro Datos;
 	public Confirmar_Registro Boton;
 	public Introducir_Datos Datil;
-	public Contenido_cortado_noticia Noticia;
 	public Zona_insertar_contenido_noticia CENoticia;
 	public Lista_mis_noticias LHistorial;
 	public Noticias_a_Revisar LRevisar;
@@ -41,7 +39,6 @@ public class Banner_generico extends VistaBannergenerico{
 		this.Datos_Registro();
 		this.Confirmar();
 		this.Datos_Iniciar_Sesion();
-		this.Noticia_UNR();
 		this.C_E_Noticia();
 		this.Mis_Noticias();
 		this.Revision_Noticias();
@@ -49,15 +46,6 @@ public class Banner_generico extends VistaBannergenerico{
 		this.Dar_Alta_Periodistas();
 
 		this.InicioPortada();
-
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
-
-	}
-
-	public void ConductorPortadaBanner() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		noRegistro = new Banner_no_registrado(null);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
 	}
 
 	public void InicioPortada() {
@@ -85,11 +73,6 @@ public class Banner_generico extends VistaBannergenerico{
 	public void Datos_Iniciar_Sesion() {
 		this.Datil = new Introducir_Datos(null);
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this.Datil);
-	}
-
-	public void Noticia_UNR() {
-		this.Noticia = new Contenido_cortado_noticia(null);
-		this.getNoticiaUsuarioNoRegistradoLayout().as(VerticalLayout.class).add(this.Noticia);
 	}
 
 	public void C_E_Noticia() {

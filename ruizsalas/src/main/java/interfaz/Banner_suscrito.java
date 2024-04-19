@@ -12,7 +12,6 @@ public class Banner_suscrito extends VistaBannersuscrito{
 	public Noticia_completa Noticia;
 	public Noticia_Vista_Editor NoticiaVE;
 	public Ver_datos_perfil Datos;
-	public Darse_De_Baja Boton;
 	public Editar_datos Dato;
 	public Registrado registrado;
 
@@ -34,11 +33,6 @@ public class Banner_suscrito extends VistaBannersuscrito{
 	public void Ver_Datos() {
 		this.Datos = new Ver_datos_perfil(null);
 		this.getVerDatosEstaticos().add(this.Datos);
-	}
-
-	public void Boton_Baja() {
-		this.Boton = new Darse_De_Baja(null);
-		this.getDarseDeBajaLayout().add(this.Boton);
 	}
 
 	public void Editar_Dato() {

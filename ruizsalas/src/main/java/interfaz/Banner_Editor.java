@@ -9,6 +9,7 @@ public class Banner_Editor extends Banner_registrado {
 	public Editor _editor;
 	public Revisar_noticias Revision;
 	public Lista_periodistas ListaPeriodistica;
+	public Banner_Editor BananaEditor;
 	
 	public Banner_Editor(Editor _editor) {
 		super(_editor);
@@ -18,8 +19,15 @@ public class Banner_Editor extends Banner_registrado {
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonVerPeriodistasGenerico().addClickListener(event->ConductorListaPeriodistas());
 		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerE());
 	}
 
+	public void ConductorPortadaBannerE() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		BananaEditor = new Banner_Editor(this._editor);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaEditor);
+	}
+	
 	public void ConductorRevisarNoticias() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		Revision = new Revisar_noticias(null);

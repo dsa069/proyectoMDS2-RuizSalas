@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -39,10 +39,10 @@ export class VistaNoticia extends LitElement {
    Humillación sin precedentes al Barcelona 
   <vaadin-horizontal-layout style="width: 15%; height: 60%; flex-shrink: 0;" id="verValoracionEstatico"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="height: 60%; width: 10%;" id="valorarNoticia">
-   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;">
+   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonLikeNoticia">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 60%;">
    </vaadin-button>
-   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="vaadinButton">
+   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonDislikeNoticia">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="height: 100%; width: 60%;">
    </vaadin-button>
   </vaadin-horizontal-layout>
@@ -59,7 +59,7 @@ export class VistaNoticia extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout style="width: 100%; height: 10%; flex-shrink: 0; justify-content: center;" id="botonSuscribirse">
-  <vaadin-button style="color: black; flex-shrink: 1; flex-grow: 0; align-self: center;">
+  <vaadin-button style="color: black; flex-shrink: 1; flex-grow: 0; align-self: center;" id="BotonSuscribirseNoticia">
     SUSCRIBIRSE 
   </vaadin-button>
  </vaadin-vertical-layout>

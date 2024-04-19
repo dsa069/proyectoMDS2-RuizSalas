@@ -52,6 +52,7 @@ public class MainView extends VerticalLayout {
      */
 	public MainView() {
 		UR = new Usuario_Registardo(this);
+		R = new Registrado(this);
 		UNR = new Usuario_No_Registrado(this);
 		add(UNR);
 		
