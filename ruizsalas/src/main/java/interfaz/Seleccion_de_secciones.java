@@ -16,4 +16,9 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 		this.getEditarTexto().setVisible(false);
 		this.getMsgError().setVisible(true);
 	}
+	
+	public void barraBusqueda() {
+		this.buscar = new Barra_de_busqueda(this.usuario);
+		this.getBarraDeBusqueda().add(this.buscar);
+	}
 }
