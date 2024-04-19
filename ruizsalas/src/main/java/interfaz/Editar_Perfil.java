@@ -7,10 +7,6 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Registrado _unnamed_Registrado_;
 	public Editar_datos _unnamed_Editar_datos_;
 
-	public void guardar_cambios() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Registrado _registrado;
 	public Editar_Perfil(Registrado _registrado) {
 		super(_registrado);
@@ -27,8 +23,14 @@ public class Editar_Perfil extends Banner_suscrito {
 
 	public Perfil_Usuario perfil;
 	public void ConductorGuardarCambios() { //PERFIL UR???????????????????????????????????????????????????????????
+		
+	
+	}
+	
+	public void guardar_cambios() {
 		//Operacion de guardar
 		this.ConductorPerfilSuscrito();
+		//throw new UnsupportedOperationException();
 	}
 	
 	public void ConductorPerfilSuscrito() {

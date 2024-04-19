@@ -1,8 +1,10 @@
 package interfaz;
 //import basededatos.iUsuario_No_Registrado;
 
+import proyectoMDS.MainView;
+
 public class Usuario_No_Registrado extends Usuario {
-	public Usuario_No_Registrado (proyectoMDS.MainView mainView){
+	public Usuario_No_Registrado (MainView mainView){
 		super(mainView);
 
 	} 

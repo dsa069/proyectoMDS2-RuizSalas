@@ -5,6 +5,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import proyectoMDS.*;
 //import basededatos.iUsuario;
+import proyectoMDS.MainView;
 
 public class Usuario extends VistaUsuario {
 
