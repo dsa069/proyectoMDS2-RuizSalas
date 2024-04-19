@@ -22,7 +22,7 @@ export class VistaCreareditarseccionestematicas extends LitElement {
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; flex-shrink: 0; align-items: center; font-size: 40px; justify-content: center;">
    Crear temática 
   <vaadin-text-field label="" placeholder="Introducir nombre temática" style="align-self: center; flex-shrink: 0; width: 60%;"></vaadin-text-field>
-  <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%; width: 20%;">
+  <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%; width: 20%;" id="botonCrearNuevaTematica">
    <img src="https://cdn-icons-png.flaticon.com/512/117/117885.png" style="height: 15%; width: 15%;">
   </vaadin-button>
  </vaadin-horizontal-layout>

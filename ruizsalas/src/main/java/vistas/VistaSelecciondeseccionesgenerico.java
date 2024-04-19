@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-selecciondeseccionesgenerico")
 @JsModule("./src/vista-selecciondeseccionesgenerico.ts")
@@ -26,7 +27,23 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	private HorizontalLayout editarTexto;
 	@Id("MsgError")
 	private HorizontalLayout msgError;
+	@Id("layoutSeleccionSeccionesGenerico")
+	private Element layoutSeleccionSeccionesGenerico;
+	@Id("layoutGenericoSeccionesBanner")
+	private HorizontalLayout layoutGenericoSeccionesBanner;
 
+	public HorizontalLayout getLayoutGenericoSeccionesBanner() {
+		return layoutGenericoSeccionesBanner;
+	}
+	public void setLayoutGenericoSeccionesBanner(HorizontalLayout layoutGenericoSeccionesBanner) {
+		this.layoutGenericoSeccionesBanner = layoutGenericoSeccionesBanner;
+	}
+	public Element getLayoutSeleccionSeccionesGenerico() {
+		return layoutSeleccionSeccionesGenerico;
+	}
+	public void setLayoutSeleccionSeccionesGenerico(Element layoutSeleccionSeccionesGenerico) {
+		this.layoutSeleccionSeccionesGenerico = layoutSeleccionSeccionesGenerico;
+	}
 	public Button getBotonEditarSecciones() {
 		return botonEditarSecciones;
 	}

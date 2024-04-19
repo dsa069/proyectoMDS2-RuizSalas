@@ -13,20 +13,21 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	public Editor _unnamed_Editor_;
 	public Lista_secciones_Editor _contiene;
 
-	public Editor editor;
 	public Crear_Editar_Secciones_Tematicas(Editor editor) {
 		super();
-		this.editor = editor;
+		this._unnamed_Editor_ = editor;
 		this.Lista_Secciones_Vista_Editor();
+		
+		this.getBotonCrearNuevaTematica().addClickListener(event->anadir_seccion());
 	}
 
 	public void anadir_seccion() {
+		//Operacion base de datos anadir
 		throw new UnsupportedOperationException();
 	}
 
-	public Lista_secciones_Editor listaSeccionesEditor;
 	public void Lista_Secciones_Vista_Editor() {
-		this.listaSeccionesEditor = new Lista_secciones_Editor(null);
-		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this.listaSeccionesEditor);
+		this._contiene = new Lista_secciones_Editor(null);
+		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._contiene);
 	}
 }

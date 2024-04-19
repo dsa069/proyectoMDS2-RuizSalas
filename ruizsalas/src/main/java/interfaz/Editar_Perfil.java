@@ -6,8 +6,9 @@ public class Editar_Perfil extends Banner_suscrito {
 	//private JButton _guardar_cambios;
 	public Registrado _unnamed_Registrado_;
 	public Editar_datos _unnamed_Editar_datos_;
-
+	public Perfil_Usuario perfil;
 	public Registrado _registrado;
+	
 	public Editar_Perfil(Registrado _registrado) {
 		super(_registrado);
 		this._registrado = _registrado;
@@ -21,7 +22,6 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getBotonCancelarEditarPerfil().addClickListener(event->ConductorPerfilSuscrito());
 	}
 
-	public Perfil_Usuario perfil;
 	public void guardar_cambios() {//CUANDO TENGAMOS LA BASE DE DATOS PONER DISTINCION ENTRE UR Y DEMAS
 		//Operacion de guardar
 		this.ConductorPerfilSuscrito();
