@@ -17,12 +17,12 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutGenericoListarNoticiasGenerico">
  <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; font-size: 32px; align-items: center;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 57%;">
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">
    <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 1; width: 33%; height: 100%;">
-    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 82%; background-color: var(--lumo-contrast-0pct); overflow: hidden;">
+    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 82%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="botonImagenListarNoticias">
      <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" width="200%" height="200%" ">
     </vaadin-button>
     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size:50px; width: 100%; color: black; flex-grow: 0; flex-shrink: 0; height: 10%;" id="Titular1">

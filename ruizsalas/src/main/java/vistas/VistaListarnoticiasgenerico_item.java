@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.dom.Element;
 
 @Tag("vista-listarnoticiasgenerico_item")
 @JsModule("./src/vista-listarnoticiasgenerico_item.ts")
@@ -29,6 +30,27 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	private HorizontalLayout verValoracion;
 	@Id("QuitarNoticiaDeSeccion")
 	private Button quitarNoticiaDeSeccion;
+	
+	@Id("layoutGenericoListarNoticiasGenerico")
+	private Element layoutGenericoListarNoticiasGenerico;
+	@Id("botonImagenListarNoticias")
+	private Button botonImagenListarNoticias;
+
+	public Button getBotonImagenListarNoticias() {
+		return botonImagenListarNoticias;
+	}
+
+	public void setBotonImagenListarNoticias(Button botonImagenListarNoticias) {
+		this.botonImagenListarNoticias = botonImagenListarNoticias;
+	}
+
+	public Element getLayoutGenericoListarNoticiasGenerico() {
+		return layoutGenericoListarNoticiasGenerico;
+	}
+
+	public void setLayoutGenericoListarNoticiasGenerico(Element layoutGenericoListarNoticiasGenerico) {
+		this.layoutGenericoListarNoticiasGenerico = layoutGenericoListarNoticiasGenerico;
+	}
 
 	public Button getEliminarNoticiaPropia() {
 		return eliminarNoticiaPropia;

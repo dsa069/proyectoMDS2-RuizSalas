@@ -1,4 +1,6 @@
 package interfaz;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import vistas.*;
 
 public class Listar_noticias_item extends Listar_noticias_generico_item {
@@ -15,5 +17,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		this.getZonaDeAutorYVersionDeNoticia().setVisible(false);
 		this.getTitular1().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
+		
+		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 }

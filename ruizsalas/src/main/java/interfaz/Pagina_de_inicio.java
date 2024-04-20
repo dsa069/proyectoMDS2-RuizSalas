@@ -10,19 +10,20 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	public Usuario _unnamed_Usuario_;
 	public Noticias_en_Portada _contiene;
 
-	public Usuario usuario;
 	public Pagina_de_inicio(Usuario usuario) {
 		super();
-		this.usuario = usuario;
+		this._unnamed_Usuario_ = usuario;
 		this.Noticias_Portada();
 		
+		this.getBotonContinuarPaginaInicio().addClickListener(event->ConductorSiguientePagina());
 	}
-
-	public Noticias_en_Portada noticiaPortada;
+	
 	public void Noticias_Portada() {
-		this.noticiaPortada = new Noticias_en_Portada(null);
-		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this.noticiaPortada);
+		this._contiene = new Noticias_en_Portada(null);
+		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	
-	
+	public void ConductorSiguientePagina() {
+		//Botón que nos lleva a la siguiente página del periódico
+	}
 }
