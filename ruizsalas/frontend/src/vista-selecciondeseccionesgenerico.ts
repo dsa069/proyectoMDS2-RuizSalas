@@ -31,7 +31,7 @@ export class VistaSelecciondeseccionesgenerico extends LitElement {
    </vaadin-button>
    <hr style="flex-grow: 0; flex-shrink: 0; height: 100%;">
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-grow: 1; padding: var(--lumo-space-m);"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 0; flex-grow: 1; padding: var(--lumo-space-m);" id="layoutSeccionesContenidasPeriodico"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout theme="spacing" style="flex-grow: 1; flex-shrink: 0; padding: var(--lumo-space-m);" id="BarraDeBusqueda"></vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="MsgError" style="flex-shrink: 0; width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>

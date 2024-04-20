@@ -9,9 +9,12 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public Lista_secciones_Editor_item(Listar_Secciones padre) {
 		super(padre);
 		this.getBorrarSeccion().setVisible(true);
+		
+		this.getBorrarSeccion().addClickListener(event->borrar_seccion());
 	}
 	
 	public void borrar_seccion() {
+		//Operación eliminar sección base de datos
 		throw new UnsupportedOperationException();
 	}
 }

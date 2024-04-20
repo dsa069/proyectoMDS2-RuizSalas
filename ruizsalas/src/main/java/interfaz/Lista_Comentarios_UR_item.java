@@ -9,9 +9,13 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 		super(padre);
 		this.getValorarComentarioNegativamente().setVisible(true);
 		this.getValorarComentarioPositivamente().setVisible(true);
+		
+		this.getValorarComentarioNegativamente().addClickListener(event->valorar_comentario());
+		this.getValorarComentarioPositivamente().addClickListener(event->valorar_comentario());
 	}
 	
 	public void valorar_comentario() {
+		//Operaciones de dar like y dislike a comentario
 		throw new UnsupportedOperationException();
 	}
 }

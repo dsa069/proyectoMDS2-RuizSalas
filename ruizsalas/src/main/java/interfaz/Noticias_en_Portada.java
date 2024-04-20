@@ -17,5 +17,8 @@ public class Noticias_en_Portada extends Listar_noticias {
 		super(_usuario);
 		this._usuario = _usuario;
 		this.getPortada().setVisible(true);
+		
+		Noticias_en_Portada_item np_item = new Noticias_en_Portada_item(this);
+		this.getPortada().add(np_item);
 	}
 }

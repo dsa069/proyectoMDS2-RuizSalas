@@ -7,9 +7,12 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 	public Lista_comentarios_Vista_Editor_item(Lista_Comentarios_UR padre) {
 		super(padre);
 		this.getBorrarComentario().setVisible(true);
+		
+		this.getBorrarComentario().addClickListener(event->borrar_comentario());
 	}
 	
 	public void borrar_comentario() {
+		//Operacion base de datos de eliminar un comentario
 		throw new UnsupportedOperationException();
 	}
 }

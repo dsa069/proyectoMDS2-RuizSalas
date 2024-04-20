@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+
 import vistas.*;
 
 public class Listar_noticias extends Listar_noticias_generico {
@@ -15,5 +16,8 @@ public class Listar_noticias extends Listar_noticias_generico {
 		this._usuario = _usuario;
 		this.getPortada().setVisible(false);
 		this.getListaSimpleNoticias().setVisible(false);
+		
+		Listar_noticias_item ln_item = new Listar_noticias_item(this);
+		this.getColumnasNoticias().add(ln_item);
 	}
 }

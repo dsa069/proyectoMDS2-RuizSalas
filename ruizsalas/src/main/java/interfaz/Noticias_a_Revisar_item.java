@@ -18,13 +18,17 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this.getVerValoracion().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
 		
+		this.getAgregarNoticia().addClickListener(event->agregar_noticia());
+		this.getNoAgregarNoticia().addClickListener(event->no_agregar_noticia());
 	}
 
 	public void agregar_noticia() {
+		//Operación base de datos
 		throw new UnsupportedOperationException();
 	}
 
 	public void no_agregar_noticia() {
+		//Operacion base de datos
 		throw new UnsupportedOperationException();
 	}
 }

@@ -18,6 +18,9 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 		this._editor = _editor;
 		this.getBotonEditarSecciones().setVisible(true);
 		
+		Seleccion_de_secciones_Vista_Editor_item ssve_item = new Seleccion_de_secciones_Vista_Editor_item(this);
+		this.getLayoutSeccionesContenidasPeriodico().add(ssve_item);
+		
 		this.getBotonEditarSecciones().addClickListener(event->ConductorEditarSecciones());
 	}
 	

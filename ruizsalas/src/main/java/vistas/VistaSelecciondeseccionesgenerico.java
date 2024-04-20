@@ -31,7 +31,15 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	private Element layoutSeleccionSeccionesGenerico;
 	@Id("layoutGenericoSeccionesBanner")
 	private HorizontalLayout layoutGenericoSeccionesBanner;
+	@Id("layoutSeccionesContenidasPeriodico")
+	private HorizontalLayout layoutSeccionesContenidasPeriodico;
 
+	public HorizontalLayout getLayoutSeccionesContenidasPeriodico() {
+		return layoutSeccionesContenidasPeriodico;
+	}
+	public void setLayoutSeccionesContenidasPeriodico(HorizontalLayout layoutSeccionesContenidasPeriodico) {
+		this.layoutSeccionesContenidasPeriodico = layoutSeccionesContenidasPeriodico;
+	}
 	public HorizontalLayout getLayoutGenericoSeccionesBanner() {
 		return layoutGenericoSeccionesBanner;
 	}

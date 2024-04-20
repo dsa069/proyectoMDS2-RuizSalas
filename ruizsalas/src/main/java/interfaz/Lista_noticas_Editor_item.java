@@ -9,9 +9,12 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 		super(padre);
 		//this.getMarcar().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(true);
+		
+		this.getQuitarNoticiaDeSeccion().addClickListener(event->quitar_noticia_de_seccion());
 	}
 	
 	public void quitar_noticia_de_seccion() {
+		//Operación de la base de datos eliminar de la sección
 		throw new UnsupportedOperationException();
 	}
 }
