@@ -8,7 +8,7 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 	//	private JTextField _contrasenaTF;
 	//	private JLabel _correoL;
 	//	private JLabel _contrasenaL;
-	//	public Iniciar_Sesion _unnamed_Iniciar_Sesion_;
+	public Iniciar_Sesion _unnamed_Iniciar_Sesion_;
 
 	public Usuario usuario;
 	public Introducir_Datos(Usuario usuario) {
