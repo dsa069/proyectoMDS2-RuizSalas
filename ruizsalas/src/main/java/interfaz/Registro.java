@@ -24,7 +24,7 @@ public class Registro extends Banner_no_registrado {
 		this.Confirmar();
 		
 		this.getBotonIniciarSesion().addClickListener(event->ConductorIniciarSesion());
-		this.getBotonCancelarRegistro().addClickListener(event->confirmar_Registro());
+		this.getBotonCancelarRegistro().addClickListener(event->ConductorPortadaBannerUNR());
 	}
 	
 	public void Datos_Registro() {
@@ -41,11 +41,5 @@ public class Registro extends Banner_no_registrado {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		Ses = new Iniciar_Sesion(this._unnamed_Usuario_No_Registrado_);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(Ses);
-	}
-	
-	public void confirmar_Registro() {
-		//bisnis
-		this.ConductorPortadaBannerUNR();
-	//	throw new UnsupportedOperationException();
 	}
 }

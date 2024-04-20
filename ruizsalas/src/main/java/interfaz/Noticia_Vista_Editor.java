@@ -6,7 +6,7 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	public Editor _unnamed_Editor_;
 	public Lista_Secciones_noticia _contiene;
 	//public Eliminar_noticia _contiene_la_opcion_de;
-	public Noticia_Vista_Editor NoticiaVE;
+	public Contenido_noticia_editor NoticiaVE;
 	
 	public Noticia_Vista_Editor(Editor _editor) {
 		super(_editor);
@@ -14,11 +14,11 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 		this.getNoticiaEditorLayout().setVisible(true);
 		this.getNoticiaLayout().setVisible(false);
 		
-		this.Ver_Noticia_Editor();
 	}
 	
-	public void Ver_Noticia_Editor() {
-		this.NoticiaVE = new Noticia_Vista_Editor(this._unnamed_Editor_);
+	@Override
+	public void Ver_Noticia() {
+		this.NoticiaVE = new Contenido_noticia_editor(this._unnamed_Editor_);
 		this.getNoticiaEditorLayout().add(this.NoticiaVE);
 	}
 }

@@ -6,7 +6,7 @@ public class Noticia_completa extends Banner_suscrito {
 	//private JLabel _contenido_noticia_completo;
 	public Registrado _unnamed_Registrado_;
 	public Lista_Comentarios_UR _contiene;
-	public Noticia_completa Noticia;
+	public Contenido_noticia_completo Noticia;
 	
 	public Noticia_completa(Registrado _registrado) {
 		super(_registrado);
@@ -21,7 +21,7 @@ public class Noticia_completa extends Banner_suscrito {
 	}
 	
 	public void Ver_Noticia() {
-		this.Noticia = new Noticia_completa(this._unnamed_Registrado_);
+		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_);
 		this.getNoticiaLayout().add(this.Noticia);
 	}
 
