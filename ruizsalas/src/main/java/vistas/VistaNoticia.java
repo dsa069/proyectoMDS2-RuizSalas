@@ -11,6 +11,7 @@ import com.vaadin.flow.component.button.Button;
 @Tag("vista-noticia")
 @JsModule("./src/vista-noticia.ts")
 public class VistaNoticia extends LitTemplate {
+
 	
     @Id("tematicas")
 	private Element tematicas;
