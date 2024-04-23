@@ -17,8 +17,16 @@ public class Banner_registrado extends Banner_generico {
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
 
-		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
+		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerR());
+	}
+	
+	
+	public Noticia nepe;
+	public void hola() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		nepe = new Noticia(this._registrado);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(nepe);
 	}
 	
 	public void ConductorPortadaBannerR() {
@@ -27,9 +35,9 @@ public class Banner_registrado extends Banner_generico {
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 
-	public void ConductorPerfilUNR() {
+	public void ConductorPerfilUR() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		PerfilUR = new Perfil_Uusario_Vista_UR(null);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
+		PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 	}
 

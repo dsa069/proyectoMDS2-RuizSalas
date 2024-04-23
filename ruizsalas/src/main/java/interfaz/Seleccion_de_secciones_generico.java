@@ -16,6 +16,9 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Barra_de_busqueda buscar;
 	public Mensaje_de_error msgError;
 	public Pagina_de_inicio pagInicio;
+	public Crear_Editar_Secciones_Tematicas _crearEditarSeccionesTematicas;
+	
+	public Editor editor;
 	
 	public Seleccion_de_secciones_generico(Usuario usuario) {
 		super();
@@ -24,11 +27,10 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
 		
-		this.InicioPortada();
+		this.CEseccionesEstatico();
 	}
-	
-	public void InicioPortada() {
-		this.pagInicio = new Pagina_de_inicio(this.usuario);
-		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
+	public void CEseccionesEstatico() {
+		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas(this.editor);
+		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 }

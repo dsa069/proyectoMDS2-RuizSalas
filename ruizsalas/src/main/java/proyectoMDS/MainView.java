@@ -1,6 +1,7 @@
 package proyectoMDS;
 
 import interfaz.*;
+import vistas.VistaBannersuscrito;
 import vistas.VistaNoticia;
 
 import com.vaadin.flow.component.Key;
@@ -51,17 +52,20 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-//		U = new Usuario(this);
-//		UNR = new Usuario_No_Registrado(this);
-//		R = new Registrado(this);
-//		UR = new Usuario_Registardo(this);
-//		P = new Periodista(this);
-//		E = new Editor(this);
-//		
-//		add(UR);
+		U = new Usuario(this);
+		UNR = new Usuario_No_Registrado(this);
+		R = new Registrado(this);
+		UR = new Usuario_Registardo(this);
+		P = new Periodista(this);
+		E = new Editor(this);
 		
-		Lista_secciones_Editor_item prueba = new Lista_secciones_Editor_item(null);
-        add(prueba);
+		add(E);
+		
+//		Crear_Editar_Secciones_Tematicas prueba = new Crear_Editar_Secciones_Tematicas(null);
+//        add(prueba);
+		
+//		VistaBannersuscrito prueba = new VistaBannersuscrito();
+//        add(prueba);
 	}
 
 

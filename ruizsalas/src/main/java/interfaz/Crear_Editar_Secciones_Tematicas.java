@@ -27,7 +27,7 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	}
 
 	public void Lista_Secciones_Vista_Editor() {
-		this._contiene = new Lista_secciones_Editor(null);
+		this._contiene = new Lista_secciones_Editor(this._unnamed_Editor_);
 		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._contiene);
 	}
 }

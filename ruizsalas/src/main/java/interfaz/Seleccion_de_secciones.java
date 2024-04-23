@@ -16,11 +16,23 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 		this.getEditarTexto().setVisible(false);
 		this.getMsgError().setVisible(true);
 		
-		this.barraBusqueda();
+		this.CEseccionesEstatico();
+		this.barraBusqueda();	
+		this.InicioPortada();
 	}
 	
 	public void barraBusqueda() {
 		buscar = new Barra_de_busqueda(this.usuario);
 		this.getBarraDeBusqueda().add(this.buscar);
+	}
+	
+	public void InicioPortada() {
+		this.pagInicio = new Pagina_de_inicio(this.usuario);
+		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
+	}
+	
+	@Override
+	public void CEseccionesEstatico() {
+//no hace lo del super
 	}
 }
