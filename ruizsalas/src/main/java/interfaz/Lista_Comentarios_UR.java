@@ -2,6 +2,8 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 public class Lista_Comentarios_UR extends Lista_Comentarios {
 //	private JButton _escribir_comentario;
 //	private JLabel _foto;
@@ -14,11 +16,17 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		super(_registrado);
 		this._registrado = _registrado;
 		this.getEscribirComentario().setVisible(true);
-		
-		this.escribir_comentario();
+	
+		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario());ESCRIBIR COMENTARIOO CLICK LISTENER???
 		}
+	
+	@Override
+	public void Comentarios_item_Estaticos(){
+		Lista_Comentarios_UR_item _item = new Lista_Comentarios_UR_item(this);
+		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
+	}
 
 	public void escribir_comentario() {
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 }

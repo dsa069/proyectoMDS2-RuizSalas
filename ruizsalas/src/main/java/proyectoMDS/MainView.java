@@ -61,7 +61,7 @@ public class MainView extends VerticalLayout {
 		
 //		add(U);
 		
-		Seleccion_de_secciones_generico prueba = new Seleccion_de_secciones_generico(null);
+		Lista_comentarios_Vista_Editor prueba = new Lista_comentarios_Vista_Editor(E);
         add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
