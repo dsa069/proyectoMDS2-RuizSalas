@@ -19,12 +19,7 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 		this._editor = _editor;
 		this.getBotonEditarSecciones().setVisible(true);
 		
-		Seleccion_de_secciones_Vista_Editor_item ssve_item = new Seleccion_de_secciones_Vista_Editor_item(this);
-		this.getLayoutSeccionesContenidasPeriodico().add(ssve_item);
-		
 		this.getBotonEditarSecciones().addClickListener(event->ConductorEditarSecciones());
-		
-		this.CEseccionesEstatico();
 	}
 	
 	public void ConductorEditarSecciones() {
@@ -32,10 +27,5 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).removeAll();
 		SESG = new Seleccion_de_secciones_generico(this._editor);
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).add(this.SESG);
-		
-		
-//		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).removeAll();
-//		_crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas(this._editor);
-//		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).add(this._crearEditarSeccionesTematicas);
 	}
 }

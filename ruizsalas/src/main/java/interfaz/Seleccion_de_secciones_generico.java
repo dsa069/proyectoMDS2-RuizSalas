@@ -27,6 +27,9 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
 		
+		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this);
+		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+		
 		this.CEseccionesEstatico();
 	}
 	public void CEseccionesEstatico() {

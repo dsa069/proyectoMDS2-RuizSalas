@@ -59,10 +59,10 @@ public class MainView extends VerticalLayout {
 		P = new Periodista(this);
 		E = new Editor(this);
 		
-		add(E);
+//		add(U);
 		
-//		Crear_Editar_Secciones_Tematicas prueba = new Crear_Editar_Secciones_Tematicas(null);
-//        add(prueba);
+		Seleccion_de_secciones_generico prueba = new Seleccion_de_secciones_generico(null);
+        add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
 //        add(prueba);
