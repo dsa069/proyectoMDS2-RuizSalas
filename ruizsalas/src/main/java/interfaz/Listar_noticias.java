@@ -1,9 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.*;
 
 public class Listar_noticias extends Listar_noticias_generico {

@@ -10,6 +10,8 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 //	private JLabel _resumen_corto;
 	public Listar_noticias_generico _listar_noticias_generico;
 	
+	Noticia_Vista_UNR NUNR;
+	
 	public Listar_noticias_generico_item(Listar_noticias_generico _listar_noticias_generico) {
 		super();
 		this._listar_noticias_generico = _listar_noticias_generico;
@@ -33,8 +35,8 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	}
 	
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
-		this.getLayoutGenericoListarNoticiasGenerico().as(VerticalLayout.class).removeAll();
-		_listar_noticias_generico = new Listar_noticias_generico(null);//Comentario cambiar el null
-		this.getLayoutGenericoListarNoticiasGenerico().as(VerticalLayout.class).add(_listar_noticias_generico);
+		this._listar_noticias_generico.usuario.banner.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		//NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario, null);
+		this._listar_noticias_generico.usuario.banner.getBannergenericolayout().as(VerticalLayout.class).add(_listar_noticias_generico);
 	}
 }
