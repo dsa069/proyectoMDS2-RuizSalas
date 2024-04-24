@@ -15,7 +15,13 @@ public class Contenido_noticia_completo extends Noticia {
 		this.getBotonSuscribirse().setVisible(false);
 		
 		this.getBotonLikeNoticia().addClickListener(event->DarLike());
-		//this.getBotonDislikeNoticia().addClickListener(event->DarDislike());
+		this.getBotonNotLikeNoticia().addClickListener(event->DarDislike());
+	}
+	
+	@Override
+	public void Lista_De_Comentarios() {
+		this._contiene = new Lista_Comentarios_UR(this._registrado);
+		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	
 	public void DarLike() {

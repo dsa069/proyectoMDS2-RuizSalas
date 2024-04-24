@@ -24,17 +24,15 @@ public class Noticia extends VistaNoticia{
 	}
 
 	public void Listar_Tematicas() {
-		this.listarTematicas = new Listar_tematicas(null);
+		this.listarTematicas = new Listar_tematicas(this.usuario);
 		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
 	
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_Comentarios(null);
-		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 
 	public void Ver_Valoraciones() {
-		this.valoracion = new ver_valoracion(null);
+		this.valoracion = new ver_valoracion(this.usuario);
 		this.getVerValoracionEstatico().add(this.valoracion);
 	}
 }

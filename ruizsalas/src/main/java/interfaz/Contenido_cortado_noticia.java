@@ -18,6 +18,12 @@ public class Contenido_cortado_noticia extends Noticia{
 		this.getBotonSuscribirseNoticia().addClickListener(event->ConductorRegistro());
 	}
 	
+	@Override
+	public void Lista_De_Comentarios() {
+		this._contiene = new Lista_Comentarios(this._usuario);
+		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
+	}
+	
 	public void ConductorRegistro() {
 		this._usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		reg = new Registro(this._usuario);

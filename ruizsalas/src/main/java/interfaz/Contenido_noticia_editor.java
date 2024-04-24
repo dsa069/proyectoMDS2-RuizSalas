@@ -22,6 +22,12 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.getEliminarNoticia().addClickListener(event->BorrarNoticia());
 	}
 	
+	@Override
+	public void Lista_De_Comentarios() {
+		this._contiene = new Lista_comentarios_Vista_Editor(this.editor);
+		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
+	}
+	
 	public void Seleccion_Tematica() {
 		this.seleccionarTematica = new Seleccionar_Tematica(this.editor);
 		this.getSeleccionarTematicas().as(VerticalLayout.class).add(this.seleccionarTematica);
