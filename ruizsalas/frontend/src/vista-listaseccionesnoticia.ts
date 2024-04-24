@@ -1,5 +1,4 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-listaseccionesnoticia')
@@ -15,11 +14,12 @@ export class VistaListaseccionesnoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; position: absolute;">
+<vaadin-vertical-layout theme="spacing">
  <vaadin-vertical-layout theme="spacing-xs" style="align-self: flex-start; align-items: center; width: 100%; font-size: 60px;">
    Sección 
  </vaadin-vertical-layout>
-</vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="SeccionesSelecionablesItem" style="flex-grow: 1; align-self: stretch;"></vaadin-vertical-layout>
+</vaadin-vertical-layout>
 `;
   }
 

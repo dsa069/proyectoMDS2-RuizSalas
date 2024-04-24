@@ -1,5 +1,4 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-seleccionartematica')
@@ -15,11 +14,12 @@ export class VistaSeleccionartematica extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; position: absolute;">
+<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
  <vaadin-vertical-layout style="align-self: flex-start; align-items: center; width: 100%; font-size: 60px;">
    Temáticas 
  </vaadin-vertical-layout>
-</vaadin-horizontal-layout>
+ <vaadin-vertical-layout theme="spacing" id="TematicaSelecionableItem" style="align-self: stretch; flex-grow: 1;"></vaadin-vertical-layout>
+</vaadin-vertical-layout>
 `;
   }
 

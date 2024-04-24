@@ -13,7 +13,7 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		//this.getNombre().setNombre(tematica.getNombre());
 	}
 
-	public void marcar_tematica() {
+	public void marcar_tematica() {//eeeeeeeeeeeeee
 		throw new UnsupportedOperationException();
 	}
 }

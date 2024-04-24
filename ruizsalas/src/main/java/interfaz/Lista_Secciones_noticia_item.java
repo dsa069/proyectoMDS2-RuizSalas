@@ -13,7 +13,7 @@ public class Lista_Secciones_noticia_item extends VistaListaseccionesnoticia_ite
 		//this.seccion.getNombre().setNombre(seccion.getNombre());
 	}
 
-	public void marcar_seccion() {
+	public void marcar_seccion() {//radio buton no me lo pilla
 		throw new UnsupportedOperationException();
 	}
 }

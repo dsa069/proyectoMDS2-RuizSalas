@@ -19,8 +19,8 @@ export class VistaListaseccionesnoticia_item extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 60px; align-items: stretch;">
  <hr style="width: 90%;">
  <vaadin-radio-group theme="vertical" style="align-self: center; width: 80%;" value="on">
-  <vaadin-radio-button style="font-size: 40px;" checked>
-   <b style="font-size: 60px;">Text</b>
+  <vaadin-radio-button style="font-size: 40px;" checked id="SeleccionSeccion">
+   <b style="font-size: 60px;">Furgol</b>
   </vaadin-radio-button>
  </vaadin-radio-group>
 </vaadin-vertical-layout>
