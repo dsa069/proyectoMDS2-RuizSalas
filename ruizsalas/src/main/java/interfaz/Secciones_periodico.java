@@ -20,7 +20,7 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 	}
 
 	public void Lista_Secciones() {
-		this._contiene = new Listar_Secciones(null);
+		this._contiene = new Listar_Secciones(this._accede);
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	

@@ -21,6 +21,12 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 		this.InicioPortada();
 	}
 	
+	@Override
+	public void Seleccion_de_secciones_item_Estatico() {
+		Seleccion_de_secciones_item _item = new Seleccion_de_secciones_item(this);
+		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	}
+	
 	public void barraBusqueda() {
 		buscar = new Barra_de_busqueda(this.usuario);
 		this.getBarraDeBusqueda().add(this.buscar);

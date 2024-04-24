@@ -9,6 +9,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	//	private JButton _next_page;
 	public Usuario _unnamed_Usuario_;
 	public Noticias_en_Portada _contiene;
+	public Secciones_periodico SeccP;
 
 	public Pagina_de_inicio(Usuario usuario) {
 		super();
@@ -23,7 +24,9 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	
-	public void ConductorSiguientePagina() {
-		//Botón que nos lleva a la siguiente página del periódico
+	public void ConductorSiguientePagina() {//SIguiente pag periodico
+		this._unnamed_Usuario_.banner.SS.getLayoutGenericoSeccionesBanner().removeAll();
+		SeccP = new Secciones_periodico(this._unnamed_Usuario_);
+		this._unnamed_Usuario_.banner.SS.getLayoutGenericoSeccionesBanner().add(SeccP);
 	}
 }

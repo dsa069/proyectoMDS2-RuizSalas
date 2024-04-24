@@ -22,8 +22,13 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 		this.getBotonEditarSecciones().addClickListener(event->ConductorEditarSecciones());
 	}
 	
+	@Override
+	public void Seleccion_de_secciones_item_Estatico() {
+		Seleccion_de_secciones_Vista_Editor_item _item = new Seleccion_de_secciones_Vista_Editor_item(this);
+		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	}
+	
 	public void ConductorEditarSecciones() {
-		Notification.show("le he dado al boton");
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).removeAll();
 		SESG = new Seleccion_de_secciones_generico(this._editor);
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).add(this.SESG);

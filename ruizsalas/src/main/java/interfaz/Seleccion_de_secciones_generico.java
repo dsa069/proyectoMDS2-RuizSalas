@@ -27,11 +27,15 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
 		
-		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this);
-		this.getLayoutSeccionesContenidasPeriodico().add(_item);
-		
+		this.Seleccion_de_secciones_item_Estatico();
 		this.CEseccionesEstatico();
 	}
+	
+	public void Seleccion_de_secciones_item_Estatico() {
+		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this);
+		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	}
+	
 	public void CEseccionesEstatico() {
 		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas(this.editor);
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
