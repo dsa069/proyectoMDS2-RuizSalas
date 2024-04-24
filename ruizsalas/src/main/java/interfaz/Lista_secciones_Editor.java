@@ -12,9 +12,11 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	public Lista_secciones_Editor(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
-		
+	}
+	
+	@Override
+	public void Secciones_item_Estatico(){
 		Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this);
 		this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
 	}
-
 }

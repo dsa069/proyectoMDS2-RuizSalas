@@ -61,7 +61,7 @@ public class MainView extends VerticalLayout {
 		
 //		add(UNR);
 		
-		Noticia_Vista_UNR prueba = new Noticia_Vista_UNR(UNR);
+		Crear_Editar_Secciones_Tematicas prueba = new Crear_Editar_Secciones_Tematicas(E);
         add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
