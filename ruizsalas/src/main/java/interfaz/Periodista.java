@@ -6,8 +6,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import proyectoMDS.MainView;
 
 public class Periodista extends Registrado {
-	public Periodista (MainView mainView){
-		super(mainView);
+	public Periodista (MainView mainView, ocl_proyecto.Periodista periodista){
+		super(mainView, periodista);
 		
 		this.Banner_P_Inico();
 	}

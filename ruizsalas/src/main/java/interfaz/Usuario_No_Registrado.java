@@ -6,8 +6,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import proyectoMDS.MainView;
 
 public class Usuario_No_Registrado extends Usuario {
-	public Usuario_No_Registrado (MainView mainView){
-		super(mainView);
+	public Usuario_No_Registrado (MainView mainView, ocl_proyecto.Usuario usuario){
+		super(mainView, usuario);
 
 		this.Banner_URN_Inico();
 	} 

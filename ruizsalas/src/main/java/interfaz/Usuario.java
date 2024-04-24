@@ -9,10 +9,11 @@ import proyectoMDS.MainView;
 import proyectoMDS.MainView;
 public class Usuario extends VistaUsuario {
 
+	ocl_proyecto.Usuario usuario;
 	public MainView mainView;
-	public Usuario(MainView MainView) {
+	public Usuario(MainView MainView, ocl_proyecto.Usuario usuario) {
 		this.mainView = MainView;
-		
+		this.usuario = usuario;
 		this.Banner();
 	}
 	//	public iUsuario _iUsuario;
@@ -22,6 +23,6 @@ public class Usuario extends VistaUsuario {
 	public void Banner() {
 		this.banner = new Banner_generico(this);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.banner);
-		}
+	}
 }
 

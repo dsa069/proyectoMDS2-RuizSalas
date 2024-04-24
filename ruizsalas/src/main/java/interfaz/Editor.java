@@ -11,8 +11,8 @@ public class Editor extends Registrado {
 //	public Noticia_Vista_Editor _accede;
 	public Banner_Editor BE;
 	
-	public Editor (MainView mainView){
-		super(mainView);
+	public Editor (MainView mainView, ocl_proyecto.Editor editor){
+		super(mainView, editor);
 
 		this.Banner_E_Inico();
 	} 
