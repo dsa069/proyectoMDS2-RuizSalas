@@ -9,7 +9,7 @@ public class Noticias_en_Portada extends Listar_noticias {
 //	private JLabel _titulo;
 //	private JLabel _resumen_corto;
 //	private JLabel _valoracion;
-//	public Pagina_de_inicio _unnamed_Pagina_de_inicio_;
+	public Pagina_de_inicio _unnamed_Pagina_de_inicio_;
 	public Vector<Noticias_en_Portada_item> _item = new Vector<Noticias_en_Portada_item>();
 	
     public Usuario _usuario;
@@ -17,8 +17,12 @@ public class Noticias_en_Portada extends Listar_noticias {
 		super(_usuario);
 		this._usuario = _usuario;
 		this.getPortada().setVisible(true);
-		
-		Noticias_en_Portada_item np_item = new Noticias_en_Portada_item(this);
-		this.getPortada().add(np_item);
+	}
+	
+	@Override
+	public void Noticia_item() {
+		Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this);
+		this.getPortada().add(_item);
+		this.getColumnasNoticias().add(_item);
 	}
 }
