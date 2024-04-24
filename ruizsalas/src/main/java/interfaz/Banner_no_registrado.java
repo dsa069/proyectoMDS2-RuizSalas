@@ -12,9 +12,11 @@ public class Banner_no_registrado extends Banner_generico {
 	
 	public Zona_Anuncios Anuncio;
 	public Zona_Anuncios Anuncio2;
+	
+	ocl_proyecto.Usuario usuario;
 
-	public Banner_no_registrado(Usuario_No_Registrado _usuarioNoRegistrado) {
-		super(_usuarioNoRegistrado);
+	public Banner_no_registrado(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
+		super(_usuarioNoRegistrado, usuario);
 		this._usuarioNoRegistrado = _usuarioNoRegistrado;
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 		this.getBotonIniciarSesionGenerico().setVisible(false);
@@ -35,7 +37,7 @@ public class Banner_no_registrado extends Banner_generico {
 	
 	public void ConductorPortadaBannerUNR() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado);
+		noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado, this.usuario);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
 	}
 	

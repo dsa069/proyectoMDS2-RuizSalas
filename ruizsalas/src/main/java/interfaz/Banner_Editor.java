@@ -11,10 +11,12 @@ public class Banner_Editor extends Banner_registrado {
 	public Lista_periodistas ListaPeriodistica;
 	public Banner_Editor BananaEditor;
 	public Seleccion_de_secciones_Vista_Editor SSE;
+	ocl_proyecto.Editor editor;
 	
-	public Banner_Editor(Editor _editor) {
-		super(_editor);
+	public Banner_Editor(Editor _editor, ocl_proyecto.Editor editor) {
+		super(_editor, editor);
 		this._editor = _editor;
+		this.editor = editor;
 		this.getBotonMisNoticiasGenerico().setVisible(false);
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
@@ -31,7 +33,7 @@ public class Banner_Editor extends Banner_registrado {
 
 	public void ConductorPortadaBannerE() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		BananaEditor = new Banner_Editor(this._editor);
+		BananaEditor = new Banner_Editor(this._editor, this.editor);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaEditor);
 	}
 	

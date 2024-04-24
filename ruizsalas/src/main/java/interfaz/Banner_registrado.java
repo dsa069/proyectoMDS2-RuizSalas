@@ -9,10 +9,13 @@ public class Banner_registrado extends Banner_generico {
 	public Perfil_Uusario_Vista_UR PerfilUR;
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
+	
+	ocl_proyecto.Usuario usuario;
 
-	public Banner_registrado(Registrado _registrado) {
-		super(_registrado);
+	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
+		super(_registrado, usuario);
 		this._registrado = _registrado;
+		this.usuario = usuario;
 		this.getBotonSuscribirseGenerico().setVisible(false);
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
@@ -31,7 +34,7 @@ public class Banner_registrado extends Banner_generico {
 	
 	public void ConductorPortadaBannerR() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		BananaRegistardo = new Banner_registrado(this._registrado);
+		BananaRegistardo = new Banner_registrado(this._registrado, this.usuario);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 

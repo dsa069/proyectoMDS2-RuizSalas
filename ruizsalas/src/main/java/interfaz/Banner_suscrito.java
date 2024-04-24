@@ -10,9 +10,12 @@ public class Banner_suscrito extends VistaBannersuscrito{
 	public Banner_registrado _unnamed_Banner_registrado_;
 	public Banner_Periodista _unnamed_Banner_Periodista_;
 	public Registrado registrado;
+	
+	ocl_proyecto.Usuario_suscrito_ registradoBD;
 
-	public Banner_suscrito(Registrado registrado) {
+	public Banner_suscrito(Registrado registrado, ocl_proyecto.Usuario_suscrito_ registradoBD) {
 		super();
 		this.registrado = registrado;
+		this.registradoBD = registradoBD;
 	}
 }
