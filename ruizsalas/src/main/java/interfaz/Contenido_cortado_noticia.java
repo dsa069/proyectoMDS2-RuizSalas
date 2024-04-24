@@ -6,6 +6,9 @@ public class Contenido_cortado_noticia extends Noticia{
 	
 	public Usuario_No_Registrado _usuario;
 	public Registro reg;
+	
+	ocl_proyecto.Usuario usuario;
+	
 	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario) {
 		super(_usuario);
 		this._usuario = _usuario;
@@ -26,7 +29,7 @@ public class Contenido_cortado_noticia extends Noticia{
 	
 	public void ConductorRegistro() {
 		this._usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		reg = new Registro(this._usuario);
+		reg = new Registro(this._usuario, this.usuario);
 		this._usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(reg);
 	}
 }

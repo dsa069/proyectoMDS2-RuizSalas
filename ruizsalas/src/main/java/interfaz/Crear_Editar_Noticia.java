@@ -16,8 +16,8 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Seleccionar_Tematica _contiene;
 	public Zona_insertar_contenido_noticia CENoticia;
 	
-	public Crear_Editar_Noticia(Periodista _periodista) {
-		super(_periodista);
+	public Crear_Editar_Noticia(Periodista _periodista, ocl_proyecto.Periodista periodista) {
+		super(_periodista, periodista);
 		this._unnamed_Periodista_ = _periodista;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getCrearEditarNoticiaLayout().setVisible(true);

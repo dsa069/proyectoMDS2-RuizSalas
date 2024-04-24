@@ -18,8 +18,10 @@ public class Perfil_Usuario extends Banner_suscrito {
 	public Editar_Perfil editarPerfil;
 	public Ver_datos_perfil Datos;
 	
-	public Perfil_Usuario(Registrado _registrado) {
-		super(_registrado);
+	ocl_proyecto.Usuario_suscrito_ registrado;
+	
+	public Perfil_Usuario(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ registrado) {
+		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
@@ -48,7 +50,7 @@ public class Perfil_Usuario extends Banner_suscrito {
 	
 	public void ConductorEditarPerfil() {
 		this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-		editarPerfil = new Editar_Perfil(this._unnamed_Registrado_);
+		editarPerfil = new Editar_Perfil(this._unnamed_Registrado_, this.registrado);
 		this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.editarPerfil);
 	}
 }

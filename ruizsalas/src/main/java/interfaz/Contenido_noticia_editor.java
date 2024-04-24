@@ -8,6 +8,8 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	public Seleccionar_Tematica seleccionarTematica;
 	public Lista_Secciones_noticia listaSeccionesNoticia;
 	
+	ocl_proyecto.Editor editorBD;
+	
 	public Contenido_noticia_editor(Editor editor) {
 		super(editor);
 		this.editor = editor;
@@ -41,7 +43,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	public void BorrarNoticia() {
 		//OperacionBorrarnoticia
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		banner_Editor = new Banner_Editor(this.editor);
+		banner_Editor = new Banner_Editor(this.editor, this.editorBD);
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner_Editor);
 	}
 

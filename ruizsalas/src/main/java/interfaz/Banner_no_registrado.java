@@ -43,7 +43,7 @@ public class Banner_no_registrado extends Banner_generico {
 	
 	public void ConductorRegistro() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		registro = new Registro(this._usuarioNoRegistrado);
+		registro = new Registro(this._usuarioNoRegistrado, this.usuario);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(registro);
 	}
 

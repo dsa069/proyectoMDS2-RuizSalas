@@ -10,6 +10,9 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	public Lista_mis_noticias _lista_mis_noticias;
 	public Crear_Editar_Noticia crearEditarNoticia;
 //	public Eliminar_noticia _contiene_la_opcion_de;
+	
+	ocl_proyecto.Periodista periodista;
+	
 	public Lista_mis_noticias_item(Listar_noticias_generico padre) {
 		super(padre);
 		this.getAgregarNoticia().setVisible(false);
@@ -29,7 +32,7 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	
 	public void ConductorEditarNoticia() {
 		this.getLayoutGenericoListarNoticiasGenerico().as(VerticalLayout.class).removeAll();
-		crearEditarNoticia = new Crear_Editar_Noticia(null);//Comentario cambiar el null
+		crearEditarNoticia = new Crear_Editar_Noticia(null, this.periodista);//Comentario cambiar el null
 		this.getLayoutGenericoListarNoticiasGenerico().as(VerticalLayout.class).add(crearEditarNoticia);
 	}
 }

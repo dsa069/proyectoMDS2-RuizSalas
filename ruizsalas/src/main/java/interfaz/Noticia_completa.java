@@ -8,8 +8,8 @@ public class Noticia_completa extends Banner_suscrito {
 	public Lista_Comentarios_UR _contiene;
 	public Contenido_noticia_completo Noticia;
 	
-	public Noticia_completa(Registrado _registrado) {
-		super(_registrado);
+	public Noticia_completa(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ suscrito) {
+		super(_registrado, suscrito);
 		this._unnamed_Registrado_ = _registrado;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getTextoPerfil().setVisible(false);

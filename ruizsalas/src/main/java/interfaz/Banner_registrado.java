@@ -11,6 +11,7 @@ public class Banner_registrado extends Banner_generico {
 	public Banner_registrado BananaRegistardo;
 	
 	ocl_proyecto.Usuario usuario;
+	ocl_proyecto.Usuario_suscrito_ suscrito;
 
 	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
@@ -40,13 +41,13 @@ public class Banner_registrado extends Banner_generico {
 
 	public void ConductorPerfilUR() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
+		PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, this.suscrito);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 	}
 
 	public void ConductorPerfil() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		Perfil = new Perfil_Usuario(this._registrado);
+		Perfil = new Perfil_Usuario(this._registrado, this.suscrito);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
 	}
 }

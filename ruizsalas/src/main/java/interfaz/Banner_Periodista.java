@@ -29,7 +29,7 @@ public class Banner_Periodista extends Banner_registrado {
 	
 	public void ConductorMisNoticias() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		Xvideos = new Historial_noticias(this._periodista);
+		Xvideos = new Historial_noticias(this._periodista, this.periodista);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(Xvideos);
 	}
 }
