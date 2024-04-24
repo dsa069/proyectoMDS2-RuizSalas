@@ -21,7 +21,7 @@ public class Usuario extends VistaUsuario {
 
 	public Banner_generico banner;
 	public void Banner() {
-		this.banner = new Banner_generico(this);
+		this.banner = new Banner_generico(this, this.usuario);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.banner);
 	}
 }
