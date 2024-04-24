@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -20,7 +20,9 @@ export class VistaNoticia extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout style="width: 100%; height: 35%; flex-shrink: 0; align-items: center; justify-content: flex-start;">
-  <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" width="25%" height="60%" ">
+  <vaadin-button theme="icon" aria-label="Add new" style="height: 60%; width: 25%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;">
+   <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;">
+  </vaadin-button>
   <vaadin-vertical-layout style="width: 15%; height: 60%; flex-shrink: 0;" id="tematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%;" id="seleccionarTematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%;" id="SeleccionarSecciones"></vaadin-vertical-layout>
@@ -43,8 +45,8 @@ export class VistaNoticia extends LitElement {
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonLikeNoticia">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 60%;">
    </vaadin-button>
-   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonDislikeNoticia">
-    <img src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="height: 100%; width: 60%;">
+   <vaadin-button theme="icon" aria-label="Add new" id="BotonNotLikeNoticia" style="background-color: var(--lumo-contrast-0pct); overflow: hidden; height: 100%; width: 50%; flex-shrink: 0;">
+    <iron-icon src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="width: 60%; height: 100%;"></iron-icon>
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 60%; width: 5%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="eliminarNoticia">

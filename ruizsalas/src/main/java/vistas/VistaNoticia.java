@@ -37,8 +37,8 @@ public class VistaNoticia extends LitTemplate {
 	private Button botonSuscribirseNoticia;
 	@Id("BotonLikeNoticia")
 	private Button botonLikeNoticia;
-//	@Id("BotonDislikeNoticia")
-//	private Button botonDislikeNoticia;
+	@Id("BotonNotLikeNoticia")
+	private Button botonNotLikeNoticia;
 	public VistaNoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -120,12 +120,12 @@ public class VistaNoticia extends LitTemplate {
 		this.botonLikeNoticia = botonLikeNoticia;
 	}
 
-//	public Button getBotonDislikeNoticia() {
-//		return botonDislikeNoticia;
-//	}
-//
-//	public void setBotonDislikeNoticia(Button botonDislikeNoticia) {
-//		this.botonDislikeNoticia = botonDislikeNoticia;
-//	}
+	public Button getBotonNotLikeNoticia() {
+		return botonNotLikeNoticia;
+	}
+
+	public void setBotonNotLikeNoticia(Button botonNotLikeNoticia) {
+		this.botonNotLikeNoticia = botonNotLikeNoticia;
+	}
 
 }
