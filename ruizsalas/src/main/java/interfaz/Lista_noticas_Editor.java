@@ -12,4 +12,9 @@ public class Lista_noticas_Editor extends Listar_noticias {
 		super(_editor);
 		this._editor = _editor;
 	}
+	@Override
+	public void Noticia_item() {
+		Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this);
+		this.getColumnasNoticias().add(_item);
+	}
 }

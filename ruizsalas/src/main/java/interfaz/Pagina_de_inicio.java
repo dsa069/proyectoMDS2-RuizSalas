@@ -20,7 +20,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	}
 	
 	public void Noticias_Portada() {
-		this._contiene = new Noticias_en_Portada(null);
+		this._contiene = new Noticias_en_Portada(this._unnamed_Usuario_);
 		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	
