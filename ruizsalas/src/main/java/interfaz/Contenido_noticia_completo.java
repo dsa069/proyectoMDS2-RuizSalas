@@ -3,7 +3,6 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Contenido_noticia_completo extends Noticia {
-	
 	public Registrado _registrado;
 	
 	ocl_proyecto.Usuario usuario;

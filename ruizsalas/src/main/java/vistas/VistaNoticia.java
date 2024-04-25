@@ -44,6 +44,12 @@ public class VistaNoticia extends LitTemplate {
 	private Image imagenPrincipalNoticia;
 	@Id("layoutTitularVistaNoticia")
 	private Element layoutTitularVistaNoticia;
+	@Id("FechaNoticia")
+	private Element fechaNoticia;
+	@Id("AutorNoticia")
+	private Element autorNoticia;
+	@Id("LugarNoticia")
+	private Element lugarNoticia;
 	public VistaNoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -147,6 +153,30 @@ public class VistaNoticia extends LitTemplate {
 
 	public void setLayoutTitularVistaNoticia(Element layoutTitularVistaNoticia) {
 		this.layoutTitularVistaNoticia = layoutTitularVistaNoticia;
+	}
+
+	public Element getFechaNoticia() {
+		return fechaNoticia;
+	}
+
+	public void setFechaNoticia(Element fechaNoticia) {
+		this.fechaNoticia = fechaNoticia;
+	}
+
+	public Element getAutorNoticia() {
+		return autorNoticia;
+	}
+
+	public void setAutorNoticia(Element autorNoticia) {
+		this.autorNoticia = autorNoticia;
+	}
+
+	public Element getLugarNoticia() {
+		return lugarNoticia;
+	}
+
+	public void setLugarNoticia(Element lugarNoticia) {
+		this.lugarNoticia = lugarNoticia;
 	}
 
 }

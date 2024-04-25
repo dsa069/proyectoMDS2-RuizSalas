@@ -21,10 +21,12 @@ public class Noticia extends VistaNoticia{
 		this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
+		
 		this.getImagenPrincipalNoticia().setSrc(noticia.getImagen_principal());
 		this.getLayoutTitularVistaNoticia().setText(noticia.getTitulo());
-//		this.getNoticiaCompleta().setText(noticia.getTexto_largo());
-//		this.getNoticiaCortada().setText(noticia.getTexto_corto());
+//		this.getFechaNoticia().setText(noticia.getFecha());
+//		this.getAutorNoticia().setText(noticia.getAutor());
+		this.getLugarNoticia().setText(noticia.getUbicacion());
 	}
 
 	public void Listar_Tematicas() {

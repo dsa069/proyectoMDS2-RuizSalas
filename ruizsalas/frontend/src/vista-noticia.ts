@@ -27,15 +27,15 @@ export class VistaNoticia extends LitElement {
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%;" id="seleccionarTematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%;" id="SeleccionarSecciones"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%; font-size: 30px;">
-   <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0;">
+   <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="FechaNoticia">
      28/03/2024 
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="width: 100%;">
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout style="width: 100%;" id="AutorNoticia">
      Pepe Martínez 
-   </vaadin-horizontal-layout>
-   <vaadin-horizontal-layout style="width: 100%;">
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout style="width: 100%;" id="LugarNoticia">
      Lisboa 
-   </vaadin-horizontal-layout>
+   </vaadin-vertical-layout>
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 10%; flex-shrink: 0; font-size: 50px; align-items: center; justify-content: space-between;">

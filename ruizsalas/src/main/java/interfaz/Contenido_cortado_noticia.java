@@ -3,7 +3,6 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Contenido_cortado_noticia extends Noticia{
-	
 	public Usuario_No_Registrado _usuario;
 	public Registro reg;
 	
