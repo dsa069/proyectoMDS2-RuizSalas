@@ -24,7 +24,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	}
 
 	public void Datos_Iniciar_Sesion() {
-		this._contiene = new Introducir_Datos(this._unnamed_Usuario_No_Registrado_, this.user);
+		this._contiene = new Introducir_Datos(this._unnamed_Usuario_No_Registrado_);
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

@@ -26,7 +26,7 @@ public class Editar_Perfil extends Banner_suscrito {
 	}
 	
 	public void Editar_Dato() {
-		this. _unnamed_Editar_datos_ = new Editar_datos(this._unnamed_Registrado_, this.registrado);
+		this. _unnamed_Editar_datos_ = new Editar_datos(this._unnamed_Registrado_);
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
 	}
 

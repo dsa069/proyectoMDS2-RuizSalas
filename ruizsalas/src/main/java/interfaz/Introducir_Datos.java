@@ -11,7 +11,7 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 	public Iniciar_Sesion _unnamed_Iniciar_Sesion_;
 
 	public Usuario usuario;
-	public Introducir_Datos(Usuario usuario, ocl_proyecto.Usuario usuarioBD) {
+	public Introducir_Datos(Usuario usuario) {
 		super();
 		this.usuario = usuario;
 		this.getZonaRegistrarPeriodista().setVisible(false);
@@ -19,6 +19,6 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 		this.getFotoTextamen().setVisible(false);
 		this.getEditarPerfil().setVisible(false);
 		
-		this.getImagenPerfilIntroducirDatos().setSrc(usuarioBD.getFoto_de_perfil());
+		//this.getImagenPerfilIntroducirDatos().setSrc(usuarioBD.getFoto_de_perfil());
 	}
 }
