@@ -11,13 +11,10 @@ public class Periodistas_item extends VistaPeriodistas_item {
 		super();
 		this._periodistas = _periodistas;
 		
-		
-		//this.getBaja().setBaja(periodista.getBaja()); Ns si tiene que estar
-		//this.getApodo().setApodo(periodista.getApodo());
-		//this.getFoto_de_perfil().setFot_de_perfil(periodista.getFoto_de_perfil());
+		this.getApodoPeriodistas().setText(periodista.getApodo());
+		this.getFotoPeriodistas().setSrc(periodista.getFoto_de_perfil());
 				
 		this.getBotonEliminarPeriodista().addClickListener(event->baja_periodista());
-
 	}
 
 	public void baja_periodista() {
