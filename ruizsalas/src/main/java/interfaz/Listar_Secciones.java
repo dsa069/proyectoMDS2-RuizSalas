@@ -11,6 +11,9 @@ public class Listar_Secciones extends VistaListarsecciones{
 	public Vector<Listar_Secciones_item> _item = new Vector<Listar_Secciones_item>();
 	
 	public Usuario usuario;
+	
+	ocl_proyecto.Seccion seccion;
+	
 	public Listar_Secciones(Usuario usuario) {
 		super();
 		this.usuario = usuario;
@@ -19,7 +22,7 @@ public class Listar_Secciones extends VistaListarsecciones{
 		}
 	
 	public void Secciones_item_Estatico(){
-		Listar_Secciones_item _item = new Listar_Secciones_item(this);
+		Listar_Secciones_item _item = new Listar_Secciones_item(this, this.seccion);
 		this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
 	}
 }

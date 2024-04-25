@@ -8,10 +8,13 @@ public class Listar_Secciones_item extends VistaListarsecciones_item {
 	public Listar_Secciones _listar_Secciones;
 	public Listar_noticias _contiene;
 
-	public Listar_Secciones_item(Listar_Secciones _listar_Secciones) {
+	public Listar_Secciones_item(Listar_Secciones _listar_Secciones, ocl_proyecto.Seccion seccion) {
 		super();
 		this._listar_Secciones = _listar_Secciones;
 		this.getBorrarSeccion().setVisible(false);
+		
+		this.getLayoutTextoSeccionX().setText(seccion.getNombre());
+		
 		this.Listar_Noticia();
 	}
 

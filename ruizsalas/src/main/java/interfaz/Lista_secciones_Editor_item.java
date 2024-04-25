@@ -6,8 +6,8 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public Lista_secciones_Editor _lista_secciones_Editor;
 	public Lista_noticas_Editor _contiene;
 
-	public Lista_secciones_Editor_item(Listar_Secciones padre) {
-		super(padre);
+	public Lista_secciones_Editor_item(Listar_Secciones padre, ocl_proyecto.Seccion seccion) {
+		super(padre, seccion);
 		this.getBorrarSeccion().setVisible(true);
 		
 		this.getBorrarSeccion().addClickListener(event->borrar_seccion());

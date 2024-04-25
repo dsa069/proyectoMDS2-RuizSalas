@@ -9,6 +9,9 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	public Vector<Lista_secciones_Editor_item> _item = new Vector<Lista_secciones_Editor_item>();
 
     public Editor _editor;
+    
+    ocl_proyecto.Seccion seccion;
+    
 	public Lista_secciones_Editor(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
@@ -16,7 +19,7 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	
 	@Override
 	public void Secciones_item_Estatico(){
-		Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this);
+		Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this, this.seccion);
 		this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
 	}
 }
