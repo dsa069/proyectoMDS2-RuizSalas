@@ -19,14 +19,14 @@ export class VistaZonadeautoryversiondenoticia extends LitElement {
     return html`
 <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;font-size: 32px;">
  <vaadin-button theme="icon" aria-label="Add new" style="width: 5%; height: 10%; flex-shrink: 0;">
-  <img src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png" style="width: 100%;">
+  <img src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png" style="width: 100%;" id="FotoPeriodistaNoticia">
  </vaadin-button>
- <vaadin-vertical-layout style="align-self: flex-start; flex-shrink: 0; flex-wrap: wrap; flex-direction: column-reverse;">
+ <vaadin-vertical-layout style="align-self: flex-start; flex-shrink: 0; flex-wrap: wrap; flex-direction: column-reverse;" id="NombreAutorNoticia">
    Autor 
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 20%; flex-shrink: 0;"></vaadin-vertical-layout>
- <vaadin-vertical-layout style="flex-direction: column-reverse; align-self: flex-start;">
-  Versión
+ <vaadin-vertical-layout style="flex-direction: column-reverse; align-self: flex-start;" id="VersionNoticia">
+   Versión 
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;

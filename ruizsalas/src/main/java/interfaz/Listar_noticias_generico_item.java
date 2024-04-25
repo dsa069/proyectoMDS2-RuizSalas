@@ -26,7 +26,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	
 	public Zona_de_autor_y_version_de_noticia zonaAutorYVersionDeNoticia;
 	public void Zona_De_Autor_Y_Version_De_Noticia() {
-		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(null);
+		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(null,null);
 		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
 	}
 
