@@ -36,7 +36,7 @@ public class Perfil_Usuario extends Banner_suscrito {
 	}
 
 	public void Ver_Datos() {
-		this.Datos = new Ver_datos_perfil(this._unnamed_Registrado_);
+		this.Datos = new Ver_datos_perfil(this._unnamed_Registrado_, this.registrado);
 		this.getVerDatosEstaticos().add(this.Datos);
 	}
 	
