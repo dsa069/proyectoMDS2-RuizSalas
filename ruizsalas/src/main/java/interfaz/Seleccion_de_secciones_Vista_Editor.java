@@ -14,6 +14,8 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	public Editor _editor;
 	public Seleccion_de_secciones_generico SESG;
 	
+	ocl_proyecto.Seccion seccion;
+	
 	public Seleccion_de_secciones_Vista_Editor(Editor _editor) {
 		super(_editor);
 		this._editor = _editor;
@@ -24,7 +26,7 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	
 	@Override
 	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_Vista_Editor_item _item = new Seleccion_de_secciones_Vista_Editor_item(this);
+		Seleccion_de_secciones_Vista_Editor_item _item = new Seleccion_de_secciones_Vista_Editor_item(this, this.seccion);
 		this.getLayoutSeccionesContenidasPeriodico().add(_item);
 	}
 	

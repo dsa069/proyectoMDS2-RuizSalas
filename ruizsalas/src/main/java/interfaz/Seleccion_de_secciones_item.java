@@ -6,8 +6,8 @@ public class Seleccion_de_secciones_item extends Seleccion_de_secciones_generico
 	public Seleccion_de_secciones _seleccion_de_secciones;
 	Secciones_periodico SesPP;
 	
-	public Seleccion_de_secciones_item(Seleccion_de_secciones_generico padre) {
-		super(padre);
+	public Seleccion_de_secciones_item(Seleccion_de_secciones_generico padre, ocl_proyecto.Seccion seccion) {
+		super(padre, seccion);
 		//this.getMarcar().setVisible(false);
 	}
 	

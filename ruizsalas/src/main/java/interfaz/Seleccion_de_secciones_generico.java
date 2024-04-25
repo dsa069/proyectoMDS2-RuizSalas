@@ -20,6 +20,8 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	
 	public Editor editor;
 	
+	ocl_proyecto.Seccion seccion;
+	
 	public Seleccion_de_secciones_generico(Usuario usuario) {
 		super();
 		this.usuario = usuario;
@@ -32,7 +34,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this);
+		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this, this.seccion);
 		this.getLayoutSeccionesContenidasPeriodico().add(_item);
 	}
 	

@@ -8,6 +8,8 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	//public Listar_noticias _puede_contener;
 	public Vector<Seleccion_de_secciones_item> _item = new Vector<Seleccion_de_secciones_item>();
 	
+	ocl_proyecto.Seccion seccion;
+	
 	public Usuario _usuario;
 	public Seleccion_de_secciones(Usuario _usuario) {
 		super(_usuario);
@@ -23,7 +25,7 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	
 	@Override
 	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_item _item = new Seleccion_de_secciones_item(this);
+		Seleccion_de_secciones_item _item = new Seleccion_de_secciones_item(this, this.seccion);
 		this.getLayoutSeccionesContenidasPeriodico().add(_item);
 	}
 	
