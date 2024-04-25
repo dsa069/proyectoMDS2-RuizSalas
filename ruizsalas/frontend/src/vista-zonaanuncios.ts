@@ -18,11 +18,11 @@ export class VistaZonaanuncios extends LitElement {
 		return html`
 <vaadin-vertical-layout style="flex-shrink: 0; width: 10%; position: absolute;">
  <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; overflow: hidden; height: 35%; background-color: var(--lumo-contrast-0pct);">
-  <img src="https://i.pinimg.com/originals/46/f3/18/46f318120f97b7f472ecbb43ac2ef20e.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);">
+  <img src="https://i.pinimg.com/originals/46/f3/18/46f318120f97b7f472ecbb43ac2ef20e.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);" id="imagenZonaDeAnuncios">
  </vaadin-button>
  <hr style="width: 90%; flex-shrink: 0;">
  <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 20%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
-  <img src="https://i.redd.it/el59y0snhf0a1.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);">
+  <img src="https://i.redd.it/el59y0snhf0a1.jpg" style="width: 90%; height: 75%; display: block; margin: var(--lumo-space-s);" id="imagenZonaDeAnuncios1">
  </vaadin-button>
  <hr style="width: 90%; flex-shrink: 0;">
  <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; flex-shrink: 0; flex-grow: 0; height: 17%; overflow: hidden; background-color: var(--lumo-contrast-0pct);">
