@@ -10,8 +10,8 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	
 	ocl_proyecto.Editor editorBD;
 	
-	public Contenido_noticia_editor(Editor editor) {
-		super(editor);
+	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Noticia noticia) {
+		super(editor, noticia);
 		this.editor = editor;
 		this.getSeleccionarSecciones().setVisible(true);
 		this.getSeleccionarTematicas().setVisible(true);

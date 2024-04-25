@@ -8,6 +8,8 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	//public Eliminar_noticia _contiene_la_opcion_de;
 	public Contenido_noticia_editor NoticiaVE;
 	
+	ocl_proyecto.Noticia noticia;
+	
 	public Noticia_Vista_Editor(Editor _editor, ocl_proyecto.Usuario_suscrito_ suscrito) {
 		super(_editor, suscrito);
 		this._unnamed_Editor_ = _editor;
@@ -18,7 +20,7 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	
 	@Override
 	public void Ver_Noticia() {
-		this.NoticiaVE = new Contenido_noticia_editor(this._unnamed_Editor_);
+		this.NoticiaVE = new Contenido_noticia_editor(this._unnamed_Editor_, this.noticia);
 		this.getNoticiaEditorLayout().add(this.NoticiaVE);
 	}
 }

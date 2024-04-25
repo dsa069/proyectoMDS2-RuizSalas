@@ -8,14 +8,16 @@ public class Contenido_noticia_completo extends Noticia {
 	
 	ocl_proyecto.Usuario usuario;
 	
-	public Contenido_noticia_completo(Registrado registrado) {
-		super(registrado);
+	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Noticia noticia) {
+		super(registrado, noticia);
 		this._registrado = registrado;
 		this.getNoticiaCortada().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
 		this.getEliminarNoticia().setVisible(false);
 		this.getBotonSuscribirse().setVisible(false);
+		
+		this.getNoticiaCompleta().setText(noticia.getTexto_largo());
 		
 		this.getBotonLikeNoticia().addClickListener(event->DarLike());
 		this.getBotonNotLikeNoticia().addClickListener(event->DarDislike());

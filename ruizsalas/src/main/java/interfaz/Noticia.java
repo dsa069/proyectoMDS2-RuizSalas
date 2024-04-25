@@ -15,12 +15,16 @@ public class Noticia extends VistaNoticia{
 	public Usuario usuario;
 	public Listar_tematicas listarTematicas;
 	public ver_valoracion valoracion;
-	public Noticia(Usuario usuario) {
+	public Noticia(Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super();
 		this.usuario = usuario;
 		this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
+		this.getImagenPrincipalNoticia().setSrc(noticia.getImagen_principal());
+		this.getLayoutTitularVistaNoticia().setText(noticia.getTitulo());
+//		this.getNoticiaCompleta().setText(noticia.getTexto_largo());
+//		this.getNoticiaCortada().setText(noticia.getTexto_corto());
 	}
 
 	public void Listar_Tematicas() {

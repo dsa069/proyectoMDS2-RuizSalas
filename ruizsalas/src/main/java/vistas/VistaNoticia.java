@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 
 @Tag("vista-noticia")
 @JsModule("./src/vista-noticia.ts")
@@ -39,6 +40,10 @@ public class VistaNoticia extends LitTemplate {
 	private Button botonLikeNoticia;
 	@Id("BotonNotLikeNoticia")
 	private Button botonNotLikeNoticia;
+	@Id("imagenPrincipalNoticia")
+	private Image imagenPrincipalNoticia;
+	@Id("layoutTitularVistaNoticia")
+	private Element layoutTitularVistaNoticia;
 	public VistaNoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -126,6 +131,22 @@ public class VistaNoticia extends LitTemplate {
 
 	public void setBotonNotLikeNoticia(Button botonNotLikeNoticia) {
 		this.botonNotLikeNoticia = botonNotLikeNoticia;
+	}
+
+	public Image getImagenPrincipalNoticia() {
+		return imagenPrincipalNoticia;
+	}
+
+	public void setImagenPrincipalNoticia(Image imagenPrincipalNoticia) {
+		this.imagenPrincipalNoticia = imagenPrincipalNoticia;
+	}
+
+	public Element getLayoutTitularVistaNoticia() {
+		return layoutTitularVistaNoticia;
+	}
+
+	public void setLayoutTitularVistaNoticia(Element layoutTitularVistaNoticia) {
+		this.layoutTitularVistaNoticia = layoutTitularVistaNoticia;
 	}
 
 }

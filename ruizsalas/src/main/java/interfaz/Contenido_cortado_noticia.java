@@ -9,14 +9,16 @@ public class Contenido_cortado_noticia extends Noticia{
 	
 	ocl_proyecto.Usuario usuario;
 	
-	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario) {
-		super(_usuario);
+	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario, ocl_proyecto.Noticia noticia) {
+		super(_usuario, noticia);
 		this._usuario = _usuario;
 		this.getNoticiaCompleta().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
 		this.getValorarNoticia().setVisible(false);
 		this.getEliminarNoticia().setVisible(false);
+		
+		this.getNoticiaCortada().setText(noticia.getTexto_corto());
 		
 		this.getBotonSuscribirseNoticia().addClickListener(event->ConductorRegistro());
 	}

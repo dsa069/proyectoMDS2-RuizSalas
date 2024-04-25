@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -21,7 +21,7 @@ export class VistaNoticia extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout style="width: 100%; height: 35%; flex-shrink: 0; align-items: center; justify-content: flex-start;">
   <vaadin-button theme="icon" aria-label="Add new" style="height: 60%; width: 25%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;">
-   <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;">
+   <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;" id="imagenPrincipalNoticia">
   </vaadin-button>
   <vaadin-vertical-layout style="width: 15%; height: 60%; flex-shrink: 0;" id="tematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 0; width: 15%; height: 60%;" id="seleccionarTematicas"></vaadin-vertical-layout>
@@ -39,7 +39,9 @@ export class VistaNoticia extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 10%; flex-shrink: 0; font-size: 50px; align-items: center; justify-content: space-between;">
-   Humillación sin precedentes al Barcelona 
+  <vaadin-vertical-layout id="layoutTitularVistaNoticia" style="flex-shrink: 0;">
+    Humillación sin precedentes al Barcelona 
+  </vaadin-vertical-layout>
   <vaadin-horizontal-layout style="width: 15%; height: 60%; flex-shrink: 0;" id="verValoracionEstatico"></vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="height: 60%; width: 10%;" id="valorarNoticia">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonLikeNoticia">

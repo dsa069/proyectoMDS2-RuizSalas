@@ -12,6 +12,7 @@ public class Banner_registrado extends Banner_generico {
 	
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
+	ocl_proyecto.Noticia noticia;
 
 	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
@@ -29,7 +30,7 @@ public class Banner_registrado extends Banner_generico {
 	public Noticia nepe;
 	public void hola() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		nepe = new Noticia(this._registrado);
+		nepe = new Noticia(this._registrado, this.noticia);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(nepe);
 	}
 	

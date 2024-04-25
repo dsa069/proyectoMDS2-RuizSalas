@@ -8,6 +8,8 @@ public class Noticia_completa extends Banner_suscrito {
 	public Lista_Comentarios_UR _contiene;
 	public Contenido_noticia_completo Noticia;
 	
+	ocl_proyecto.Noticia noticia;
+	
 	public Noticia_completa(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ suscrito) {
 		super(_registrado, suscrito);
 		this._unnamed_Registrado_ = _registrado;
@@ -21,7 +23,7 @@ public class Noticia_completa extends Banner_suscrito {
 	}
 	
 	public void Ver_Noticia() {
-		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_);
+		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_, this.noticia);
 		this.getNoticiaLayout().add(this.Noticia);
 	}
 
