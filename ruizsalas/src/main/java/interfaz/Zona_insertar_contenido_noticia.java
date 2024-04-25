@@ -16,7 +16,7 @@ public class Zona_insertar_contenido_noticia extends VistaZonainsertarcontenidon
 	
 	public Seleccionar_Tematica ST;
 	public void Seleccinar_Tematicas() {
-		this.ST = new Seleccionar_Tematica(null);
+		this.ST = new Seleccionar_Tematica(this.periodista);
 		this.getSeleccionarTematicasEstatico().as(VerticalLayout.class).add(this.ST);
 		}
 }

@@ -20,8 +20,6 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		this.usuario = usuario;
 		this.user = user;
 		this.getEscribirComentario().setVisible(false);
-		this.getImagenFotoPerfilComentar().setSrc(user.getFoto_de_perfil());
-		this.getLayoutTextoNombreUsuario().setText(user.getApodo());
 
 		this.Comentarios_item_Estaticos();
 
