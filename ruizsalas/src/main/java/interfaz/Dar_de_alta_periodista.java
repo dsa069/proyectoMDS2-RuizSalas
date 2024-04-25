@@ -10,10 +10,6 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	
 	ocl_proyecto.Editor editor;
 
-	public void registrar_periodista() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Dar_de_alta_periodista(Editor _editor, ocl_proyecto.Editor editor) {
 		super(_editor, editor);
 		this._unnamed_Editor_ = _editor;
@@ -22,8 +18,8 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 
 		this.Dar_Alta_Periodistas();
 		
-		this.getBotonCancelarAnadirPeriodista().addClickListener(event->ConfirmarAnadirPeriodistador());
-		this.getBotonConfirmarAnadirPeriodista().addClickListener(event->ConductorListaPeriodistas());
+		this.getBotonCancelarAnadirPeriodista().addClickListener(event->ConductorListaPeriodistas());
+		this.getBotonConfirmarAnadirPeriodista().addClickListener(event->registrar_periodista());
 	}
 
 	public void Dar_Alta_Periodistas() {
@@ -36,9 +32,10 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 		LP = new Lista_periodistas(this._unnamed_Editor_, this.editor);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(LP);
 	}
-	
-	public void ConfirmarAnadirPeriodistador() {
+
+	public void registrar_periodista() {
 		//GUardar cambios y añador
 		this.ConductorListaPeriodistas();
+		throw new UnsupportedOperationException();
 	}
 }

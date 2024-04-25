@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.html.Image;
 
 @Tag("vista-bannergenerico")
 @JsModule("./src/vista-bannergenerico.ts")
@@ -106,7 +107,8 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("BotonAnadirPeriodista")
 	private Button botonAnadirPeriodista;
 
-
+	@Id("FotoPerfilBanner")
+	private Image fotoPerfilBanner;
 
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
@@ -345,6 +347,12 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setBotonAnadirPeriodista(Button botonAnadirPeriodista) {
 		this.botonAnadirPeriodista = botonAnadirPeriodista;
+	}
+	public Image getFotoPerfilBanner() {
+		return fotoPerfilBanner;
+	}
+	public void setFotoPerfilBanner(Image fotoPerfilBanner) {
+		this.fotoPerfilBanner = fotoPerfilBanner;
 	}
 
 }
