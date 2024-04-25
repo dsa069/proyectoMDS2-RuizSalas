@@ -7,8 +7,10 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 //	private JLabel _ver_valoracion;
 	public Listar_noticias _listar_noticias;
 	
-	public Listar_noticias_item(Listar_noticias_generico padre) {
-		super(padre);
+	ocl_proyecto.Valoracion valoracion;
+	
+	public Listar_noticias_item(Listar_noticias_generico padre, ocl_proyecto.Noticia Notas) {
+		super(padre, Notas);
 		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
@@ -18,6 +20,16 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		this.getTitular1().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
 		
+		this.Ver_Valoracion();
+		
+		this.getTitular2().setText(Notas.getTitulo());
+		
 		this.getTitular2().addClickListener(event->ConductorNoticia());
+	}
+	
+	public ver_valoracion verValoracion;
+	public void Ver_Valoracion() {
+		this.verValoracion = new ver_valoracion(null, this.valoracion);
+		this.getVerValoracion().add(this.verValoracion);
 	}
 }

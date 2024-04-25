@@ -14,7 +14,7 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	}
 	@Override
 	public void Noticia_item() {
-		Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this);
+		Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.Notas);
 		this.getColumnasNoticias().add(_item);
 	}
 }

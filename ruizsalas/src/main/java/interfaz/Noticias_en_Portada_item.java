@@ -4,8 +4,8 @@ import vistas.*;
 public class Noticias_en_Portada_item extends Listar_noticias_item {
 	public Noticias_en_Portada _noticias_en_Portada;
 	
-	public Noticias_en_Portada_item(Listar_noticias padre) {
-		super(padre);
+	public Noticias_en_Portada_item(Listar_noticias padre, 	ocl_proyecto.Noticia Notas) {
+		super(padre, Notas);
 		//this.getMarcar().setVisible(false);
 	}
 	

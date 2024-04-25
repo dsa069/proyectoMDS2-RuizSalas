@@ -13,14 +13,16 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	
 	ocl_proyecto.Periodista periodista;
 	
-	public Lista_mis_noticias_item(Listar_noticias_generico padre) {
-		super(padre);
+	public Lista_mis_noticias_item(Listar_noticias_generico padre, ocl_proyecto.Noticia Notas) {
+		super(padre, Notas);
 		this.getAgregarNoticia().setVisible(false);
 		this.getNoAgregarNoticia().setVisible(false);
 		this.getZonaDeAutorYVersionDeNoticia().setVisible(false);
 		this.getTitular2().setVisible(false);
 		this.getVerValoracion().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
+		
+		this.getTitular1().setText(Notas.getTitulo());
 		
 		this.getEliminarNoticiaPropia().addClickListener(event->ConductorEliminarNoticia());
 		this.getEditarNoticia().addClickListener(event->ConductorEditarNoticia());

@@ -21,7 +21,7 @@ public class Noticias_en_Portada extends Listar_noticias {
 	
 	@Override
 	public void Noticia_item() {
-		Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this);
+		Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this, this.Notas);
 		this.getPortada().add(_item);
 		this.getColumnasNoticias().add(_item);
 	}

@@ -19,7 +19,7 @@ public class Listar_noticias extends Listar_noticias_generico {
 	}
 	@Override
 	public void Noticia_item() {
-		Listar_noticias_item _item = new Listar_noticias_item(this);
+		Listar_noticias_item _item = new Listar_noticias_item(this, this.Notas);
 		this.getColumnasNoticias().add(_item);
 	}
 }

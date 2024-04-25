@@ -20,7 +20,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	
 	@Override
 	public void Noticia_item() {
-		Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this);
+		Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.Notas);
 		this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 	}
 }
