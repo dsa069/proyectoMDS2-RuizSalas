@@ -5,6 +5,9 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class Contenido_noticia_completo extends Noticia {
 	
 	public Registrado _registrado;
+	
+	ocl_proyecto.Usuario usuario;
+	
 	public Contenido_noticia_completo(Registrado registrado) {
 		super(registrado);
 		this._registrado = registrado;
@@ -20,7 +23,7 @@ public class Contenido_noticia_completo extends Noticia {
 	
 	@Override
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_Comentarios_UR(this._registrado);
+		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

@@ -12,8 +12,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public Vector<Lista_Comentarios_UR_item> _item = new Vector<Lista_Comentarios_UR_item>();
 	
 	public Registrado _registrado;
-	public Lista_Comentarios_UR(Registrado _registrado) {
-		super(_registrado);
+	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario) {
+		super(_registrado, usuario);
 		this._registrado = _registrado;
 		this.getEscribirComentario().setVisible(true);
 	

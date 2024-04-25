@@ -23,7 +23,7 @@ public class Contenido_cortado_noticia extends Noticia{
 	
 	@Override
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_Comentarios(this._usuario);
+		this._contiene = new Lista_Comentarios(this._usuario, this.usuario);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

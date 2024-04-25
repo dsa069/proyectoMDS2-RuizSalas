@@ -11,10 +11,11 @@ public class Lista_Comentarios extends VistaListacomentarios {
 	public Vector<Lista_Comentarios_item> _item = new Vector<Lista_Comentarios_item>();
 	
 	public Usuario usuario;
-	public Lista_Comentarios(Usuario usuario) {
+	public Lista_Comentarios(Usuario usuario, ocl_proyecto.Usuario user) {
 		super();
 		this.usuario = usuario;
 		this.getEscribirComentario().setVisible(false);
+		this.getImagenFotoPerfilComentar().setSrc(user.getFoto_de_perfil());
 	
 		this.Comentarios_item_Estaticos();
 		}

@@ -26,7 +26,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	
 	@Override
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_comentarios_Vista_Editor(this.editor);
+		this._contiene = new Lista_comentarios_Vista_Editor(this.editor, this.editorBD);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	
