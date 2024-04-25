@@ -25,7 +25,10 @@ export class VistaListacomentarios extends LitElement {
     <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; width: 100%; height: 100%;">
      <img src="https://content.imageresizer.com/images/memes/among-us-drip-meme-8.jpg" width="300%" height="300%" id="imagenFotoPerfilComentar">
     </vaadin-button>
-   </vaadin-vertical-layout>Pepe Mel 
+   </vaadin-vertical-layout>
+   <vaadin-vertical-layout theme="spacing" id="layoutTextoNombreUsuario">
+    Pepe Mel 
+   </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-text-area placeholder="Escriba aquí su comentario" style="width: 100%; flex-shrink: 1; flex-grow: 1;" id="CampoEscribirComentario"></vaadin-text-area>
  </vaadin-vertical-layout>

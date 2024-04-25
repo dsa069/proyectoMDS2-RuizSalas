@@ -12,6 +12,10 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public Vector<Lista_Comentarios_UR_item> _item = new Vector<Lista_Comentarios_UR_item>();
 	
 	public Registrado _registrado;
+	
+	ocl_proyecto.Usuario user;
+	ocl_proyecto.Comentario comentario;
+	
 	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
 		this._registrado = _registrado;
@@ -22,7 +26,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	
 	@Override
 	public void Comentarios_item_Estaticos(){
-		Lista_Comentarios_UR_item _item = new Lista_Comentarios_UR_item(this);
+		Lista_Comentarios_UR_item _item = new Lista_Comentarios_UR_item(this, this.user, this.comentario);
 		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
 	}
 

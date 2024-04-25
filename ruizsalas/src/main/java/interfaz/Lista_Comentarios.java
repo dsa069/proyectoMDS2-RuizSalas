@@ -9,19 +9,28 @@ import vistas.*;
 public class Lista_Comentarios extends VistaListacomentarios {
 	//public Noticia _unnamed_Noticia_;
 	public Vector<Lista_Comentarios_item> _item = new Vector<Lista_Comentarios_item>();
-	
+
 	public Usuario usuario;
+
+	ocl_proyecto.Usuario user;
+	ocl_proyecto.Comentario comentario;
+
 	public Lista_Comentarios(Usuario usuario, ocl_proyecto.Usuario user) {
 		super();
 		this.usuario = usuario;
+		this.user = user;
 		this.getEscribirComentario().setVisible(false);
 		this.getImagenFotoPerfilComentar().setSrc(user.getFoto_de_perfil());
-	
+		this.getLayoutTextoNombreUsuario().setText(user.getApodo());
+
 		this.Comentarios_item_Estaticos();
-		}
-	
+
+		Lista_Comentarios_item _item = new Lista_Comentarios_item(this, this.user, this.comentario);
+		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
+	}
+
 	public void Comentarios_item_Estaticos(){
-		Lista_Comentarios_item _item = new Lista_Comentarios_item(this);
+		Lista_Comentarios_item _item = new Lista_Comentarios_item(this, this.user, this.comentario);
 		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
 	}
 }

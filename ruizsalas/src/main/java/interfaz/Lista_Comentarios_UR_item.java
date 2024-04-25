@@ -5,8 +5,8 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 //	private JButton _no_me_gusta;
 	public Lista_Comentarios_UR _lista_Comentarios_UR;
 	
-	public Lista_Comentarios_UR_item(Lista_Comentarios padre) {
-		super(padre);
+	public Lista_Comentarios_UR_item(Lista_Comentarios padre, ocl_proyecto.Usuario user, ocl_proyecto.Comentario comentario) {
+		super(padre, user, comentario);
 		this.getValorarComentarioNegativamente().setVisible(true);
 		this.getValorarComentarioPositivamente().setVisible(true);
 		
