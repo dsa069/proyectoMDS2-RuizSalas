@@ -6,6 +6,8 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	//private Button _confirmar_Datos;
 	public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
 	public Introducir_Datos _contiene;
+	
+	ocl_proyecto.Usuario user;
 
 	public Iniciar_Sesion(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
 		super(_usuarioNoRegistrado, usuario);
@@ -22,7 +24,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	}
 
 	public void Datos_Iniciar_Sesion() {
-		this._contiene = new Introducir_Datos(this._unnamed_Usuario_No_Registrado_);
+		this._contiene = new Introducir_Datos(this._unnamed_Usuario_No_Registrado_, this.user);
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

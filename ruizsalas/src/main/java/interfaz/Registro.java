@@ -30,7 +30,7 @@ public class Registro extends Banner_no_registrado {
 	}
 	
 	public void Datos_Registro() {
-		this.Datos = new Introducir_datos_registro(this._unnamed_Usuario_No_Registrado_);
+		this.Datos = new Introducir_datos_registro(this._unnamed_Usuario_No_Registrado_, this.usuario);
 		this.getDatosRegistroEstatico().as(VerticalLayout.class).add(this.Datos);
 	}
 	

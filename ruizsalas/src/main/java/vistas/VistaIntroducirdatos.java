@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.html.Image;
 
 @Tag("vista-introducirdatos")
 @JsModule("./src/vista-introducirdatos.ts")
@@ -19,6 +20,8 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private Element editarPerfil;
 	@Id("FotoTextamen")
 	private Element fotoTextamen;
+	@Id("imagenPerfilIntroducirDatos")
+	private Image imagenPerfilIntroducirDatos;
 	
 	public VistaIntroducirdatos() {
         // You can initialise any data required for the connected UI components here.
@@ -54,6 +57,14 @@ public class VistaIntroducirdatos extends LitTemplate {
 
 	public void setFotoTextamen(Element fotoTextamen) {
 		this.fotoTextamen = fotoTextamen;
+	}
+
+	public Image getImagenPerfilIntroducirDatos() {
+		return imagenPerfilIntroducirDatos;
+	}
+
+	public void setImagenPerfilIntroducirDatos(Image imagenPerfilIntroducirDatos) {
+		this.imagenPerfilIntroducirDatos = imagenPerfilIntroducirDatos;
 	}
 
 }

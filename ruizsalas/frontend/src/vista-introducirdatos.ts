@@ -21,7 +21,7 @@ export class VistaIntroducirdatos extends LitElement {
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; position: absolute;">
  <vaadin-vertical-layout style="width: 50%; height: 100%; flex-shrink: 0; align-items: center; justify-content: center;" id="editarPerfil">
   <vaadin-button theme="icon" aria-label="Add new" style="height: 60%; flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%;">
-   <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="60%" height="60%">
+   <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="60%" height="60%" id="imagenPerfilIntroducirDatos">
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="height: 100%; width: 50%; justify-content: center;" theme="spacing">
