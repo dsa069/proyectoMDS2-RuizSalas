@@ -21,4 +21,10 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		this.getLayoutNickNameUsuario1().setText(usuario.getApodo());
 //		this.getLayoutTarjetaCreditoUsuario1().setText(suscrito.getTarjeta_de_credito());
 	}
+	
+	public void SelectorUsuarioPerfil() {
+		//if no es UR
+		this.getLayoutTarjetaCreditoUsuario1().setVisible(false);
+		//else nada
+	}
 }
