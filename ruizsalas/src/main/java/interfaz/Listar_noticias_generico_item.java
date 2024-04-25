@@ -12,6 +12,8 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	
 	Noticia_Vista_UNR NUNR;
 	
+	ocl_proyecto.Valoracion valoracion;
+	
 	public Listar_noticias_generico_item(Listar_noticias_generico _listar_noticias_generico) {
 		super();
 		this._listar_noticias_generico = _listar_noticias_generico;
@@ -30,7 +32,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 
 	public ver_valoracion verValoracion;
 	public void Ver_Valoracion() {
-		this.verValoracion = new ver_valoracion(null);
+		this.verValoracion = new ver_valoracion(null, this.valoracion);
 		this.getVerValoracion().add(this.verValoracion);
 	}
 	

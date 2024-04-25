@@ -15,6 +15,9 @@ public class Noticia extends VistaNoticia{
 	public Usuario usuario;
 	public Listar_tematicas listarTematicas;
 	public ver_valoracion valoracion;
+	
+	ocl_proyecto.Valoracion valoracionBD;
+	
 	public Noticia(Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super();
 		this.usuario = usuario;
@@ -38,7 +41,7 @@ public class Noticia extends VistaNoticia{
 	}
 
 	public void Ver_Valoraciones() {
-		this.valoracion = new ver_valoracion(this.usuario);
+		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);
 		this.getVerValoracionEstatico().add(this.valoracion);
 	}
 }
