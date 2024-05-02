@@ -11,8 +11,8 @@ public class Periodistas_item extends VistaPeriodistas_item {
 		super();
 		this._periodistas = _periodistas;
 		
-		this.getApodoPeriodistas().setText(periodista.getApodo());
-		this.getFotoPeriodistas().setSrc(periodista.getFoto_de_perfil());
+//		this.getApodoPeriodistas().setText(periodista.getApodo());
+//		this.getFotoPeriodistas().setSrc(periodista.getFoto_de_perfil());
 				
 		this.getBotonEliminarPeriodista().addClickListener(event->baja_periodista());
 	}

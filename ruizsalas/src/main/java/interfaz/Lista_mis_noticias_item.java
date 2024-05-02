@@ -22,7 +22,7 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 		this.getVerValoracion().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
 		
-		this.getTitular1().setText(Notas.getTitulo());
+//		this.getTitular1().setText(Notas.getTitulo());
 		
 		this.getEliminarNoticiaPropia().addClickListener(event->ConductorEliminarNoticia());
 		this.getEditarNoticia().addClickListener(event->ConductorEditarNoticia());

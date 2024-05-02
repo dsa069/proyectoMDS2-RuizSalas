@@ -25,11 +25,11 @@ public class Noticia extends VistaNoticia{
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
-		this.getImagenPrincipalNoticia().setSrc(noticia.getImagen_principal());
-		this.getLayoutTitularVistaNoticia().setText(noticia.getTitulo());
+//		this.getImagenPrincipalNoticia().setSrc(noticia.getImagen_principal());
+//		this.getLayoutTitularVistaNoticia().setText(noticia.getTitulo());
 //		this.getFechaNoticia().setText(noticia.getFecha());
 //		this.getAutorNoticia().setText(noticia.getAutor());
-		this.getLugarNoticia().setText(noticia.getUbicacion());
+//		this.getLugarNoticia().setText(noticia.getUbicacion());
 	}
 
 	public void Listar_Tematicas() {

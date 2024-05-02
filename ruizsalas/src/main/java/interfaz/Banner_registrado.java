@@ -25,7 +25,7 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerR());
 		
-		this.getFotoPerfilBanner().setSrc(usuarioBD.getFoto_de_perfil());
+//		this.getFotoPerfilBanner().setSrc(usuarioBD.getFoto_de_perfil());
 	}
 	
 	

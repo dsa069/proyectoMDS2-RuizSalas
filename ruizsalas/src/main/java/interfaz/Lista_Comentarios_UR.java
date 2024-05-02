@@ -21,8 +21,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this._registrado = _registrado;
 		this.getEscribirComentario().setVisible(true);
 		
-		this.getImagenFotoPerfilComentar().setSrc(user.getFoto_de_perfil());
-		this.getLayoutTextoNombreUsuario().setText(user.getApodo());
+//		this.getImagenFotoPerfilComentar().setSrc(user.getFoto_de_perfil());
+//		this.getLayoutTextoNombreUsuario().setText(user.getApodo());
 	
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario());ESCRIBIR COMENTARIOO CLICK LISTENER???
 		}

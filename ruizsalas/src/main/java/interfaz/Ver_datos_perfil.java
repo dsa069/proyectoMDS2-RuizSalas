@@ -15,11 +15,11 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		
 		ocl_proyecto.Usuario_suscrito_ suscrito;
 		
-		this.getImagenUsuarioVerDatos().setSrc(usuario.getFoto_de_perfil());
-		this.getLayoutCorreoUsuario1().setText(usuario.getCorreo());
-		this.getLayoutDNIUsuario1().setText(usuario.getDni());
-		this.getLayoutNickNameUsuario1().setText(usuario.getApodo());
-//		this.getLayoutTarjetaCreditoUsuario1().setText(suscrito.getTarjeta_de_credito());
+//		this.getImagenUsuarioVerDatos().setSrc(usuario.getFoto_de_perfil());
+//		this.getLayoutCorreoUsuario1().setText(usuario.getCorreo());
+//		this.getLayoutDNIUsuario1().setText(usuario.getDni());
+//		this.getLayoutNickNameUsuario1().setText(usuario.getApodo());
+////		this.getLayoutTarjetaCreditoUsuario1().setText(suscrito.getTarjeta_de_credito());
 	}
 	
 	public void SelectorUsuarioPerfil() {

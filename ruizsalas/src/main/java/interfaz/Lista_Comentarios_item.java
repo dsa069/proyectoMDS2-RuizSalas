@@ -18,9 +18,10 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 		this.getValorarComentarioPositivamente().setVisible(false);
 		this.getBorrarComentario().setVisible(false);
 		
-		this.getLayoutZonaComentarioEscrito().setText(comentario.getTexto());
-		this.getLayoutApodoComentarista().setText(usuario.getApodo());
-		this.getImagenUsuarioComento().setSrc(usuario.getFoto_de_perfil());
+//		this.getLayoutZonaComentarioEscrito().setText(comentario.getTexto());
+//		this.getLayoutApodoComentarista().setText(usuario.getApodo());
+//		this.getImagenUsuarioComento().setSrc(usuario.getFoto_de_perfil());
+		
 //		this.getLayoutVerValoracionComentario().setText(comentario.getId_valoracion()); //Tenemos que pasarle también valoración o que hacemos?
 	}
 }
