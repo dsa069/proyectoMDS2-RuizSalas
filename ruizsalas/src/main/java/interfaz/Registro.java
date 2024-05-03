@@ -24,7 +24,7 @@ public class Registro extends Banner_no_registrado {
 		this.Confirmar();
 		
 		this.getBotonIniciarSesion().addClickListener(event->ConductorIniciarSesion());
-		this.getBotonCancelarRegistro().addClickListener(event->ConductorPortadaBannerUNR());
+		this.getBotonCancelarRegistro().addClickListener(event->ConductorPortadaBanner());
 	}
 	
 	public void Datos_Registro() {

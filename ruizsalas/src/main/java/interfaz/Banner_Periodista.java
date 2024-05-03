@@ -19,9 +19,11 @@ public class Banner_Periodista extends Banner_registrado {
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonMisNoticiasGenerico().addClickListener(event->ConductorMisNoticias());
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerP());
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
-	public void ConductorPortadaBannerP() {
+	
+	@Override
+	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		BananaPeriodista = new Banner_Periodista(this._periodista, this.periodista);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaPeriodista);

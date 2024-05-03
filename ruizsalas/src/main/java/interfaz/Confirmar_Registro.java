@@ -27,7 +27,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 //		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
 	//	throw new UnsupportedOperationException();
 		this.enviar_Correo_Confirmacion();
-		this.enviar_Correo_Confirmacion();
+		this.gestionar_Transaccion();
 	}
 	
 	public void enviar_Correo_Confirmacion() {

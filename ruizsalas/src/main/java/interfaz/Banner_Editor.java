@@ -21,9 +21,7 @@ public class Banner_Editor extends Banner_registrado {
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonVerPeriodistasGenerico().addClickListener(event->ConductorListaPeriodistas());
-		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerE());
-	}
+		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());	}
 	
 	@Override
 	public void InicioPortada() {
@@ -31,7 +29,8 @@ public class Banner_Editor extends Banner_registrado {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SSE);
 	}
 
-	public void ConductorPortadaBannerE() {
+	@Override
+	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		BananaEditor = new Banner_Editor(this._editor, this.editor);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaEditor);

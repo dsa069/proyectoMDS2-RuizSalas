@@ -28,10 +28,15 @@ public class Banner_generico extends VistaBannergenerico{
 		this.getAltaPeriodistaLayout().setVisible(false);
 
 		this.InicioPortada();
+		
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 
 	public void InicioPortada() {
 		this.SS = new Seleccion_de_secciones(this.usuario);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
+	}
+	
+	public void ConductorPortadaBanner() {
 	}
 }

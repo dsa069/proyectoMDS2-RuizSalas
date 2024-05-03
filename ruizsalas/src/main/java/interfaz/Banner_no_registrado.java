@@ -26,6 +26,7 @@ public class Banner_no_registrado extends Banner_generico {
 		this.Zona_Anuncio();
 		
 		this.getBotonSuscribirseGenerico().addClickListener(event->ConductorRegistro());
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 	
 	public void Zona_Anuncio() {
@@ -35,10 +36,11 @@ public class Banner_no_registrado extends Banner_generico {
 		this.getZonaAnunciosLayout2().as(VerticalLayout.class).add(this.Anuncio2);
 	}
 	
-	public void ConductorPortadaBannerUNR() {
+	@Override
+	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado, this.usuario);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);	
 	}
 	
 	public void ConductorRegistro() {

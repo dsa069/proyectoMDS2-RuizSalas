@@ -9,6 +9,7 @@ public class Banner_registrado extends Banner_generico {
 	public Perfil_Uusario_Vista_UR PerfilUR;
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
+	public Usuario_No_Registrado Usus_no_reg;
 	
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
@@ -23,7 +24,7 @@ public class Banner_registrado extends Banner_generico {
 		this.getZonaAnunciosLayout2().setVisible(false);
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBannerR());
+		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 		
 //		this.getFotoPerfilBanner().setSrc(usuarioBD.getFoto_de_perfil());
 	}
@@ -36,7 +37,9 @@ public class Banner_registrado extends Banner_generico {
 		this.getBannergenericolayout().as(VerticalLayout.class).add(nepe);
 	}
 	
-	public void ConductorPortadaBannerR() {
+	//PODEMOS CARGAR EN VISTA USUARIO Y CARGAR EL BANNER DE RESGITRADO PA QUE NO  SE MUEVO Y ME BAILE
+	@Override
+	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		BananaRegistardo = new Banner_registrado(this._registrado, this.usuario);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
