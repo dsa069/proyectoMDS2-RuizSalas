@@ -45,9 +45,12 @@ public class Banner_registrado extends Banner_generico {
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 
+	//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
+	
+	
 	public void ConductorPerfilUR() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, this.suscrito);//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
+		PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, this.suscrito);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 	}
 

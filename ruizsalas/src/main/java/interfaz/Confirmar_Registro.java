@@ -21,10 +21,11 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		//bisnis
 
 		
-//QUITAR REGISSTRO Y PONER BANER (UR O UNR NOSE TODAVIA)		
-//		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-//		noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado);
-//		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);
+//QUITAR REGISSTRO Y PONER BANER (UR O UNR NOSE TODAVIA)	
+		
+		
+		this.usuarioNoRegistrado.mainView.removeAll();
+		this.usuarioNoRegistrado.mainView.add(this.usuarioNoRegistrado.mainView.UR);
 	//	throw new UnsupportedOperationException();
 		this.enviar_Correo_Confirmacion();
 		this.gestionar_Transaccion();
