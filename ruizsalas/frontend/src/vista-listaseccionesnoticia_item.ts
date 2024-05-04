@@ -27,7 +27,7 @@ export class VistaListaseccionesnoticia_item extends LitElement {
 `;
   }
 
-  // Remove this method to render the contents of this view inside Shadow DOM
+  // Remove this method to render the contents of this view inside  Shadow DOM
   createRenderRoot() {
     return this;
   }
