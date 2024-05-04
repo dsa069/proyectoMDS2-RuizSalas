@@ -17,7 +17,7 @@ export class VistaSeleccionartematica_item extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 60px; align-items: stretch;">
  <hr style="width: 90%;">
- <vaadin-checkbox style="align-self: center; width: 80%;" id="tematicaAAñadir">
+ <vaadin-checkbox style="align-self: center; width: 80%;" id="SeleccionarTematica">
    Text 
  </vaadin-checkbox>
 </vaadin-vertical-layout>
