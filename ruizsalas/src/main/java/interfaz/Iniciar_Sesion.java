@@ -28,7 +28,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	
-	public void confirmar_Datos() {//NOFUNCIONADELTODO
+	public void confirmar_Datos() {
 		//ComparacionBd
 		this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
         this._unnamed_Usuario_No_Registrado_.mainView.add(this._unnamed_Usuario_No_Registrado_.mainView.UR);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse

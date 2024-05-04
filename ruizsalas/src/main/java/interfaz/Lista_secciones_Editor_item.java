@@ -16,7 +16,7 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	
 	@Override
 	public void Listar_Noticia() {
-		this._contiene = new Lista_noticas_Editor(null);//nose null??
+		this._contiene = new Lista_noticas_Editor(this._lista_secciones_Editor._editor);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
 	}
 	
