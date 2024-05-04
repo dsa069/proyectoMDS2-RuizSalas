@@ -9,8 +9,9 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 //	private JLabel _foto;
 //	private JLabel _version;
 	public Noticias_a_Revisar _noticias_a_Revisar;
-	public Noticias_a_Revisar_item(Listar_noticias_generico padre, ocl_proyecto.Noticia Notas) {
+	public Noticias_a_Revisar_item(Noticias_a_Revisar padre, ocl_proyecto.Noticia Notas) {
 		super(padre,Notas);
+		this._noticias_a_Revisar = padre;
 		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);

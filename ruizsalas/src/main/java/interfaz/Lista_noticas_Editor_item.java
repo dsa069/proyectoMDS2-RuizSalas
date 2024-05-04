@@ -5,8 +5,9 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	//private JButton _quitar_noticia_de_seccion;
 	public Lista_noticas_Editor _lista_noticas_Editor;
 
-	public Lista_noticas_Editor_item(Listar_noticias padre, ocl_proyecto.Noticia Notas) {
+	public Lista_noticas_Editor_item(Lista_noticas_Editor padre, ocl_proyecto.Noticia Notas) {
 		super(padre, Notas);
+		this._lista_noticas_Editor = padre;
 		//this.getMarcar().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(true);
 		
