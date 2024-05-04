@@ -14,7 +14,7 @@ export class VistaListarsecciones extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute;" id="ListarSeccionesContenedorItems"></vaadin-vertical-layout>
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="ListarSeccionesContenedorItems"></vaadin-vertical-layout>
 `;
   }
 

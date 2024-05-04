@@ -17,7 +17,7 @@ export class VistaPaginadeinicio extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-vertical-layout style="width: 100%; height: 80%; flex-shrink: 0;" id="listaPortadaEstatica"></vaadin-vertical-layout>
  <vaadin-horizontal-layout style="width: 100%; height: 20%; flex-shrink: 0; align-items: center; justify-content: center;">
   <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%;" id="botonContinuarPaginaInicio">

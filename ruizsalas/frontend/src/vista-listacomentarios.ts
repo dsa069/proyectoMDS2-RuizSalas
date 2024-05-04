@@ -18,7 +18,7 @@ export class VistaListacomentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between; position: absolute;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between;">
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 30%;" id="EscribirComentario">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 0; flex-shrink: 1; align-items: center; height: 27%; font-size: 25px;">
    <vaadin-vertical-layout style="height: 100%; width: 4%;">
@@ -27,7 +27,7 @@ export class VistaListacomentarios extends LitElement {
     </vaadin-button>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="layoutTextoNombreUsuario">
-    Pepe Mel 
+     Pepe Mel 
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-text-area placeholder="Escriba aquí su comentario" style="width: 100%; flex-shrink: 1; flex-grow: 1;" id="CampoEscribirComentario"></vaadin-text-area>

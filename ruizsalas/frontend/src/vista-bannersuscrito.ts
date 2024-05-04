@@ -17,7 +17,7 @@ export class VistaBannersuscrito extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute;" id="layoutBannerSuscrito">
+<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutBannerSuscrito">
  <vaadin-horizontal-layout style="width: 100%; height: 10%; align-self: center; justify-content: center; font-size: 36px;" id="textoPerfil">
    Perfil 
  </vaadin-horizontal-layout>
