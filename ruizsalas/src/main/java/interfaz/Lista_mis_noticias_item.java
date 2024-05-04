@@ -13,8 +13,9 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	
 	ocl_proyecto.Periodista periodista;
 	
-	public Lista_mis_noticias_item(Listar_noticias_generico padre, ocl_proyecto.Noticia Notas) {
+	public Lista_mis_noticias_item(Lista_mis_noticias padre, ocl_proyecto.Noticia Notas) {
 		super(padre, Notas);
+		this._lista_mis_noticias = padre;
 		this.getAgregarNoticia().setVisible(false);
 		this.getNoAgregarNoticia().setVisible(false);
 		this.getZonaDeAutorYVersionDeNoticia().setVisible(false);

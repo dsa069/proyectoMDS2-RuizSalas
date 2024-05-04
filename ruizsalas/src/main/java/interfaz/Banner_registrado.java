@@ -30,11 +30,11 @@ public class Banner_registrado extends Banner_generico {
 	}
 	
 	
-	public Noticia nepe;
+	public Noticia carlos;
 	public void hola() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		nepe = new Noticia(this._registrado, this.noticia);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(nepe);
+		carlos = new Noticia(this._registrado, this.noticia);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(carlos);
 	}
 	
 	//PODEMOS CARGAR EN VISTA USUARIO Y CARGAR EL BANNER DE RESGITRADO PA QUE NO  SE MUEVO Y ME BAILE
