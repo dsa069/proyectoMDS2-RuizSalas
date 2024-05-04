@@ -11,7 +11,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		super();
 	this.usuario = usuario;
 	
-	//this.getBarraBuscarNoticia().addClickListener(event->ConductorBusquedaFallida())); Algun comentario, como hacer clicklistenner?
+	//this.getBarraBuscarNoticia().addClickListener(event->ConductorBusquedaFallida())); como hacer clicklistenner?
 	}
 	
 	public void ConductorBusquedaFallida() {
@@ -21,7 +21,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	}
 	
 	public void ConductorBuscarNoticia() {
-		//HACER que Dani no le sabe ahora
+		//HACER
 	}
 	
 	public void Buscar() {
