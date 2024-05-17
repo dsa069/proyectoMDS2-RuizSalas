@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -333,7 +333,7 @@ public class NoticiaDAO {
 			
 			ocl_proyecto.Tematica[] lContienes = noticia.contiene.toArray();
 			for(int i = 0; i < lContienes.length; i++) {
-				lContienes[i].está_en.remove(noticia);
+				lContienes[i].esta_en.remove(noticia);
 			}
 			ocl_proyecto.Comentario[] lTienes = noticia.tiene.toArray();
 			for(int i = 0; i < lTienes.length; i++) {
@@ -363,7 +363,7 @@ public class NoticiaDAO {
 			
 			ocl_proyecto.Tematica[] lContienes = noticia.contiene.toArray();
 			for(int i = 0; i < lContienes.length; i++) {
-				lContienes[i].está_en.remove(noticia);
+				lContienes[i].esta_en.remove(noticia);
 			}
 			ocl_proyecto.Comentario[] lTienes = noticia.tiene.toArray();
 			for(int i = 0; i < lTienes.length; i++) {

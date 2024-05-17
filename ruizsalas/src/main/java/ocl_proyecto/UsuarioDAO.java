@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;

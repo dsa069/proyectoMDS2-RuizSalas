@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -95,7 +95,7 @@ public class Noticia extends ocl_proyecto.Valoracion implements Serializable {
 	@JoinColumns(value={ @JoinColumn(name="SeccionIdSeccion", referencedColumnName="IdSeccion") }, foreignKey=@ForeignKey(name="FKNoticia914393"))	
 	private ocl_proyecto.Seccion pertenece_a;
 	
-	@ManyToMany(mappedBy="ORM_está_en", targetEntity=ocl_proyecto.Tematica.class)	
+	@ManyToMany(mappedBy="ORM_esta_en", targetEntity=ocl_proyecto.Tematica.class)	
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
 	private java.util.Set ORM_contiene = new java.util.HashSet();
@@ -234,7 +234,7 @@ public class Noticia extends ocl_proyecto.Valoracion implements Serializable {
 	}
 	
 	@Transient	
-	public final ocl_proyecto.TematicaSetCollection contiene = new ocl_proyecto.TematicaSetCollection(this, _ormAdapter, ORMConstants.KEY_NOTICIA_CONTIENE, ORMConstants.KEY_TEMATICA_ESTÁ_EN, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ocl_proyecto.TematicaSetCollection contiene = new ocl_proyecto.TematicaSetCollection(this, _ormAdapter, ORMConstants.KEY_NOTICIA_CONTIENE, ORMConstants.KEY_TEMATICA_ESTA_EN, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Tiene(java.util.Set value) {
 		this.ORM_tiene = value;

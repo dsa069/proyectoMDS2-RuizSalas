@@ -74,9 +74,6 @@ public class VistaBannergenerico extends LitTemplate {
 	private Element revisarNoticiasEstatico;
 	@Id("listaPeriodistaEstatico")
 	private Element listaPeriodistaEstatico;
-	@Id("datosPeriodistaAñadirEstatico")
-	private Element datosPeriodistaAñadirEstatico;
-	
 	@Id("BotonIniciarSesion")
 	private Button botonIniciarSesion;
 	@Id("BotonCancelarRegistro")
@@ -92,9 +89,6 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("BotonCrearNoticia")
 	private Button botonCrearNoticia;
 
-	@Id("BotonConfirmarModificaciónNoticia")
-	private Button botonConfirmarModificaciónNoticia;
-
 	@Id("BotonEliminarNoticiaPropia")
 	private Button botonEliminarNoticiaPropia;
 
@@ -109,6 +103,12 @@ public class VistaBannergenerico extends LitTemplate {
 
 	@Id("FotoPerfilBanner")
 	private Image fotoPerfilBanner;
+
+	@Id("BotonConfirmarModificacionNoticia")
+	private Button botonConfirmarModificacionNoticia;
+
+	@Id("datosPeriodistaAnadirEstatico")
+	private Element datosPeriodistaAnadirEstatico;
 
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
@@ -246,11 +246,11 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setListaPeriodistaEstatico(Element listaPeriodistaEstatico) {
 		this.listaPeriodistaEstatico = listaPeriodistaEstatico;
 	}
-	public Element getDatosPeriodistaAñadirEstatico() {
-		return datosPeriodistaAñadirEstatico;
+	public Element getDatosPeriodistaAnadirEstatico() {
+		return datosPeriodistaAnadirEstatico;
 	}
-	public void setDatosPeriodistaAñadirEstatico(Element datosPeriodistaAñadirEstatico) {
-		this.datosPeriodistaAñadirEstatico = datosPeriodistaAñadirEstatico;
+	public void setDatosPeriodistaAnadirEstatico(Element datosPeriodistaAnadirEstatico) {
+		this.datosPeriodistaAnadirEstatico = datosPeriodistaAnadirEstatico;
 	}
 	public Button getBotonIniciarSesion() {
 		return botonIniciarSesion;
@@ -318,11 +318,11 @@ public class VistaBannergenerico extends LitTemplate {
 	public void setBotonCrearNoticia(Button botonCrearNoticia) {
 		this.botonCrearNoticia = botonCrearNoticia;
 	}
-	public Button getBotonConfirmarModificaciónNoticia() {
-		return botonConfirmarModificaciónNoticia;
+	public Button getBotonConfirmarModificacionNoticia() {
+		return botonConfirmarModificacionNoticia;
 	}
-	public void setBotonConfirmarModificaciónNoticia(Button botonConfirmarModificaciónNoticia) {
-		this.botonConfirmarModificaciónNoticia = botonConfirmarModificaciónNoticia;
+	public void setBotonConfirmarModificacionNoticia(Button botonConfirmarModificacionNoticia) {
+		this.botonConfirmarModificacionNoticia = botonConfirmarModificacionNoticia;
 	}
 	public Button getBotonEliminarNoticiaPropia() {
 		return botonEliminarNoticiaPropia;

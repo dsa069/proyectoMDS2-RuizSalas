@@ -24,7 +24,7 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 
 	public void Dar_Alta_Periodistas() {
 		this._contiene = new Zona_registrar_periodista(this._unnamed_Editor_);
-		this.getDatosPeriodistaAñadirEstatico().as(VerticalLayout.class).add(this._contiene);
+		this.getDatosPeriodistaAnadirEstatico().as(VerticalLayout.class).add(this._contiene);
 	}
 	
 	public void ConductorListaPeriodistas() {

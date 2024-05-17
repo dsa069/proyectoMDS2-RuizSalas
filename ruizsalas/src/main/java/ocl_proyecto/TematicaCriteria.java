@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -23,7 +23,7 @@ public class TematicaCriteria extends AbstractORMCriteria {
 	public final IntegerExpression es_unaId;
 	public final AssociationExpression es_una;
 	public final StringExpression nombre;
-	public final CollectionExpression está_en;
+	public final CollectionExpression esta_en;
 	
 	public TematicaCriteria(Criteria criteria) {
 		super(criteria);
@@ -31,7 +31,7 @@ public class TematicaCriteria extends AbstractORMCriteria {
 		es_unaId = new IntegerExpression("es_una.idSeccion", this);
 		es_una = new AssociationExpression("es_una", this);
 		nombre = new StringExpression("nombre", this);
-		está_en = new CollectionExpression("ORM_está_en", this);
+		esta_en = new CollectionExpression("ORM_esta_en", this);
 	}
 	
 	public TematicaCriteria(PersistentSession session) {
@@ -46,8 +46,8 @@ public class TematicaCriteria extends AbstractORMCriteria {
 		return new SeccionCriteria(createCriteria("es_una"));
 	}
 	
-	public NoticiaCriteria createEstá_enCriteria() {
-		return new NoticiaCriteria(createCriteria("ORM_está_en"));
+	public NoticiaCriteria createEsta_enCriteria() {
+		return new NoticiaCriteria(createCriteria("ORM_esta_en"));
 	}
 	
 	public Tematica uniqueTematica() {

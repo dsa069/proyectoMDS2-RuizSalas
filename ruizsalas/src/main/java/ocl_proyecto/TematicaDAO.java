@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -327,9 +327,9 @@ public class TematicaDAO {
 				tematica.getEs_una().setEs_una(null);
 			}
 			
-			ocl_proyecto.Noticia[] lEstá_ens = tematica.está_en.toArray();
-			for(int i = 0; i < lEstá_ens.length; i++) {
-				lEstá_ens[i].contiene.remove(tematica);
+			ocl_proyecto.Noticia[] lEsta_ens = tematica.esta_en.toArray();
+			for(int i = 0; i < lEsta_ens.length; i++) {
+				lEsta_ens[i].contiene.remove(tematica);
 			}
 			return delete(tematica);
 		}
@@ -345,9 +345,9 @@ public class TematicaDAO {
 				tematica.getEs_una().setEs_una(null);
 			}
 			
-			ocl_proyecto.Noticia[] lEstá_ens = tematica.está_en.toArray();
-			for(int i = 0; i < lEstá_ens.length; i++) {
-				lEstá_ens[i].contiene.remove(tematica);
+			ocl_proyecto.Noticia[] lEsta_ens = tematica.esta_en.toArray();
+			for(int i = 0; i < lEsta_ens.length; i++) {
+				lEsta_ens[i].contiene.remove(tematica);
 			}
 			try {
 				session.delete(tematica);

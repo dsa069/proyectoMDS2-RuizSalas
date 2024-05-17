@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -23,7 +23,7 @@ public class TematicaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final IntegerExpression es_unaId;
 	public final AssociationExpression es_una;
 	public final StringExpression nombre;
-	public final CollectionExpression está_en;
+	public final CollectionExpression esta_en;
 	
 	public TematicaDetachedCriteria() {
 		super(ocl_proyecto.Tematica.class, ocl_proyecto.TematicaCriteria.class);
@@ -31,7 +31,7 @@ public class TematicaDetachedCriteria extends AbstractORMDetachedCriteria {
 		es_unaId = new IntegerExpression("es_una.idSeccion", this.getDetachedCriteria());
 		es_una = new AssociationExpression("es_una", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
-		está_en = new CollectionExpression("ORM_está_en", this.getDetachedCriteria());
+		esta_en = new CollectionExpression("ORM_esta_en", this.getDetachedCriteria());
 	}
 	
 	public TematicaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
@@ -40,15 +40,15 @@ public class TematicaDetachedCriteria extends AbstractORMDetachedCriteria {
 		es_unaId = new IntegerExpression("es_una.idSeccion", this.getDetachedCriteria());
 		es_una = new AssociationExpression("es_una", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
-		está_en = new CollectionExpression("ORM_está_en", this.getDetachedCriteria());
+		esta_en = new CollectionExpression("ORM_esta_en", this.getDetachedCriteria());
 	}
 	
 	public SeccionDetachedCriteria createEs_unaCriteria() {
 		return new SeccionDetachedCriteria(createCriteria("es_una"));
 	}
 	
-	public NoticiaDetachedCriteria createEstá_enCriteria() {
-		return new NoticiaDetachedCriteria(createCriteria("ORM_está_en"));
+	public NoticiaDetachedCriteria createEsta_enCriteria() {
+		return new NoticiaDetachedCriteria(createCriteria("ORM_esta_en"));
 	}
 	
 	public Tematica uniqueTematica(PersistentSession session) {

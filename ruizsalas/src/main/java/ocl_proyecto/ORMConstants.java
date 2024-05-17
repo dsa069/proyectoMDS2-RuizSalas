@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -34,7 +34,7 @@ public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	
 	final int KEY_TEMATICA_ES_UNA = -1049812738;
 	
-	final int KEY_TEMATICA_ESTÁ_EN = 1838140678;
+	final int KEY_TEMATICA_ESTA_EN = 1834327430;
 	
 	final int KEY_USUARIO_ESCRIBE = 932934526;
 	

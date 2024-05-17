@@ -1,5 +1,5 @@
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -34,7 +34,7 @@ public class CreateProyectoMDS2RuizSalas20232024Data {
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : es_una, portada
 			ocl_proyecto.SeccionDAO.save(locl_proyectoSeccion);
 			ocl_proyecto.Tematica locl_proyectoTematica = ocl_proyecto.TematicaDAO.createTematica();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : está_en, es_una
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : esta_en, es_una
 			ocl_proyecto.TematicaDAO.save(locl_proyectoTematica);
 			t.commit();
 		}

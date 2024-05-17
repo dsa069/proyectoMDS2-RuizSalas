@@ -8,7 +8,7 @@
  */
 
 /**
- * Licensee: Carlos Ruiz(University of Almeria)
+ * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ocl_proyecto;
@@ -23,8 +23,8 @@ public class Tematica implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORMConstants.KEY_TEMATICA_ESTÁ_EN) {
-			return ORM_está_en;
+		if (key == ORMConstants.KEY_TEMATICA_ESTA_EN) {
+			return ORM_esta_en;
 		}
 		
 		return null;
@@ -66,7 +66,7 @@ public class Tematica implements Serializable {
 	@org.hibernate.annotations.Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.LOCK})	
 	@JoinTable(name="Noticia_Tematica", joinColumns={ @JoinColumn(name="TematicaIdTematica") }, inverseJoinColumns={ @JoinColumn(name="NoticiaValoracionId_valoracion") })	
 	@org.hibernate.annotations.LazyCollection(org.hibernate.annotations.LazyCollectionOption.TRUE)	
-	private java.util.Set ORM_está_en = new java.util.HashSet();
+	private java.util.Set ORM_esta_en = new java.util.HashSet();
 	
 	public void setNombre(String value) {
 		this.nombre = value;
@@ -105,16 +105,16 @@ public class Tematica implements Serializable {
 		return es_una;
 	}
 	
-	private void setORM_Está_en(java.util.Set value) {
-		this.ORM_está_en = value;
+	private void setORM_Esta_en(java.util.Set value) {
+		this.ORM_esta_en = value;
 	}
 	
-	private java.util.Set getORM_Está_en() {
-		return ORM_está_en;
+	private java.util.Set getORM_Esta_en() {
+		return ORM_esta_en;
 	}
 	
 	@Transient	
-	public final ocl_proyecto.NoticiaSetCollection está_en = new ocl_proyecto.NoticiaSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMATICA_ESTÁ_EN, ORMConstants.KEY_NOTICIA_CONTIENE, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ocl_proyecto.NoticiaSetCollection esta_en = new ocl_proyecto.NoticiaSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMATICA_ESTA_EN, ORMConstants.KEY_NOTICIA_CONTIENE, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTematica());

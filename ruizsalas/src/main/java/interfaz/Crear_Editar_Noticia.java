@@ -25,7 +25,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		this.C_E_Noticia();
 		
 		this.getBotonEliminarNoticiaPropia().addClickListener(event->eliminar_cambios_noticia());
-		this.getBotonConfirmarModificaciónNoticia().addClickListener(event->guardar_cambios_noticia());
+		this.getBotonConfirmarModificacionNoticia().addClickListener(event->guardar_cambios_noticia());
 	}
 	
 	public void C_E_Noticia() {
