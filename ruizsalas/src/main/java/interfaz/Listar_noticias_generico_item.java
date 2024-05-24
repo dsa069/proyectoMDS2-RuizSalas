@@ -25,6 +25,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 		
 		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticiaUNR());
 		this.getTitular1().addClickListener(event->ConductorNoticia());
+		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
 	public void ConductorNoticiaUNR() {//Ir a noticia dependiendo del usuario

@@ -8,6 +8,7 @@ import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Label;
 
 @Tag("vista-listarnoticiasgenerico_item")
 @JsModule("./src/vista-listarnoticiasgenerico_item.ts")
@@ -38,9 +39,8 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	private Button botonImagenListarNoticias;
 	@Id("imagenListarNoticias")
 	private Image imagenListarNoticias;
-	@Id("ResumenNoticia")
-	private Element resumenNoticia;
-
+	@Id("resumenNoticia")
+	private Label resumenNoticia;
 	public Button getBotonImagenListarNoticias() {
 		return botonImagenListarNoticias;
 	}
@@ -137,11 +137,11 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 		this.imagenListarNoticias = imagenListarNoticias;
 	}
 
-	public Element getResumenNoticia() {
+	public Label getResumenNoticia() {
 		return resumenNoticia;
 	}
 
-	public void setResumenNoticia(Element resumenNoticia) {
+	public void setResumenNoticia(Label resumenNoticia) {
 		this.resumenNoticia = resumenNoticia;
 	}
 
