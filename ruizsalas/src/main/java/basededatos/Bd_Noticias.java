@@ -60,8 +60,15 @@ public class Bd_Noticias {
 	try {
 		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 		usuario = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
-		noticia.es_valorado_por.add(usuario);
-		NoticiaDAO.save(noticia);
+		
+		if(!noticia.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
+			noticia.es_valorado_por.add(usuario);
+			if(aValoracion)
+				noticia.setNum_likes(noticia.getNum_likes()+1);
+			else
+				noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
+			NoticiaDAO.save(noticia);
+		}
 		t.commit();
 	} catch (Exception e) {
 		t.rollback();

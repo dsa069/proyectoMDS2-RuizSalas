@@ -78,16 +78,16 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Seccion[] cargar_secciones_generico() {
 		try {
-			_bd_secciones.marcar_seccion(aIdSeccion, aId_noticia);
+			_bd_secciones.cargar_secciones_generico();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void marcar_seccion(int aIdSeccion, int aId_noticia) {
+	public void marcar_seccion(Seccion[] aSeccion, int aId_noticia) {
 		try {
-			_bd_secciones.marcar_seccion(aIdSeccion, aId_noticia);
+			_bd_secciones.marcar_seccion(aSeccion, aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

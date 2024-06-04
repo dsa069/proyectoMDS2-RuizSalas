@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import ocl_proyecto.Noticia;
+import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.Periodista;
 import ocl_proyecto.PeriodistaDAO;
 import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
@@ -34,9 +36,16 @@ public class BD_Tematicas {
 	public void marcar_tematica(int aId_Tematica, int aId_noticia) 
 		throws PersistentException {
 			Tematica tematica = null;
+			Noticia noticia = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			tematica = TematicaDAO.getTematicaByORMID(aId_Tematica);
+			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			if(!tematica.esta_en.contains(noticia))
+				tematica.esta_en.add(noticia);
+			else
+				tematica.esta_en.remove(noticia);
+			TematicaDAO.save(tematica);
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
