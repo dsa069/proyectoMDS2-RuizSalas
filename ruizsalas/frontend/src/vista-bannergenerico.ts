@@ -44,8 +44,8 @@ export class VistaBannergenerico extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 1; height: 100%; width: 100%;">
-  <vaadin-vertical-layout style="width: 10%; height: 100%; align-self: flex-end; flex-shrink: 0;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="width: 80%; flex-shrink: 0;">
+  <vaadin-vertical-layout style="height: 100%; align-self: flex-end; flex-shrink: 1; flex-grow: 0;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="flex-shrink: 1; flex-grow: 0;">
    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="noRegistradoLayout">
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="registroLayout">
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
@@ -55,14 +55,14 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 22px;">
        ¿Ya tienes cuenta? 
      </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
-      <vaadin-button style="flex-shrink: 0; color: black;" id="BotonCancelarRegistro">
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between; flex-grow: 0; align-items: center;">
+      <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 0;" id="BotonCancelarRegistro">
         Cancelar 
       </vaadin-button>
-      <vaadin-button style="flex-shrink: 0; color: black;" id="BotonIniciarSesion">
+      <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 0;" id="BotonIniciarSesion">
         Iniciar Sesión 
       </vaadin-button>
-      <vaadin-vertical-layout theme="spacing" id="botonConfirmarRegistroEstaticoLayout" style="flex-shrink: 1; align-self: center; align-items: center;"></vaadin-vertical-layout>
+      <vaadin-vertical-layout id="botonConfirmarRegistroEstaticoLayout" style="flex-shrink: 0; align-self: center; align-items: center;"></vaadin-vertical-layout>
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="iniciarSesionLayout">
@@ -137,7 +137,7 @@ export class VistaBannergenerico extends LitElement {
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="LayoutGenericoVistaGenerica" style="flex-shrink: 0; align-self: stretch; flex-grow: 1;"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout style="width: 10%; flex-shrink: 0; height: 100%; align-self: flex-end;" id="ZonaAnunciosLayout2"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="flex-shrink: 1; height: 100%; align-self: flex-end; flex-grow: 0; align-items: flex-end;" id="ZonaAnunciosLayout2"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;

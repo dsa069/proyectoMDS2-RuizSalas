@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-listarnoticiasgenerico_item')
 export class VistaListarnoticiasgenerico_item extends LitElement {
@@ -18,23 +18,23 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutGenericoListarNoticiasGenerico">
- <vaadin-horizontal-layout theme="spacing-xl" style="width: 100%; height: 10%; font-size: 32px; align-items: center;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%; height: 57%;">
+ <vaadin-horizontal-layout style="width: 100%; height: 10%; font-size: 32px; align-items: flex-start; flex-shrink: 0;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0;">
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">
-   <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 1; width: 33%; height: 100%;">
-    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 82%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="botonImagenListarNoticias">
-     <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" width="200%" height="200%" " id="imagenListarNoticias">
+   <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 0; width: 33%; align-items: flex-start; justify-content: flex-end;">
+    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 80%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;" id="botonImagenListarNoticias">
+     <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" width="" height="" id="imagenListarNoticias" style="width: 100%; height: 100%;">
     </vaadin-button>
     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size:50px; width: 100%; color: black; flex-grow: 0; flex-shrink: 0; height: 10%;" id="Titular1">
       Titular 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 1; width: 33%; font-size: 15px; height: 100%;">
+   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 1; width: 33%; font-size: 15px;">
     <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; width: 100%; align-items: center;">
-     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 50px; width: 100%; height: 100%; color: black; flex-grow: 1;" id="Titular2">
+     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 50px; width: 100%; height: 100%; color: black; flex-grow: 0; flex-shrink: 1;" id="Titular2">
        Titular2 
      </vaadin-button>
-     <vaadin-horizontal-layout style="font-size: 30px; align-self: center; align-items: center;" id="VerValoracion"></vaadin-horizontal-layout>
+     <vaadin-horizontal-layout style="font-size: 30px; align-items: flex-start; flex-shrink: 1; justify-content: flex-start; align-self: center;" id="VerValoracion"></vaadin-horizontal-layout>
      <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 1; width: 10%; height: 60%; background-color: var(--lumo-contrast-0pct);" id="QuitarNoticiaDeSeccion">
       <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
      </vaadin-button>

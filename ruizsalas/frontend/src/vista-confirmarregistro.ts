@@ -16,7 +16,7 @@ export class VistaConfirmarregistro extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-button id="BotonConfirmarRegistro">
+ <vaadin-button id="BotonConfirmarRegistro" style="color: black; flex-shrink: 0;">
    Confirmar 
  </vaadin-button>
 </vaadin-vertical-layout>
