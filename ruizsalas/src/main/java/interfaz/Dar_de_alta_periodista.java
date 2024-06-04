@@ -2,6 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iEditor;
+
 public class Dar_de_alta_periodista extends Banner_Editor {
 	//private JButton _registrar_periodista;
 	public Editor _unnamed_Editor_;
@@ -9,6 +12,9 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	public Lista_periodistas LP;
 	
 	ocl_proyecto.Editor editor;
+	ocl_proyecto.Periodista periodista;
+	
+	iEditor iEdito = new BD_Principal();
 
 	public Dar_de_alta_periodista(Editor _editor, ocl_proyecto.Editor editor) {
 		super(_editor, editor);
@@ -35,6 +41,7 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 
 	public void registrar_periodista() {
 		//GUardar cambios y añador
+		iEdito.registrar_periodista(periodista.getApodo(), periodista.getDni(), periodista.getCorreo(), periodista.getContrasena(), periodista.getFoto_de_perfil());
 		this.ConductorListaPeriodistas();
 		throw new UnsupportedOperationException();
 	}

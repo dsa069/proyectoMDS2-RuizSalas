@@ -1,5 +1,7 @@
 package interfaz;
 
+import basededatos.BD_Principal;
+import basededatos.iEditor;
 import vistas.*;
 
 public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
@@ -9,6 +11,11 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 //	private JLabel _foto;
 //	private JLabel _version;
 	public Noticias_a_Revisar _noticias_a_Revisar;
+	
+	ocl_proyecto.Noticia notice;
+	
+	iEditor iEdito = new BD_Principal();
+	
 	public Noticias_a_Revisar_item(Noticias_a_Revisar padre, ocl_proyecto.Noticia Notas) {
 		super(padre,Notas);
 		this._noticias_a_Revisar = padre;
@@ -35,11 +42,13 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 	
 	public void agregar_noticia() {
 		//Operación base de datos
+		iEdito.agregar_noticia(notice.getId_noticia(), notice.getAgregada());
 		throw new UnsupportedOperationException();
 	}
 
 	public void no_agregar_noticia() {
 		//Operacion base de datos
+		iEdito.no_agregar_noticia(notice.getId_noticia());
 		throw new UnsupportedOperationException();
 	}
 }

@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iEditor;
 import vistas.VistaCreareditarseccionestematicas;
 
 public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionestematicas{
@@ -12,6 +14,10 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	//	private JScrollPanel _scroll;
 	public Editor _unnamed_Editor_;
 	public Lista_secciones_Editor _contiene;
+	
+	ocl_proyecto.Seccion seccionBD;
+	
+	iEditor iEdito = new BD_Principal();
 
 	public Crear_Editar_Secciones_Tematicas(Editor editor) {
 		super();
@@ -21,8 +27,10 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 		this.getBotonCrearNuevaTematica().addClickListener(event->anadir_seccion());
 	}
 
+	//NS SI ES CORRECTO PQ ES CREAR
 	public void anadir_seccion() {
 		//Operacion base de datos anadir
+		iEdito.anadir_seccion(this.seccionBD.getNombre());
 		throw new UnsupportedOperationException();
 	}
 

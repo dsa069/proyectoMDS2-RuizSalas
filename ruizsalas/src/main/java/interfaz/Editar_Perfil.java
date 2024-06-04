@@ -2,6 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iRegistrado;
+
 public class Editar_Perfil extends Banner_suscrito {
 	//private JButton _guardar_cambios;
 	public Registrado _unnamed_Registrado_;
@@ -9,6 +12,8 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Perfil_Usuario perfil;
 	
 	ocl_proyecto.Usuario_suscrito_ registrado;
+	
+	iRegistrado iRegistrao = new BD_Principal();
 	
 	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ registrado) {
 		super(_registrado, registrado);
@@ -32,6 +37,7 @@ public class Editar_Perfil extends Banner_suscrito {
 
 	public void guardar_cambios() {//CUANDO TENGAMOS LA BASE DE DATOS PONER DISTINCION ENTRE UR Y DEMAS
 		//Operacion de guardar
+		iRegistrao.guardar_cambios(this.registrado.getIdUsuario(), this.registrado.getApodo(), this.registrado.getDni(), this.registrado.getCorreo(), this.registrado.getContrasena(), this.registrado.getFoto_de_perfil(), this.registrado.getTarjeta_de_credito());
 		this.ConductorPerfilSuscrito();
 		//throw new UnsupportedOperationException();
 	}

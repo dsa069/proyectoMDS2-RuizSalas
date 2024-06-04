@@ -2,6 +2,9 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iEditor;
+
 public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	public Editor editor;
 	public Banner_Editor banner_Editor;
@@ -9,6 +12,9 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	public Lista_Secciones_noticia listaSeccionesNoticia;
 	
 	ocl_proyecto.Editor editorBD;
+	ocl_proyecto.Noticia notice;
+	
+	iEditor iEdito = new BD_Principal();
 	
 	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Noticia noticia) {
 		super(editor, noticia);
@@ -22,6 +28,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.Seleccion_Tematica();
 		
 		this.getEliminarNoticia().addClickListener(event->BorrarNoticia());
+		this.getEliminarNoticia().addClickListener(event->eliminar_noticia());
 	}
 	
 	@Override
@@ -45,6 +52,10 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		banner_Editor = new Banner_Editor(this.editor, this.editorBD);
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner_Editor);
+	}
+	
+	public void eliminar_noticia() {
+		iEdito.eliminar_noticia(this.notice.getId_noticia());
 	}
 
 }
