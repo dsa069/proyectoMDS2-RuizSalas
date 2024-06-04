@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iPeriodista;
+import ocl_proyecto.Noticia;
 import vistas.*;
 
 public class Lista_mis_noticias extends Listar_noticias_generico {
@@ -25,7 +26,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		notice = cargar_lista_mis_noticias();
 		for (int i=0; i<notice.length; i++) {
 			Lista_mis_noticias_item LMNI = new Lista_mis_noticias_item(this, notice[i]);
-			this.getLayoutSeccionesContenidasPeriodico().add(LMNI);
+			this.getListaSimpleNoticias().as(VerticalLayout.class).add(LMNI);
 		}
 	}
 	

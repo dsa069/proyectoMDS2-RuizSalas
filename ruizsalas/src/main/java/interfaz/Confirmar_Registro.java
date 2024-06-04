@@ -11,7 +11,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	public Introducir_datos_registro _contiene;
 	public Enviar_Correo_Confirmacion _procede_a;
 	
-	ocl_proyecto.Usuario usuario;
+	ocl_proyecto.Usuario_suscrito_ usuario;
 	
 	iUsuario_No_Registrado iUNR = new BD_Principal();
 	
@@ -43,7 +43,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	}
 
 	public void gestionar_Transaccion() {
-		iUNR.gestionar_Transaccion(usuario.getApodo(), usuario.getDni(), usuario.getCorreo(), usuario.getContrasena());
+		iUNR.gestionar_Transaccion(usuario.getApodo(), usuario.getDni(), usuario.getCorreo(), usuario.getTarjeta_de_credito());
 		throw new UnsupportedOperationException();
 	}
 }
