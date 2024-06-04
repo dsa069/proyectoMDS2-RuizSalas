@@ -19,7 +19,7 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 2400px; height: 900px;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout theme="" style="width: 100%; flex-shrink: 0; justify-content: space-between;">
   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;">
    <iron-icon icon="lumo:plus"></iron-icon>
