@@ -1,4 +1,6 @@
 package interfaz;
+import basededatos.BD_Principal;
+import basededatos.iEditor;
 import vistas.*;
 
 public class Periodistas_item extends VistaPeriodistas_item {
@@ -6,6 +8,7 @@ public class Periodistas_item extends VistaPeriodistas_item {
 //	private JLabel _foto_periodista;
 //	private JLabel _apodo_periodista;
 	public Periodistas _periodistas;
+	iEditor ieditor = new BD_Principal();
 	ocl_proyecto.Periodista periodista;
 	public Periodistas_item(Periodistas _periodistas, ocl_proyecto.Periodista periodista) {
 		super();
@@ -18,7 +21,6 @@ public class Periodistas_item extends VistaPeriodistas_item {
 	}
 
 	public void baja_periodista() {
-		//bd operacion
-		throw new UnsupportedOperationException();
+		ieditor.baja_periodista(periodista.getIdUsuario());
 	}
 }

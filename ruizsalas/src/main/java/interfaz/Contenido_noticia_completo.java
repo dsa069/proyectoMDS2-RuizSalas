@@ -2,10 +2,17 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iRegistrado;
+import basededatos.iUsuario_Registardo;
+
 public class Contenido_noticia_completo extends Noticia {
 	public Registrado _registrado;
+	public iRegistrado iregistrado = new BD_Principal();
 	
 	ocl_proyecto.Usuario usuario;
+	ocl_proyecto.Noticia noticia;
+	
 	
 	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Noticia noticia) {
 		super(registrado, noticia);
@@ -18,8 +25,8 @@ public class Contenido_noticia_completo extends Noticia {
 		
 //		this.getNoticiaCompleta().setText(noticia.getTexto_largo());
 		
-		this.getBotonLikeNoticia().addClickListener(event->DarLike());
-		this.getBotonNotLikeNoticia().addClickListener(event->DarDislike());
+		this.getBotonLikeNoticia().addClickListener(event->valorar_noticia(true));
+		this.getBotonNotLikeNoticia().addClickListener(event->valorar_noticia(false));
 	}
 	
 	@Override
@@ -28,11 +35,7 @@ public class Contenido_noticia_completo extends Noticia {
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	
-	public void DarLike() {
-		//operacion BD
-	}
-	
-	public void DarDislike() {
-		//operacion BD
+	public void valorar_noticia(boolean valoracion) {
+		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_noticia(), valoracion);
 	}
 }

@@ -27,7 +27,4 @@ public class Noticia_completa extends Banner_suscrito {
 		this.getNoticiaLayout().add(this.Noticia);
 	}
 
-	public void valorar_noticia() {
-		throw new UnsupportedOperationException();
-	}
 }

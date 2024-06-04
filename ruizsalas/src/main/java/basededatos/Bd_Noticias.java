@@ -1,9 +1,20 @@
 package basededatos;
 
 import java.util.Vector;
+
+import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
+
 import ocl_proyecto.Noticia;
+import ocl_proyecto.Periodista;
+import ocl_proyecto.NoticiaDAO;
+import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
+
 import java.util.Date;
 import ocl_proyecto.Tematica;
+import ocl_proyecto.UsuarioDAO;
+import ocl_proyecto.Usuario_suscrito_;
+import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
@@ -41,8 +52,22 @@ public class Bd_Noticias {
 		throw new UnsupportedOperationException();
 	}
 
-	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) {
-		throw new UnsupportedOperationException();
+	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) 
+	throws PersistentException {
+		Noticia noticia = null;
+		Usuario_suscrito_ usuario = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+	try {
+		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+		usuario = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
+		noticia.es_valorado_por.add(usuario);
+		NoticiaDAO.save(noticia);
+		t.commit();
+	} catch (Exception e) {
+		t.rollback();
+	}
+	//	ProyectoPersistentManager.instance().disposePersistentManager();
+
 	}
 
 	public Noticia[] Buscar(String aBusqueda) {
