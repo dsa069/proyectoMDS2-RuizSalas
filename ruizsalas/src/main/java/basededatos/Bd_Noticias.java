@@ -80,4 +80,8 @@ public class Bd_Noticias {
 	public Noticia[] Buscar(String aBusqueda) {
 		throw new UnsupportedOperationException();
 	}
+	
+	public Noticia[] cargar_lista_mis_noticias(int aIdUsuario) {
+		throw new UnsupportedOperationException();
+	}
 }

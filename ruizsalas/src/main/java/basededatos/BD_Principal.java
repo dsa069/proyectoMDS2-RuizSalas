@@ -233,6 +233,18 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
+	//HOMEMADE
+	public Noticia[] cargar_lista_mis_noticias(int aIdUsuario) {
+		try {
+			_bd_noticias.cargar_lista_mis_noticias(aIdUsuario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 	public Comentario[] cargar_listar_comenatrios(int aId_Noticia) {
 		try {
 			_bd_comentarios.cargar_listar_comenatrios(aId_Noticia);
