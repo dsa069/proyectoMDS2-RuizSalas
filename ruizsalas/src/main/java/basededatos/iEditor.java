@@ -24,7 +24,7 @@ public interface iEditor extends iRegistrado {
 
 	public void no_agregar_noticia(int aId_noticia);
 
-	public void quitar_noticia_de_seccion(int aId_noticia);
+	public void quitar_noticia_de_seccion(int aId_noticia, int aIdSeccion);
 
 	public void eliminar_noticia(int aId_noticia);
 

@@ -8,6 +8,7 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	public Lista_noticas_Editor _lista_noticas_Editor;
 	
 	ocl_proyecto.Noticia notice;
+	ocl_proyecto.Seccion seccion;
 	
 	iEditor iEdito = new BD_Principal();
 
@@ -22,7 +23,7 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	
 	public void quitar_noticia_de_seccion() {
 		//Operación de la base de datos eliminar de la sección
-		iEdito.quitar_noticia_de_seccion(this.notice.getId_noticia());
+		iEdito.quitar_noticia_de_seccion(this.notice.getId_noticia(), this.seccion.getIdSeccion());
 		throw new UnsupportedOperationException();
 	}
 }
