@@ -50,7 +50,12 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	}
 
 	public Seccion[] cargar_secciones_seleccion() {
-		throw new UnsupportedOperationException(); //NOSE SI HACE FALTA, SE VERÁ
+		try {
+			_bd_secciones.cargar_secciones_seleccion();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public ocl_proyecto.Periodista[] cargar_periodistas() {
@@ -156,7 +161,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public ocl_proyecto.Periodista registrar_periodista(String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_periodistas.registrar_periodista(aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -174,7 +179,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Tematica[] cargar_tematicas_seleccion() {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_tematicas.cargar_tematicas_seleccion();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -183,7 +188,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_comentarios.valorar_comentario(aIdUsuario, aIdComentario, aValoracion);;
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -192,7 +197,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Comentario escribir_comentario(String aTexto) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_comentarios.escribir_comentario(aTexto);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -208,9 +213,11 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, String aTarjeta_de_credito) {
+	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, int aTarjeta_de_credito) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_editores.guardar_cambios_Editor(aIdUsuario, aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil);
+			_bd_periodistas.guardar_cambios_Periodista(aIdUsuario, aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil);
+			_bd_us_suscritos.guardar_cambios_US(aIdUsuario, aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil, aTarjeta_de_credito);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -219,7 +226,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Tematica[] cargar_tematicas(int aId_noticia) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_tematicas.cargar_tematicas(aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -228,7 +235,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Comentario[] cargar_listar_comenatrios(int aId_Noticia) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_comentarios.cargar_listar_comenatrios(aId_Noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -237,7 +244,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public Noticia[] Buscar(String aBusqueda) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_noticias.Buscar(aBusqueda);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -246,7 +253,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void eliminar_noticia_propia(int aId_noticia) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_noticias.eliminar_noticia_propia(aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -255,68 +262,47 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_noticias.guardar_cambios_noticia(aId_noticia, aTexto_corto, aTexto_largo, aTitulo, aImagen_principal, aUbicacion, aFecha, aTematicas);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void cancelar_cobro_suscripcion(String aApodo, String aDni, String aCorreo, String aTarjeta_de_credito) {
-		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void cancelar_cobro_suscripcion(String aApodo, String aDni, String aCorreo, int aTarjeta_de_credito) {
+
 	}
 
 	public void cancelar_cobro_suscripcion(int aIdUsuario) {
-		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
 	public void enviar_Correo_Confirmacion(String aApodo, String aDni, String aCorreo) {
-		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
 	}
 
-	public void gestionar_Transaccion(String aApodo, String aDni, String aCorreo, String aTarjeta_de_credito) {
-		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void gestionar_Transaccion(String aApodo, String aDni, String aCorreo, int aTarjeta_de_credito) {
+
 	}
 
 	public void enviar_Correo_Confirmacion() {
-		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	}
+		
+		}
 
-	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, String aTarjeta_de_credito) {
+	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, int aFoto_de_perfil, String aDni, String aTarjeta_de_credito) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aTarjeta_de_credito, aDni, aFoto_de_perfil);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}	}
+		}	
+		}
 
 	public ocl_proyecto.Usuario confirmar_Datos(String aCorreo, String aContrasena) {
 		try {
-			_bd_periodistas.baja_periodista(aIdUsuario);
+			_bd_editores.confirmar_Datos_Editor(aCorreo, aContrasena);
+			_bd_periodistas.confirmar_Datos_Periodista(aCorreo, aContrasena);
+			_bd_us_suscritos.confirmar_Datos_US(aCorreo, aContrasena);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

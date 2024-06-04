@@ -12,7 +12,7 @@ public class BD_Usuarios_suscritos {
 		throw new UnsupportedOperationException();
 	}
 
-	public Usuario crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, String aTarjeta_de_credito) {
+	public Usuario crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
 		throw new UnsupportedOperationException();
 	}
 
@@ -20,7 +20,7 @@ public class BD_Usuarios_suscritos {
 		throw new UnsupportedOperationException();
 	}
 
-	public void guardar_cambios_US(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, String aTarjeta_de_credito) {
+	public void guardar_cambios_US(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, int aTarjeta_de_credito) {
 		throw new UnsupportedOperationException();
 	}
 }
