@@ -19,16 +19,16 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;">
+<vaadin-vertical-layout style="width: 2400px; height: 900px;">
  <vaadin-horizontal-layout theme="" style="width: 100%; flex-shrink: 0; justify-content: space-between;">
-  <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; flex-shrink: 0; flex-grow: 1; width: 100%;">
+  <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;">
    <iron-icon icon="lumo:plus"></iron-icon>
   </vaadin-button>
-  <vaadin-vertical-layout style="height: 100%; justify-content: center; flex-shrink: 0; flex-grow: 1; width: 100%;">
+  <vaadin-vertical-layout style="height: 100%; justify-content: center; flex-shrink: 1; flex-grow: 1; width: 100%;">
    <vaadin-text-field label="Fecha" placeholder="Insertar Fecha" style="width: 100%;"></vaadin-text-field>
    <vaadin-text-field label="Ubicación" placeholder="Insertar Ubicación" style="width: 100%;"></vaadin-text-field>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout style="height: 100%; flex-grow: 1; flex-shrink: 0; width: 100%;" id="seleccionarTematicasEstatico"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="height: 100%; flex-grow: 1; flex-shrink: 1; width: 100%;" id="seleccionarTematicasEstatico"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1;">
   <vaadin-text-field placeholder="Insertar Título" style="width: 100%; margin: var(--lumo-space-m);"></vaadin-text-field>

@@ -85,10 +85,10 @@ export class VistaBannergenerico extends LitElement {
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="crearEditarNoticiaLayout">
      <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="crearEditarNoticiaEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct);" id="BotonEliminarNoticiaPropia">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 5%; background-color: var(--lumo-contrast-0pct);" id="BotonEliminarNoticiaPropia">
        <iron-icon style="width: 100%; height: 100%;" src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png"></iron-icon>
       </vaadin-button>
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct);" id="BotonConfirmarModificacionNoticia">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 5%; background-color: var(--lumo-contrast-0pct);" id="BotonConfirmarModificacionNoticia">
        <iron-icon style="width: 100%; height: 100%;" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ1aasFk2CpyAtSah2dIdd6b7uLMDLhA4Zs5Jx7XqFzgQ_NFs_4"></iron-icon>
       </vaadin-button>
      </vaadin-horizontal-layout>
