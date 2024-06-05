@@ -10,7 +10,10 @@ import ocl_proyecto.Periodista;
 import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import ocl_proyecto.Tematica;
 import ocl_proyecto.TematicaDAO;
 import ocl_proyecto.UsuarioDAO;
@@ -19,7 +22,7 @@ import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
-	public Vector<Noticia> _contiene_noticias = new Vector<Noticia>();
+	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
 
 	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada) {
 		throw new UnsupportedOperationException();
@@ -123,6 +126,7 @@ public class Bd_Noticias {
 		
 		if(!noticia.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 			noticia.es_valorado_por.add(usuario);
+			usuario.realiza.add(noticia);
 			if(aValoracion)
 				noticia.setNum_likes(noticia.getNum_likes()+1);
 			else
@@ -137,8 +141,19 @@ public class Bd_Noticias {
 
 	}
 
-	public Noticia[] Buscar(String aBusqueda) {
-		throw new UnsupportedOperationException();
+	public Noticia[] Buscar(String aBusqueda) 
+		throws PersistentException {
+			Noticia[] noticias = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"titulo LIKE '%"+aBusqueda+"%'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return noticias;
 	}
 	
 	public Noticia[] cargar_lista_mis_noticias(int aIdUsuario) {

@@ -200,9 +200,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public Comentario escribir_comentario(String aTexto) {
+	public Comentario escribir_comentario(String aTexto, int aIdUsuario) {
 		try {
-			return _bd_comentarios.escribir_comentario(aTexto);
+			return _bd_comentarios.escribir_comentario(aTexto, aIdUsuario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -41,7 +41,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	//NS SI ES CORRECTO PQ ES CREAR
 	public void escribir_comentario() {
-		iRegitrao.escribir_comentario(comentario.getTexto());
+		iRegitrao.escribir_comentario(comentario.getTexto(), user.getIdUsuario());
 		//throw new UnsupportedOperationException();
 	}
 }

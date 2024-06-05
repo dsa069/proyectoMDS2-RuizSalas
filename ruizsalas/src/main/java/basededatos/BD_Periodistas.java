@@ -59,8 +59,19 @@ public class BD_Periodistas {
 		return periodista;
 	}
 
-	public Usuario confirmar_Datos_Periodista(String aCorreo, String aContrasena) {
-		throw new UnsupportedOperationException();
+	public Usuario confirmar_Datos_Periodista(String aCorreo, String aContrasena) 
+		throws PersistentException {
+			Periodista periodista = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			periodista = PeriodistaDAO.loadPeriodistaByQuery(
+					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return periodista;
 	}
 
 	public void guardar_cambios_Periodista(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil) 
