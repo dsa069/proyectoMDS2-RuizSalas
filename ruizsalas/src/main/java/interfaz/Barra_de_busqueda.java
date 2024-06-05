@@ -18,8 +18,8 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		super();
 		this.usuario = usuario;
 
-		//this.getBarraBuscarNoticia().addClickListener(event->ConductorBusquedaFallida())); como hacer clicklistenner?
-		//this.getBarraBuscarNoticia().addClickListener(event->notice = Buscar()); HACE FALTA UN BOTÓN PARA BUSCAR
+		//this.getBotonRealizadorBusqueda().addClickListener(event->ConductorBusquedaFallida()); ESTO DONDE DEBERÍA ESTAR????????????????????
+		this.getBotonRealizadorBusqueda().addClickListener(event->notice = Buscar());
 		for (int i=0; i<notice.length; i++) {
 			//Item de algo ns de que PQ NO ENTIENDO NADA
 			//this.getLayoutGenericoDeBuscarNoticia().as(VerticalLayout.class).add(null); Añadimos el objeto que creamos del item PERO QUE ITEM PUES DI SI
@@ -36,8 +36,8 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		//HACER
 	}
 
-	public void Buscar() {
+	public Noticia[] Buscar() {
 		//if(error)this.ConductorBusquedafallida else conductorBuscar noticas
-		//return iUsu.Buscar(this.getBarraBuscarNoticia()); TEXTFIELD != STRING NO ENTIENDO ESTA ASIGNATURA
+		return iUsu.Buscar(this.getBarraBuscarNoticia().toString()); //Imaginemos cosas chingonas
 	}
 }

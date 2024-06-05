@@ -6,6 +6,7 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-barradebusqueda")
 @JsModule("./src/vista-barradebusqueda.ts")
@@ -15,8 +16,8 @@ public class VistaBarradebusqueda extends LitTemplate {
 	private TextField barraBuscarNoticia;
 	@Id("layoutGenericoDeBuscarNoticia")
 	private Element layoutGenericoDeBuscarNoticia;
-
-
+	@Id("BotonRealizadorBusqueda")
+	private Button botonRealizadorBusqueda;
 	public Element getLayoutGenericoDeBuscarNoticia() {
 		return layoutGenericoDeBuscarNoticia;
 	}
@@ -34,6 +35,16 @@ public class VistaBarradebusqueda extends LitTemplate {
 
 	public void setBarraBuscarNoticia(TextField barraBuscarNoticia) {
 		this.barraBuscarNoticia = barraBuscarNoticia;
+	}
+
+
+	public Button getBotonRealizadorBusqueda() {
+		return botonRealizadorBusqueda;
+	}
+
+
+	public void setBotonRealizadorBusqueda(Button botonRealizadorBusqueda) {
+		this.botonRealizadorBusqueda = botonRealizadorBusqueda;
 	}
 
 
