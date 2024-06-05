@@ -10,6 +10,7 @@ import ocl_proyecto.Seccion;
 // import ocl_proyecto.Periodista;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Tematica;
+import ocl_proyecto.Usuario;
 import ocl_proyecto.Comentario;
 import java.util.Date;
 
@@ -89,7 +90,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
-	public void marcar_seccion(Seccion[] aSeccion, int aId_noticia) {
+	public void marcar_seccion(int aSeccion, int aId_noticia) {
 		try {
 			_bd_secciones.marcar_seccion(aSeccion, aId_noticia);
 		} catch (PersistentException e) {
@@ -311,9 +312,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		
 		}
 
-	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, int aFoto_de_perfil, String aDni, String aTarjeta_de_credito) {
+	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
 		try {
-			return _bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aTarjeta_de_credito, aDni, aFoto_de_perfil);
+			return _bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aFoto_de_perfil , aDni, aTarjeta_de_credito);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -332,4 +333,5 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}	
 		return null;
 	}
+
 }

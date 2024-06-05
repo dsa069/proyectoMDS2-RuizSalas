@@ -1,5 +1,7 @@
 package basededatos;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -17,22 +19,35 @@ import ocl_proyecto.TematicaDAO;
 
 public class BD_Secciones {
 	public BD_Principal _bd_cont_secciones;
+	public Bd_Noticias _bd_noticias = new Bd_Noticias();
 	public BD_Tematicas _bd_tematicas = new BD_Tematicas();
-	public Vector<Seccion> _contiene_secciones = new Vector<Seccion>();
+	public ArrayList<Seccion> _contiene_secciones = new ArrayList<Seccion>();
 
 	public Seccion[] cargar_secciones_seleccion() {
-		throw new UnsupportedOperationException();
+
 	}
 
 	public Seccion[] cargar_secciones_vista_editor() {
 		throw new UnsupportedOperationException();
 	}
 
-	public Seccion[] cargar_secciones_generico() {
-		throw new UnsupportedOperationException();
+	public Seccion[] cargar_secciones_generico() 
+		throws PersistentException {
+			List seccion = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			//seccion = SeccionDAO.getSeccionByORMID(aIdSeccion);
+			_bd_noticias.cargar_secciones_generico(0);
+
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return seccion;
 	}
 
-	public void marcar_seccion(Seccion[] aSeccion, int aId_noticia) 
+	public void marcar_seccion(int aSeccion, int aId_noticia) 
 		throws PersistentException {
 			Seccion seccion = null;
 			Noticia noticia = null;

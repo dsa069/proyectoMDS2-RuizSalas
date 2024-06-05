@@ -33,7 +33,20 @@ public class Bd_Noticias {
 	}
 
 	public Noticia[] cargar_secciones_generico(int aIdSeccion) {
-		throw new UnsupportedOperationException();
+		throws PersistentException {
+			Noticia[] noticias = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"idSeccion LIKE '%"+aIdSeccion+"%'", null);
+					
+
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return noticias;
 	}
 
 	public void eliminar_noticia_propia(int aId_noticia)
