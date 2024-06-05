@@ -32,15 +32,13 @@ public class Bd_Noticias {
 		throw new UnsupportedOperationException();
 	}
 
-	public Noticia[] cargar_secciones_generico(int aIdSeccion) {
+	public Noticia[] cargar_secciones_generico(int aIdSeccion) 
 		throws PersistentException {
 			Noticia[] noticias = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"idSeccion LIKE '%"+aIdSeccion+"%'", null);
-					
-
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();

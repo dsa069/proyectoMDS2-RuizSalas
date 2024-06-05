@@ -24,7 +24,7 @@ public class BD_Secciones {
 	public ArrayList<Seccion> _contiene_secciones = new ArrayList<Seccion>();
 
 	public Seccion[] cargar_secciones_seleccion() {
-
+		throw new UnsupportedOperationException();
 	}
 
 	public Seccion[] cargar_secciones_vista_editor() {
@@ -33,12 +33,12 @@ public class BD_Secciones {
 
 	public Seccion[] cargar_secciones_generico() 
 		throws PersistentException {
-			List seccion = null;
+			Seccion[] seccion = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			//seccion = SeccionDAO.getSeccionByORMID(aIdSeccion);
-			_bd_noticias.cargar_secciones_generico(0);
-
+			seccion = SeccionDAO.listSeccionByQuery(null, null);
+			for(Seccion secc : seccion) 
+				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
