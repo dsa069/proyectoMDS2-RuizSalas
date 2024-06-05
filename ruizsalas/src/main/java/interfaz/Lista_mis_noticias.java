@@ -14,6 +14,8 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Vector<Lista_mis_noticias_item> _item = new Vector<Lista_mis_noticias_item>();
 	public Noticia[] notice;
 	
+	ocl_proyecto.Usuario user;
+	
 	iPeriodista iPeriodita = new BD_Principal();
 	
 	public Periodista periodista;
@@ -23,7 +25,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
-		notice = cargar_lista_mis_noticias();
+		notice = cargar_listar_mis_noticias();
 		for (int i=0; i<notice.length; i++) {
 			Lista_mis_noticias_item LMNI = new Lista_mis_noticias_item(this, notice[i]);
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(LMNI);
@@ -36,7 +38,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 	}
 	
-	public Noticia[] cargar_lista_mis_noticias() {
-		return iPeriodita.cargar_lista_mis_noticias();
+	public Noticia[] cargar_listar_mis_noticias() {
+		return iPeriodita.cargar_lista_mis_noticias(user.getIdUsuario());
 	}
 }
