@@ -39,6 +39,6 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	}
 	
 	public Noticia[] cargar_listar_mis_noticias() {
-		return iPeriodita.cargar_lista_mis_noticias(user.getIdUsuario());
+		return iPeriodita.cargar_listar_mis_noticias(user.getIdUsuario());
 	}
 }
