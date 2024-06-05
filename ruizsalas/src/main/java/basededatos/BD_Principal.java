@@ -110,8 +110,8 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void borrar_seccion(int aIdSeccion, int aIdTematica) {
 		try {
-			_bd_secciones.borrar_seccion(aIdSeccion, aIdTematica);
-			_bd_tematicas.borrar_seccion(aIdSeccion, aIdTematica);
+			_bd_secciones.borrar_seccion(aIdSeccion);
+			_bd_tematicas.borrar_seccion(aIdSeccion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -242,9 +242,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	}
 
 	//HOMEMADE
-	public Noticia[] cargar_lista_mis_noticias(int aIdUsuario) {
+	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) {
 		try {
-			return _bd_noticias.cargar_lista_mis_noticias(aIdUsuario);
+			return _bd_noticias.cargar_listar_mis_noticias(aIdUsuario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -324,8 +324,10 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public ocl_proyecto.Usuario confirmar_Datos(String aCorreo, String aContrasena) {
 		try {
-			return _bd_editores.confirmar_Datos_Editor(aCorreo, aContrasena);
-			return _bd_periodistas.confirmar_Datos_Periodista(aCorreo, aContrasena);
+			if(_bd_editores.confirmar_Datos_Editor(aCorreo, aContrasena) != null)
+				return _bd_editores.confirmar_Datos_Editor(aCorreo, aContrasena);
+			if(_bd_periodistas.confirmar_Datos_Periodista(aCorreo, aContrasena)!= null)
+				return _bd_periodistas.confirmar_Datos_Periodista(aCorreo, aContrasena);
 			return _bd_us_suscritos.confirmar_Datos_US(aCorreo, aContrasena);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

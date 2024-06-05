@@ -23,12 +23,34 @@ public class BD_Secciones {
 	public BD_Tematicas _bd_tematicas = new BD_Tematicas();
 	public ArrayList<Seccion> _contiene_secciones = new ArrayList<Seccion>();
 
-	public Seccion[] cargar_secciones_seleccion() {
-		throw new UnsupportedOperationException();
+	public Seccion[] cargar_secciones_seleccion() 
+		throws PersistentException {
+			Seccion[] seccion = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			seccion = SeccionDAO.listSeccionByQuery(null, null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return seccion;
 	}
 
-	public Seccion[] cargar_secciones_vista_editor() {
-		throw new UnsupportedOperationException();
+	public Seccion[] cargar_secciones_vista_editor() 
+		throws PersistentException {
+			Seccion[] seccion = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			seccion = SeccionDAO.listSeccionByQuery(null, null);
+			for(Seccion secc : seccion) 
+				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return seccion;
 	}
 
 	public Seccion[] cargar_secciones_generico() 
@@ -85,7 +107,7 @@ public class BD_Secciones {
 		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
-	public void borrar_seccion(int aIdSecccion, int aIdTematica)
+	public void borrar_seccion(int aIdSecccion)
 		throws PersistentException {
 			Seccion seccion = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();

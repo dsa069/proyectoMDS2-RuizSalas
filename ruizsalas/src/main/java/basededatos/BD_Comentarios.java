@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -11,15 +12,27 @@ import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Editor;
 import ocl_proyecto.EditorDAO;
+import ocl_proyecto.Noticia;
 import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
 
 public class BD_Comentarios {
 	public BD_Principal _bd_cont_comentarios;
-	public Vector<Comentario> _contiene_comentarios = new Vector<Comentario>();
+	public ArrayList<Comentario> _contiene_comentarios = new ArrayList<Comentario>();
 
-	public Comentario[] cargar_listar_comenatrios(int aId_noticia) {
-		throw new UnsupportedOperationException();
+	public Comentario[] cargar_listar_comenatrios(int aId_noticia) 
+		throws PersistentException {
+			Comentario[] comentarios = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			comentarios = ComentarioDAO.listComentarioByQuery(
+					"Id_noticia LIKE '%"+aId_noticia+"%'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return comentarios;
 	}
 
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion) 

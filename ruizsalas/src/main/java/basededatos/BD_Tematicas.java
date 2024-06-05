@@ -1,5 +1,6 @@
 package basededatos;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 import org.orm.PersistentException;
@@ -17,14 +18,35 @@ import ocl_proyecto.TematicaDAO;
 
 public class BD_Tematicas {
 	public BD_Principal _bd_cont_tematica;
-	public Vector<Tematica> _contiene_tematicas = new Vector<Tematica>();
+	public ArrayList<Tematica> _contiene_tematicas = new ArrayList<Tematica>();
 
-	public Tematica[] cargar_tematicas_seleccion() {
-		throw new UnsupportedOperationException();
+	public Tematica[] cargar_tematicas_seleccion() 		
+	throws PersistentException {
+		Tematica[] tematica = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+	try {
+		tematica = TematicaDAO.listTematicaByQuery(null, null);
+		t.commit();
+	} catch (Exception e) {
+		t.rollback();
+	}
+	//	ProyectoPersistentManager.instance().disposePersistentManager();
+	return tematica;
 	}
 
-	public Tematica[] cargar_tematicas(int aId_noticia) {
-		throw new UnsupportedOperationException();
+	public Tematica[] cargar_tematicas(int aId_noticia)
+	throws PersistentException {
+		Tematica[] tematica = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+	try {
+		tematica = TematicaDAO.listTematicaByQuery(
+				"id_noticia LIKE '%"+aId_noticia+"%'", null);
+		t.commit();
+	} catch (Exception e) {
+		t.rollback();
+	}
+	//	ProyectoPersistentManager.instance().disposePersistentManager();
+	return tematica;
 	}
 
 	public void anadir_seccion(String aNombre, int aIdSeccion) 

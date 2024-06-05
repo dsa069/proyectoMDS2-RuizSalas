@@ -26,11 +26,12 @@ public class BD_Editores {
 			editor = EditorDAO.loadEditorByQuery(
 					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
 			t.commit();
+			return editor;
 		} catch (Exception e) {
 			t.rollback();
+			return null;
 		}
 		//	ProyectoPersistentManager.instance().disposePersistentManager();
-		return editor;
 	}
 
 	public void guardar_cambios_Editor(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil) 

@@ -24,12 +24,34 @@ public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
 	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
 
-	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada) {
-		throw new UnsupportedOperationException();
+	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada) 
+		throws PersistentException {
+			Noticia[] noticias = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"Agregada LIKE '%"+aAgregada+"%'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return noticias;
 	}
 
-	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) 
+		throws PersistentException {
+			Noticia[] noticias = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"IdUsuario LIKE '%"+aIdUsuario+"%'", null);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return noticias;
 	}
 
 	public Noticia[] cargar_secciones_generico(int aIdSeccion) 
@@ -165,9 +187,5 @@ public class Bd_Noticias {
 		}
 		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return noticias;
-	}
-	
-	public Noticia[] cargar_lista_mis_noticias(int aIdUsuario) {
-		throw new UnsupportedOperationException();
 	}
 }
