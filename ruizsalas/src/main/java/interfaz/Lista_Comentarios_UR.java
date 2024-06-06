@@ -33,31 +33,31 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this._registrado = _registrado;
 		this.getEscribirComentario().setVisible(true);
 
-//		this.setImagenFotoPerfilComentar(createImageFromFile(user.getFoto_de_perfil()));
-//		this.getLayoutTextoNombreUsuario().setText(user.getApodo());
+		this.setImagenFotoPerfilComentar(createImageFromFile(user.getFoto_de_perfil()));
+		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
-		//		this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
+		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
+	private Image createImageFromFile(String filePath) {
+		File file = new File(filePath);
+		if (file.exists()) {
+			StreamResource resource = new StreamResource(file.getName(), () -> {
+				try {
+					return new FileInputStream(file);
+				} catch (FileNotFoundException e) {
+					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+					return null;
+				}
+			});
+			Image image = new Image(resource, "Image not found");
+			image.setMaxWidth("500px");
+			return image;
+		} else {
+			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+			return new Image();
+		}
+	}
 
 	@Override
 	public void Comentarios_item_Estaticos(){

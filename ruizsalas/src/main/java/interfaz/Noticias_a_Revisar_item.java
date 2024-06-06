@@ -28,7 +28,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		
 		this.Zona_De_Autor_Y_Version_De_Noticia();
 		
-//		this.getTitular1().setText(Notas.getTitulo());
+		this.getTitular1().setText("" + Notas.getTitulo());
 		
 		this.getAgregarNoticia().addClickListener(event->agregar_noticia());
 		this.getNoAgregarNoticia().addClickListener(event->no_agregar_noticia());

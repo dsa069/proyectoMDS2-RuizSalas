@@ -43,6 +43,16 @@ public class MainView extends VerticalLayout {
 	public Usuario_Registardo UR;
 	public Editor E;
 	public Periodista P;
+	
+	ocl_proyecto.Usuario UOCL;
+	ocl_proyecto.Noticia N;
+	ocl_proyecto.Periodista POCL;
+	ocl_proyecto.Seccion S;
+	ocl_proyecto.Tematica T;
+	ocl_proyecto.Comentario C;
+	ocl_proyecto.Usuario_suscrito_ US;
+	ocl_proyecto.Valoracion V;
+	ocl_proyecto.Editor EOCL;
 
     /**
      * Construct a new Vaadin view.
@@ -52,12 +62,12 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-		U = new Usuario(this, null);
-		UNR = new Usuario_No_Registrado(this, null);
-		R = new Registrado(this, null);
-		UR = new Usuario_Registardo(this, null);
-		P = new Periodista(this, null);
-		E = new Editor(this, null);
+		U = new Usuario(this, UOCL);
+		UNR = new Usuario_No_Registrado(this, UOCL);
+		R = new Registrado(this, US);
+		UR = new Usuario_Registardo(this, US);
+		P = new Periodista(this, POCL);
+		E = new Editor(this, EOCL);
 		
 		add(P);
 		

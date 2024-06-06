@@ -23,7 +23,7 @@ public class Contenido_noticia_completo extends Noticia {
 		this.getEliminarNoticia().setVisible(false);
 		this.getBotonSuscribirse().setVisible(false);
 		
-//		this.getNoticiaCompleta().setText(noticia.getTexto_largo());
+		this.getNoticiaCompleta().setText("" + noticia.getTexto_largo());
 		
 		this.getBotonLikeNoticia().addClickListener(event->valorar_noticia(true));
 		this.getBotonNotLikeNoticia().addClickListener(event->valorar_noticia(false));
