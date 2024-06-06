@@ -11,7 +11,6 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	public Usuario usuario;
 	public Busqueda_fallida busquedaFallida;
 	public Noticia[] notice;
-
 	iUsuario iUsu = new BD_Principal();
 
 	public Barra_de_busqueda(Usuario usuario) {
@@ -19,11 +18,6 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		this.usuario = usuario;
 
 		//this.getBotonRealizadorBusqueda().addClickListener(event->ConductorBusquedaFallida()); ESTO DONDE DEBERÍA ESTAR????????????????????
-		this.getBotonRealizadorBusqueda().addClickListener(event->notice = Buscar());
-		for (int i=0; i<notice.length; i++) {
-			//Item de algo ns de que PQ NO ENTIENDO NADA
-			//this.getLayoutGenericoDeBuscarNoticia().as(VerticalLayout.class).add(null); Añadimos el objeto que creamos del item PERO QUE ITEM PUES DI SI
-		}
 	}
 
 	public void ConductorBusquedaFallida() {
