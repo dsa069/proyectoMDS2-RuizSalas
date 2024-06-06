@@ -5,6 +5,15 @@
 package ormsamples;
 
 import org.orm.*;
+
+import ocl_proyecto.Comentario;
+import basededatos.BD_Comentarios;
+import basededatos.BD_Editores;
+import basededatos.BD_Periodistas;
+import basededatos.BD_Secciones;
+import basededatos.BD_Tematicas;
+import basededatos.BD_Usuarios_suscritos;
+import basededatos.Bd_Noticias;
 public class ListProyectoMDS2RuizSalas20232024Data {
 	private static final int ROW_COUNT = 100;
 	
@@ -195,18 +204,25 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 	}
 	
 	public static void main(String[] args) {
-		try {
-			ListProyectoMDS2RuizSalas20232024Data listProyectoMDS2RuizSalas20232024Data = new ListProyectoMDS2RuizSalas20232024Data();
-			try {
-				listProyectoMDS2RuizSalas20232024Data.listTestData();
-				//listProyectoMDS2RuizSalas20232024Data.listByCriteria();
-			}
-			finally {
-				ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+				try {
+					BD_Editores _bd_editores = new BD_Editores();
+					BD_Usuarios_suscritos _bd_us_suscritos = new BD_Usuarios_suscritos();
+				    BD_Comentarios _bd_comentarios = new BD_Comentarios();
+					BD_Periodistas _bd_periodistas = new BD_Periodistas();
+					Bd_Noticias _bd_noticias = new Bd_Noticias();
+					BD_Secciones _bd_secciones = new BD_Secciones();
+					BD_Tematicas _bd_tematicas = new BD_Tematicas();
+					
+					Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
+					Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1);
+					_bd_comentarios.valorar_comentario(1, 1, false);
+					
+					
+					//listProyectoMDS2RuizSalas20232024Data.listTestData();
+					//listProyectoMDS2RuizSalas20232024Data.listByCriteria();
+				} catch (PersistentException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	}
 }
