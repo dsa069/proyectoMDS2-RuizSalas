@@ -18,8 +18,19 @@ public class BD_Usuarios_suscritos {
 	public BD_Principal _bd_cont_us_suscritos;
 	public Vector<Usuario_suscrito_> _contiene_usuarios_suscritos = new Vector<Usuario_suscrito_>();
 
-	public void cancelar_cobro_suscripcion(int aIdUsuario) {
-		throw new UnsupportedOperationException();
+	public void cancelar_cobro_suscripcion(int aIdUsuario) 
+		throws PersistentException {
+			Usuario_suscrito_ us_sus = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			us_sus = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
+			us_sus.setBaja(false);
+			Usuario_suscrito_DAO.save(us_sus);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
 	}
 
 	public Usuario crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) 
@@ -36,10 +47,10 @@ public class BD_Usuarios_suscritos {
 			us_sus.setTarjeta_de_credito(aTarjeta_de_credito);
 			Usuario_suscrito_DAO.save(us_sus);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return us_sus;
 	}
 
@@ -51,10 +62,10 @@ public class BD_Usuarios_suscritos {
 			us_sus = Usuario_suscrito_DAO.loadUsuario_suscrito_ByQuery(
 					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return us_sus;
 	}
 
@@ -72,9 +83,9 @@ public class BD_Usuarios_suscritos {
 			us_sus.setTarjeta_de_credito(aTarjeta_de_credito);
 			Usuario_suscrito_DAO.save(us_sus);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 }

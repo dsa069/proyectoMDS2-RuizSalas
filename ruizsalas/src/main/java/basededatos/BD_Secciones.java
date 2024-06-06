@@ -30,10 +30,10 @@ public class BD_Secciones {
 		try {
 			seccion = SeccionDAO.listSeccionByQuery(null, null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return seccion;
 	}
 
@@ -46,10 +46,10 @@ public class BD_Secciones {
 			for(Seccion secc : seccion) 
 				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return seccion;
 	}
 
@@ -62,10 +62,10 @@ public class BD_Secciones {
 			for(Seccion secc : seccion) 
 				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return seccion;
 	}
 
@@ -84,14 +84,14 @@ public class BD_Secciones {
 				seccion.contiene.remove(noticia);
 			SeccionDAO.save(seccion);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 
-	public void anadir_seccion(String aNombre) 
+	public Seccion anadir_seccion(String aNombre) 
 		throws PersistentException {
 			Seccion seccion = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
@@ -99,12 +99,12 @@ public class BD_Secciones {
 			seccion = SeccionDAO.createSeccion();
 			seccion.setNombre(aNombre);
 			SeccionDAO.save(seccion);
-			_bd_tematicas.anadir_seccion(aNombre, seccion.getIdSeccion());
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		return seccion;
 	}
 
 	public void borrar_seccion(int aIdSecccion)
@@ -115,10 +115,10 @@ public class BD_Secciones {
 			seccion = SeccionDAO.getSeccionByORMID(aIdSecccion);
 			SeccionDAO.deleteAndDissociate(seccion);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void quitar_noticia_de_seccion(int aId_noticia, int aIdSeccion) 
@@ -132,9 +132,9 @@ public class BD_Secciones {
 			seccion.contiene.remove(noticia);
 			SeccionDAO.save(seccion);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();	}
 	}
 }

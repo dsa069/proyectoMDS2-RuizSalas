@@ -9,7 +9,7 @@ public interface iRegistrado extends iUsuario {
 
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion);
 
-	public Comentario escribir_comentario(String aTexto, int aIdUsuario);
+	public Comentario escribir_comentario(String aTexto, int aIdUsuario, int aId_noticia);
 
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion);
 

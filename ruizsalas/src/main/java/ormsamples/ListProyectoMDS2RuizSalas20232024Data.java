@@ -220,7 +220,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			BD_Tematicas _bd_tematicas = new BD_Tematicas();
 
 //			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
-//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1);
+//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1, 1);
 //			_bd_comentarios.valorar_comentario(1, 1, false);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
@@ -229,10 +229,10 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			Noticia[] noticiassss = _bd_noticias.Buscar("Taylor Swift no quiere a sus fans de Barcelona");
 //			_bd_noticias.eliminar_noticia_propia(1);
 //			_bd_noticias.agregar_noticia(1, true);
-//			_bd_noticias.no_agregar_noticia(1);
-//			_bd_noticias.guardar_cambios_noticia(2, "Hola", "Taylor Swift ha decidido cancelar su concierto en el estadio Camp Nou de Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Barcelona", Date.valueOf("06/06/2024"), null);
+//			_bd_noticias.no_agregar_noticia(9);
+//			_bd_noticias.guardar_cambios_noticia(1, "hola", "Taylor Swift ha decidido cancelar su concierto en el estadio Camp Nou de Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Barcelona", Date.valueOf("2024-08-09"), null, 2);
 //			_bd_noticias.valorar_noticia(1, 2, false);
-//			_bd_noticias.eliminar_noticia(2);
+//			_bd_noticias.eliminar_noticia(7);
 
 //			_bd_editores.guardar_cambios_Editor(2, "Pepe", "78451232", "pepe@gmail.mel", "PepeMel3", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg");
 //			_bd_editores.confirmar_Datos_Editor("pepe@gmail.mel", "PepeMel3");
@@ -247,20 +247,20 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			Seccion[] secc = _bd_secciones.cargar_secciones_seleccion();
 //			Seccion[] seccc = _bd_secciones.cargar_secciones_vista_editor();
 //			_bd_secciones.marcar_seccion(1, 2);
-//			_bd_secciones.anadir_seccion("Política");
+//			_bd_secciones.anadir_seccion("Jueguillos");
 //			_bd_secciones.borrar_seccion(2);
 //			_bd_secciones.quitar_noticia_de_seccion(2, 1);
 
 //			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(1);
 //			Tematica[] tematics =  _bd_tematicas.cargar_tematicas_seleccion();
-//			_bd_tematicas.anadir_seccion("Política", 2);
+//			_bd_tematicas.anadir_seccion("Jueguillos", 3);
 //			_bd_tematicas.marcar_tematica(2, 1);
 //			_bd_tematicas.borrar_seccion(2);
 
 //			_bd_us_suscritos.crear_Usuario("Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 123456789);
 //			_bd_us_suscritos.confirmar_Datos_US("paco@chocolatero.es", "PaquitoElChocolatero");
 //			_bd_us_suscritos.guardar_cambios_US(2, "Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 1234567890);
-//			_bd_us_suscritos.cancelar_cobro_suscripcion(4);
+//			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
 
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();

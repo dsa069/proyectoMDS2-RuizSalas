@@ -7,6 +7,7 @@ import org.orm.PersistentTransaction;
 
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Periodista;
+import ocl_proyecto.PeriodistaDAO;
 import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
 
@@ -30,12 +31,12 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"Agregada LIKE '%"+aAgregada+"%'", null);
+					"Agregada  '"+aAgregada+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return noticias;
 	}
 
@@ -45,12 +46,12 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"IdUsuario LIKE '%"+aIdUsuario+"%'", null);
+					"PeriodistaUsuarioIdUsuario = '"+aIdUsuario+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return noticias;
 	}
 
@@ -60,12 +61,12 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"idSeccion LIKE '%"+aIdSeccion+"%'", null);
+					"SeccionIdSeccion = '"+aIdSeccion+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return noticias;
 	}
 
@@ -77,10 +78,10 @@ public class Bd_Noticias {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			NoticiaDAO.deleteAndDissociate(noticia);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void agregar_noticia(int aId_noticia, boolean aAgregada)
@@ -92,86 +93,109 @@ public class Bd_Noticias {
 			noticia.setAgregada(true);
 			NoticiaDAO.save(noticia);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void no_agregar_noticia(int aId_noticia) 
-	throws PersistentException {
-		Noticia noticia = null;
-		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
-	try {
-		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-		NoticiaDAO.deleteAndDissociate(noticia);
-		t.commit();
-	} catch (Exception e) {
-		t.rollback();
-	}
-	//	ProyectoPersistentManager.instance().disposePersistentManager();
-	}
-
-	public void eliminar_noticia(int aId_noticia) 		
-	throws PersistentException {
-		Noticia noticia = null;
-		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
-	try {
-		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-		NoticiaDAO.deleteAndDissociate(noticia);
-		t.commit();
-	} catch (Exception e) {
-		t.rollback();
-	}
-	//	ProyectoPersistentManager.instance().disposePersistentManager();
-	}
-
-	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas) 
 		throws PersistentException {
 			Noticia noticia = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-	
-			noticia.setTexto_corto(aTexto_corto);
-			noticia.setTexto_largo(aTexto_largo);
-			noticia.setTitulo(aTitulo);
-			noticia.setImagen_principal(aImagen_principal);
-			noticia.setUbicacion(aUbicacion);
-			noticia.setFecha(aFecha);
-			//Tematicas marcartematicas?????
-			NoticiaDAO.save(noticia);
+			NoticiaDAO.deleteAndDissociate(noticia);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
+	}
+
+	public void eliminar_noticia(int aId_noticia) 		
+		throws PersistentException {
+			Noticia noticia = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			NoticiaDAO.deleteAndDissociate(noticia);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+	}
+
+	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) 
+		throws PersistentException {
+			Noticia noticia = null;
+			Periodista periodista = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+
+			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			periodista = PeriodistaDAO.getPeriodistaByORMID(aId_Usuario);
+			System.out.println("Prueba1");
+			if(noticia== null) {
+				noticia = NoticiaDAO.createNoticia();
+			}
+				
+			
+			
+			periodista.publica.add(noticia);
+			noticia.setAutor(periodista);
+			noticia.setVersion(noticia.getVersion()+1);
+			System.out.println("Prueba2");
+			noticia.setId_noticia(1);
+			System.out.println("Pruebaa");
+			noticia.setTexto_corto(aTexto_corto);
+			System.out.println("Pruebab");
+			noticia.setTexto_largo(aTexto_largo);
+			System.out.println("Pruebac");
+			noticia.setTitulo(aTitulo);
+			System.out.println("Pruebad");
+			noticia.setImagen_principal(aImagen_principal);
+			System.out.println("Pruebae");
+			noticia.setUbicacion(aUbicacion);
+			System.out.println("Prueba3");
+			noticia.setFecha(aFecha);
+			System.out.println("Prueba4");
+			
+			//Tematicas marcartematicas?????
+			NoticiaDAO.save(noticia);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+			System.out.println("Prueba5");
+		} catch (Exception e) {
+			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
+			t.rollback();
+		}
 	}
 
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) 
-	throws PersistentException {
-		Noticia noticia = null;
-		Usuario_suscrito_ usuario = null;
-		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
-	try {
-		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-		usuario = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
-		
-		if(!noticia.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
-			noticia.es_valorado_por.add(usuario);
-			usuario.realiza.add(noticia);
-			if(aValoracion)
-				noticia.setNum_likes(noticia.getNum_likes()+1);
-			else
-				noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
-			NoticiaDAO.save(noticia);
-		}
-		t.commit();
-	} catch (Exception e) {
-		t.rollback();
+		throws PersistentException {
+			Noticia noticia = null;
+			Usuario_suscrito_ usuario = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			usuario = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
+			
+			if(!noticia.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
+				noticia.es_valorado_por.add(usuario);
+				usuario.realiza.add(noticia);
+				if(aValoracion)
+					noticia.setNum_likes(noticia.getNum_likes()+1);
+				else
+					noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
+				NoticiaDAO.save(noticia);
+			}
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
 	}
-	//	ProyectoPersistentManager.instance().disposePersistentManager();
-
 	}
 
 	public Noticia[] Buscar(String aBusqueda) 
@@ -182,10 +206,10 @@ public class Bd_Noticias {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"titulo LIKE '%"+aBusqueda+"%'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return noticias;
 	}
 }

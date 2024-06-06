@@ -26,12 +26,12 @@ public class BD_Editores {
 			editor = EditorDAO.loadEditorByQuery(
 					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			return editor;
 		} catch (Exception e) {
 			t.rollback();
 			return null;
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void guardar_cambios_Editor(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil) 
@@ -47,9 +47,9 @@ public class BD_Editores {
 			editor.setFoto_de_perfil(aFoto_de_perfil);
 			EditorDAO.save(editor);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 }

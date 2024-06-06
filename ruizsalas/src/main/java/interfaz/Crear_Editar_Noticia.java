@@ -49,7 +49,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 	//COMO LE HACEMOS PARA EL ARRAY DE TEMÁTICAS
 	public void guardar_cambios_noticia() {
 		//Operacion guardar cambios
-		iPeriodita.guardar_cambios_noticia(this.notice.getId_noticia(), this.notice.getTexto_corto(), this.notice.getTexto_largo(), this.notice.getTitulo(), this.notice.getImagen_principal(), this.notice.getUbicacion(), this.notice.getFecha(), null);
+		iPeriodita.guardar_cambios_noticia(this.notice.getId_noticia(), this.notice.getTexto_corto(), this.notice.getTexto_largo(), this.notice.getTitulo(), this.notice.getImagen_principal(), this.notice.getUbicacion(), this.notice.getFecha(), null, periodista.getIdUsuario());
 		this.ConductorMisNoticias();
 		//throw new UnsupportedOperationException();
 	}

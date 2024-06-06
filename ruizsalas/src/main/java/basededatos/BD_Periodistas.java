@@ -15,6 +15,7 @@ import ocl_proyecto.Editor;
 import ocl_proyecto.EditorDAO;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Usuario;
+import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class BD_Periodistas {
 	public BD_Principal _bd_cont_periodistas;
@@ -27,12 +28,12 @@ public class BD_Periodistas {
 		try {
 			periodistas = PeriodistaDAO.listPeriodistaByQuery(null, null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			return periodistas;
 		} catch (Exception e) {
 			t.rollback();
 			return null;
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void baja_periodista(int aIdUsuario) 
@@ -41,12 +42,13 @@ public class BD_Periodistas {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			periodista = PeriodistaDAO.getPeriodistaByORMID(aIdUsuario);
-			PeriodistaDAO.deleteAndDissociate(periodista);
+			periodista.setBaja(false);
+			PeriodistaDAO.save(periodista);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public Periodista registrar_periodista(String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil) 
@@ -61,11 +63,11 @@ public class BD_Periodistas {
 			periodista.setContrasena(aContrasena);
 			periodista.setFoto_de_perfil(aFoto_de_perfil);
 			PeriodistaDAO.save(periodista);
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			t.commit();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 		return periodista;
 	}
 
@@ -77,10 +79,10 @@ public class BD_Periodistas {
 			periodista = PeriodistaDAO.loadPeriodistaByQuery(
 					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
-		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
+		}	
 		return periodista;
 	}
 
@@ -97,9 +99,9 @@ public class BD_Periodistas {
 			periodista.setFoto_de_perfil(aFoto_de_perfil);
 			PeriodistaDAO.save(periodista);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 }

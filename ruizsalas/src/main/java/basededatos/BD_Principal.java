@@ -101,7 +101,8 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void anadir_seccion(String aNombre) {
 		try {
-			_bd_secciones.anadir_seccion(aNombre);
+			Seccion seccion = _bd_secciones.anadir_seccion(aNombre);
+			_bd_tematicas.anadir_seccion(aNombre, seccion.getIdSeccion());
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -201,9 +202,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public Comentario escribir_comentario(String aTexto, int aIdUsuario) {
+	public Comentario escribir_comentario(String aTexto, int aIdUsuario, int aId_noticia) {
 		try {
-			return _bd_comentarios.escribir_comentario(aTexto, aIdUsuario);
+			return _bd_comentarios.escribir_comentario(aTexto, aIdUsuario, aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -283,9 +284,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas) {
+	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) {
 		try {
-			_bd_noticias.guardar_cambios_noticia(aId_noticia, aTexto_corto, aTexto_largo, aTitulo, aImagen_principal, aUbicacion, aFecha, aTematicas);
+			_bd_noticias.guardar_cambios_noticia(aId_noticia, aTexto_corto, aTexto_largo, aTitulo, aImagen_principal, aUbicacion, aFecha, aTematicas, aId_Usuario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -297,7 +298,12 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	}
 
 	public void cancelar_cobro_suscripcion(int aIdUsuario) {
-
+		try {
+			_bd_us_suscritos.cancelar_cobro_suscripcion(aIdUsuario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}			
 	}
 
 	public void enviar_Correo_Confirmacion(String aApodo, String aDni, String aCorreo) {

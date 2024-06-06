@@ -27,11 +27,11 @@ public class BD_Tematicas {
 	try {
 		tematica = TematicaDAO.listTematicaByQuery(null, null);
 		t.commit();
+		ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 	} catch (Exception e) {
 		t.rollback();
 	}
-	//	ProyectoPersistentManager.instance().disposePersistentManager();
-	return tematica;
+		return tematica;
 	}
 
 	public Tematica[] cargar_tematicas(int aId_noticia)
@@ -40,13 +40,13 @@ public class BD_Tematicas {
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 	try {
 		tematica = TematicaDAO.listTematicaByQuery(
-				"id_noticia LIKE '%"+aId_noticia+"%'", null);
+				"NoticiaValoracionId_valoracion = '"+aId_noticia+"'", null);
 		t.commit();
+		ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 	} catch (Exception e) {
 		t.rollback();
 	}
-	//	ProyectoPersistentManager.instance().disposePersistentManager();
-	return tematica;
+		return tematica;
 	}
 
 	public void anadir_seccion(String aNombre, int aIdSeccion) 
@@ -62,10 +62,11 @@ public class BD_Tematicas {
 			seccion.setEs_una(tematica);
 			TematicaDAO.save(tematica);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void borrar_seccion(int aIdTematica)
@@ -76,10 +77,10 @@ public class BD_Tematicas {
 			tematica = TematicaDAO.getTematicaByORMID(aIdTematica);
 			TematicaDAO.deleteAndDissociate(tematica);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 
 	public void marcar_tematica(int aId_Tematica, int aId_noticia) 
@@ -96,9 +97,9 @@ public class BD_Tematicas {
 				tematica.esta_en.remove(noticia);
 			TematicaDAO.save(tematica);
 			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		//	ProyectoPersistentManager.instance().disposePersistentManager();
 	}
 }
