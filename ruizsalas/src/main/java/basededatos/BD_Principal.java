@@ -80,6 +80,16 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
+	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
+		try {
+			return _bd_noticias.cargar_noticias_secciones(IdSeccion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public Seccion[] cargar_secciones_generico() {
 		try {
 			return _bd_secciones.cargar_secciones_generico();
@@ -111,8 +121,8 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void borrar_seccion(int aIdSeccion, int aIdTematica) {
 		try {
+			_bd_tematicas.borrar_seccion(aIdTematica);
 			_bd_secciones.borrar_seccion(aIdSeccion);
-			_bd_tematicas.borrar_seccion(aIdSeccion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

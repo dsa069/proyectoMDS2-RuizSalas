@@ -43,8 +43,8 @@ public class BD_Secciones {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			seccion = SeccionDAO.listSeccionByQuery(null, null);
-			for(Seccion secc : seccion) 
-				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
+		//	for(Seccion secc : seccion) 
+		//		_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -59,8 +59,8 @@ public class BD_Secciones {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			seccion = SeccionDAO.listSeccionByQuery(null, null);
-			for(Seccion secc : seccion) 
-				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
+//			for(Seccion secc : seccion) 
+//				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {

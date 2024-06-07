@@ -36,17 +36,23 @@ public class BD_Tematicas {
 
 	public Tematica[] cargar_tematicas(int aId_noticia)
 	throws PersistentException {
-		Tematica[] tematica = null;
+		Tematica[] tematicas = null;
+		ArrayList<Tematica> tematicasNoticia = new ArrayList<Tematica>();
+		Noticia noticia = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 	try {
-		tematica = TematicaDAO.listTematicaByQuery(
-				"NoticiaValoracionId_valoracion = '"+aId_noticia+"'", null);
+		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+		tematicas = TematicaDAO.listTematicaByQuery(null, null);
+		for(Tematica tematica : tematicas) {
+			if(noticia.contiene.contains(tematica));
+				tematicasNoticia.add(tematica);
+		}
 		t.commit();
 		ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 	} catch (Exception e) {
 		t.rollback();
 	}
-		return tematica;
+		return tematicasNoticia.toArray(new Tematica[0]);
 	}
 
 	public void anadir_seccion(String aNombre, int aIdSeccion) 

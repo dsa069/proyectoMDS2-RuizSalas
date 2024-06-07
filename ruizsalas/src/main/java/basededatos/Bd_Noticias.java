@@ -55,7 +55,7 @@ public class Bd_Noticias {
 		return noticias;
 	}
 
-	public Noticia[] cargar_secciones_generico(int aIdSeccion) 
+	public Noticia[] cargar_noticias_secciones(int aIdSeccion) 
 		throws PersistentException {
 			Noticia[] noticias = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
