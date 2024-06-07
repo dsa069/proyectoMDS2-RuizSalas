@@ -39,6 +39,6 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 	}
 	
 	public Noticia[] cargar_noticias_a_revisar() {
-		return iEdito.cargar_noticias_a_revisar(not.getAgregada());
+		return iEdito.cargar_noticias_a_revisar();
 	}
 }
