@@ -17,6 +17,7 @@ import java.util.List;
 
 import ocl_proyecto.Tematica;
 import ocl_proyecto.TematicaDAO;
+import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
@@ -176,13 +177,13 @@ public class Bd_Noticias {
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) 
 		throws PersistentException {
 			Noticia noticia = null;
-			Usuario_suscrito_ usuario = null;
+			Usuario usuario = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-			usuario = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(aIdUsuario);
+			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
 			
-			if(!noticia.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
+			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				noticia.es_valorado_por.add(usuario);
 				usuario.realiza.add(noticia);
 				if(aValoracion)
