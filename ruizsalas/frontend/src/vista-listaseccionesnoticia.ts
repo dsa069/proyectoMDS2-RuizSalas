@@ -15,7 +15,7 @@ export class VistaListaseccionesnoticia extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing">
- <vaadin-vertical-layout theme="spacing-xs" style="align-self: flex-start; align-items: center; width: 100%; font-size: 60px;">
+ <vaadin-vertical-layout style="align-self: flex-start; align-items: center; width: 100%; font-size: 40px;">
    Sección 
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="SeccionesSelecionablesItem" style="flex-grow: 1; align-self: stretch;"></vaadin-vertical-layout>

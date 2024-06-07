@@ -19,7 +19,7 @@ export class VistaListarsecciones_item extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch;">
  <vaadin-horizontal-layout style="justify-content: space-between; width: 100%; height: 7%; font-size: 32px; align-items: center;">
   <vaadin-vertical-layout id="layoutTextoSeccionX" style="flex-shrink: 0;">
-    Sección 
+   <label> Sección </label>
   </vaadin-vertical-layout>
   <vaadin-button theme="icon" aria-label="Add new" style="height: 80%; width: 6%; background-color: var(--lumo-contrast-0pct);" id="BorrarSeccion">
    <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" width="50" height="50">
