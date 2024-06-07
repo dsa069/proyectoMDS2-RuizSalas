@@ -31,7 +31,7 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
    </vaadin-vertical-layout>
    <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 1; width: 33%; font-size: 15px;">
     <vaadin-horizontal-layout theme="spacing" style="flex-grow: 0; width: 100%; align-items: center;">
-     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 50px; width: 100%; height: 100%; color: black; flex-grow: 0; flex-shrink: 1;" id="Titular2">
+     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 50px; color: black; flex-grow: 0; flex-shrink: 1; height: 60%; width: 100%; align-self: center; margin: var(--lumo-space-m); padding: var(--lumo-space-m);" id="Titular2">
        Titular2 
      </vaadin-button>
      <vaadin-horizontal-layout style="font-size: 30px; align-items: flex-start; flex-shrink: 1; justify-content: flex-start; align-self: center;" id="VerValoracion"></vaadin-horizontal-layout>

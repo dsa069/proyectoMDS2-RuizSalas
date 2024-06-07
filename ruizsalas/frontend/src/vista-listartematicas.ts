@@ -14,9 +14,9 @@ export class VistaListartematicas extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%;">
- <vaadin-vertical-layout theme="spacing-xs" style="flex-grow: 0; flex-shrink: 1; align-self: flex-start; width: 100%; align-items: center; font-size: 60px;">
-   Temáticas 
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
+ <vaadin-vertical-layout style="flex-grow: 0; flex-shrink: 1; align-self: flex-start; width: 100%; font-size: 40px; align-items: center;">
+  <label> Temáticas </label>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" id="Tematicasitem" style="align-self: stretch; flex-grow: 1;"></vaadin-vertical-layout>
 </vaadin-vertical-layout>

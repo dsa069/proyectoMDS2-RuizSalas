@@ -20,19 +20,19 @@ export class VistaListacomentarios extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between;">
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 30%;" id="EscribirComentario">
-  <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 0; flex-shrink: 1; align-items: center; height: 27%; font-size: 25px;">
-   <vaadin-vertical-layout style="height: 100%; width: 4%;">
+  <vaadin-horizontal-layout style="width: 100%; flex-grow: 0; flex-shrink: 1; align-items: center; height: 27%; font-size: 25px;">
+   <vaadin-vertical-layout style="height: 100%; width: 4%; flex-shrink: 1;">
     <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; width: 100%; height: 100%;">
-     <img src="https://content.imageresizer.com/images/memes/among-us-drip-meme-8.jpg" width="300%" height="300%" id="imagenFotoPerfilComentar">
+     <img src="https://content.imageresizer.com/images/memes/among-us-drip-meme-8.jpg" width="" height="" id="imagenFotoPerfilComentar" style="width: 150%;">
     </vaadin-button>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout theme="spacing" id="layoutTextoNombreUsuario">
-     Pepe Mel 
+    <label> Pepe Mel </label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <vaadin-text-area placeholder="Escriba aquí su comentario" style="width: 100%; flex-shrink: 1; flex-grow: 1;" id="CampoEscribirComentario"></vaadin-text-area>
+  <vaadin-text-area placeholder="Escriba aquí su comentario" style="width: 100%; flex-shrink: 0; flex-grow: 1;" id="CampoEscribirComentario"></vaadin-text-area>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 80%; flex-shrink: 0; flex-grow: 1;" id="ContenedorComentariosItem"></vaadin-vertical-layout>
+ <vaadin-vertical-layout style="width: 100%; height: 80%; flex-shrink: 0; flex-grow: 0;" id="ContenedorComentariosItem"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }
