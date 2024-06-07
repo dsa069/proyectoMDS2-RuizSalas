@@ -73,10 +73,6 @@ public class BD_Comentarios {
 			comentario = ComentarioDAO.createComentario();
 			
 			System.out.println("Prueba2");
-			usuario.realiza.add(comentario);
-			System.out.println("Pruebaa");
-			comentario.es_valorado_por.add(usuario);
-			System.out.println("Pruebab");
 			comentario.setAutor(usuario);
 			System.out.println("Pruebac");
 			usuario.escribe.add(comentario);
@@ -86,13 +82,11 @@ public class BD_Comentarios {
 			noticia.tiene.add(comentario);
 			System.out.println("Prueba3");
 			comentario.setTexto(aTexto);
-			comentario.setNum_likes(1);
+			comentario.setNum_likes(0);
 			comentario.setNum_dislikes(0);
 			comentario.setId_comentario(1);
 			System.out.println("Prueba4");
 			ComentarioDAO.save(comentario);
-			NoticiaDAO.save(noticia);
-			UsuarioDAO.save(usuario);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
