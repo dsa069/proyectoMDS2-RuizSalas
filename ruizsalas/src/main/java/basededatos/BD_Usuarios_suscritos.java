@@ -45,6 +45,7 @@ public class BD_Usuarios_suscritos {
 			us_sus.setContrasena(aContrasena);
 			us_sus.setFoto_de_perfil(aFoto_de_perfil);
 			us_sus.setTarjeta_de_credito(aTarjeta_de_credito);
+			us_sus.setBaja(true);
 			Usuario_suscrito_DAO.save(us_sus);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();

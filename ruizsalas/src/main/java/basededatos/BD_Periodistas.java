@@ -62,6 +62,7 @@ public class BD_Periodistas {
 			periodista.setCorreo(aCorreo);
 			periodista.setContrasena(aContrasena);
 			periodista.setFoto_de_perfil(aFoto_de_perfil);
+			periodista.setBaja(true);
 			PeriodistaDAO.save(periodista);
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			t.commit();
