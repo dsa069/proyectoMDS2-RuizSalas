@@ -70,9 +70,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
-	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada) {
+	public Noticia[] cargar_noticias_a_revisar() {
 		try {
-			return _bd_noticias.cargar_noticias_a_revisar(aAgregada);
+			return _bd_noticias.cargar_noticias_a_revisar();
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -26,13 +26,13 @@ public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
 	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
 
-	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada) 
+	public Noticia[] cargar_noticias_a_revisar() 
 		throws PersistentException {
 			Noticia[] noticias = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"Agregada  '"+aAgregada+"'", null);
+					"Agregada  '"+false+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {

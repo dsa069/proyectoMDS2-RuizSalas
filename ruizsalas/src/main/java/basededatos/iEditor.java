@@ -10,7 +10,7 @@ public interface iEditor extends iRegistrado {
 
 	public Periodista[] cargar_periodistas();
 
-	public Noticia[] cargar_noticias_a_revisar(boolean aAgregada);
+	public Noticia[] cargar_noticias_a_revisar();
 
 	public Seccion[] cargar_secciones_generico();
 	
