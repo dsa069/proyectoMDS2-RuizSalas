@@ -87,6 +87,7 @@ public class BD_Comentarios {
 			System.out.println("Prueba3");
 			comentario.setTexto(aTexto);
 			comentario.setNum_likes(1);
+			comentario.setNum_dislikes(0);
 			comentario.setId_comentario(1);
 			System.out.println("Prueba4");
 			ComentarioDAO.save(comentario);
