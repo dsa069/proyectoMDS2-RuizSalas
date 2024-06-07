@@ -14,7 +14,7 @@ public class Seleccion_de_secciones_generico_item extends VistaSelecciondeseccio
 		super();
 		this._unnamed_Seleccion_de_secciones_generico_ = _seleccion_de_secciones_generico;
 		
-		this.getBotonSeccionX().setText("" + seccion.getNombre());
+//		this.getBotonSeccionX().setText("" + seccion.getNombre());
 		
 		this.getBotonSeccionX().addClickListener(event->ConductorSeccion());
 	}

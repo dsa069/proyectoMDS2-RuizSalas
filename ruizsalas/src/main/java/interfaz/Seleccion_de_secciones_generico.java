@@ -38,11 +38,11 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.Seleccion_de_secciones_item_Estatico();
 		this.CEseccionesEstatico();
 		
-		sec = cargar_secciones_generico();
-		for (int i=0; i<sec.length; i++) {
-			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
-			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
-		}
+//		sec = cargar_secciones_generico();
+//		for (int i=0; i<sec.length; i++) {
+//			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
+//			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
+//		}
 	}
 	
 	public void Seleccion_de_secciones_item_Estatico() {
@@ -55,7 +55,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 	
-	public Seccion[] cargar_secciones_generico() {
-		return iEdito.cargar_secciones_generico();
-	}
+//	public Seccion[] cargar_secciones_generico() {
+//		return iEdito.cargar_secciones_generico();
+//	}
 }
