@@ -33,11 +33,11 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		Lista_Comentarios_item _item = new Lista_Comentarios_item(this, this.user, this.comentario);
 		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
 		
-		comenta = cargar_listar_comentarios();
-		for (int i=0; i<comenta.length; i++) {
-			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
-			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
-		}
+//		comenta = cargar_listar_comentarios();
+//		for (int i=0; i<comenta.length; i++) {
+//			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
+//			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
+//		}
 	}
 
 	public void Comentarios_item_Estaticos(){

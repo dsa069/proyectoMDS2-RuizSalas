@@ -69,7 +69,7 @@ public class MainView extends VerticalLayout {
 		P = new Periodista(this, POCL);
 		E = new Editor(this, EOCL);
 		
-		add(P);
+		add(UR);
 		
 //		Secciones_periodico prueba = new Secciones_periodico(UR);
 //        add(prueba);
