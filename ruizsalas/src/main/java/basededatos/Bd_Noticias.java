@@ -191,6 +191,7 @@ public class Bd_Noticias {
 				else
 					noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
 				NoticiaDAO.save(noticia);
+				UsuarioDAO.save(usuario);
 			}
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
