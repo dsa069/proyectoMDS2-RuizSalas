@@ -32,7 +32,7 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"Agregada  '"+false+"'", null);
+					"Agregada  ='"+false+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
