@@ -18,14 +18,14 @@ public class Banner_registrado extends Banner_generico {
 	public Banner_registrado BananaRegistardo;
 	public Usuario_No_Registrado Usus_no_reg;
 
-	ocl_proyecto.Usuario usuario;
+	ocl_proyecto.Usuario user;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
 	ocl_proyecto.Noticia noticia;
 
 	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
 		this._registrado = _registrado;
-		this.usuario = usuario;
+		this.user = usuario;
 		this.getBotonSuscribirseGenerico().setVisible(false);
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
@@ -33,7 +33,7 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 
-//		this.setFotoPerfilBanner(createImageFromFile(usuarioBD.getFoto_de_perfil()));
+//		this.setFotoPerfilBanner(createImageFromFile(user.getFoto_de_perfil()));
 	}
 
 //	private Image createImageFromFile(String filePath) {
@@ -67,7 +67,7 @@ public class Banner_registrado extends Banner_generico {
 	@Override
 	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		BananaRegistardo = new Banner_registrado(this._registrado, this.usuario);
+		BananaRegistardo = new Banner_registrado(this._registrado, this.user);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 

@@ -30,26 +30,26 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 		this.getFotoTextamen().setVisible(false);
 		this.getEditarPerfil().setVisible(false);
 
-//		this.setImagenPerfilIntroducirDatos(createImageFromFile(usuarioBD.getFoto_de_perfil()));
+		this.setImagenPerfilIntroducirDatos(createImageFromFile(usuarioBD.getFoto_de_perfil()));
 	}
 
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
+	private Image createImageFromFile(String filePath) {
+		File file = new File(filePath);
+		if (file.exists()) {
+			StreamResource resource = new StreamResource(file.getName(), () -> {
+				try {
+					return new FileInputStream(file);
+				} catch (FileNotFoundException e) {
+					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+					return null;
+				}
+			});
+			Image image = new Image(resource, "Image not found");
+			image.setMaxWidth("500px");
+			return image;
+		} else {
+			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+			return new Image();
+		}
+	}
 }

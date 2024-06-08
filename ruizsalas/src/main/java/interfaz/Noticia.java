@@ -34,7 +34,7 @@ public class Noticia extends VistaNoticia{
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
-//		this.setImagenPrincipalNoticia(createImageFromFile(noticia.getImagen_principal()));
+		this.setImagenPrincipalNoticia(createImageFromFile(noticia.getImagen_principal()));
 		this.getLayoutTitularVistaNoticia().setText("" + noticia.getTitulo());
 		this.getFechaNoticia().setText("" + String.valueOf(noticia.getFecha()));
 		this.getAutorNoticia().setText("" + noticia.getAutor().getApodo());
@@ -54,23 +54,23 @@ public class Noticia extends VistaNoticia{
 		this.getVerValoracionEstatico().add(this.valoracion);
 	}
 	
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
+	private Image createImageFromFile(String filePath) {
+		File file = new File(filePath);
+		if (file.exists()) {
+			StreamResource resource = new StreamResource(file.getName(), () -> {
+				try {
+					return new FileInputStream(file);
+				} catch (FileNotFoundException e) {
+					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+					return null;
+				}
+			});
+			Image image = new Image(resource, "Image not found");
+			image.setMaxWidth("500px");
+			return image;
+		} else {
+			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+			return new Image();
+		}
+	}
 }
