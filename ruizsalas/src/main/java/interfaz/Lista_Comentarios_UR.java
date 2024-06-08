@@ -61,7 +61,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 //	}
 
 	@Override
-	public void Comentarios_item_Estaticos(Comentario[] comenta){
+	public void Comentarios_item_Estaticos(){
+		comenta = this.cargar_listar_comentarios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, user, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);

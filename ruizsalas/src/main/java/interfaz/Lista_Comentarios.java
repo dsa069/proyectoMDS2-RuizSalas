@@ -28,12 +28,11 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		this.user = user;
 		this.getEscribirComentario().setVisible(false);
 		
-		comenta = this.cargar_listar_comentarios();
-		
-		this.Comentarios_item_Estaticos(comenta);
+		this.Comentarios_item_Estaticos();
 	}
 
-	public void Comentarios_item_Estaticos(Comentario[] comenta){
+	public void Comentarios_item_Estaticos(){
+		comenta = this.cargar_listar_comentarios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
