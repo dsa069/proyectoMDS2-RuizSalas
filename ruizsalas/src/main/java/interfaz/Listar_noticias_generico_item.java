@@ -40,8 +40,8 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 //		this.getResumenNoticia().setText("" + Notas.getTexto_corto());
 		
 		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());
-		this.getTitular1().addClickListener(event->ConductorNoticia());
-		//this.getTitular2().addClickListener(event->ConductorNoticia());
+		this.getTitular1().addClickListener(event->ConductorNoticiaUNR());
+		this.getTitular2().addClickListener(event->ConductorNoticiaUNR());
 	}
 	
 //	private Image createImageFromFile(String filePath) {
@@ -69,6 +69,15 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 		NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null);
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);
 	}
+	
+	
+	public void ConductorNoticiaUR() {//Ir a noticia dependiendo del usuario
+		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, null);
+		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+	}
+	
+	
 	
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
 		try {
