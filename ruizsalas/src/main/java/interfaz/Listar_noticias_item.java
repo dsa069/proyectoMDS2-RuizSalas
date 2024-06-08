@@ -29,7 +29,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 	
 	public ver_valoracion verValoracion;
 	public void Ver_Valoracion() {
-		this.verValoracion = new ver_valoracion(null, this.valoracion);
+		this.verValoracion = new ver_valoracion(this._listar_noticias._usuario, this.valoracion);
 		this.getVerValoracion().add(this.verValoracion);
 	}
 }
