@@ -3,11 +3,20 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
+import ocl_proyecto.Editor;
+import ocl_proyecto.EditorDAO;
+import ocl_proyecto.Periodista;
+import ocl_proyecto.PeriodistaDAO;
+import ocl_proyecto.UsuarioDAO;
+import ocl_proyecto.Usuario_suscrito_;
+import ocl_proyecto.Usuario_suscrito_DAO;
 import vistas.*;
 
 public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_item {
@@ -62,11 +71,33 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	}
 	
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
-		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		Notification.show("2");
-		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, null);
-		Notification.show("3");
-		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-		Notification.show("1");
+		try {
+			
+			Usuario_suscrito_ us_sus = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this._listar_noticias_generico.usuario.mainView.UR.usuario.getIdUsuario());
+			if(us_sus != null) {
+				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, null);
+				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+			}
+			Periodista periodista = PeriodistaDAO.getPeriodistaByORMID(this._listar_noticias_generico.usuario.usuario.getIdUsuario());
+			if(periodista != null) {
+				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.P, null);
+				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+			} 
+			Editor editor = EditorDAO.getEditorByORMID(this._listar_noticias_generico.usuario.usuario.getIdUsuario());
+			if(editor!= null) {
+				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, null);
+				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+			}else {
+				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null);
+				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

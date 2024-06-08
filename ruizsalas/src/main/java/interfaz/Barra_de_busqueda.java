@@ -10,6 +10,7 @@ import vistas.VistaBarradebusqueda;
 public class Barra_de_busqueda extends VistaBarradebusqueda {
 	public Usuario usuario;
 	public Busqueda_fallida busquedaFallida;
+	public Busqueda search;
 	public Noticia[] notice;
 	iUsuario iUsu = new BD_Principal();
 
@@ -17,7 +18,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		super();
 		this.usuario = usuario;
 
-		//this.getBotonRealizadorBusqueda().addClickListener(event->ConductorBusquedaFallida()); ESTO DONDE DEBERÍA ESTAR????????????????????
+		this.getBotonRealizadorBusqueda().addClickListener(event->ConductorBuscarNoticia()); //ESTO DONDE DEBERÍA ESTAR????????????????????
 	}
 
 	public void ConductorBusquedaFallida() {
@@ -27,7 +28,9 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	}
 
 	public void ConductorBuscarNoticia() {
-		//HACER
+		this.usuario.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().removeAll();
+		search = new Busqueda (this.usuario);
+		this.usuario.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().add(search);
 	}
 
 	public Noticia[] Buscar() {

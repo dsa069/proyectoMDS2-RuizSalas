@@ -26,14 +26,14 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	
 	@Override
 	public void Secciones_item_Estatico(){
-		Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this, this.seccion);
+		Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this,this._editor, this.seccion);
 		this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
 		
-		sec = cargar_secciones_seleccion();
-		for (int i=0; i<sec.length; i++) {
-			Lista_secciones_Editor_item LSEI = new Lista_secciones_Editor_item(this, sec[i]);
-			this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(LSEI);
-		}
+//		sec = cargar_secciones_seleccion();
+//		for (int i=0; i<sec.length; i++) {
+//			Lista_secciones_Editor_item LSEI = new Lista_secciones_Editor_item(this, sec[i]);
+//			this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(LSEI);
+//		}
 	}
 	
 	public Seccion[] cargar_secciones_seleccion() {

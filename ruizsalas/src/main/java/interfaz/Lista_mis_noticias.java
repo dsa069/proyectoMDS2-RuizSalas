@@ -25,11 +25,11 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
-		notice = cargar_listar_mis_noticias();
-		for (int i=0; i<notice.length; i++) {
-			Lista_mis_noticias_item LMNI = new Lista_mis_noticias_item(this, notice[i]);
-			this.getListaSimpleNoticias().as(VerticalLayout.class).add(LMNI);
-		}
+//		notice = cargar_listar_mis_noticias();
+//		for (int i=0; i<notice.length; i++) {
+//			Lista_mis_noticias_item LMNI = new Lista_mis_noticias_item(this, notice[i]);
+//			this.getListaSimpleNoticias().as(VerticalLayout.class).add(LMNI);
+//		}
 	}
 	
 	@Override

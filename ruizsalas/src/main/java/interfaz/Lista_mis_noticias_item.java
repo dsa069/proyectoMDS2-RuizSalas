@@ -34,7 +34,7 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 		this.getEditarNoticia().addClickListener(event->ConductorEditarNoticia());
 	}
 	
-	public void ConductorEditarNoticia() {//NO VA
+	public void ConductorEditarNoticia() {
 		this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		crearEditarNoticia = new Crear_Editar_Noticia(this._lista_mis_noticias.periodista, null);
 		this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).add(crearEditarNoticia);

@@ -51,7 +51,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void CEseccionesEstatico() {
-		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas(this.editor);
+		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario);
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 	
