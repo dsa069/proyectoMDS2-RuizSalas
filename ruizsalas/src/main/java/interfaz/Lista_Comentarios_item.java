@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
 import vistas.*;
@@ -15,7 +16,9 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 //	private JLabel _comentario;
 //	private JLabel _valoracion;
 	public Lista_Comentarios _lista_Comentarios;
+	public ver_valoracion valoracion;
 	
+	ocl_proyecto.Valoracion valoracionBD;
 	ocl_proyecto.Comentario comentario;
 	ocl_proyecto.Usuario usuario;
 	
@@ -29,10 +32,20 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 		this.getLayoutZonaComentarioEscrito().setText("" + comentario.getTexto());
 		this.getLayoutApodoComentarista().setText("" + usuario.getApodo());
 		
+		this.Ver_Valoraciones();
+		
 //		this.setImagenUsuarioComento(createImageFromFile(usuario.getFoto_de_perfil()));
 		
 		this.getLayoutVerValoracionComentario().setText("" + String.valueOf(comentario.getId_valoracion())); //Tenemos que pasarle también valoración o que hacemos?
 	}
+	
+	
+	public void Ver_Valoraciones() {
+		this.valoracion = new ver_valoracion(this._lista_Comentarios.usuario, this.valoracionBD);
+		this.getLayoutVerValoracionComentario().as(VerticalLayout.class).add(this.valoracion);
+	}
+	
+	
 	
 //	private Image createImageFromFile(String filePath) {
 //		File file = new File(filePath);

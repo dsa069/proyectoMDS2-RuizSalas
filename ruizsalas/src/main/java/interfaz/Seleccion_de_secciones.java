@@ -46,6 +46,6 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	
 	@Override
 	public void CEseccionesEstatico() {
-//no hace lo del super
+		//no hace lo del super
 	}
 }

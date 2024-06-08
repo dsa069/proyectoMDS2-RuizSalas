@@ -9,9 +9,12 @@ import interfaz.Usuario_No_Registrado;
 import ocl_proyecto.Seccion;
 // import ocl_proyecto.Periodista;
 import ocl_proyecto.Noticia;
+import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.Tematica;
 import ocl_proyecto.Usuario;
 import ocl_proyecto.Comentario;
+import ocl_proyecto.ComentarioDAO;
+
 import java.util.Date;
 
 import org.orm.PersistentException;
@@ -69,6 +72,20 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 		return null;
 	}
+	
+	public int cargar_valoracion(int aIdValoracion) {
+		try {
+			if (NoticiaDAO.getNoticiaByORMID(aIdValoracion)!=null)
+				return _bd_noticias.cargar_valoracion(aIdValoracion);
+			if (ComentarioDAO.getComentarioByORMID(aIdValoracion)!=null)
+				return _bd_comentarios.cargar_valoracion(aIdValoracion);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 777;
+	}
+	
 
 	public Noticia[] cargar_noticias_a_revisar() {
 		try {
@@ -80,9 +97,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
-	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
+	public Noticia[] cargar_noticias_secciones(int aIdSeccion) {
 		try {
-			return _bd_noticias.cargar_noticias_secciones(IdSeccion);
+			return _bd_noticias.cargar_noticias_secciones(aIdSeccion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

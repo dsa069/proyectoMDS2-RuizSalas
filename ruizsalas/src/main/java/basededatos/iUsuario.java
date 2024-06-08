@@ -13,11 +13,14 @@ public interface iUsuario {
 	
 	public Seccion[] cargar_secciones_generico();
 	
-	public Noticia[] cargar_noticias_secciones(int IdSeccion);
+	public Noticia[] cargar_noticias_secciones(int aIdSeccion);
 	
 	public Noticia[] cargar_noticias();
 	
 	public Noticia[] cargar_noticias_portada(); 
+	
+	public int cargar_valoracion(int aIdValoracion);
 
 	public Noticia[] Buscar(String aBusqueda);
+
 }

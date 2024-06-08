@@ -19,7 +19,24 @@ import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
 public class BD_Comentarios {
 	public BD_Principal _bd_cont_comentarios;
 	public ArrayList<Comentario> _contiene_comentarios = new ArrayList<Comentario>();
-
+	
+	public int cargar_valoracion(int aIdValoracion) 
+		throws PersistentException {
+			Comentario comentario = null;
+			int ratio = 0;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			comentario = ComentarioDAO.getComentarioByORMID(aIdValoracion);
+			ratio = comentario.getNum_likes()/(comentario.getNum_dislikes() + comentario.getNum_likes());
+			ratio = ratio * 100;
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return ratio;
+	}
+	
 	public Comentario[] cargar_listar_comenatrios(int aId_noticia) 
 		throws PersistentException {
 			Comentario[] comentarios = null;

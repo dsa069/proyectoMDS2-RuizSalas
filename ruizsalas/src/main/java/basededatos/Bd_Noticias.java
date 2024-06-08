@@ -29,6 +29,23 @@ import ocl_proyecto.Usuario_suscrito_DAO;
 public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
 	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
+	
+	public int cargar_valoracion(int aIdValoracion) 
+		throws PersistentException {
+			Noticia noticia = null;
+			int ratio = 0;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticia = NoticiaDAO.getNoticiaByORMID(aIdValoracion);
+			ratio = noticia.getNum_likes()/(noticia.getNum_dislikes() + noticia.getNum_likes());
+			ratio = ratio * 100;
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return ratio;
+	}
 
 	public Noticia[] cargar_noticias_a_revisar() 
 			throws PersistentException {
