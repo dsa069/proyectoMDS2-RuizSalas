@@ -75,9 +75,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	
 	public int cargar_valoracion(int aIdValoracion) {
 		try {
-			if (NoticiaDAO.getNoticiaByORMID(aIdValoracion)!=null)
+			if (NoticiaDAO.getNoticiaByORMID(aIdValoracion)!=null) 
 				return _bd_noticias.cargar_valoracion(aIdValoracion);
-			if (ComentarioDAO.getComentarioByORMID(aIdValoracion)!=null)
+			if (ComentarioDAO.getComentarioByORMID(aIdValoracion)!=null) 
 				return _bd_comentarios.cargar_valoracion(aIdValoracion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

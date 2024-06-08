@@ -269,6 +269,8 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
 
 //			_bd_principal.borrar_seccion(3, 3);
+			_bd_principal.cargar_valoracion(55);
+			
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();
