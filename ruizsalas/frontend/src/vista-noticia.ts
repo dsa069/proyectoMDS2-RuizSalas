@@ -39,7 +39,7 @@ export class VistaNoticia extends LitElement {
   </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 50px; align-items: center; flex-grow: 1;" theme="spacing-xl">
-  <vaadin-vertical-layout id="layoutTitularVistaNoticia" style="flex-shrink: 1; flex-grow: 0;">
+  <vaadin-vertical-layout id="layoutTitularVistaNoticia" style="flex-shrink: 0; flex-grow: 1;">
    <label> Humillación sin precedentes al Barcelona </label>
   </vaadin-vertical-layout>
   <vaadin-horizontal-layout style="height: 60%; flex-shrink: 1; align-self: flex-start; align-items: flex-start; flex-grow: 0;" id="verValoracionEstatico"></vaadin-horizontal-layout>
