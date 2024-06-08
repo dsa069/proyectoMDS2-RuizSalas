@@ -232,7 +232,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_noticias.eliminar_noticia_propia(34);
 //			_bd_noticias.agregar_noticia(1, true);
 //			_bd_noticias.no_agregar_noticia(9);
-//			_bd_noticias.guardar_cambios_noticia(890, "hola", "Taylor Swift ha decidido cancelar su concierto en el estadio Camp Nou de Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Carboneras", Date.valueOf("2024-08-09"), null, 2);
+//			_bd_noticias.guardar_cambios_noticia(890, "hola", "Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Carboneras", Date.valueOf("2024-08-09"), null, 4);
 //			_bd_noticias.valorar_noticia(2, 5, false);
 //			_bd_noticias.eliminar_noticia(55);
 //			_bd_noticias.guardar_cambios_noticia(3, "Fernando volvió a traernos la magia y la ilusión a nuestro corazón", "Esta pasada madrugada hemos podido ver otro espectaculo de nuestro mago favorito, otra vuelta mágica bajo la lluvia de Montreal (Canadá) que nos permite volver a soñar con un buen resultado este fin de semana, tras una primera posición en los libres2", "Otra más de Magic Alonso", "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/06/08/17177979059305.jpg", "Montreal", Date.valueOf("2024-06-08"), null, 3);
@@ -269,8 +269,13 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
 
 //			_bd_principal.borrar_seccion(3, 3);
-			_bd_principal.cargar_valoracion(55);
-			
+//			_bd_principal.cargar_valoracion(55);
+			Noticia[] notis =_bd_noticias.cargar_noticias_portada();
+			 for (Noticia notice: notis) {
+				 System.out.println("===================================DISI==========================================");
+				 System.out.println("Disi " + notice.getId_valoracion());
+			 }
+				 
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();

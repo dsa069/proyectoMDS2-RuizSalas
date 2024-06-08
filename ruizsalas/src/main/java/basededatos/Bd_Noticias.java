@@ -98,10 +98,13 @@ public class Bd_Noticias {
 			Seccion porta = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
+			System.out.println("===================================DISI==========================================");
 			porta = SeccionDAO.loadSeccionByQuery(
-					"Portada = '"+true+"'", null);
+					"Portada ='"+1+"'", null);
+			System.out.println("===================================DISI==========================================");
+			System.out.println(porta.getIdSeccion());
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"SeccionIdSeccion = '"+porta.getIdSeccion()+"'", null);
+					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
