@@ -19,9 +19,7 @@ public class ver_valoracion extends VistaVervaloracion {
 		super();
 		this.usuario = usuario;
 		this.valorar = valoracion;
-		this.getLayoutVisualizarValoracion().setText("" + String.valueOf(valoracion.getNum_likes())); //Como vemos el resumen global de valoraciones
-		
-		this.cargar_valoracion();
+		this.getLayoutVisualizarValoracion().setText("" + String.valueOf(this.cargar_valoracion())); //Como vemos el resumen global de valoraciones
 		
 	}
 	
