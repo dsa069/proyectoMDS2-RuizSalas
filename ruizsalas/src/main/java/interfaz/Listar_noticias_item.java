@@ -25,7 +25,6 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		
 		this.getTitular2().setText("" + Notas.getTitulo());
 		
-		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
 	public ver_valoracion verValoracion;
