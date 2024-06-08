@@ -29,6 +29,7 @@ public class Noticia extends VistaNoticia{
 	public Noticia(Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super();
 		this.usuario = usuario;
+		this.valoracionBD = noticia;
 		this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
