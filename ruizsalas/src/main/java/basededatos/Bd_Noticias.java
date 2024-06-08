@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import ocl_proyecto.Comentario;
+import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Periodista;
 import ocl_proyecto.PeriodistaDAO;
@@ -27,9 +29,9 @@ public class Bd_Noticias {
 	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
 
 	public Noticia[] cargar_noticias_a_revisar() 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"Agregada  ='"+false+"'", null);
@@ -42,9 +44,9 @@ public class Bd_Noticias {
 	}
 
 	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"PeriodistaUsuarioIdUsuario = '"+aIdUsuario+"'", null);
@@ -57,9 +59,9 @@ public class Bd_Noticias {
 	}
 
 	public Noticia[] cargar_noticias_secciones(int aIdSeccion) 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"SeccionIdSeccion = '"+aIdSeccion+"'", null);
@@ -72,10 +74,14 @@ public class Bd_Noticias {
 	}
 
 	public void eliminar_noticia_propia(int aId_noticia)
-		throws PersistentException {
-			Noticia noticia = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
+			Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
+			for (Comentario comentarios1 : comentarios) {
+				ComentarioDAO.deleteAndDissociate(comentarios1);
+			}
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			NoticiaDAO.deleteAndDissociate(noticia);
 			t.commit();
@@ -86,9 +92,9 @@ public class Bd_Noticias {
 	}
 
 	public void agregar_noticia(int aId_noticia, boolean aAgregada)
-		throws PersistentException {
-			Noticia noticia = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			noticia.setAgregada(true);
@@ -101,9 +107,9 @@ public class Bd_Noticias {
 	}
 
 	public void no_agregar_noticia(int aId_noticia) 
-		throws PersistentException {
-			Noticia noticia = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			NoticiaDAO.deleteAndDissociate(noticia);
@@ -115,24 +121,33 @@ public class Bd_Noticias {
 	}
 
 	public void eliminar_noticia(int aId_noticia) 		
-		throws PersistentException {
-			Noticia noticia = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
+			System.out.println("prueba1");
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			System.out.println("prueba2");
+			Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
+			for (Comentario comentarios1 : comentarios) {
+				ComentarioDAO.deleteAndDissociate(comentarios1);
+			}
+			System.out.println("prueba3");
 			NoticiaDAO.deleteAndDissociate(noticia);
+			System.out.println("prueba4");
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
+			System.out.println("AYYYYYYYYYYYYYYYYYYYYYY CASIIIIIIIIIIIIIIIIIIIIIIIIII");
 		}
 	}
 
 	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) 
-		throws PersistentException {
-			Noticia noticia = null;
-			Periodista periodista = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		Periodista periodista = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
@@ -141,9 +156,9 @@ public class Bd_Noticias {
 			if(noticia== null) {
 				noticia = NoticiaDAO.createNoticia();
 			}
-				
-			
-			
+
+
+
 			periodista.publica.add(noticia);
 			noticia.setAutor(periodista);
 			noticia.setVersion(noticia.getVersion()+1);
@@ -162,7 +177,7 @@ public class Bd_Noticias {
 			System.out.println("Prueba3");
 			noticia.setFecha(aFecha);
 			System.out.println("Prueba4");
-			
+
 			//Tematicas marcartematicas?????
 			NoticiaDAO.save(noticia);
 			t.commit();
@@ -175,14 +190,14 @@ public class Bd_Noticias {
 	}
 
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) 
-		throws PersistentException {
-			Noticia noticia = null;
-			Usuario usuario = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		Usuario usuario = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
-			
+
 			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				noticia.es_valorado_por.add(usuario);
 				usuario.realiza.add(noticia);
@@ -197,13 +212,13 @@ public class Bd_Noticias {
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
-	}
+		}
 	}
 
 	public Noticia[] Buscar(String aBusqueda) 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"titulo LIKE '%"+aBusqueda+"%'", null);

@@ -14,10 +14,10 @@ export class VistaListartematicas_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch; font-size: 60px; padding-left: 80px; padding-right: 80px;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 30px; padding-left: 80px; padding-right: 80px;">
  <hr style="width: 100%;">
- <vaadin-vertical-layout theme="spacing" id="layoutNombredelaTematica">
-  Text 
+ <vaadin-vertical-layout id="layoutNombredelaTematica" style="align-items: flex-start;">
+  <label style="align-self: flex-start;"> Text </label>
  </vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;

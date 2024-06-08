@@ -75,7 +75,7 @@ public class BD_Secciones {
 			Noticia noticia = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			//seccion = SeccionDAO.getSeccionByORMID(aIdSeccion);
+			seccion = SeccionDAO.getSeccionByORMID(aSeccion);
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			
 			if(!seccion.contiene.contains(noticia))

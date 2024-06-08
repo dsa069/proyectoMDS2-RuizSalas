@@ -21,19 +21,19 @@ export class VistaVerdatosperfil extends LitElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="flex-shrink: 0; justify-content: center; font-size: 35px; flex-grow: 1;">
   <vaadin-vertical-layout id="layoutNombreUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
-    El Bob Mafioso 
+   <label> El Bob Mafioso </label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutDNIUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
-    35196854K 
+   <label> 35196854K </label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutCorreoUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
-    mafiosoBob69@hotmail.com 
+   <label> mafiosoBob69@hotmail.com </label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutNickNameUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
-    Mafioso69Bob 
+   <label> Mafioso69Bob </label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutTarjetaCreditoUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
-    0123456789 
+   <label> 0123456789 </label>
   </vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
