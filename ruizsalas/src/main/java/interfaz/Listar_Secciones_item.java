@@ -13,7 +13,7 @@ public class Listar_Secciones_item extends VistaListarsecciones_item {
 		this._listar_Secciones = _listar_Secciones;
 		this.getBorrarSeccion().setVisible(false);
 		
-//		this.getLayoutTextoSeccionX().setText("" + seccion.getNombre());
+		this.getLayoutTextoSeccionX().setText("" + seccion.getNombre());
 		
 		this.Listar_Noticia();
 	}

@@ -26,12 +26,12 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 		this.getValorarComentarioPositivamente().setVisible(false);
 		this.getBorrarComentario().setVisible(false);
 		
-//		this.getLayoutZonaComentarioEscrito().setText("" + comentario.getTexto());
-//		this.getLayoutApodoComentarista().setText("" + usuario.getApodo());
+		this.getLayoutZonaComentarioEscrito().setText("" + comentario.getTexto());
+		this.getLayoutApodoComentarista().setText("" + usuario.getApodo());
 		
 //		this.setImagenUsuarioComento(createImageFromFile(usuario.getFoto_de_perfil()));
 		
-//		this.getLayoutVerValoracionComentario().setText("" + String.valueOf(comentario.getId_valoracion())); //Tenemos que pasarle también valoración o que hacemos?
+		this.getLayoutVerValoracionComentario().setText("" + String.valueOf(comentario.getId_valoracion())); //Tenemos que pasarle también valoración o que hacemos?
 	}
 	
 //	private Image createImageFromFile(String filePath) {

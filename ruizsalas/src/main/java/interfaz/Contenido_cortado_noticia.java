@@ -17,7 +17,7 @@ public class Contenido_cortado_noticia extends Noticia{
 		this.getValorarNoticia().setVisible(false);
 		this.getEliminarNoticia().setVisible(false);
 		
-//		this.getNoticiaCortada().setText("" + noticia.getTexto_corto());
+		this.getNoticiaCortada().setText("" + noticia.getTexto_corto());
 		
 		this.getBotonSuscribirseNoticia().addClickListener(event->ConductorRegistro());
 	}

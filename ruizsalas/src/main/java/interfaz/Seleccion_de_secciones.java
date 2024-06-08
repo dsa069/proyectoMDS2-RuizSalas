@@ -1,6 +1,8 @@
 package interfaz;
 
 import java.util.Vector;
+
+import ocl_proyecto.Seccion;
 import vistas.*;
 
 public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
@@ -24,9 +26,12 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	}
 	
 	@Override
-	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_item _item = new Seleccion_de_secciones_item(this, this.seccion);
-		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	public void Seleccion_de_secciones_item_Estatico(Seccion[] sec) {
+		sec = cargar_secciones_generico();
+		for (int i=0; i<sec.length; i++) {
+			Seleccion_de_secciones_item SSI = new Seleccion_de_secciones_item(this, sec[i]);
+			this.getLayoutSeccionesContenidasPeriodico().add(SSI);
+		}
 	}
 	
 	public void barraBusqueda() {

@@ -22,8 +22,8 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 		this.periodista = periodista;
 		
 //		this.setFotoPeriodistaNoticia(createImageFromFile(periodista.getFoto_de_perfil()));
-//		this.getNombreAutorNoticia().setText("" + periodista.getApodo());
-//		this.getVersionNoticia().setText("" + String.valueOf(noticia.getVersion())); //Ns si es correcto pq convierte el float a String
+		this.getNombreAutorNoticia().setText("" + periodista.getApodo());
+		this.getVersionNoticia().setText("" + String.valueOf(noticia.getVersion())); //Ns si es correcto pq convierte el float a String
 	}
 	
 //	private Image createImageFromFile(String filePath) {

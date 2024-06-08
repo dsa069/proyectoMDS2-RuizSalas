@@ -5,6 +5,7 @@ import java.util.Vector;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import ocl_proyecto.Seccion;
 import vistas.*;
 
 public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones {
@@ -25,9 +26,12 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	}
 	
 	@Override
-	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_Vista_Editor_item _item = new Seleccion_de_secciones_Vista_Editor_item(this, this.seccion);
-		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	public void Seleccion_de_secciones_item_Estatico(Seccion[] sec) {
+		sec = cargar_secciones_generico();
+		for (int i=0; i<sec.length; i++) {
+			Seleccion_de_secciones_Vista_Editor_item SSVE = new Seleccion_de_secciones_Vista_Editor_item(this, sec[i]);
+			this.getLayoutSeccionesContenidasPeriodico().add(SSVE);
+		}
 	}
 	
 	public void ConductorEditarSecciones() {

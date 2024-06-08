@@ -35,19 +35,18 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
 		
-		this.Seleccion_de_secciones_item_Estatico();
-		this.CEseccionesEstatico();
 		
-//		sec = cargar_secciones_generico();
-//		for (int i=0; i<sec.length; i++) {
-//			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
-//			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
-//		}
+		sec = this.cargar_secciones_generico();
+		
+		this.Seleccion_de_secciones_item_Estatico(sec);
+		this.CEseccionesEstatico();
 	}
 	
-	public void Seleccion_de_secciones_item_Estatico() {
-		Seleccion_de_secciones_generico_item _item = new Seleccion_de_secciones_generico_item(this, this.seccion);
-		this.getLayoutSeccionesContenidasPeriodico().add(_item);
+	public void Seleccion_de_secciones_item_Estatico(Seccion[] sec) {
+		for (int i=0; i<sec.length; i++) {
+			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
+			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
+		}
 	}
 	
 	public void CEseccionesEstatico() {
@@ -55,7 +54,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 	
-//	public Seccion[] cargar_secciones_generico() {
-//		return iEdito.cargar_secciones_generico();
-//	}
+	public Seccion[] cargar_secciones_generico() {
+		return iEdito.cargar_secciones_generico();
+	}
 }

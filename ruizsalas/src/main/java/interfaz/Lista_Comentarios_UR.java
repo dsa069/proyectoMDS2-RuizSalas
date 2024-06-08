@@ -34,7 +34,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this.getEscribirComentario().setVisible(true);
 
 //		this.setImagenFotoPerfilComentar(createImageFromFile(user.getFoto_de_perfil()));
-//		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
+		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}

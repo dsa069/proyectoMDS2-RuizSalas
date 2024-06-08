@@ -23,10 +23,10 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		this.usuario = usuario;
 		
 //		this.setImagenUsuarioVerDatos(createImageFromFile(usuario.getFoto_de_perfil()));
-//		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
-//		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
-//		this.getLayoutNickNameUsuario1().setText("" + usuario.getApodo());
-//		this.getLayoutTarjetaCreditoUsuario1().setText("" + String.valueOf(suscrito.getTarjeta_de_credito()));
+		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
+		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
+		this.getLayoutNickNameUsuario1().setText("" + usuario.getApodo());
+		this.getLayoutTarjetaCreditoUsuario1().setText("" + String.valueOf(suscrito.getTarjeta_de_credito()));
 	}
 	
 	public void SelectorUsuarioPerfil() {
