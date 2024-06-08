@@ -222,19 +222,19 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			BD_Principal _bd_principal = new BD_Principal();
 
 //			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
-			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1, 2);
-//			_bd_comentarios.valorar_comentario(1, 1, false);
+//			Comentario comentario =_bd_comentarios.escribir_comentario("Este hombre hace magia", 2, 34);
+//			_bd_comentarios.valorar_comentario(3, 27, false);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
-//			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar(true);
+//			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
 //			Noticia[] noticiasss = _bd_noticias.cargar_secciones_generico(1);
 //			Noticia[] noticiassss = _bd_noticias.Buscar("Taylor Swift no quiere a sus fans de Barcelona");
-//			_bd_noticias.eliminar_noticia_propia(1);
+//			_bd_noticias.eliminar_noticia_propia(34);
 //			_bd_noticias.agregar_noticia(1, true);
 //			_bd_noticias.no_agregar_noticia(9);
-//			_bd_noticias.guardar_cambios_noticia(1, "hola", "Taylor Swift ha decidido cancelar su concierto en el estadio Camp Nou de Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Barcelona", Date.valueOf("2024-08-09"), null, 2);
-//			_bd_noticias.valorar_noticia(1, 2, false);
-//			_bd_noticias.eliminar_noticia(7);
+//			_bd_noticias.guardar_cambios_noticia(3, "Fernando volvió a traernos la magia y la ilusión a nuestro corazón", "Esta pasada madrugada hemos podido ver otro espectaculo de nuestro mago favorito, otra vuelta mágica bajo la lluvia de Montreal (Canadá) que nos permite volver a soñar con un buen resultado este fin de semana, tras una primera posición en los libres2", "Otra más de Magic Alonso", "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/06/08/17177979059305.jpg", "Montreal", Date.valueOf("2024-06-08"), null, 3);
+//			_bd_noticias.valorar_noticia(1, 34, true);
+//			_bd_noticias.eliminar_noticia(29);
 //			_bd_noticias.cargar_noticias_secciones(1);
 
 //			_bd_editores.guardar_cambios_Editor(2, "Pepe", "78451232", "pepe@gmail.mel", "PepeMel3", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg");
@@ -242,22 +242,22 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 
 //			Periodista[] periodita = _bd_periodistas.cargar_periodistas();
 //			_bd_periodistas.registrar_periodista("Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg");
-//			_bd_periodistas.baja_periodista(2);
+//			_bd_periodistas.baja_periodista(6);
 //			_bd_periodistas.confirmar_Datos_Periodista("paco@chocolatero.es", "PaquitoElChocolatero");
 //			_bd_periodistas.guardar_cambios_Periodista(3, "Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg");
 
 //			Seccion[] sec = _bd_secciones.cargar_secciones_generico();
 //			Seccion[] secc = _bd_secciones.cargar_secciones_seleccion();
 //			Seccion[] seccc = _bd_secciones.cargar_secciones_vista_editor();
-//			_bd_secciones.marcar_seccion(1, 2);
+//			_bd_secciones.marcar_seccion(1, 34);
 //			_bd_secciones.anadir_seccion("Jueguillos");
 //			_bd_secciones.borrar_seccion(2);
-//			_bd_secciones.quitar_noticia_de_seccion(2, 1);
+//			_bd_secciones.quitar_noticia_de_seccion(25, 3);
 
-//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(2);
+//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(25);
 //			Tematica[] tematics =  _bd_tematicas.cargar_tematicas_seleccion();
 //			_bd_tematicas.anadir_seccion("Jueguillos", 3);
-//			_bd_tematicas.marcar_tematica(2, 1);
+//			_bd_tematicas.marcar_tematica(1, 34);
 //			_bd_tematicas.borrar_seccion(2);
 
 //			_bd_us_suscritos.crear_Usuario("Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 123456789);
