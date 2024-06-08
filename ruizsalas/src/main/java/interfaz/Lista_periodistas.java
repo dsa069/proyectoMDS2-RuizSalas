@@ -1,0 +1,35 @@
+package interfaz;
+
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+public class Lista_periodistas extends Banner_Editor {
+	//	private JButton _alta_periodista;
+	//	private JScrollPanel _scroll;
+	public Editor _accede;
+	public Periodistas _unnamed_Periodistas_;
+	public Dar_de_alta_periodista Ananin;
+	
+	ocl_proyecto.Editor editor;
+	
+	public Lista_periodistas(Editor _editor, ocl_proyecto.Editor editor) {
+		super(_editor, editor);
+		this._accede = _editor;
+		this.getLayoutGenericoVistaGenerica().setVisible(false);
+		this.getListarPeriodistaLayout().setVisible(true);
+
+		this.Dar_Baja_Periodistas();
+		
+		this.getBotonAnadirPeriodista().addClickListener(event->ConductorDarAltaPeriodista());
+	}
+	
+	public void Dar_Baja_Periodistas() {
+		this._unnamed_Periodistas_ = new Periodistas(this._accede);
+		this.getListaPeriodistaEstatico().as(VerticalLayout.class).add(this._unnamed_Periodistas_);
+	}
+	
+	public void ConductorDarAltaPeriodista() {
+		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		Ananin = new Dar_de_alta_periodista(this._accede, this.editor);
+		this.getBannergenericolayout().as(VerticalLayout.class).add(Ananin);
+	}
+}
