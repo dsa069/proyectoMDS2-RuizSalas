@@ -12,6 +12,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 	public Listar_noticias_item(Listar_noticias padre, ocl_proyecto.Noticia Notas) {
 		super(padre, Notas);
 		this._listar_noticias = padre;
+		this.valoracion = Notas;
 		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
