@@ -25,20 +25,23 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
-//		notice = cargar_listar_mis_noticias();
-//		for (int i=0; i<notice.length; i++) {
-//			Lista_mis_noticias_item LMNI = new Lista_mis_noticias_item(this, notice[i]);
-//			this.getListaSimpleNoticias().as(VerticalLayout.class).add(LMNI);
-//		}
 	}
 	
 	@Override
 	public void Noticia_item() {
-		Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.Notas);
-		this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
+		notice = this.cargar_noticias();
+		for (int i=0; i<notice.length; i++) {
+			Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.notice[i]);
+			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
+		}
 	}
 	
 	public Noticia[] cargar_listar_mis_noticias() {
 		return iPeriodita.cargar_listar_mis_noticias(user.getIdUsuario());
+	}
+	
+	@Override
+	public Noticia[] cargar_noticias() {
+		return iPeriodita.cargar_listar_mis_noticias(this.user.getIdUsuario());
 	}
 }

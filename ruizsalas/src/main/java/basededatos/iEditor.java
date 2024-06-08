@@ -12,10 +12,6 @@ public interface iEditor extends iRegistrado {
 
 	public Noticia[] cargar_noticias_a_revisar();
 
-	public Seccion[] cargar_secciones_generico();
-	
-	public Noticia[] cargar_noticias_secciones(int IdSeccion);
-
 	public void marcar_seccion(int aIdSeccion, int aId_noticia);
 
 	public void anadir_seccion(String aNombre);

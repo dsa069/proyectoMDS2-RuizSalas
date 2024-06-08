@@ -27,6 +27,7 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public void Listar_Noticia() {
 		this._contiene = new Lista_noticas_Editor(this._editor);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
+		this._contiene.Noticia_item(seccion.getIdSeccion());
 	}
 	
 	public void borrar_seccion() {

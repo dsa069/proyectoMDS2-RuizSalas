@@ -12,6 +12,8 @@ import ocl_proyecto.Periodista;
 import ocl_proyecto.PeriodistaDAO;
 import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.ProyectoMDS2RuizSalas20232024PersistentManager;
+import ocl_proyecto.Seccion;
+import ocl_proyecto.SeccionDAO;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -59,12 +61,44 @@ public class Bd_Noticias {
 	}
 
 	public Noticia[] cargar_noticias_secciones(int aIdSeccion) 
+		throws PersistentException {
+			Noticia[] noticias = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"SeccionIdSeccion = '"+aIdSeccion+"'", null);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return noticias;
+	}
+	
+	public Noticia[] cargar_noticias_portada() 
+		throws PersistentException {
+			Noticia[] noticias = null;
+			Seccion porta = null;
+			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			porta = SeccionDAO.loadSeccionByQuery(
+					"Portada = '"+true+"'", null);
+			noticias = NoticiaDAO.listNoticiaByQuery(
+					"SeccionIdSeccion = '"+porta.getIdSeccion()+"'", null);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+		return noticias;
+	}
+	
+	public Noticia[] cargar_noticias() 
 			throws PersistentException {
 		Noticia[] noticias = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			noticias = NoticiaDAO.listNoticiaByQuery(
-					"SeccionIdSeccion = '"+aIdSeccion+"'", null);
+			noticias = NoticiaDAO.listNoticiaByQuery(null, null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {

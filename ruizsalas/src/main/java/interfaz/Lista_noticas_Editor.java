@@ -13,8 +13,11 @@ public class Lista_noticas_Editor extends Listar_noticias {
 		this._editor = _editor;
 	}
 	@Override
-	public void Noticia_item() {
-		Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.Notas);
-		this.getColumnasNoticias().add(_item);
+	public void Noticia_item(int seccion) {
+		notice = this.cargar_noticias_secciones(seccion);
+		for (int i=0; i<notice.length; i++) {
+			Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.notice[i]);
+			this.getColumnasNoticias().add(_item);	
+		}
 	}
 }

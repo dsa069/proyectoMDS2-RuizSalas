@@ -26,7 +26,7 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	}
 	
 	@Override
-	public void Seleccion_de_secciones_item_Estatico(Seccion[] sec) {
+	public void Seleccion_de_secciones_item_Estatico() {
 		sec = cargar_secciones_generico();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_Vista_Editor_item SSVE = new Seleccion_de_secciones_Vista_Editor_item(this, sec[i]);
@@ -35,12 +35,8 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	}
 	
 	public void ConductorEditarSecciones() {
-		Notification.show("1");
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).removeAll();
-		Notification.show("2");
 		SESG = new Seleccion_de_secciones_generico(this._editor);
-		Notification.show("3");
 		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).add(this.SESG);
-		Notification.show("4");
 	}
 }

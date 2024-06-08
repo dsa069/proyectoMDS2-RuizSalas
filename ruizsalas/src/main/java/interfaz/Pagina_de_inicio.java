@@ -24,7 +24,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	
-	public void ConductorSiguientePagina() {//SIguiente pag periodico
+	public void ConductorSiguientePagina() {//SIguiente pag periodico (di)
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().removeAll();
 		SeccP = new Secciones_periodico(this._unnamed_Usuario_);
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().add(SeccP);

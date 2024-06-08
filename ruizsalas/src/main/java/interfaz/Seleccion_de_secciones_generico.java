@@ -6,6 +6,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iEditor;
+import basededatos.iUsuario;
+import ocl_proyecto.Noticia;
 import ocl_proyecto.Seccion;
 import vistas.VistaSelecciondeseccionesgenerico;
 
@@ -21,12 +23,12 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Pagina_de_inicio pagInicio;
 	public Crear_Editar_Secciones_Tematicas _crearEditarSeccionesTematicas;
 	public Seccion[] sec;
+	public Noticia[] not;
 	
-	public Editor editor;
-	
+		
 	ocl_proyecto.Seccion seccion;
 	
-	iEditor iEdito = new BD_Principal();
+	iUsuario iUsuario = new BD_Principal();
 	
 	public Seleccion_de_secciones_generico(Usuario usuario) {
 		super();
@@ -36,13 +38,13 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getMsgError().setVisible(false);
 		
 		
-		sec = this.cargar_secciones_generico();
 		
-		this.Seleccion_de_secciones_item_Estatico(sec);
+		this.Seleccion_de_secciones_item_Estatico();
 		this.CEseccionesEstatico();
 	}
 	
-	public void Seleccion_de_secciones_item_Estatico(Seccion[] sec) {
+	public void Seleccion_de_secciones_item_Estatico() {
+		sec = this.cargar_secciones_generico();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
 			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
@@ -55,6 +57,10 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public Seccion[] cargar_secciones_generico() {
-		return iEdito.cargar_secciones_generico();
+		return iUsuario.cargar_secciones_generico();
+	}
+	
+	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
+		return iUsuario.cargar_noticias_secciones(IdSeccion);
 	}
 }
