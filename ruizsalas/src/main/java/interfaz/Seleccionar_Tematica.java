@@ -23,9 +23,6 @@ public class Seleccionar_Tematica extends VistaSeleccionartematica {
 		super();
 		this.registrado = registrado;
 		
-		Seleccionar_Tematica_itema _item = new Seleccionar_Tematica_itema(this,null);
-		this.getTematicaSelecionableItem().as(VerticalLayout.class).add(_item);
-		
 		tem = cargar_tematicas_seleccion();
 		for (int i=0; i<tem.length; i++) {
 			Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this, tem[i]);

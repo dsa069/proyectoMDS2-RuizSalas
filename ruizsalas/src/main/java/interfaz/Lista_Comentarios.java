@@ -27,22 +27,17 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		this.usuario = usuario;
 		this.user = user;
 		this.getEscribirComentario().setVisible(false);
-
-		this.Comentarios_item_Estaticos();
-
-		Lista_Comentarios_item _item = new Lista_Comentarios_item(this, this.user, this.comentario);
-		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
 		
-//		comenta = cargar_listar_comentarios();
-//		for (int i=0; i<comenta.length; i++) {
-//			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
-//			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
-//		}
+		comenta = this.cargar_listar_comentarios();
+		
+		this.Comentarios_item_Estaticos(comenta);
 	}
 
-	public void Comentarios_item_Estaticos(){
-		Lista_Comentarios_item _item = new Lista_Comentarios_item(this, this.user, this.comentario);
-		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
+	public void Comentarios_item_Estaticos(Comentario[] comenta){
+		for (int i=0; i<comenta.length; i++) {
+			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
+			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
+		}
 	}
 	
 	public Comentario[] cargar_listar_comentarios() {

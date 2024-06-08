@@ -24,14 +24,11 @@ public class Listar_tematicas extends VistaListartematicas {
 		super();
 		this.usuario = usuario;
 		
-		Listar_tematicas_item _item = new Listar_tematicas_item(this,null);
-		this.getTematicasitem().as(VerticalLayout.class).add(_item);
-		
-//		tem = cargar_tematicas();
-//		for (int i=0; i<tem.length; i++) {
-//			Listar_tematicas_item LTI = new Listar_tematicas_item(this, tem[i]);
-//			this.getTematicasitem().as(VerticalLayout.class).add(LTI);
-//		}
+		tem = cargar_tematicas();
+		for (int i=0; i<tem.length; i++) {
+			Listar_tematicas_item LTI = new Listar_tematicas_item(this, tem[i]);
+			this.getTematicasitem().as(VerticalLayout.class).add(LTI);
+		}
 	}
 	
 	public Tematica[] cargar_tematicas() {

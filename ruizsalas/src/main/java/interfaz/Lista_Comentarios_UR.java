@@ -13,6 +13,7 @@ import com.vaadin.flow.server.StreamResource;
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
 import basededatos.iUsuario_Registardo;
+import ocl_proyecto.Comentario;
 
 public class Lista_Comentarios_UR extends Lista_Comentarios {
 	//	private JButton _escribir_comentario;
@@ -60,9 +61,11 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 //	}
 
 	@Override
-	public void Comentarios_item_Estaticos(){
-		Lista_Comentarios_UR_item _item = new Lista_Comentarios_UR_item(this, this.user, this.comentario);
-		this.getContenedorComentariosItem().as(VerticalLayout.class).add(_item);
+	public void Comentarios_item_Estaticos(Comentario[] comenta){
+		for (int i=0; i<comenta.length; i++) {
+			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, user, comenta[i]);
+			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);
+		}
 	}
 
 	//NS SI ES CORRECTO PQ ES CREAR

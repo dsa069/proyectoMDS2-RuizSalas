@@ -20,9 +20,6 @@ public class Periodistas extends VistaPeriodistas {
 		super();
 		this.editor = editor;
 		
-		Periodistas_item _item = new Periodistas_item(this, null);
-		this.getPeriodistasItemLayout().add(_item);
-		
 		per = cargar_periodistas();
 		for (int i=0; i<per.length; i++) {
 			Periodistas_item PI = new Periodistas_item(this, per[i]);
