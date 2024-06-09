@@ -12,9 +12,12 @@ public class Registro extends Banner_no_registrado {
 	public Introducir_datos_registro Datos;
 	public Confirmar_Registro Boton;
 	
+	ocl_proyecto.Usuario user;
+	
 	public Registro(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
 		super(_usuarioNoRegistrado, usuario);
 		this._unnamed_Usuario_No_Registrado_ = _usuarioNoRegistrado;
+		this.user = usuario;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getRegistroLayout().setVisible(true);
 		this.getZonaAnunciosLayout1().setVisible(false);
@@ -28,7 +31,7 @@ public class Registro extends Banner_no_registrado {
 	}
 	
 	public void Datos_Registro() {
-		this.Datos = new Introducir_datos_registro(this._unnamed_Usuario_No_Registrado_);
+		this.Datos = new Introducir_datos_registro(this._unnamed_Usuario_No_Registrado_, this.user);
 		this.getDatosRegistroEstatico().as(VerticalLayout.class).add(this.Datos);
 	}
 	

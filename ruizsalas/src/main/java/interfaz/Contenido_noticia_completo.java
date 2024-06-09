@@ -17,6 +17,7 @@ public class Contenido_noticia_completo extends Noticia {
 	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Noticia noticia) {
 		super(registrado, noticia);
 		this._registrado = registrado;
+		this.noticia = noticia;
 		this.getNoticiaCortada().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
@@ -31,7 +32,7 @@ public class Contenido_noticia_completo extends Noticia {
 	
 	@Override
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario);
+		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario, this.noticia);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

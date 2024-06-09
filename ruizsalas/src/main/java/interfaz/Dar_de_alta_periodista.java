@@ -19,6 +19,7 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	public Dar_de_alta_periodista(Editor _editor, ocl_proyecto.Editor editor) {
 		super(_editor, editor);
 		this._unnamed_Editor_ = _editor;
+		this.editor = editor;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getAltaPeriodistaLayout().setVisible(true);
 
@@ -29,7 +30,7 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	}
 
 	public void Dar_Alta_Periodistas() {
-		this._contiene = new Zona_registrar_periodista(this._unnamed_Editor_);
+		this._contiene = new Zona_registrar_periodista(this._unnamed_Editor_, this.editor);
 		this.getDatosPeriodistaAnadirEstatico().as(VerticalLayout.class).add(this._contiene);
 	}
 	

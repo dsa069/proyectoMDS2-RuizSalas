@@ -20,6 +20,7 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 		super();
 		this.editor = editor;
 		this.periodista = periodista;
+		//this.noticia = periodista.publica //SOCORRO AYUDA
 		
 		this.setFotoPeriodistaNoticia(createImageFromFile(periodista.getFoto_de_perfil()));
 		this.getNombreAutorNoticia().setText("" + periodista.getApodo());

@@ -22,23 +22,26 @@ public class Noticia extends VistaNoticia{
 	public Usuario usuario;
 	public Listar_tematicas listarTematicas;
 	public ver_valoracion valoracion;
+	public Lista_Comentarios comentarios;
 	
 	ocl_proyecto.Valoracion valoracionBD;
 	ocl_proyecto.Periodista periodista;
+	ocl_proyecto.Noticia notice;
 	
 	public Noticia(Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super();
 		this.usuario = usuario;
 		this.valoracionBD = noticia;
+		this.notice = noticia;
 		this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
-		this.setImagenPrincipalNoticia(createImageFromFile(noticia.getImagen_principal()));
-		this.getLayoutTitularVistaNoticia().setText("" + noticia.getTitulo());
-		this.getFechaNoticia().setText("" + String.valueOf(noticia.getFecha()));
-		this.getAutorNoticia().setText("" + noticia.getAutor().getApodo());
-		this.getLugarNoticia().setText("" + noticia.getUbicacion());
+		this.setImagenPrincipalNoticia(createImageFromFile(this.notice.getImagen_principal()));
+		this.getLayoutTitularVistaNoticia().setText("" + this.notice.getTitulo());
+		this.getFechaNoticia().setText("" + String.valueOf(this.notice.getFecha()));
+		this.getAutorNoticia().setText("" + this.notice.getAutor().getApodo());
+		this.getLugarNoticia().setText("" + this.notice.getUbicacion());
 	}
 
 	public void Listar_Tematicas() {
@@ -47,6 +50,8 @@ public class Noticia extends VistaNoticia{
 	}
 	
 	public void Lista_De_Comentarios() {
+		this.comentarios = new Lista_Comentarios(this.usuario, this.periodista, this.notice);
+		this.getComentariosEstaticos().as(VerticalLayout.class).add(comentarios);
 	}
 
 	public void Ver_Valoraciones() {

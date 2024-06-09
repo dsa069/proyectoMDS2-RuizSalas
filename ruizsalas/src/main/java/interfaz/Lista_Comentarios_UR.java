@@ -26,12 +26,14 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	ocl_proyecto.Usuario user;
 	ocl_proyecto.Comentario comentario;
+	ocl_proyecto.Noticia notice;
 
 	iRegistrado iRegitrao = new BD_Principal();
 
-	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario) {
-		super(_registrado, usuario);
+	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia) {
+		super(_registrado, usuario, noticia);
 		this._registrado = _registrado;
+		this.notice = noticia;
 		this.getEscribirComentario().setVisible(true);
 
 		this.setImagenFotoPerfilComentar(createImageFromFile(user.getFoto_de_perfil()));
@@ -62,7 +64,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	@Override
 	public void Comentarios_item_Estaticos(){
-		comenta = this.cargar_listar_comentarios();
+		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, user, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);

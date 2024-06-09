@@ -13,12 +13,14 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 	public Noticias_a_Revisar _noticias_a_Revisar;
 	
 	ocl_proyecto.Noticia notice;
+	ocl_proyecto.Periodista per;
 	
 	iEditor iEdito = new BD_Principal();
 	
 	public Noticias_a_Revisar_item(Noticias_a_Revisar padre, ocl_proyecto.Noticia Notas) {
 		super(padre,Notas);
 		this._noticias_a_Revisar = padre;
+		this.per = Notas.getAutor();
 		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
@@ -36,7 +38,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 
 	public Zona_de_autor_y_version_de_noticia zonaAutorYVersionDeNoticia;
 	public void Zona_De_Autor_Y_Version_De_Noticia() {
-		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor,null);
+		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor, this.per);
 		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
 	}
 	

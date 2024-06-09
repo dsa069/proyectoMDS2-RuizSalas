@@ -1,6 +1,12 @@
 package proyectoMDS;
 
 import interfaz.*;
+import ocl_proyecto.Comentario;
+import ocl_proyecto.Noticia;
+import ocl_proyecto.Seccion;
+import ocl_proyecto.Tematica;
+import ocl_proyecto.Usuario_suscrito_;
+import ocl_proyecto.Valoracion;
 import vistas.VistaBannersuscrito;
 import vistas.VistaNoticia;
 
@@ -69,10 +75,20 @@ public class MainView extends VerticalLayout {
 		P = new Periodista(this, POCL);
 		E = new Editor(this, EOCL);
 		
-		add(UR);
+		V = new Valoracion();
+		UOCL = new ocl_proyecto.Usuario();
+		N = new Noticia();
+		POCL = new ocl_proyecto.Periodista();
+		S = new Seccion();
+		T = new Tematica();
+		C = new Comentario();
+		US = new Usuario_suscrito_();
+		EOCL = new ocl_proyecto.Editor();
 		
-//		Secciones_periodico prueba = new Secciones_periodico(UR);
-//        add(prueba);
+//		add(UR);
+		
+		Lista_mis_noticias prueba = new Lista_mis_noticias(P);
+        add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
 //        add(prueba);

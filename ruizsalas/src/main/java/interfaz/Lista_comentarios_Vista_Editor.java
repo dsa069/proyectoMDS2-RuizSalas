@@ -13,16 +13,18 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	
 	ocl_proyecto.Editor editor;
 	ocl_proyecto.Comentario comentario;
+	ocl_proyecto.Noticia noti;
 	
-	public Lista_comentarios_Vista_Editor(Editor _editor, ocl_proyecto.Editor editor) {
-		super(_editor, editor);
+	public Lista_comentarios_Vista_Editor(Editor _editor, ocl_proyecto.Editor editor, ocl_proyecto.Noticia noticia) {
+		super(_editor, editor, noticia);
 		this._editor = _editor;
+		this.noti = noticia;
 		//this.getOcultar().setVisible(false);
 		}
 	
 	@Override
 	public void Comentarios_item_Estaticos(){
-		comenta = this.cargar_listar_comentarios();
+		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, (ocl_proyecto.Editor) user, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCVEI);

@@ -7,10 +7,12 @@ public class Contenido_cortado_noticia extends Noticia{
 	public Registro reg;
 	
 	ocl_proyecto.Usuario usuario;
+	ocl_proyecto.Noticia noti;
 	
 	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario, ocl_proyecto.Noticia noticia) {
 		super(_usuario, noticia);
 		this._usuario = _usuario;
+		this.noti = noticia;
 		this.getNoticiaCompleta().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
@@ -24,7 +26,7 @@ public class Contenido_cortado_noticia extends Noticia{
 	
 	@Override
 	public void Lista_De_Comentarios() {
-		this._contiene = new Lista_Comentarios(this._usuario, this.usuario);
+		this._contiene = new Lista_Comentarios(this._usuario, this.usuario, this.noti);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

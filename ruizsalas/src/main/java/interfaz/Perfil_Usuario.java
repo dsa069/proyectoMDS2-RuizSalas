@@ -19,10 +19,12 @@ public class Perfil_Usuario extends Banner_suscrito {
 	public Ver_datos_perfil Datos;
 	
 	ocl_proyecto.Usuario_suscrito_ registrado;
+	ocl_proyecto.Usuario user;
 	
 	public Perfil_Usuario(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ registrado) {
 		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
+		this.user = registrado;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
 		this.getNoticiaLayoutGenerico().setVisible(false);
@@ -36,7 +38,7 @@ public class Perfil_Usuario extends Banner_suscrito {
 	}
 
 	public void Ver_Datos() {
-		this.Datos = new Ver_datos_perfil(this._unnamed_Registrado_, this.registrado);
+		this.Datos = new Ver_datos_perfil(this._unnamed_Registrado_, this.user);
 		this.getVerDatosEstaticos().add(this.Datos);
 	}
 	

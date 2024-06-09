@@ -8,6 +8,7 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.server.StreamResource;
 
+import ocl_proyecto.Usuario_suscrito_;
 import vistas.VistaVerdatosperfil;
 
 public class Ver_datos_perfil extends VistaVerdatosperfil{
@@ -21,6 +22,7 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		super();
 		this.registrado = registrado;
 		this.usuario = usuario;
+		this.suscrito = (Usuario_suscrito_) usuario;
 		
 		this.setImagenUsuarioVerDatos(createImageFromFile(usuario.getFoto_de_perfil()));
 		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());

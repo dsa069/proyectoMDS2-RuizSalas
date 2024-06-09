@@ -22,9 +22,10 @@ public class Introducir_Datos extends VistaIntroducirdatos{
 	
 	ocl_proyecto.Usuario usuarioBD;
 	
-	public Introducir_Datos(Usuario usuario) {
+	public Introducir_Datos(Usuario usuario, ocl_proyecto.Usuario user) {
 		super();
 		this.usuario = usuario;
+		this.usuarioBD = user;
 		this.getZonaRegistrarPeriodista().setVisible(false);
 		this.getDatosRegistro().setVisible(false);
 		this.getFotoTextamen().setVisible(false);
