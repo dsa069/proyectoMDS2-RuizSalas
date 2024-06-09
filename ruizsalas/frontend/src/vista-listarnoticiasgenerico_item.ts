@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-listarnoticiasgenerico_item')
 export class VistaListarnoticiasgenerico_item extends LitElement {
@@ -23,7 +23,7 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">
    <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 0; width: 33%; align-items: flex-start; justify-content: flex-end;">
     <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 80%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;" id="botonImagenListarNoticias">
-     <img src="" width="" height="" id="imagenListarNoticias" style="width: 100%; height: 100%;">
+     <vaadin-vertical-layout theme="spacing" id="LayoutImagenNoticiaCojonesPlaceholderRoggenrola"></vaadin-vertical-layout>
     </vaadin-button>
     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size:50px; width: 100%; color: black; flex-grow: 0; flex-shrink: 0; height: 10%;" id="Titular1">
       Titular 

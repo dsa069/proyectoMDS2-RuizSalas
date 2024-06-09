@@ -37,10 +37,10 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	private Element layoutGenericoListarNoticiasGenerico;
 	@Id("botonImagenListarNoticias")
 	private Button botonImagenListarNoticias;
-	@Id("imagenListarNoticias")
-	private Image imagenListarNoticias;
 	@Id("resumenNoticia")
 	private Label resumenNoticia;
+	@Id("LayoutImagenNoticiaCojonesPlaceholderRoggenrola")
+	private Element layoutImagenNoticiaCojonesPlaceholderRoggenrola;
 	public Button getBotonImagenListarNoticias() {
 		return botonImagenListarNoticias;
 	}
@@ -129,20 +129,21 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 		this.quitarNoticiaDeSeccion = quitarNoticiaDeSeccion;
 	}
 
-	public Image getImagenListarNoticias() {
-		return imagenListarNoticias;
-	}
-
-	public void setImagenListarNoticias(Image imagenListarNoticias) {
-		this.imagenListarNoticias = imagenListarNoticias;
-	}
-
 	public Label getResumenNoticia() {
 		return resumenNoticia;
 	}
 
 	public void setResumenNoticia(Label resumenNoticia) {
 		this.resumenNoticia = resumenNoticia;
+	}
+
+	public Element getLayoutImagenNoticiaCojonesPlaceholderRoggenrola() {
+		return layoutImagenNoticiaCojonesPlaceholderRoggenrola;
+	}
+
+	public void setLayoutImagenNoticiaCojonesPlaceholderRoggenrola(
+			Element layoutImagenNoticiaCojonesPlaceholderRoggenrola) {
+		this.layoutImagenNoticiaCojonesPlaceholderRoggenrola = layoutImagenNoticiaCojonesPlaceholderRoggenrola;
 	}
 
 	public VistaListarnoticiasgenerico_item() {

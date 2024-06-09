@@ -85,10 +85,10 @@ public class MainView extends VerticalLayout {
 		US = new Usuario_suscrito_();
 		EOCL = new ocl_proyecto.Editor();
 		
-//		add(UR);
+		add(UNR);
 		
-		Lista_mis_noticias prueba = new Lista_mis_noticias(P);
-        add(prueba);
+//		Lista_mis_noticias prueba = new Lista_mis_noticias(P);
+//        add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
 //        add(prueba);

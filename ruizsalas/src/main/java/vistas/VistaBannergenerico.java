@@ -110,6 +110,9 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("datosPeriodistaAnadirEstatico")
 	private Element datosPeriodistaAnadirEstatico;
 
+	@Id("LayoutFotoPerfilBanner")
+	private Element layoutFotoPerfilBanner;
+
 	public VistaBannergenerico() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -353,6 +356,12 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setFotoPerfilBanner(Image fotoPerfilBanner) {
 		this.fotoPerfilBanner = fotoPerfilBanner;
+	}
+	public Element getLayoutFotoPerfilBanner() {
+		return layoutFotoPerfilBanner;
+	}
+	public void setLayoutFotoPerfilBanner(Element layoutFotoPerfilBanner) {
+		this.layoutFotoPerfilBanner = layoutFotoPerfilBanner;
 	}
 
 }
