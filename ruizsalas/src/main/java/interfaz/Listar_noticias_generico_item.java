@@ -37,6 +37,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 		this.Notas = Notas;
 		
 		this.setImagenListarNoticias(createImageFromFile(Notas.getImagen_principal()));
+	//	this.getImagenListarNoticias().setSrc("" + Notas.getImagen_principal());
 		this.getResumenNoticia().setText("" + Notas.getTexto_corto());
 		
 //		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());

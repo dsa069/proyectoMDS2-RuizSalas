@@ -100,7 +100,6 @@ public class Bd_Noticias {
 		try {
 			porta = SeccionDAO.loadSeccionByQuery(
 					"Portada ='"+1+"'", null);
-			System.out.println(porta.getIdSeccion());
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'", null);
 			t.commit();
