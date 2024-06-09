@@ -270,11 +270,11 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 
 //			_bd_principal.borrar_seccion(3, 3);
 //			_bd_principal.cargar_valoracion(55);
-			Noticia[] notis =_bd_noticias.cargar_noticias_portada();
-			 for (Noticia notice: notis) {
-				 System.out.println("===================================DISI==========================================");
-				 System.out.println("Disi " + notice.getId_valoracion());
-			 }
+//			Noticia[] notis =_bd_noticias.cargar_noticias_portada();
+//			 for (Noticia notice: notis) {
+//				 System.out.println("===================================DISI==========================================");
+//				 System.out.println("Disi " + notice.getId_valoracion());
+//			 }
 				 
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
