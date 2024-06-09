@@ -14,6 +14,8 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 		this._noticias_en_Portada = padre;
 		//this.getMarcar().setVisible(false);
 		
+		this.getTitular2().setText(""+Notas.getTitulo());
+		
 //		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());
 //		this.getTitular1().addClickListener(event->ConductorNoticia());
 //		this.getTitular2().addClickListener(event->ConductorNoticia());
