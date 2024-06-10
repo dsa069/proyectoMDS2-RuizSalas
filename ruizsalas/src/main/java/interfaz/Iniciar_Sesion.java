@@ -12,6 +12,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	public Iniciar_Sesion(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
 		super(_usuarioNoRegistrado, usuario);
 		this._unnamed_Usuario_No_Registrado_ = _usuarioNoRegistrado;
+		this.user = usuario;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getIniciarSesionLayout().setVisible(true);
 		this.getZonaAnunciosLayout1().setVisible(false);

@@ -10,9 +10,10 @@ public class Noticia_Vista_UNR extends Banner_no_registrado {
 	
 	ocl_proyecto.Noticia noticia;
 
-	public Noticia_Vista_UNR(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
+	public Noticia_Vista_UNR(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia notice) {
 		super(_usuarioNoRegistrado, usuario);
 		this._unnamed_Usuario_No_Registrado_ = _usuarioNoRegistrado;
+		this.noticia = notice;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getNoticiaUsuarioNoRegistradoLayout().setVisible(true);
 		

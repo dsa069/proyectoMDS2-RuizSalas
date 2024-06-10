@@ -20,10 +20,11 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 	ocl_proyecto.Periodista periodista;
 	ocl_proyecto.Noticia noticia;
 	
-	public Zona_de_autor_y_version_de_noticia(Editor editor, ocl_proyecto.Periodista periodista) {
+	public Zona_de_autor_y_version_de_noticia(Editor editor, ocl_proyecto.Periodista periodista, ocl_proyecto.Noticia notice) {
 		super();
 		this.editor = editor;
 		this.periodista = periodista;
+		this.noticia = notice;
 		//this.noticia = periodista.publica //SOCORRO AYUDA
 		
 		imagen = new Image();
@@ -48,7 +49,7 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).removeAll();
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).add(this.imagen);
 		this.getNombreAutorNoticia().setText("" + periodista.getApodo());
-		this.getVersionNoticia().setText("" + String.valueOf(noticia.getVersion())); //Ns si es correcto pq convierte el float a String
+		this.getVersionNoticia().setText("" + String.valueOf(this.noticia.getVersion())); //Ns si es correcto pq convierte el float a String
 	}
 	
 //	private Image createImageFromFile(String filePath) {

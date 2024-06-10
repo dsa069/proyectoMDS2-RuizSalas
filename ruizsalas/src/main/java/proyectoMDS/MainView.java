@@ -68,13 +68,6 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
-		U = new Usuario(this, UOCL);
-		UNR = new Usuario_No_Registrado(this, UOCL);
-		R = new Registrado(this, US);
-		UR = new Usuario_Registardo(this, US);
-		P = new Periodista(this, POCL);
-		E = new Editor(this, EOCL);
-		
 		V = new Valoracion();
 		UOCL = new ocl_proyecto.Usuario();
 		N = new Noticia();
@@ -85,10 +78,17 @@ public class MainView extends VerticalLayout {
 		US = new Usuario_suscrito_();
 		EOCL = new ocl_proyecto.Editor();
 		
-		add(UNR);
+		U = new Usuario(this, UOCL);
+		UNR = new Usuario_No_Registrado(this, UOCL);
+		R = new Registrado(this, US);
+		UR = new Usuario_Registardo(this, US);
+		P = new Periodista(this, POCL);
+		E = new Editor(this, EOCL);
 		
-//		Lista_mis_noticias prueba = new Lista_mis_noticias(P);
-//        add(prueba);
+//		add(E);
+		
+		Contenido_noticia_editor prueba = new Contenido_noticia_editor(E, N, EOCL);
+        add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();
 //        add(prueba);

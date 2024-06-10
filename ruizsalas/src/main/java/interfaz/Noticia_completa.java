@@ -1,5 +1,7 @@
 package interfaz;
 
+import ocl_proyecto.Usuario;
+
 public class Noticia_completa extends Banner_suscrito {
 	//private JButton _me_gusta;
 	//private JButton _no_me_gusta;
@@ -10,9 +12,10 @@ public class Noticia_completa extends Banner_suscrito {
 	
 	ocl_proyecto.Noticia noticia;
 	
-	public Noticia_completa(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ suscrito) {
+	public Noticia_completa(Registrado _registrado, ocl_proyecto.Usuario suscrito, ocl_proyecto.Noticia notice) {
 		super(_registrado, suscrito);
 		this._unnamed_Registrado_ = _registrado;
+		this.noticia = notice;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getTextoPerfil().setVisible(false);
 		this.getPerfilUsuarioLayout().setVisible(false);

@@ -14,6 +14,7 @@ public class Editor extends Registrado {
 	
 	public Editor (MainView mainView, ocl_proyecto.Editor editor){
 		super(mainView, editor);
+		this.editor = editor;
 
 		this.Banner_E_Inico();
 	} 

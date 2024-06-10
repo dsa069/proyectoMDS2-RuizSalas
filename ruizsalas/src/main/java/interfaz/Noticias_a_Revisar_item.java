@@ -2,6 +2,7 @@ package interfaz;
 
 import basededatos.BD_Principal;
 import basededatos.iEditor;
+import ocl_proyecto.Noticia;
 import vistas.*;
 
 public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
@@ -21,6 +22,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		super(padre,Notas);
 		this._noticias_a_Revisar = padre;
 		this.per = Notas.getAutor();
+		this.notice = Notas;
 		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
@@ -38,7 +40,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 
 	public Zona_de_autor_y_version_de_noticia zonaAutorYVersionDeNoticia;
 	public void Zona_De_Autor_Y_Version_De_Noticia() {
-		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor, this.per);
+		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor, this.per, this.notice);
 		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
 	}
 	

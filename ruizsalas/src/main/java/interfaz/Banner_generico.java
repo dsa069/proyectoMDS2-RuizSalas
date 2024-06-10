@@ -26,7 +26,16 @@ public class Banner_generico extends VistaBannergenerico{
 		super();
 		this.usuario = usuario;
 		this.usuarioBD = usuarioBD;
-
+		
+		this.getRegistroLayout().setVisible(false);
+		this.getIniciarSesionLayout().setVisible(false);
+		this.getNoticiaUsuarioNoRegistradoLayout().setVisible(false);
+		this.getCrearEditarNoticiaLayout().setVisible(false);
+		this.getHistorialNoticiasLayout().setVisible(false);
+		this.getRevisarNoticiasLayout().setVisible(false);
+		this.getListarPeriodistaLayout().setVisible(false);
+		this.getAltaPeriodistaLayout().setVisible(false);
+		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.usuarioBD.getFoto_de_perfil());
         if (file.exists()) {
@@ -49,15 +58,6 @@ public class Banner_generico extends VistaBannergenerico{
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
-		
-		this.getRegistroLayout().setVisible(false);
-		this.getIniciarSesionLayout().setVisible(false);
-		this.getNoticiaUsuarioNoRegistradoLayout().setVisible(false);
-		this.getCrearEditarNoticiaLayout().setVisible(false);
-		this.getHistorialNoticiasLayout().setVisible(false);
-		this.getRevisarNoticiasLayout().setVisible(false);
-		this.getListarPeriodistaLayout().setVisible(false);
-		this.getAltaPeriodistaLayout().setVisible(false);
 
 		this.InicioPortada();
 		

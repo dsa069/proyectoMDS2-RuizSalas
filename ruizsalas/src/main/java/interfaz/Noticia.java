@@ -69,7 +69,7 @@ public class Noticia extends VistaNoticia{
 	}
 
 	public void Listar_Tematicas() {
-		this.listarTematicas = new Listar_tematicas(this.usuario);
+		this.listarTematicas = new Listar_tematicas(this.usuario, this.notice);
 		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
 	

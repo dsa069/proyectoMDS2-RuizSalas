@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import ocl_proyecto.Usuario;
 import vistas.VistaBannersuscrito;
 
 public class Banner_suscrito extends VistaBannersuscrito{
@@ -11,11 +12,11 @@ public class Banner_suscrito extends VistaBannersuscrito{
 	public Banner_Periodista _unnamed_Banner_Periodista_;
 	public Registrado registrado;
 	
-	ocl_proyecto.Usuario_suscrito_ registradoBD;
+	ocl_proyecto.Usuario registradoBD;
 
-	public Banner_suscrito(Registrado registrado, ocl_proyecto.Usuario_suscrito_ registradoBD) {
+	public Banner_suscrito(Registrado registrado, ocl_proyecto.Usuario suscrito) {
 		super();
 		this.registrado = registrado;
-		this.registradoBD = registradoBD;
+		this.registradoBD = suscrito;
 	}
 }

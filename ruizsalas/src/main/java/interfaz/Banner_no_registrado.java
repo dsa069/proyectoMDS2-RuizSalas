@@ -18,6 +18,7 @@ public class Banner_no_registrado extends Banner_generico {
 	public Banner_no_registrado(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
 		super(_usuarioNoRegistrado, usuario);
 		this._usuarioNoRegistrado = _usuarioNoRegistrado;
+		this.usuario = usuario;
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 		this.getBotonIniciarSesionGenerico().setVisible(false);
 		this.getBotonMisNoticiasGenerico().setVisible(false);

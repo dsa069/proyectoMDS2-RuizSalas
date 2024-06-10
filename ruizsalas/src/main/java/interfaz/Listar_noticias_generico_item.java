@@ -32,11 +32,13 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	Noticia_completa NUN;
 	
 	ocl_proyecto.Noticia Notas;
+	ocl_proyecto.Usuario user;
 	
 	public Listar_noticias_generico_item(Listar_noticias_generico _listar_noticias_generico, ocl_proyecto.Noticia Notas) {
 		super();
 		this._listar_noticias_generico = _listar_noticias_generico;
 		this.Notas = Notas;
+		this.user = this.Notas.getAutor();
 		
         this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.Notas.getImagen_principal());
@@ -89,14 +91,14 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	
 	public void ConductorNoticiaUNR() {//Ir a noticia dependiendo del usuario
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null);
+		NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);
 	}
 	
 	
 	public void ConductorNoticiaUR() {//Ir a noticia dependiendo del usuario
 		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, null);
+		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this.user, this.Notas);
 		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
 	}
 }

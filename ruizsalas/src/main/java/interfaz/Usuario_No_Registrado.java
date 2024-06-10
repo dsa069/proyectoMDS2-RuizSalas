@@ -9,6 +9,7 @@ public class Usuario_No_Registrado extends Usuario {
 	ocl_proyecto.Usuario usuario;
 	public Usuario_No_Registrado (MainView mainView, ocl_proyecto.Usuario usuario){
 		super(mainView, usuario);
+		this.usuario = usuario;
 
 		this.Banner_URN_Inico();
 	} 

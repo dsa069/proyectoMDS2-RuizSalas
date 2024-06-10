@@ -11,6 +11,7 @@ public class Periodista extends Registrado {
 	
 	public Periodista (MainView mainView, ocl_proyecto.Periodista periodista){
 		super(mainView, periodista);
+		this.periodista = periodista;
 
 		this.Banner_P_Inico();
 	}

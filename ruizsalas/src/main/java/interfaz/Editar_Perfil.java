@@ -18,6 +18,7 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ registrado) {
 		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
+		this.registrado = registrado;
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
 		this.getNoticiaLayoutGenerico().setVisible(false);

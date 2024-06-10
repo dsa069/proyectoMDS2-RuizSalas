@@ -16,10 +16,11 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	
 	iEditor iEdito = new BD_Principal();
 	
-	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Noticia noticia) {
+	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Noticia noticia, ocl_proyecto.Editor editorBD) {
 		super(editor, noticia);
 		this.editor = editor;
 		this.notice = noticia;
+		this.editorBD = editorBD;
 		this.getSeleccionarSecciones().setVisible(true);
 		this.getSeleccionarTematicas().setVisible(true);
 		this.getEliminarNoticia().setVisible(true);

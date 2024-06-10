@@ -20,9 +20,10 @@ public class Listar_tematicas extends VistaListartematicas {
 	
 	iUsuario iUsu = new BD_Principal();
 	
-	public Listar_tematicas(Usuario usuario) {
+	public Listar_tematicas(Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super();
 		this.usuario = usuario;
+		this.notice = noticia;
 		
 		tem = cargar_tematicas();
 		for (int i=0; i<tem.length; i++) {
