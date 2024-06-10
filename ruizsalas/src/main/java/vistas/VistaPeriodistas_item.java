@@ -18,6 +18,8 @@ public class VistaPeriodistas_item extends LitTemplate {
 	private Element apodoPeriodistas;
 	@Id("FotoPeriodistas")
 	private Image fotoPeriodistas;
+	@Id("layoutFotoPeriodistas")
+	private Element layoutFotoPeriodistas;
 	public VistaPeriodistas_item() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -44,6 +46,14 @@ public class VistaPeriodistas_item extends LitTemplate {
 
 	public void setApodoPeriodistas(Element apodoPeriodistas) {
 		this.apodoPeriodistas = apodoPeriodistas;
+	}
+
+	public Element getLayoutFotoPeriodistas() {
+		return layoutFotoPeriodistas;
+	}
+
+	public void setLayoutFotoPeriodistas(Element layoutFotoPeriodistas) {
+		this.layoutFotoPeriodistas = layoutFotoPeriodistas;
 	}
 
 }

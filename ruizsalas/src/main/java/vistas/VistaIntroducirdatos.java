@@ -22,6 +22,8 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private Element fotoTextamen;
 	@Id("imagenPerfilIntroducirDatos")
 	private Image imagenPerfilIntroducirDatos;
+	@Id("layoutImagenPerfilIntroducirDatos")
+	private Element layoutImagenPerfilIntroducirDatos;
 	
 	public VistaIntroducirdatos() {
         // You can initialise any data required for the connected UI components here.
@@ -65,6 +67,14 @@ public class VistaIntroducirdatos extends LitTemplate {
 
 	public void setImagenPerfilIntroducirDatos(Image imagenPerfilIntroducirDatos) {
 		this.imagenPerfilIntroducirDatos = imagenPerfilIntroducirDatos;
+	}
+
+	public Element getLayoutImagenPerfilIntroducirDatos() {
+		return layoutImagenPerfilIntroducirDatos;
+	}
+
+	public void setLayoutImagenPerfilIntroducirDatos(Element layoutImagenPerfilIntroducirDatos) {
+		this.layoutImagenPerfilIntroducirDatos = layoutImagenPerfilIntroducirDatos;
 	}
 
 }

@@ -23,7 +23,9 @@ export class VistaPeriodistas_item extends LitElement {
     ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ 
   </vaadin-vertical-layout>
   <vaadin-button theme="icon" aria-label="Add new" style="flex-shrink: 0; width: 50%; height: 85%; overflow: hidden; background-color: var(--lumo-contrast-0pct); ">
-   <img src="https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/2/vegeta-blue-evolution-emerald-light-transparent.png?&amp;targetx=-2&amp;targety=-335&amp;imagewidth=788&amp;imageheight=1867&amp;modelwidth=788&amp;modelheight=788&amp;backgroundcolor=000000&amp;orientation=0" width="650" height="650" id="FotoPeriodistas" style="width: 100%; height: 100%;">
+   <vaadin-vertical-layout id="layoutFotoPeriodistas">
+    <img src="https://render.fineartamerica.com/images/rendered/default/flat/round-beach-towel/images/artworkimages/medium/2/vegeta-blue-evolution-emerald-light-transparent.png?&amp;targetx=-2&amp;targety=-335&amp;imagewidth=788&amp;imageheight=1867&amp;modelwidth=788&amp;modelheight=788&amp;backgroundcolor=000000&amp;orientation=0" width="650" height="650" id="FotoPeriodistas" style="width: 100%; height: 100%;">
+   </vaadin-vertical-layout>
   </vaadin-button>
   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; width: 15%; height: 20%; align-self: flex-end; overflow: hidden; background-color: var(--lumo-contrast-0pct);" id="BotonEliminarPeriodista">
    <img src="https://cdn-icons-png.flaticon.com/512/748/748138.png" width="75%" height="75%">

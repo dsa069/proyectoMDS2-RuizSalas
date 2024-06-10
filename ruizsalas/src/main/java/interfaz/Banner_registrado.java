@@ -17,6 +17,8 @@ public class Banner_registrado extends Banner_generico {
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
 	public Usuario_No_Registrado Usus_no_reg;
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
+	public Image imagen;
 
 	ocl_proyecto.Usuario user;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
@@ -30,10 +32,31 @@ public class Banner_registrado extends Banner_generico {
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
 
+		this.imagen = new Image();
+        File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
+        if (file.exists()) {
+            StreamResource resource = new StreamResource(file.getName(), () -> {
+                try {
+                    return new FileInputStream(file);
+                } catch (FileNotFoundException e) {
+                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+                    return null;
+                }
+            });
+
+            Image image = new Image(resource, "Image not found");
+            image.setMaxWidth("500px");
+            this.imagen = image;
+        } else {
+            Notification.show("File not found: " + IMAGE_PATH + this.user.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
+        }
+
+        this.imagen.getStyle().set("align-self", "center");
+        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
+        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
+		
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
-
-//		this.setFotoPerfilBanner(createImageFromFile(user.getFoto_de_perfil()));
 	}
 
 //	private Image createImageFromFile(String filePath) {

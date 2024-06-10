@@ -21,7 +21,9 @@ export class VistaIntroducirdatos extends LitElement {
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; justify-content: center;">
  <vaadin-vertical-layout style="flex-shrink: 0; justify-content: center; margin: var(--lumo-space-xl); flex-grow: 1; height: 100%;" id="editarPerfil">
   <vaadin-button theme="icon" aria-label="Add new" style="flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; align-self: center; height: 100%;">
-   <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="" height="" id="imagenPerfilIntroducirDatos" style="flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; height: 65%; width: 65%;">
+   <vaadin-vertical-layout id="layoutImagenPerfilIntroducirDatos">
+    <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="" height="" id="imagenPerfilIntroducirDatos" style="flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; height: 65%; width: 65%;">
+   </vaadin-vertical-layout>
   </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1; height: 100%; justify-content: center;">

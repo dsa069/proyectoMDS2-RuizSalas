@@ -21,7 +21,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	//	private JLabel _mi_apodo;
 	//	public Noticia_completa _unnamed_Noticia_completa_;
 	public Vector<Lista_Comentarios_UR_item> _item = new Vector<Lista_Comentarios_UR_item>();
-
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
+	public Image imagen;
 	public Registrado _registrado;
 
 	ocl_proyecto.Usuario user;
@@ -34,33 +35,56 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		super(_registrado, usuario, noticia);
 		this._registrado = _registrado;
 		this.notice = noticia;
+		this.user = usuario;
 		this.getEscribirComentario().setVisible(true);
 
-		this.setImagenFotoPerfilComentar(createImageFromFile(user.getFoto_de_perfil()));
+		this.imagen = new Image();
+        File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
+        if (file.exists()) {
+            StreamResource resource = new StreamResource(file.getName(), () -> {
+                try {
+                    return new FileInputStream(file);
+                } catch (FileNotFoundException e) {
+                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+                    return null;
+                }
+            });
+
+            Image image = new Image(resource, "Image not found");
+            image.setMaxWidth("500px");
+            this.imagen = image;
+        } else {
+            Notification.show("File not found: " + IMAGE_PATH + this.user.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
+        }
+
+        this.imagen.getStyle().set("align-self", "center");
+        this.getLayoutImagenFotoPerfilComentar().as(VerticalLayout.class).removeAll();
+        this.getLayoutImagenFotoPerfilComentar().as(VerticalLayout.class).add(this.imagen);
+		
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
-	private Image createImageFromFile(String filePath) {
-		File file = new File(filePath);
-		if (file.exists()) {
-			StreamResource resource = new StreamResource(file.getName(), () -> {
-				try {
-					return new FileInputStream(file);
-				} catch (FileNotFoundException e) {
-					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-					return null;
-				}
-			});
-			Image image = new Image(resource, "Image not found");
-			image.setMaxWidth("500px");
-			return image;
-		} else {
-			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-			return new Image();
-		}
-	}
+//	private Image createImageFromFile(String filePath) {
+//		File file = new File(filePath);
+//		if (file.exists()) {
+//			StreamResource resource = new StreamResource(file.getName(), () -> {
+//				try {
+//					return new FileInputStream(file);
+//				} catch (FileNotFoundException e) {
+//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+//					return null;
+//				}
+//			});
+//			Image image = new Image(resource, "Image not found");
+//			image.setMaxWidth("500px");
+//			return image;
+//		} else {
+//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+//			return new Image();
+//		}
+//	}
 
 	@Override
 	public void Comentarios_item_Estaticos(){

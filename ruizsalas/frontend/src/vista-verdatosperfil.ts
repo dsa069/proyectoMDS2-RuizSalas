@@ -16,7 +16,7 @@ export class VistaVerdatosperfil extends LitElement {
   render() {
     return html`
 <vaadin-horizontal-layout class="content" style="width: 100%; height: 100%; justify-content: center;">
- <vaadin-vertical-layout style="flex-shrink: 0; height: 100%; justify-content: center; flex-grow: 1; margin: var(--lumo-space-xl);">
+ <vaadin-vertical-layout style="flex-shrink: 0; height: 100%; justify-content: center; flex-grow: 1; margin: var(--lumo-space-xl);" id="layoutImagenUsuarioVerDatos">
   <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="" height="" style="height: 75%; flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; align-self: center; width: 75%;" id="imagenUsuarioVerDatos">
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="flex-shrink: 0; justify-content: center; font-size: 35px; flex-grow: 1;">

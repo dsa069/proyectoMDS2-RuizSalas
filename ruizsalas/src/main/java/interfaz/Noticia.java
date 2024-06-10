@@ -23,6 +23,8 @@ public class Noticia extends VistaNoticia{
 	public Listar_tematicas listarTematicas;
 	public ver_valoracion valoracion;
 	public Lista_Comentarios comentarios;
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
+	public Image imagen;
 	
 	ocl_proyecto.Valoracion valoracionBD;
 	ocl_proyecto.Periodista periodista;
@@ -37,7 +39,29 @@ public class Noticia extends VistaNoticia{
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
-		this.setImagenPrincipalNoticia(createImageFromFile(this.notice.getImagen_principal()));
+		this.imagen = new Image();
+        File file = new File(IMAGE_PATH + this.notice.getImagen_principal());
+        if (file.exists()) {
+            StreamResource resource = new StreamResource(file.getName(), () -> {
+                try {
+                    return new FileInputStream(file);
+                } catch (FileNotFoundException e) {
+                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+                    return null;
+                }
+            });
+
+            Image image = new Image(resource, "Image not found");
+            image.setMaxWidth("500px");
+            this.imagen = image;
+        } else {
+            Notification.show("File not found: " + IMAGE_PATH + this.notice.getImagen_principal(), 5000, Notification.Position.MIDDLE);
+        }
+
+        this.imagen.getStyle().set("align-self", "center");
+        this.getLayoutImagenPrincipalNoticia().as(VerticalLayout.class).removeAll();
+        this.getLayoutImagenPrincipalNoticia().as(VerticalLayout.class).add(this.imagen);
+		
 		this.getLayoutTitularVistaNoticia().setText("" + this.notice.getTitulo());
 		this.getFechaNoticia().setText("" + String.valueOf(this.notice.getFecha()));
 		this.getAutorNoticia().setText("" + this.notice.getAutor().getApodo());
@@ -59,23 +83,23 @@ public class Noticia extends VistaNoticia{
 		this.getVerValoracionEstatico().add(this.valoracion);
 	}
 	
-	private Image createImageFromFile(String filePath) {
-		File file = new File(filePath);
-		if (file.exists()) {
-			StreamResource resource = new StreamResource(file.getName(), () -> {
-				try {
-					return new FileInputStream(file);
-				} catch (FileNotFoundException e) {
-					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-					return null;
-				}
-			});
-			Image image = new Image(resource, "Image not found");
-			image.setMaxWidth("500px");
-			return image;
-		} else {
-			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-			return new Image();
-		}
-	}
+//	private Image createImageFromFile(String filePath) {
+//		File file = new File(filePath);
+//		if (file.exists()) {
+//			StreamResource resource = new StreamResource(file.getName(), () -> {
+//				try {
+//					return new FileInputStream(file);
+//				} catch (FileNotFoundException e) {
+//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+//					return null;
+//				}
+//			});
+//			Image image = new Image(resource, "Image not found");
+//			image.setMaxWidth("500px");
+//			return image;
+//		} else {
+//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
+//			return new Image();
+//		}
+//	}
 }

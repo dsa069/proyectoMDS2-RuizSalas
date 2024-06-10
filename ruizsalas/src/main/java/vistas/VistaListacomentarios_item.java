@@ -51,6 +51,8 @@ public class VistaListacomentarios_item extends LitTemplate {
 	private Image imagenUsuarioComento;
 	@Id("layoutVerValoracionComentario")
 	private Element layoutVerValoracionComentario;
+	@Id("layoutImagenUsuarioComento")
+	private Element layoutImagenUsuarioComento;
 	public VistaListacomentarios_item() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -85,6 +87,14 @@ public class VistaListacomentarios_item extends LitTemplate {
 
 	public void setLayoutVerValoracionComentario(Element layoutVerValoracionComentario) {
 		this.layoutVerValoracionComentario = layoutVerValoracionComentario;
+	}
+
+	public Element getLayoutImagenUsuarioComento() {
+		return layoutImagenUsuarioComento;
+	}
+
+	public void setLayoutImagenUsuarioComento(Element layoutImagenUsuarioComento) {
+		this.layoutImagenUsuarioComento = layoutImagenUsuarioComento;
 	}
 
 }

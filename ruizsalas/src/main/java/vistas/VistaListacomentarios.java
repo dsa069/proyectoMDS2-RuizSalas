@@ -22,6 +22,8 @@ public class VistaListacomentarios extends LitTemplate {
 	private Image imagenFotoPerfilComentar;
 	@Id("layoutTextoNombreUsuario")
 	private Element layoutTextoNombreUsuario;
+	@Id("layoutImagenFotoPerfilComentar")
+	private Element layoutImagenFotoPerfilComentar;
 
 	public VistaListacomentarios() {
         // You can initialise any data required for the connected UI components here.
@@ -65,6 +67,14 @@ public class VistaListacomentarios extends LitTemplate {
 
 	public void setLayoutTextoNombreUsuario(Element layoutTextoNombreUsuario) {
 		this.layoutTextoNombreUsuario = layoutTextoNombreUsuario;
+	}
+
+	public Element getLayoutImagenFotoPerfilComentar() {
+		return layoutImagenFotoPerfilComentar;
+	}
+
+	public void setLayoutImagenFotoPerfilComentar(Element layoutImagenFotoPerfilComentar) {
+		this.layoutImagenFotoPerfilComentar = layoutImagenFotoPerfilComentar;
 	}
 
 }

@@ -17,6 +17,8 @@ public class VistaZonadeautoryversiondenoticia extends LitTemplate {
 	private Element nombreAutorNoticia;
 	@Id("VersionNoticia")
 	private Element versionNoticia;
+	@Id("layoutFotoPeriodistaNoticia")
+	private Element layoutFotoPeriodistaNoticia;
 	public VistaZonadeautoryversiondenoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -37,6 +39,12 @@ public class VistaZonadeautoryversiondenoticia extends LitTemplate {
 	}
 	public void setVersionNoticia(Element versionNoticia) {
 		this.versionNoticia = versionNoticia;
+	}
+	public Element getLayoutFotoPeriodistaNoticia() {
+		return layoutFotoPeriodistaNoticia;
+	}
+	public void setLayoutFotoPeriodistaNoticia(Element layoutFotoPeriodistaNoticia) {
+		this.layoutFotoPeriodistaNoticia = layoutFotoPeriodistaNoticia;
 	}
 
 }
