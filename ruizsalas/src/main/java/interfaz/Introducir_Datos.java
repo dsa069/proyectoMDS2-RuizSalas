@@ -55,7 +55,7 @@ public class Introducir_Datos extends VistaIntroducirdatos{
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutImagenPerfilIntroducirDatos().as(VerticalLayout.class).removeAll();
         this.getLayoutImagenPerfilIntroducirDatos().as(VerticalLayout.class).add(this.imagen);
-        
+
         //coger nombre usuario y contrasena
 	}
 }

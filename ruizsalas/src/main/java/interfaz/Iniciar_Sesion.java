@@ -2,6 +2,7 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
 import basededatos.iUsuario_No_Registrado;
 
 public class Iniciar_Sesion extends Banner_no_registrado{
@@ -10,7 +11,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	public Introducir_Datos _contiene;
 	
 	ocl_proyecto.Usuario user;
-	public iUsuario_No_Registrado iUsuario_No_Registrado;
+	public iUsuario_No_Registrado iUsuario_No_Registrado = new BD_Principal();
 
 	public Iniciar_Sesion(Usuario_No_Registrado _usuarioNoRegistrado, ocl_proyecto.Usuario usuario) {
 		super(_usuarioNoRegistrado, usuario);
@@ -33,9 +34,7 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	}
 	
 	public void confirmar_Datos() {
-
-		iUsuario_No_Registrado.confirmar_Datos(null, null);
-		
+		user = iUsuario_No_Registrado.confirmar_Datos(this._contiene.getCampoEmail().toString(), this._contiene.getCampoContrasena().toString());
 		this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
         this._unnamed_Usuario_No_Registrado_.mainView.add(this._unnamed_Usuario_No_Registrado_.mainView.UR);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
 		//throw new UnsupportedOperationException();
