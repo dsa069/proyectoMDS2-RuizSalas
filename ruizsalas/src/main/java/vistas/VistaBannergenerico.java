@@ -101,9 +101,6 @@ public class VistaBannergenerico extends LitTemplate {
 	@Id("BotonAnadirPeriodista")
 	private Button botonAnadirPeriodista;
 
-	@Id("FotoPerfilBanner")
-	private Image fotoPerfilBanner;
-
 	@Id("BotonConfirmarModificacionNoticia")
 	private Button botonConfirmarModificacionNoticia;
 
@@ -350,12 +347,6 @@ public class VistaBannergenerico extends LitTemplate {
 	}
 	public void setBotonAnadirPeriodista(Button botonAnadirPeriodista) {
 		this.botonAnadirPeriodista = botonAnadirPeriodista;
-	}
-	public Image getFotoPerfilBanner() {
-		return fotoPerfilBanner;
-	}
-	public void setFotoPerfilBanner(Image fotoPerfilBanner) {
-		this.fotoPerfilBanner = fotoPerfilBanner;
 	}
 	public Element getLayoutFotoPerfilBanner() {
 		return layoutFotoPerfilBanner;
