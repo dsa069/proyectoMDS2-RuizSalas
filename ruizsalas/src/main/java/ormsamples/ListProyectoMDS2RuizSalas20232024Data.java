@@ -267,6 +267,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_us_suscritos.confirmar_Datos_US("paco@chocolatero.es", "PaquitoElChocolatero");
 //			_bd_us_suscritos.guardar_cambios_US(2, "Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 1234567890);
 //			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
+			_bd_us_suscritos.crear_Usuario("us@gmail.com", "cock", "Aleandro", "images/sadam.jpg", "23342423424R", 564657568);
 
 //			_bd_principal.borrar_seccion(3, 3);
 //			_bd_principal.cargar_valoracion(55);
