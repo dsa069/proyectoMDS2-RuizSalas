@@ -37,7 +37,6 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this.notice = noticia;
 		this.user = usuario;
 		this.getEscribirComentario().setVisible(true);
-
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
         if (file.exists()) {

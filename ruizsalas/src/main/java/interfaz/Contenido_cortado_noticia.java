@@ -19,13 +19,14 @@ public class Contenido_cortado_noticia extends Noticia{
 		this.getValorarNoticia().setVisible(false);
 		this.getEliminarNoticia().setVisible(false);
 		
+		this.Lista_De_Comentarios_UNR();
+		
 		this.getNoticiaCortada().setText("" + noticia.getTexto_corto());
 		
 		this.getBotonSuscribirseNoticia().addClickListener(event->ConductorRegistro());
 	}
 	
-	@Override
-	public void Lista_De_Comentarios() {
+	public void Lista_De_Comentarios_UNR() {
 		this._contiene = new Lista_Comentarios(this._usuario, this.usuario, this.noti);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}

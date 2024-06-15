@@ -30,7 +30,6 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 			if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
 				Notification.show("suscrito");
 				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				Notification.show(this._noticias_en_Portada.usuarioocl.getApodo());
 				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas);
 				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
 			}
@@ -47,7 +46,8 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
 			}else {
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
+				Notification.show(this.notitas.getTitulo());
+				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.notitas);
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
 			}
 		} catch (Exception e) {

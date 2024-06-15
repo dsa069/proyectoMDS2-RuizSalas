@@ -36,28 +36,28 @@ public class Banner_generico extends VistaBannergenerico{
 		this.getListarPeriodistaLayout().setVisible(false);
 		this.getAltaPeriodistaLayout().setVisible(false);
 		
-		this.imagen = new Image();
-        File file = new File(IMAGE_PATH + this.usuarioBD.getFoto_de_perfil());
-        if (file.exists()) {
-            StreamResource resource = new StreamResource(file.getName(), () -> {
-                try {
-                    return new FileInputStream(file);
-                } catch (FileNotFoundException e) {
-                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-                    return null;
-                }
-            });
-
-            Image image = new Image(resource, "Image not found");
-            image.setMaxWidth("500px");
-            this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.usuarioBD.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
-        }
-
-        this.imagen.getStyle().set("align-self", "center");
-        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
-        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
+//		this.imagen = new Image();
+//        File file = new File(IMAGE_PATH + this.usuarioBD.getFoto_de_perfil());
+//        if (file.exists()) {
+//            StreamResource resource = new StreamResource(file.getName(), () -> {
+//                try {
+//                    return new FileInputStream(file);
+//                } catch (FileNotFoundException e) {
+//                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+//                    return null;
+//                }
+//            });
+//
+//            Image image = new Image(resource, "Image not found");
+//            image.setMaxWidth("500px");
+//            this.imagen = image;
+//        } else {
+//            Notification.show("File not found: " + IMAGE_PATH + this.usuarioBD.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
+//        }
+//
+//        this.imagen.getStyle().set("align-self", "center");
+//        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
+//        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
 		
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
