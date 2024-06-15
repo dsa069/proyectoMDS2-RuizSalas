@@ -17,8 +17,8 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	
 	ocl_proyecto.Seccion seccion;
 	
-	public Seleccion_de_secciones_Vista_Editor(Editor _editor) {
-		super(_editor);
+	public Seleccion_de_secciones_Vista_Editor(Editor _editor, ocl_proyecto.Editor usuarioocl ) {
+		super(_editor, usuarioocl );
 		this._editor = _editor;
 		this.getBotonEditarSecciones().setVisible(true);
 		

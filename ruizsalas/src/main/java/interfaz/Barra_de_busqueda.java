@@ -23,7 +23,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 
 	public void ConductorBusquedaFallida() {
 		this.getLayoutGenericoDeBuscarNoticia().as(VerticalLayout.class).removeAll();
-		busquedaFallida = new Busqueda_fallida(this.usuario);
+		busquedaFallida = new Busqueda_fallida(this.usuario, null);
 		this.getLayoutGenericoDeBuscarNoticia().as(VerticalLayout.class).add(this.busquedaFallida);
 	}
 

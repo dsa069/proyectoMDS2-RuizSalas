@@ -2,6 +2,8 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import ocl_proyecto.Seccion;
 import vistas.*;
 
@@ -11,13 +13,13 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	public Vector<Seleccion_de_secciones_item> _item = new Vector<Seleccion_de_secciones_item>();
 	
 	ocl_proyecto.Seccion seccion;
-	ocl_proyecto.Seccion usuarioocl;
+	ocl_proyecto.Usuario usuarioocl;
 	
 	public Usuario _usuario;
-	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuarioocl ) {
+	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuariocl ) {
 		super(_usuario);
 		this._usuario = _usuario;
-		this.usuarioocl =  this.usuarioocl;
+		this.usuarioocl =  usuariocl;
 		this.getBarraDeBusqueda().setVisible(true);
 		this.getEditarTexto().setVisible(false);
 		this.getMsgError().setVisible(true);
@@ -42,7 +44,13 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	}
 	
 	public void InicioPortada() {
-		this.pagInicio = new Pagina_de_inicio(this.usuario);
+//		try {
+//			Notification.show("SS "+this.usuarioocl.getApodo());
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		this.pagInicio = new Pagina_de_inicio(this.usuario, this.usuarioocl);
 		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
 	}
 	

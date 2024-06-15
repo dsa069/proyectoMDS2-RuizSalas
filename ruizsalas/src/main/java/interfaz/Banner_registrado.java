@@ -32,6 +32,8 @@ public class Banner_registrado extends Banner_generico {
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
 
+		this.InicioPortada();
+		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
         if (file.exists()) {
@@ -55,6 +57,8 @@ public class Banner_registrado extends Banner_generico {
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
 		
+       // this.InicioPortada();
+        
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
@@ -85,6 +89,17 @@ public class Banner_registrado extends Banner_generico {
 //		carlos = new Noticia(this._registrado, this.noticia);
 //		this.getBannergenericolayout().as(VerticalLayout.class).add(carlos);
 //	}
+	
+	public void InicioPortada() {
+//		try {
+//			Notification.show("banner "+this.user.getApodo());
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		this.SS = new Seleccion_de_secciones(this._registrado, this.user);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
+	}
 
 	//PODEMOS CARGAR EN VISTA USUARIO Y CARGAR EL BANNER DE RESGITRADO PA QUE NO  SE MUEVO Y ME BAILE
 	@Override

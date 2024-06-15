@@ -1,6 +1,8 @@
 package interfaz;
 //import basededatos.iRegistrado;
 import proyectoMDS.MainView;
+
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Registrado extends Usuario {
@@ -19,6 +21,13 @@ public class Registrado extends Usuario {
 	public Banner_registrado BR;
 	
 	public void Banner_R_Inico() {
+		
+//		try {
+//			Notification.show(usuario.getApodo());
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		this.BR = new Banner_registrado(this, this.usuario);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.BR);	

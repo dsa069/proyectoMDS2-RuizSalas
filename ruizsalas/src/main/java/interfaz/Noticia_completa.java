@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import ocl_proyecto.Usuario;
 
 public class Noticia_completa extends Banner_suscrito {

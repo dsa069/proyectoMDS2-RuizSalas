@@ -58,16 +58,13 @@ public class Banner_generico extends VistaBannergenerico{
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
-
-		this.InicioPortada();
 		
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 
-	public void InicioPortada() {
-		this.SS = new Seleccion_de_secciones(this.usuario);
-		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
-	}
+	//Super
+//	public void InicioPortada() {
+//	}
 	
 	public void ConductorPortadaBanner() {
 	}

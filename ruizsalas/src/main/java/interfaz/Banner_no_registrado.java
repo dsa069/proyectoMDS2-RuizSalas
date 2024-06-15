@@ -25,9 +25,15 @@ public class Banner_no_registrado extends Banner_generico {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 
 		this.Zona_Anuncio();
+		this.InicioPortada();
 		
 		this.getBotonSuscribirseGenerico().addClickListener(event->ConductorRegistro());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
+	}
+	
+	public void InicioPortada() {
+		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, null);
+		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 	
 	public void Zona_Anuncio() {

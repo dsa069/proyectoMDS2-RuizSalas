@@ -5,8 +5,8 @@ public class Busqueda_fallida extends Seleccion_de_secciones {
 //	private JLabel _icono;
 	public Usuario _unnamed_Usuario_;
 	
-	public Busqueda_fallida(Usuario _usuario) {
-		super(_usuario);
+	public Busqueda_fallida(Usuario _usuario, ocl_proyecto.Usuario usuarioocl ) {
+		super(_usuario, usuarioocl );
 		this._unnamed_Usuario_ = _usuario;
 		this.getMsgError().setVisible(true);
 		this.getLayoutGenericoSeccionesBanner().setVisible(false);
