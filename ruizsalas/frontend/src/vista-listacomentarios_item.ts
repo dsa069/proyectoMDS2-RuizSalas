@@ -23,7 +23,7 @@ export class VistaListacomentarios_item extends LitElement {
    <vaadin-vertical-layout style="height: 100%; width: 22%; flex-shrink: 1;">
     <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; height: 100%; flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; ">
      <vaadin-vertical-layout id="layoutImagenUsuarioComento">
-      <img src="https://ih1.redbubble.net/image.3742638888.6889/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="" height="" id="imagenUsuarioComento" style="width: 75%;">
+      <vaadin-vertical-layout theme="spacing" id="imagenUsuarioComento"></vaadin-vertical-layout>
      </vaadin-vertical-layout>
     </vaadin-button>
    </vaadin-vertical-layout>

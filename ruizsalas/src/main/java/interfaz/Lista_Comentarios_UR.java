@@ -62,12 +62,12 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
-		this.Comentarios_item_Estaticos();
+		this.Comentarios_item_Estaticos_UR();
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
 
-	public void Comentarios_item_Estaticos(){
+	public void Comentarios_item_Estaticos_UR(){
 		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, user, comenta[i]);

@@ -35,7 +35,7 @@ public class Noticia extends VistaNoticia{
 		this.usuario = usuario;
 		this.valoracionBD = noticia;
 		this.notice = noticia;
-		this.Lista_De_Comentarios();
+	//	this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
@@ -73,10 +73,10 @@ public class Noticia extends VistaNoticia{
 		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
 	
-	public void Lista_De_Comentarios() {
-		this.comentarios = new Lista_Comentarios(this.usuario, this.periodista, this.notice);
-		this.getComentariosEstaticos().as(VerticalLayout.class).add(comentarios);
-	}
+//	public void Lista_De_Comentarios() {
+//		this.comentarios = new Lista_Comentarios(this.usuario, this.periodista, this.notice);
+//		this.getComentariosEstaticos().as(VerticalLayout.class).add(comentarios);
+//	}
 
 	public void Ver_Valoraciones() {
 		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);

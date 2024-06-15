@@ -52,6 +52,22 @@ public class BD_Comentarios {
 		return comentarios;
 	}
 
+	public Usuario cargar_usuario_comentario(int aId_comentario) 
+			throws PersistentException {
+				Comentario comentario = null;
+				Usuario usuario = null;
+				PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			try {
+				comentario = ComentarioDAO.getComentarioByORMID(aId_comentario);
+				usuario = UsuarioDAO.getUsuarioByORMID(comentario.getAutor().getIdUsuario());
+				t.commit();
+				ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+			} catch (Exception e) {
+				t.rollback();
+			}
+			return usuario;
+		}
+	
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion) 
 		throws PersistentException {
 			Usuario usuario = null;

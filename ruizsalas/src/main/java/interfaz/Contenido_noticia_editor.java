@@ -28,13 +28,13 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		
 		this.Listar_Secciones_Noticia();
 		this.Seleccion_Tematica();
+		this.Lista_De_Comentarios_Editor();
 		
 		this.getEliminarNoticia().addClickListener(event->BorrarNoticia());
 		this.getEliminarNoticia().addClickListener(event->eliminar_noticia());
 	}
 	
-	@Override
-	public void Lista_De_Comentarios() {
+	public void Lista_De_Comentarios_Editor() {
 		this._contiene = new Lista_comentarios_Vista_Editor(this.editor, this.editorBD, this.notice);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}

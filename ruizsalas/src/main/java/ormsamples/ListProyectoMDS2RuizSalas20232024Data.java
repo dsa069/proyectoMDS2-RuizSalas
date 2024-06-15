@@ -13,6 +13,7 @@ import ocl_proyecto.Noticia;
 import ocl_proyecto.Periodista;
 import ocl_proyecto.Seccion;
 import ocl_proyecto.Tematica;
+import ocl_proyecto.Usuario;
 import basededatos.BD_Comentarios;
 import basededatos.BD_Editores;
 import basededatos.BD_Periodistas;
@@ -221,9 +222,12 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			BD_Tematicas _bd_tematicas = new BD_Tematicas();
 			BD_Principal _bd_principal = new BD_Principal();
 
-//			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
-			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 5, 60);
+//			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(60);
+//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 5, 60);
 //			_bd_comentarios.valorar_comentario(1, 1, false);
+//			_bd_comentarios.cargar_usuario_comentario(62);
+
+			
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
@@ -276,7 +280,10 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //				 System.out.println("===================================DISI==========================================");
 //				 System.out.println("Disi " + notice.getId_valoracion());
 //			 }
-				 
+//			 for (Comentario notice: comentarios) {
+//			 System.out.println("===================================DISI==========================================");
+//			 System.out.println("Disi " + notice.getId_valoracion());
+//		 }
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();

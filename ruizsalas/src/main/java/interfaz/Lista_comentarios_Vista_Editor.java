@@ -20,10 +20,11 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 		this._editor = _editor;
 		this.noti = noticia;
 		//this.getOcultar().setVisible(false);
+		
+		this.Comentarios_item_Estaticos_Editor();
 		}
 	
-	@Override
-	public void Comentarios_item_Estaticos(){
+	public void Comentarios_item_Estaticos_Editor(){
 		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
 			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, (ocl_proyecto.Editor) user, comenta[i]);

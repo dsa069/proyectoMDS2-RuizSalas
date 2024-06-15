@@ -389,4 +389,14 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
+	public Usuario cargar_usuario_comentario(int aId_comentario) {
+		try {
+			return _bd_comentarios.cargar_usuario_comentario(aId_comentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
 }
