@@ -13,7 +13,7 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 		this.getValorarComentarioNegativamente().setVisible(true);
 		this.getValorarComentarioPositivamente().setVisible(true);
 		try {
-		Notification.show("CUm "+this.comentario.getId_comentario());
+		Notification.show("CUm "+this.valoracionBD.getId_valoracion());
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
