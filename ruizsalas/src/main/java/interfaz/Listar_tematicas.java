@@ -27,13 +27,12 @@ public class Listar_tematicas extends VistaListartematicas {
 		this.notice = noticia;
 		tem = cargar_tematicas();
 		for (int i=0; i<tem.length; i++) {
-			Notification.show("AAAAAAAAAAAAAAAAAAA" +tem[i].getNombre());
 			Listar_tematicas_item LTI = new Listar_tematicas_item(this, tem[i]);
 			this.getTematicasitem().as(VerticalLayout.class).add(LTI);
 		}
 	}
 	
 	public Tematica[] cargar_tematicas() {
-		return iUsu.cargar_tematicas(notice.getId_noticia());
+		return iUsu.cargar_tematicas(notice.getId_valoracion());
 	}
 }
