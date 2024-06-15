@@ -97,7 +97,7 @@ public class Banner_registrado extends Banner_generico {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		this.SS = new Seleccion_de_secciones(this._registrado, this.user);
+		this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 

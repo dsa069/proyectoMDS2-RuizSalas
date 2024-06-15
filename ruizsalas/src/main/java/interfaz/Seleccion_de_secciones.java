@@ -16,10 +16,13 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	ocl_proyecto.Usuario usuarioocl;
 	
 	public Usuario _usuario;
-	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuariocl ) {
+	public Banner_registrado Banana;
+	
+	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuariocl, Banner_registrado Banana) {
 		super(_usuario);
 		this._usuario = _usuario;
 		this.usuarioocl =  usuariocl;
+		this.Banana = Banana;
 		this.getBarraDeBusqueda().setVisible(true);
 		this.getEditarTexto().setVisible(false);
 		this.getMsgError().setVisible(true);
@@ -50,7 +53,7 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		this.pagInicio = new Pagina_de_inicio(this.usuario, this.usuarioocl);
+		this.pagInicio = new Pagina_de_inicio(this.usuario, this.usuarioocl, this);
 		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
 	}
 	

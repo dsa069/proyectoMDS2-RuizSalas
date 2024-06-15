@@ -32,7 +32,7 @@ public class Banner_no_registrado extends Banner_generico {
 	}
 	
 	public void InicioPortada() {
-		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, null);
+		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, null, null);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 	

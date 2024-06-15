@@ -20,10 +20,11 @@ public class Noticias_en_Portada extends Listar_noticias {
     
 	ocl_proyecto.Usuario usuarioocl;
     
-	public Noticias_en_Portada(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl) {
+	public Noticias_en_Portada(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl, Pagina_de_inicio _unnamed_Pagina_de_inicio_ ) {
 		super(_usuario);
 		this._usuario = _usuario;
 		this.usuarioocl =  usuarioocl;
+		this._unnamed_Pagina_de_inicio_ = _unnamed_Pagina_de_inicio_;
 		this.getPortada().setVisible(true);
 	}
 	

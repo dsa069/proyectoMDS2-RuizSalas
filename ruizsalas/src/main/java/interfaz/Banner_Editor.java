@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Banner_Editor extends Banner_registrado {
@@ -19,13 +20,16 @@ public class Banner_Editor extends Banner_registrado {
 		this.editor = editor;
 		this.getBotonMisNoticiasGenerico().setVisible(false);
 
+		this.InicioPortada_Editor();
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonVerPeriodistasGenerico().addClickListener(event->ConductorListaPeriodistas());
-		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());	}
+		this.getBotonRevisarNoticiaGenerico().addClickListener(event->ConductorRevisarNoticias());	
+		}
 	
-	@Override
-	public void InicioPortada() {
-		this.SSE = new Seleccion_de_secciones_Vista_Editor(this._editor, this.editor);
+
+	public void InicioPortada_Editor() {
+		Notification.show("null " + this.editor.getApodo());
+		this.SSE = new Seleccion_de_secciones_Vista_Editor(this._editor, this.editor,this);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SSE);
 	}
 

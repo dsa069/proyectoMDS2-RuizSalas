@@ -14,11 +14,12 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	public Vector<Seleccion_de_secciones_Vista_Editor_item> _item = new Vector<Seleccion_de_secciones_Vista_Editor_item>();
 	public Editor _editor;
 	public Seleccion_de_secciones_generico SESG;
+	public Banner_registrado banerReg;
 	
 	ocl_proyecto.Seccion seccion;
 	
-	public Seleccion_de_secciones_Vista_Editor(Editor _editor, ocl_proyecto.Editor usuarioocl ) {
-		super(_editor, usuarioocl );
+	public Seleccion_de_secciones_Vista_Editor(Editor _editor, ocl_proyecto.Editor usuarioocl, Banner_registrado banerReg ) {
+		super(_editor, usuarioocl, banerReg );
 		this._editor = _editor;
 		this.getBotonEditarSecciones().setVisible(true);
 		
