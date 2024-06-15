@@ -29,7 +29,7 @@ export class VistaVerdatosperfil extends LitElement {
   <vaadin-vertical-layout id="layoutCorreoUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
    <label> mafiosoBob69@hotmail.com </label>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout id="layoutNickNameUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
+  <vaadin-vertical-layout id="layoutContrasena" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">
    <label> Mafioso69Bob </label>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="layoutTarjetaCreditoUsuario1" style="flex-shrink: 0; flex-grow: 0; margin: var(--lumo-space-m); width: 100%;">

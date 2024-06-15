@@ -20,12 +20,12 @@ public class VistaVerdatosperfil extends LitTemplate {
 	private Element layoutDNIUsuario1;
 	@Id("layoutCorreoUsuario1")
 	private Element layoutCorreoUsuario1;
-	@Id("layoutNickNameUsuario1")
-	private Element layoutNickNameUsuario1;
 	@Id("layoutTarjetaCreditoUsuario1")
 	private Element layoutTarjetaCreditoUsuario1;
 	@Id("layoutImagenUsuarioVerDatos")
 	private Element layoutImagenUsuarioVerDatos;
+	@Id("layoutContrasena")
+	private Element layoutContrasena;
 	public VistaVerdatosperfil() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -62,14 +62,6 @@ public class VistaVerdatosperfil extends LitTemplate {
 		this.layoutCorreoUsuario1 = layoutCorreoUsuario1;
 	}
 
-	public Element getLayoutNickNameUsuario1() {
-		return layoutNickNameUsuario1;
-	}
-
-	public void setLayoutNickNameUsuario1(Element layoutNickNameUsuario1) {
-		this.layoutNickNameUsuario1 = layoutNickNameUsuario1;
-	}
-
 	public Element getLayoutTarjetaCreditoUsuario1() {
 		return layoutTarjetaCreditoUsuario1;
 	}
@@ -84,6 +76,14 @@ public class VistaVerdatosperfil extends LitTemplate {
 
 	public void setLayoutImagenUsuarioVerDatos(Element layoutImagenUsuarioVerDatos) {
 		this.layoutImagenUsuarioVerDatos = layoutImagenUsuarioVerDatos;
+	}
+
+	public Element getLayoutContrasena() {
+		return layoutContrasena;
+	}
+
+	public void setLayoutContrasena(Element layoutContrasena) {
+		this.layoutContrasena = layoutContrasena;
 	}
 
 

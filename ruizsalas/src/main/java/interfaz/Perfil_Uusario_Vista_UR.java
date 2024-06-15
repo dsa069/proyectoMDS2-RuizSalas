@@ -6,9 +6,12 @@ public class Perfil_Uusario_Vista_UR extends Perfil_Usuario {
 	public Cancelar_cobro_suscripcion _procede_a;
 	public Darse_De_Baja Boton;
 	
+	ocl_proyecto.Usuario_suscrito_ user;
+	
 	public Perfil_Uusario_Vista_UR(Usuario_Registardo _usuarioRegistrado, ocl_proyecto.Usuario_suscrito_ suscrito) {
 		super(_usuarioRegistrado, suscrito);
 		this._unnamed_Usuario_Registardo_ = _usuarioRegistrado;
+		this.user = suscrito;
 		this.getDarseDeBajaLayout().setVisible(true);
 		
 		this.Boton_Baja();

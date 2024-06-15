@@ -59,7 +59,7 @@ public class Banner_registrado extends Banner_generico {
 		
        // this.InicioPortada();
         
-		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfilUR());
+		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 
@@ -120,7 +120,7 @@ public class Banner_registrado extends Banner_generico {
 
 	public void ConductorPerfil() {
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		Perfil = new Perfil_Usuario(this._registrado, this.suscrito);
+		Perfil = new Perfil_Usuario(this._registrado, this.user);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
 	}
 }

@@ -11,11 +11,11 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Editar_datos _unnamed_Editar_datos_;
 	public Perfil_Usuario perfil;
 	
-	ocl_proyecto.Usuario_suscrito_ registrado;
+	ocl_proyecto.Usuario registrado;
 	
 	iRegistrado iRegistrao = new BD_Principal();
 	
-	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario_suscrito_ registrado) {
+	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario registrado) {
 		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
 		this.registrado = registrado;
@@ -38,7 +38,7 @@ public class Editar_Perfil extends Banner_suscrito {
 
 	public void guardar_cambios() {//CUANDO TENGAMOS LA BASE DE DATOS PONER DISTINCION ENTRE UR Y DEMAS
 		//Operacion de guardar
-		iRegistrao.guardar_cambios(this.registrado.getIdUsuario(), this.registrado.getApodo(), this.registrado.getDni(), this.registrado.getCorreo(), this.registrado.getContrasena(), this.registrado.getFoto_de_perfil(), this.registrado.getTarjeta_de_credito());
+		iRegistrao.guardar_cambios(this.registrado.getIdUsuario(), this.registrado.getApodo(), this.registrado.getDni(), this.registrado.getCorreo(), this.registrado.getContrasena(), this.registrado.getFoto_de_perfil(), this._unnamed_Banner_registrado_.suscrito.getTarjeta_de_credito());
 		this.ConductorPerfilSuscrito();
 		//throw new UnsupportedOperationException();
 	}

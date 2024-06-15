@@ -25,7 +25,7 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		super();
 		this.registrado = registrado;
 		this.usuario = usuario;
-		this.suscrito = (Usuario_suscrito_) usuario;
+//		this.suscrito = (Usuario_suscrito_) usuario;
 		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.usuario.getFoto_de_perfil());
@@ -52,8 +52,11 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		
 		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
 		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
-		this.getLayoutNickNameUsuario1().setText("" + usuario.getApodo());
-		this.getLayoutTarjetaCreditoUsuario1().setText("" + String.valueOf(suscrito.getTarjeta_de_credito()));
+		this.getLayoutNombreUsuario1().setText("" + usuario.getApodo());
+		this.getLayoutContrasena().setText("" + usuario.getContrasena());
+		if (this.registrado.BR.suscrito != null) {
+			this.getLayoutTarjetaCreditoUsuario1().setText("" + String.valueOf(suscrito.getTarjeta_de_credito()));
+		}
 	}
 	
 	public void SelectorUsuarioPerfil() {
