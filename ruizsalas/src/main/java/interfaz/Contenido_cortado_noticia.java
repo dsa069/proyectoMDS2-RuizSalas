@@ -21,6 +21,7 @@ public class Contenido_cortado_noticia extends Noticia{
 		this.getEliminarNoticia().setVisible(false);
 		
 		this.Lista_De_Comentarios_UNR();
+		this.Listar_Tematicas();
 		
 		this.getNoticiaCortada().setText("" + noticia.getTexto_corto());
 		
@@ -30,6 +31,11 @@ public class Contenido_cortado_noticia extends Noticia{
 	public void Lista_De_Comentarios_UNR() {
 		this._contiene = new Lista_Comentarios(this._usuario, this.usuario, this.noti);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
+	}
+	
+	public void Listar_Tematicas() {
+		this.listarTematicas = new Listar_tematicas(this._usuario, this.noti);
+		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
 	
 	public void ConductorRegistro() {

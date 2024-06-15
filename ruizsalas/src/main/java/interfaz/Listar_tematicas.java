@@ -3,6 +3,7 @@ import vistas.*;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
@@ -15,7 +16,7 @@ public class Listar_tematicas extends VistaListartematicas {
 	public Vector<Listar_tematicas_item> _item = new Vector<Listar_tematicas_item>();
 	public Usuario usuario;
 	public Tematica[] tem;
-	
+
 	ocl_proyecto.Noticia notice;
 	
 	iUsuario iUsu = new BD_Principal();
@@ -24,9 +25,9 @@ public class Listar_tematicas extends VistaListartematicas {
 		super();
 		this.usuario = usuario;
 		this.notice = noticia;
-		
 		tem = cargar_tematicas();
 		for (int i=0; i<tem.length; i++) {
+			Notification.show("AAAAAAAAAAAAAAAAAAA" +tem[i].getNombre());
 			Listar_tematicas_item LTI = new Listar_tematicas_item(this, tem[i]);
 			this.getTematicasitem().as(VerticalLayout.class).add(LTI);
 		}

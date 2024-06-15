@@ -36,7 +36,7 @@ public class Noticia extends VistaNoticia{
 		this.valoracionBD = noticia;
 		this.notice = noticia;
 	//	this.Lista_De_Comentarios();
-		this.Listar_Tematicas();
+//		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
 		this.imagen = new Image();
@@ -68,10 +68,10 @@ public class Noticia extends VistaNoticia{
 		this.getLugarNoticia().setText("" + this.notice.getUbicacion());
 	}
 
-	public void Listar_Tematicas() {
-		this.listarTematicas = new Listar_tematicas(this.usuario, this.notice);
-		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
-	}
+//	public void Listar_Tematicas() {
+//		this.listarTematicas = new Listar_tematicas(this.usuario, this.notice);
+//		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
+//	}
 	
 //	public void Lista_De_Comentarios() {
 //		this.comentarios = new Lista_Comentarios(this.usuario, this.periodista, this.notice);

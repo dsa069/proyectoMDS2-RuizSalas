@@ -227,8 +227,6 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_comentarios.valorar_comentario(1, 1, false);
 //			_bd_comentarios.cargar_usuario_comentario(62);
 
-			
-
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
 //			Noticia[] noticiasss = _bd_noticias.cargar_secciones_generico(1);
@@ -261,7 +259,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_secciones.borrar_seccion(2);
 //			_bd_secciones.quitar_noticia_de_seccion(25, 3);
 
-//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(25);
+//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(60);
 //			Tematica[] tematics =  _bd_tematicas.cargar_tematicas_seleccion();
 //			_bd_tematicas.anadir_seccion("Jueguillos", 3);
 //			_bd_tematicas.marcar_tematica(1, 34);
@@ -280,10 +278,16 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //				 System.out.println("===================================DISI==========================================");
 //				 System.out.println("Disi " + notice.getId_valoracion());
 //			 }
-//			 for (Comentario notice: comentarios) {
+			
+//			 for (Tematica notice: tematic) {
 //			 System.out.println("===================================DISI==========================================");
-//			 System.out.println("Disi " + notice.getId_valoracion());
+//			 System.out.println("Disi " + notice.getNombre());
 //		 }
+			
+//			_bd_principal.anadir_seccion("Mereketenge");
+//			_bd_principal.anadir_seccion("fornai");
+			
+			
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();

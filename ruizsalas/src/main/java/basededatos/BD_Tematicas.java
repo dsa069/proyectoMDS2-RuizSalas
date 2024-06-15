@@ -44,7 +44,7 @@ public class BD_Tematicas {
 		noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 		tematicas = TematicaDAO.listTematicaByQuery(null, null);
 		for(Tematica tematica : tematicas) {
-			if(noticia.contiene.contains(tematica));
+			if(noticia.contiene.contains(tematica))
 				tematicasNoticia.add(tematica);
 		}
 		t.commit();
