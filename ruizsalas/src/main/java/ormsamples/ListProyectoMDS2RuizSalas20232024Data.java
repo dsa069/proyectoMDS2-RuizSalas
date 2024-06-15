@@ -222,7 +222,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			BD_Principal _bd_principal = new BD_Principal();
 
 //			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
-//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1, 2);
+//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 5, 60);
 //			_bd_comentarios.valorar_comentario(1, 1, false);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
@@ -267,7 +267,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_us_suscritos.confirmar_Datos_US("paco@chocolatero.es", "PaquitoElChocolatero");
 //			_bd_us_suscritos.guardar_cambios_US(2, "Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 1234567890);
 //			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
-			_bd_us_suscritos.crear_Usuario("us@gmail.com", "cock", "Aleandro", "images/sadam.jpg", "23342423424R", 564657568);
+//			_bd_us_suscritos.crear_Usuario("us@gmail.com", "cock", "Aleandro", "images/sadam.jpg", "23342423424R", 564657568);
 
 //			_bd_principal.borrar_seccion(3, 3);
 //			_bd_principal.cargar_valoracion(55);

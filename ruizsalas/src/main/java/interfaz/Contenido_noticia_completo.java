@@ -14,7 +14,7 @@ public class Contenido_noticia_completo extends Noticia {
 	ocl_proyecto.Noticia noticia;
 	
 	
-	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Noticia noticia) {
+	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia) {
 		super(registrado, noticia);
 		this._registrado = registrado;
 		this.noticia = noticia;

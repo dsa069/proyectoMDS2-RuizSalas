@@ -16,8 +16,8 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	
 	iEditor iEdito = new BD_Principal();
 	
-	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Noticia noticia, ocl_proyecto.Editor editorBD) {
-		super(editor, noticia);
+	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Editor editorBD, ocl_proyecto.Noticia noticia) {
+		super(editor,editorBD, noticia);
 		this.editor = editor;
 		this.notice = noticia;
 		this.editorBD = editorBD;

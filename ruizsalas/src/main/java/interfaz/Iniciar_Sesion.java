@@ -7,6 +7,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iUsuario_No_Registrado;
+import ocl_proyecto.EditorDAO;
+import ocl_proyecto.PeriodistaDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
 
@@ -15,6 +17,8 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 	public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
 	public Introducir_Datos _contiene;
 	public Usuario_Registardo usreg;
+	public Periodista uspe;
+	public Editor used;
 	
 	ocl_proyecto.Usuario user;
 	public iUsuario_No_Registrado iUsuario_No_Registrado = new BD_Principal();
@@ -47,10 +51,20 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 				Notification.show(this._contiene.getCampoContrasena().getValue());
 				Notification.show("Usuario incorrecrto");
 			} else if (Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario())!=null) {
-				Notification.show("di");
+				Notification.show("suscrito");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				usreg = new Usuario_Registardo(this._unnamed_Usuario_No_Registrado_.mainView, (Usuario_suscrito_) user);
 			    this._unnamed_Usuario_No_Registrado_.mainView.add(usreg);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
+			} else if (PeriodistaDAO.getPeriodistaByORMID(user.getIdUsuario())!=null) {
+				Notification.show("periodista");
+				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
+				uspe = new Periodista(this._unnamed_Usuario_No_Registrado_.mainView, (ocl_proyecto.Periodista) user);
+			    this._unnamed_Usuario_No_Registrado_.mainView.add(uspe);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
+			} else if (EditorDAO.getEditorByORMID(user.getIdUsuario())!=null) {
+				Notification.show("editor");
+				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
+				used = new Editor(this._unnamed_Usuario_No_Registrado_.mainView,  (ocl_proyecto.Editor) user);
+			    this._unnamed_Usuario_No_Registrado_.mainView.add(used);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
 			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

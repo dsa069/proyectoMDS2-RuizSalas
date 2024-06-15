@@ -22,7 +22,7 @@ public class Banner_registrado extends Banner_generico {
 
 	ocl_proyecto.Usuario user;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
-	ocl_proyecto.Noticia noticia;
+	//ocl_proyecto.Noticia noticia;
 
 	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
@@ -79,12 +79,12 @@ public class Banner_registrado extends Banner_generico {
 //		}
 //	}
 
-	public Noticia carlos;
-	public void hola() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		carlos = new Noticia(this._registrado, this.noticia);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(carlos);
-	}
+//	public Noticia carlos;
+//	public void hola() {
+//		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+//		carlos = new Noticia(this._registrado, this.noticia);
+//		this.getBannergenericolayout().as(VerticalLayout.class).add(carlos);
+//	}
 
 	//PODEMOS CARGAR EN VISTA USUARIO Y CARGAR EL BANNER DE RESGITRADO PA QUE NO  SE MUEVO Y ME BAILE
 	@Override

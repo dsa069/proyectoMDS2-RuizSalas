@@ -23,7 +23,7 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	
 	@Override
 	public void Ver_Noticia() {
-		this.NoticiaVE = new Contenido_noticia_editor(this._unnamed_Editor_, this.noticia, this.editorBD);
+		this.NoticiaVE = new Contenido_noticia_editor(this._unnamed_Editor_, this.editorBD, this.noticia);
 		this.getNoticiaEditorLayout().add(this.NoticiaVE);
 	}
 }

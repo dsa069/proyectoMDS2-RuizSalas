@@ -11,11 +11,13 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	public Vector<Seleccion_de_secciones_item> _item = new Vector<Seleccion_de_secciones_item>();
 	
 	ocl_proyecto.Seccion seccion;
+	ocl_proyecto.Seccion usuarioocl;
 	
 	public Usuario _usuario;
-	public Seleccion_de_secciones(Usuario _usuario) {
+	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuarioocl ) {
 		super(_usuario);
 		this._usuario = _usuario;
+		this.usuarioocl =  this.usuarioocl;
 		this.getBarraDeBusqueda().setVisible(true);
 		this.getEditarTexto().setVisible(false);
 		this.getMsgError().setVisible(true);

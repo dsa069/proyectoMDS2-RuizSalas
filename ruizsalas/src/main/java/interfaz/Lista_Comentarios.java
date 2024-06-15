@@ -29,18 +29,18 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		this.notice = notic;
 		this.getEscribirComentario().setVisible(false);
 		
-		this.Comentarios_item_Estaticos();
+//		this.Comentarios_item_Estaticos();
 	}
 
-	public void Comentarios_item_Estaticos(){
-		comenta = this.cargar_listar_comenatrios();
-		for (int i=0; i<comenta.length; i++) {
-			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
-			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
-		}
-	}
-	
-	public Comentario[] cargar_listar_comenatrios() {
-		return iUsu.cargar_listar_comenatrios(notice.getId_noticia());
-	}
+//	public void Comentarios_item_Estaticos(){
+//		comenta = this.cargar_listar_comenatrios();
+//		for (int i=0; i<comenta.length; i++) {
+//			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, user, comenta[i]);
+//			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
+//		}
+//	}
+//	
+//	public Comentario[] cargar_listar_comenatrios() {
+//		return iUsu.cargar_listar_comenatrios(notice.getId_noticia());
+//	}
 }

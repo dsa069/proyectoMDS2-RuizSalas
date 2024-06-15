@@ -63,30 +63,11 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
+		this.Comentarios_item_Estaticos();
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
 
-	@Override
 	public void Comentarios_item_Estaticos(){
 		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
@@ -94,6 +75,10 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);
 		}
 	}
+	
+	public Comentario[] cargar_listar_comenatrios() {
+		return iUsu.cargar_listar_comenatrios(notice.getId_noticia());
+}
 
 	//NS SI ES CORRECTO PQ ES CREAR
 	public void escribir_comentario() {

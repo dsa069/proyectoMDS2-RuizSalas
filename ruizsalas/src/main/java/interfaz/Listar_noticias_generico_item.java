@@ -69,23 +69,34 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 //		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
+//	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
+//		try {
+//			if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
+//				Notification.show("suscrito");
+//				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._listar_noticias_generico.usuario.mainView.UR.BR.suscrito, this.Notas);
+//				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+//			}
+//			else if(PeriodistaDAO.getPeriodistaByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
+//				Notification.show("periodista");
+//				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.P, null, this.Notas);
+//				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+//			} 
+//			else if(EditorDAO.getEditorByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
+//				Notification.show("editor");
+//				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, null, this.Notas);
+//				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+//			}else {
+//				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+//				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
+//				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
+//			}
+//		} catch (Exception e) {
+//			Notification.show("cacheado");
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
 //		}
 //	}
 	
