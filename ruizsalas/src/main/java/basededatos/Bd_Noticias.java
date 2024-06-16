@@ -252,25 +252,18 @@ public class Bd_Noticias {
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
-			Notification.show("me quedo en el try que me gusta mas");
 			
 			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
-				Notification.show("Entro en el if" + usuario.getIdUsuario());
-				Notification.show("Soy la noticia:" + noticia.getId_valoracion());
 				noticia.es_valorado_por.add(usuario);
 				usuario.realiza.add(noticia);
-				Notification.show("he realizado los pasos previstos");
 				if(aValoracion) {
 					noticia.setNum_likes(noticia.getNum_likes()+1);
-					Notification.show("he dado like");
 				}
 				else {
 					noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
 				}
 				NoticiaDAO.save(noticia);
 				UsuarioDAO.save(usuario);
-			} else {
-				Notification.show("Que le jodan al if");
 			}
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
