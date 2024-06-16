@@ -34,7 +34,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		
 		this.getTitular1().setText("" + Notas.getTitulo());
 		
-		this.getAgregarNoticia().addClickListener(event->agregar_noticia());
+		this.getAgregarNoticia().addClickListener(event->agregar_noticia(true));
 		this.getNoAgregarNoticia().addClickListener(event->no_agregar_noticia());
 	}
 
@@ -44,15 +44,13 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
 	}
 	
-	public void agregar_noticia() {
+	public void agregar_noticia(boolean agregar) {
 		//Operación base de datos
-		iEdito.agregar_noticia(notice.getId_noticia(), notice.getAgregada());
-		throw new UnsupportedOperationException();
+		iEdito.agregar_noticia(notice.getId_valoracion(), agregar);
 	}
 
 	public void no_agregar_noticia() {
 		//Operacion base de datos
 		iEdito.no_agregar_noticia(notice.getId_noticia());
-		throw new UnsupportedOperationException();
 	}
 }
