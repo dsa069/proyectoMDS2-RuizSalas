@@ -34,7 +34,6 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 	}
 	
 	public void ConductorPagina(boolean Palanteopatras) {
-		Notification.show("TURBINA "+ this.seccion.getNombre());
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).removeAll();
 		_contiene = new Listar_Secciones(this._accede, this.seccion =  iusuario.cargar_seccion_palanteypatras(this.seccion.getIdSeccion(), Palanteopatras));
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).add(_contiene);
