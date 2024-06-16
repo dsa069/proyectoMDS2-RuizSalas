@@ -132,4 +132,18 @@ public class BD_Comentarios {
 		}
 		return comentario;
 	}
+	
+	public void borrar_comentario(int aId_comentario)
+			throws PersistentException {
+		Comentario comentario = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			comentario = ComentarioDAO.getComentarioByORMID(aId_comentario);
+			ComentarioDAO.deleteAndDissociate(comentario);
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+	}
 }

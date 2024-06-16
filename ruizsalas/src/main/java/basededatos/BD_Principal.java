@@ -421,4 +421,13 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}	
 		return null;
 	}
+	
+	public void borrar_comentario(int aId_comentario) {
+		try {
+			_bd_comentarios.borrar_comentario(aId_comentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

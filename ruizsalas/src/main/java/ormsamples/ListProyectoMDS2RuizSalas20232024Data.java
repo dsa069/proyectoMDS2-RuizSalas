@@ -226,6 +226,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 5, 60);
 //			_bd_comentarios.valorar_comentario(5, 63, true);
 //			_bd_comentarios.cargar_usuario_comentario(62);
+//			_bd_comentarios.borrar_comentario(37);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
@@ -286,12 +287,12 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			
 //			_bd_principal.anadir_seccion("Mereketenge");
 //			_bd_principal.anadir_seccion("fornai");
-			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
-			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
-			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
-			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(9, false).getNombre());
-			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(11, true).getNombre());
-			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(11, false).getNombre());
+//			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
+//			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
+//			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
+//			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(9, false).getNombre());
+//			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(11, true).getNombre());
+//			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(11, false).getNombre());
 			
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();

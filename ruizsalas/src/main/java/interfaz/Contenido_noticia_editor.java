@@ -62,7 +62,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	}
 	
 	public void eliminar_noticia() {
-		iEdito.eliminar_noticia(this.notice.getId_noticia());
+		iEdito.eliminar_noticia(this.notice.getId_valoracion());
 	}
 	
 	@Override
