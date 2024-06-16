@@ -167,7 +167,7 @@ public class Bd_Noticias {
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-			NoticiaDAO.deleteAndDissociate(noticia);
+			noticia.setAgregada(false);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
