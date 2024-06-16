@@ -58,7 +58,7 @@ public class Lista_Comentarios_item extends VistaListacomentarios_item {
 		
 		this.getLayoutZonaComentarioEscrito().setText("" + comentario.getTexto());
 		this.getLayoutApodoComentarista().setText("" + usuario.getApodo());
-		this.getLayoutVerValoracionComentario().setText("" + String.valueOf(comentario.getId_valoracion())); //Tenemos que pasarle también valoración o que hacemos?
+		//this.getLayoutVerValoracionComentario().setText("" + String.valueOf(comentario.getId_valoracion())); //Tenemos que pasarle también valoración o que hacemos?
 		
 		this.Ver_Valoraciones();
 	}

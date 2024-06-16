@@ -66,12 +66,12 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
-		this.Comentarios_item_Estaticos_UR();
+		//this.Comentarios_item_Estaticos_UR();
 		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
-
-	public void Comentarios_item_Estaticos_UR(){
+	@Override
+	public void Comentarios_item_Estaticos(){
 		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
 			Us_coment = this.cargar_usuario_comenatrio(comenta[i].getId_valoracion());
