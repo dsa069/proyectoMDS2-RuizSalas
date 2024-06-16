@@ -286,9 +286,12 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			
 //			_bd_principal.anadir_seccion("Mereketenge");
 //			_bd_principal.anadir_seccion("fornai");
-			//System.out.println("DISIIIIIIIIIIIIIIIIIII"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
-			System.out.println("DISIOOOOOOOOOOO"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
-//			System.out.println("DISIIIIAAAAAAAAAAAAAAA"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
+			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
+			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
+			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
+			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(9, false).getNombre());
+			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(11, true).getNombre());
+			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(11, false).getNombre());
 			
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();

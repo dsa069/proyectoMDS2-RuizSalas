@@ -2,6 +2,8 @@ package interfaz;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import basededatos.BD_Principal;
+import basededatos.iUsuario;
 import vistas.VistaPaginadeinicio;
 
 public class Pagina_de_inicio extends VistaPaginadeinicio{
@@ -12,6 +14,8 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	public Secciones_periodico SeccP;
 	public Seleccion_de_secciones Selec;
 	ocl_proyecto.Usuario usuarioocl;
+	
+	public iUsuario iusuario = new BD_Principal();
 
 	public Pagina_de_inicio(Usuario usuario, ocl_proyecto.Usuario usuarioocl,  Seleccion_de_secciones Selec) {
 		super();
@@ -30,7 +34,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	
 	public void ConductorSiguientePagina() {//SIguiente pag periodico (di)
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().removeAll();
-		SeccP = new Secciones_periodico(this._unnamed_Usuario_, null);
+		SeccP = new Secciones_periodico(this._unnamed_Usuario_, iusuario.cargar_seccion_primero());
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().add(SeccP);
 	}
 }

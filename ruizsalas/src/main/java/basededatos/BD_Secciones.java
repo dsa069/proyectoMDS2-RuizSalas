@@ -58,24 +58,27 @@ public class BD_Secciones {
 				PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 			try {
 				seccion = SeccionDAO.querySeccion("Portada  ='"+0+"'", null, null);
-				for (int i = 0; i < seccion.size(); i++) {
-					System.out.println("ME CORROOOOO"+ seccion.get(i));	
-				}
 				seccActual = SeccionDAO.getSeccionByORMID(aId_seccion);
 				if(seccion.contains(seccActual)) {
-					if(Palanteopatras&&seccion.indexOf(seccActual) != seccion.size()-1) 
-						return seccion.get(seccion.indexOf(seccActual)+1);
-					else if(!Palanteopatras && seccion.indexOf(seccActual) != 0) 
-						return seccion.get(seccion.indexOf(seccActual)-1);
+					if(Palanteopatras) { 
+						if(seccion.indexOf(seccActual) != seccion.size()-1)
+							return seccion.get(seccion.indexOf(seccActual)+1);
+						else 
+							return seccion.get(0);
+					}
+					else if(!Palanteopatras ) {
+						if(seccion.indexOf(seccActual) != 0) 
+							return seccion.get(seccion.indexOf(seccActual)-1);
+						else
+							return seccion.get(seccion.size()-1);
+					}
 				}
-				seccion.clear();
-				seccion = SeccionDAO.querySeccion("Portada  ='"+1+"'", null, null);
 				t.commit();
 				ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			} catch (Exception e) {
 				t.rollback();
 			}
-			return seccion.get(0);
+			return null;
 		}
 
 	public Seccion[] cargar_secciones_vista_editor() 
