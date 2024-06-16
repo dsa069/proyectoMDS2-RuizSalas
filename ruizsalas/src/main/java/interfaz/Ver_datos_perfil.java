@@ -57,8 +57,6 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
             Image image = new Image(resource, "Image not found");
             image.setMaxWidth("500px");
             this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.usuario.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
         }
 
         this.imagen.getStyle().set("align-self", "center");
