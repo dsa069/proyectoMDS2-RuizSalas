@@ -4,12 +4,16 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
+import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
+import ocl_proyecto.Usuario_suscrito_DAO;
 import vistas.VistaVerdatosperfil;
 
 public class Ver_datos_perfil extends VistaVerdatosperfil{
@@ -25,7 +29,18 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		super();
 		this.registrado = registrado;
 		this.usuario = usuario;
-//		this.suscrito = (Usuario_suscrito_) usuario;
+		try {
+			this.suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(usuario.getIdUsuario());
+			if(suscrito != null) {
+				this.getLayoutTarjetaCreditoUsuario1().setVisible(true);
+				this.getLayoutTarjetaCreditoUsuario1().setText(""+ suscrito.getTarjeta_de_credito());
+			}else
+				this.getLayoutTarjetaCreditoUsuario1().setVisible(false);
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.usuario.getFoto_de_perfil());
