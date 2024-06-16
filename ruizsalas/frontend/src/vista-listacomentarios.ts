@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-listacomentarios')
 export class VistaListacomentarios extends LitElement {
@@ -33,6 +33,9 @@ export class VistaListacomentarios extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
   <vaadin-text-area placeholder="Escriba aquí su comentario" style="width: 100%; flex-shrink: 1; flex-grow: 1;" id="CampoEscribirComentario"></vaadin-text-area>
+  <vaadin-button id="botonAnadirComentarioNoticia" style="color: black; align-self: center;">
+   Añadir
+  </vaadin-button>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 80%; flex-shrink: 0; flex-grow: 1;" id="ContenedorComentariosItem"></vaadin-vertical-layout>
 </vaadin-vertical-layout>

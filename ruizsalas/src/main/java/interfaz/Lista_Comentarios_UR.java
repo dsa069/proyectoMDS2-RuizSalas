@@ -67,7 +67,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
 		//this.Comentarios_item_Estaticos_UR();
-		//this.getCampoEscribirComentario().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
+		this.getBotonAnadirComentarioNoticia().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	
 	@Override
@@ -86,6 +86,6 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	//NS SI ES CORRECTO PQ ES CREAR
 	public void escribir_comentario() {
-		iRegitrao.escribir_comentario(comentario.getTexto(), user.getIdUsuario(), notice.getId_valoracion());
+		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
 	}
 }

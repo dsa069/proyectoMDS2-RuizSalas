@@ -57,7 +57,5 @@ public class Introducir_Datos extends VistaIntroducirdatos{
         this.getLayoutImagenPerfilIntroducirDatos().as(VerticalLayout.class).add(this.imagen);
 
         //coger nombre usuario y contrasena
-        this.getCampoApodo().setTitle(usuarioBD.getApodo());
-        this.getCampoContrasena().setTitle(usuarioBD.getContrasena());
 	}
 }
