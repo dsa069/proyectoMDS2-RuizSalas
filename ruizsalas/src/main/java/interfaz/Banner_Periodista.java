@@ -16,6 +16,7 @@ public class Banner_Periodista extends Banner_registrado {
 		this.periodista = periodista;
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
+		this.getBotonMisNoticiasGenerico().setVisible(true);
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonMisNoticiasGenerico().addClickListener(event->ConductorMisNoticias());

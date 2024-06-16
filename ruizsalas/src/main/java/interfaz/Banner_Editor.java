@@ -19,6 +19,8 @@ public class Banner_Editor extends Banner_registrado {
 		this._editor = _editor;
 		this.editor = editor;
 		this.getBotonMisNoticiasGenerico().setVisible(false);
+		this.getBotonVerPeriodistasGenerico().setVisible(true);
+		this.getBotonRevisarNoticiaGenerico().setVisible(true);
 
 		this.InicioPortada_Editor();
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());

@@ -69,15 +69,6 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
 		this.getLayoutNombreUsuario1().setText("" + usuario.getApodo());
 		this.getLayoutContrasena().setText("" + usuario.getContrasena());
-		if (this.registrado.BR.suscrito != null) {
-			this.getLayoutTarjetaCreditoUsuario1().setText("" + String.valueOf(suscrito.getTarjeta_de_credito()));
-		}
-	}
-	
-	public void SelectorUsuarioPerfil() {
-		//if no es UR
-		this.getLayoutTarjetaCreditoUsuario1().setVisible(false);
-		//else nada
 	}
 	
 //	private Image createImageFromFile(String filePath) {
