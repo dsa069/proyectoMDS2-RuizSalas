@@ -28,17 +28,20 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 	
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
 		try {
-			if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
-				Notification.show("suscrito dnahdfaibd");				
-				this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas); 
-				this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-			}else {
+			if (this._noticias_en_Portada.usuarioocl != null) {
+				if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
+					Notification.show("suscrito dnahdfaibd");				
+					this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+					NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas); 
+					this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+				}
+			} else {
 				Notification.show("noregistaro");
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.notitas);
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
 			}
+			
 		} catch (Exception e) {
 			Notification.show("cacheado");
 			// TODO Auto-generated catch block
