@@ -18,6 +18,8 @@ import ocl_proyecto.ComentarioDAO;
 import java.util.Date;
 
 import org.orm.PersistentException;
+
+import com.vaadin.flow.component.notification.Notification;
 // import ocl_proyecto.Usuario;
 
 public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, iRegistrado, iUsuario_No_Registrado, iUsuario {
@@ -261,6 +263,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion) {
 		try {
+			Notification.show("Voy a por ti");
 			_bd_noticias.valorar_noticia(aIdUsuario, aId_noticia, aValoracion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Noticia;
@@ -25,6 +27,8 @@ import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
+import ocl_proyecto.Valoracion;
+import ocl_proyecto.ValoracionDAO;
 
 public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
@@ -244,20 +248,33 @@ public class Bd_Noticias {
 			throws PersistentException {
 		Noticia noticia = null;
 		Usuario usuario = null;
+		Valoracion valoracion = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
-
+			valoracion = ValoracionDAO.getValoracionByORMID(aId_noticia);
+			Notification.show("me quedo en el try que me gusta mas");
+			
 			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
+				Notification.show("Entro en el if" + usuario.getIdUsuario());
+				Notification.show("Soy la noticia:" + noticia.getId_valoracion());
 				noticia.es_valorado_por.add(usuario);
 				usuario.realiza.add(noticia);
-				if(aValoracion)
+				Notification.show("he realizado los pasos previstos");
+				if(aValoracion) {
 					noticia.setNum_likes(noticia.getNum_likes()+1);
-				else
+					valoracion.setNum_likes(valoracion.getNum_likes()+1);
+				Notification.show("he dado like");
+				}
+				else {
 					noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
+				valoracion.setNum_dislikes(valoracion.getNum_dislikes()+1);
+				}
 				NoticiaDAO.save(noticia);
 				UsuarioDAO.save(usuario);
+			} else {
+				Notification.show("Que le jodan al if");
 			}
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();

@@ -39,6 +39,8 @@ public class Contenido_noticia_completo extends Noticia {
 	}
 	
 	public void valorar_noticia(boolean valoracion) {
-		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_noticia(), valoracion);
+		Notification.show("he pulsado el boton " + usuario.getIdUsuario());
+		Notification.show("Soy la noticia: " + noticia.getId_valoracion());
+		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_valoracion(), valoracion);
 	}
 }
