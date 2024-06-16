@@ -9,10 +9,13 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 	//	private JButton _next_page;
 	public Usuario _accede;
 	public Listar_Secciones _contiene;
+	
+	public ocl_proyecto.Seccion seccion;
 
-	public Secciones_periodico(Usuario usuario) {
+	public Secciones_periodico(Usuario usuario, ocl_proyecto.Seccion seccion) {
 		super();
 		this._accede = usuario;
+		this.seccion = seccion;
 		this.Lista_Secciones();
 		
 		this.getBotonAvazarPaginaPeriodico().addClickListener(event->ConductorPaginaSiguiente());
@@ -20,7 +23,7 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 	}
 
 	public void Lista_Secciones() {
-		this._contiene = new Listar_Secciones(this._accede);
+		this._contiene = new Listar_Secciones(this._accede, this.seccion);
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).add(this._contiene);
 	}
 	

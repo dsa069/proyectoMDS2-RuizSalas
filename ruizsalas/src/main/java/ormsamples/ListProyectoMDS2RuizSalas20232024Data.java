@@ -279,14 +279,16 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //				 System.out.println("Disi " + notice.getId_valoracion());
 //			 }
 			
-//			 for (Tematica notice: tematic) {
+//			 for (Seccion notice: sec) {
 //			 System.out.println("===================================DISI==========================================");
 //			 System.out.println("Disi " + notice.getNombre());
 //		 }
 			
 //			_bd_principal.anadir_seccion("Mereketenge");
 //			_bd_principal.anadir_seccion("fornai");
-			
+			//System.out.println("DISIIIIIIIIIIIIIIIIIII"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
+			System.out.println("DISIOOOOOOOOOOO"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
+//			System.out.println("DISIIIIAAAAAAAAAAAAAAA"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
 			
 			
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();

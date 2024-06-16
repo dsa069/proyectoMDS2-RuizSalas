@@ -30,7 +30,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 	
 	public void ConductorSiguientePagina() {//SIguiente pag periodico (di)
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().removeAll();
-		SeccP = new Secciones_periodico(this._unnamed_Usuario_);
+		SeccP = new Secciones_periodico(this._unnamed_Usuario_, null);
 		this._unnamed_Usuario_.mainView.P.BP.SS.getLayoutGenericoSeccionesBanner().add(SeccP);
 	}
 }

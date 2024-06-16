@@ -25,5 +25,9 @@ public interface iUsuario {
 	public Noticia[] Buscar(String aBusqueda);
 	
 	public Usuario cargar_usuario_comentario(int aId_comentario);
+	
+	public Seccion cargar_seccion_palanteypatras(int aId_seccion, boolean aPalanteopatras);
+	
+	public Seccion cargar_seccion_primero();
 
 }

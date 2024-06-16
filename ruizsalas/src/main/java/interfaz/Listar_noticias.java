@@ -13,11 +13,14 @@ public class Listar_noticias extends Listar_noticias_generico {
 	public Seleccion_de_secciones_Vista_Editor _puede_contener;
 	public Seleccion_de_secciones _unnamed_Seleccion_de_secciones_;
 	
+	ocl_proyecto.Usuario usuarioocl;
+	
     public Usuario _usuario;
 	
-	public Listar_noticias(Usuario _usuario) {
+	public Listar_noticias(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl) {
 		super(_usuario);
 		this._usuario = _usuario;
+		this.usuarioocl = usuarioocl;
 		this.getPortada().setVisible(false);
 		this.getListaSimpleNoticias().setVisible(false);
 	}

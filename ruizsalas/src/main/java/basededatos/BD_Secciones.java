@@ -36,6 +36,47 @@ public class BD_Secciones {
 		}
 		return seccion;
 	}
+	
+	public Seccion cargar_seccion_primero() 
+			throws PersistentException {
+				Seccion[] seccion = null;
+				PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			try {
+				seccion = SeccionDAO.listSeccionByQuery("Portada  ='"+0+"'", null, null);
+				t.commit();
+				ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+			} catch (Exception e) {
+				t.rollback();
+			}
+			return seccion[0];
+		}
+	
+	public Seccion cargar_seccion_palanteypatras(int aId_seccion, boolean Palanteopatras) 
+			throws PersistentException {
+				List<Seccion> seccion = null;
+				Seccion seccActual= null;
+				PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			try {
+				seccion = SeccionDAO.querySeccion("Portada  ='"+0+"'", null, null);
+				for (int i = 0; i < seccion.size(); i++) {
+					System.out.println("ME CORROOOOO"+ seccion.get(i));	
+				}
+				seccActual = SeccionDAO.getSeccionByORMID(aId_seccion);
+				if(seccion.contains(seccActual)) {
+					if(Palanteopatras&&seccion.indexOf(seccActual) != seccion.size()-1) 
+						return seccion.get(seccion.indexOf(seccActual)+1);
+					else if(!Palanteopatras && seccion.indexOf(seccActual) != 0) 
+						return seccion.get(seccion.indexOf(seccActual)-1);
+				}
+				seccion.clear();
+				seccion = SeccionDAO.querySeccion("Portada  ='"+1+"'", null, null);
+				t.commit();
+				ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+			} catch (Exception e) {
+				t.rollback();
+			}
+			return seccion.get(0);
+		}
 
 	public Seccion[] cargar_secciones_vista_editor() 
 		throws PersistentException {
@@ -58,7 +99,7 @@ public class BD_Secciones {
 			Seccion[] seccion = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			seccion = SeccionDAO.listSeccionByQuery(null, null);
+			seccion = SeccionDAO.listSeccionByQuery("Portada  ='"+0+"'", null, null);
 //			for(Seccion secc : seccion) 
 //				_bd_noticias.cargar_secciones_generico(secc.getIdSeccion());
 			t.commit();

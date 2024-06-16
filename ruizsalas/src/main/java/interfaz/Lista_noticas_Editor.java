@@ -9,7 +9,7 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	public Editor _editor;
     
 	public Lista_noticas_Editor(Editor _editor) {
-		super(_editor);
+		super(_editor, null);
 		this._editor = _editor;
 	}
 	@Override

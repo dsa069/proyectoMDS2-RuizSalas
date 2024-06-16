@@ -47,12 +47,6 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	}
 	
 	public void InicioPortada() {
-//		try {
-//			Notification.show("SS "+this.usuarioocl.getApodo());
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		this.pagInicio = new Pagina_de_inicio(this.usuario, this.usuarioocl, this);
 		this.getLayoutGenericoSeccionesBanner().add(pagInicio);
 	}

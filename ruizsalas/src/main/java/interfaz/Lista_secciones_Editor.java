@@ -20,7 +20,7 @@ public class Lista_secciones_Editor extends Listar_Secciones {
     iEditor iEdito = new BD_Principal();
     
 	public Lista_secciones_Editor(Editor _editor) {
-		super(_editor);
+		super(_editor, null);
 		this._editor = _editor;
 	}
 	

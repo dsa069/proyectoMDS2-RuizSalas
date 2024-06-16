@@ -25,7 +25,7 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
-	
+	//@Override
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
 		try {
 			if (this._noticias_en_Portada.usuarioocl != null) {
