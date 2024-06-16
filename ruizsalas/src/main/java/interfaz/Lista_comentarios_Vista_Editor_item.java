@@ -17,10 +17,6 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 		this.comentar = comentario;
 		this.getBorrarComentario().setVisible(true);
 		
-		this.getBorrarComentario().addClickListener(event->borrar_comentario());
-	}
-	
-	public void borrar_comentario() {
-		iEdito.borrar_comentario(this.comentar.getId_valoracion());
+		this.getBorrarComentario().addClickListener(event->iEdito.borrar_comentario(this.comentar.getId_valoracion()));
 	}
 }
