@@ -10,15 +10,18 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	public Vector<Lista_comentarios_Vista_Editor_item> _item = new Vector<Lista_comentarios_Vista_Editor_item>();
 
 	public Editor _editor;
+	public Lista_comentarios_Vista_Editor LCVE;
+	public Contenido_noticia_editor CNC;
 	
 	ocl_proyecto.Editor editor;
 	ocl_proyecto.Comentario comentario;
 	ocl_proyecto.Noticia noti;
 	
-	public Lista_comentarios_Vista_Editor(Editor _editor, ocl_proyecto.Editor editor, ocl_proyecto.Noticia noticia) {
-		super(_editor, editor, noticia);
+	public Lista_comentarios_Vista_Editor(Editor _editor, ocl_proyecto.Editor editor, ocl_proyecto.Noticia noticia,Contenido_noticia_editor CNC) {
+		super(_editor, editor, noticia, CNC);
 		this._editor = _editor;
 		this.noti = noticia;
+		this.CNC = CNC;
 		//this.getOcultar().setVisible(false);
 		
 //		this.Comentarios_item_Estaticos_Editor();
@@ -27,8 +30,17 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	public void Comentarios_item_Estaticos(){
 		comenta = this.cargar_listar_comenatrios();
 		for (int i=0; i<comenta.length; i++) {
-			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, (ocl_proyecto.Editor) user, comenta[i]);
+			Us_coment = this.cargar_usuario_comenatrio(comenta[i].getId_valoracion());
+			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, Us_coment, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCVEI);
 		}
+	}
+	
+	@Override
+	public void escribir_comentario() {
+		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
+		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
+		LCVE = new Lista_comentarios_Vista_Editor((Editor) this.usuario,(ocl_proyecto.Editor) this.user, this.notice, this.CNC);
+		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).add(LCVE);
 	}
 }

@@ -36,7 +36,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	}
 	
 	public void Lista_De_Comentarios_Editor() {
-		this._contiene = new Lista_comentarios_Vista_Editor(this.editor, this.editorBD, this.notice);
+		this._contiene = new Lista_comentarios_Vista_Editor(this.editor, this.editorBD, this.notice, this);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

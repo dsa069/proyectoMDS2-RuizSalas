@@ -34,7 +34,7 @@ public class Contenido_noticia_completo extends Noticia {
 	}
 	
 	public void Lista_De_ComentariosComp() {
-		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario, this.noticia);
+		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario, this.noticia,this);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	

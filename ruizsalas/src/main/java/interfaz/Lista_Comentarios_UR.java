@@ -24,6 +24,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
 	public Registrado _registrado;
+	public Contenido_noticia_completo CNC;
+	public Lista_Comentarios_UR LCUR;
 
 	//ocl_proyecto.Usuario user;
 	ocl_proyecto.Comentario comentario;
@@ -31,10 +33,11 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	iRegistrado iRegitrao = new BD_Principal();
 
-	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia) {
+	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia,Contenido_noticia_completo CNC) {
 		super(_registrado, usuario, noticia);
 //		this._registrado = _registrado;
 //		this.user = usuario;
+		this.CNC = CNC;
 
 		Notification.show("el feo "+notice.getId_valoracion());
 		Notification.show("el feo "+user.getApodo());
@@ -84,8 +87,10 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		return iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
 }
 
-	//NS SI ES CORRECTO PQ ES CREAR
 	public void escribir_comentario() {
 		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
+		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
+		LCUR = new Lista_Comentarios_UR((Registrado) this.usuario, this.user, this.notice, this.CNC);
+		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).add( LCUR);
 	}
 }
