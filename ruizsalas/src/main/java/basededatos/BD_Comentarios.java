@@ -10,6 +10,8 @@ import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
+import ocl_proyecto.Valoracion;
+import ocl_proyecto.ValoracionDAO;
 import ocl_proyecto.Editor;
 import ocl_proyecto.EditorDAO;
 import ocl_proyecto.Noticia;
@@ -80,11 +82,13 @@ public class BD_Comentarios {
 			if(!comentario.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				usuario.realiza.add(comentario);
 				comentario.es_valorado_por.add(usuario);
-				if(aValoracion)
+				if(aValoracion) {
 					comentario.setNum_likes(comentario.getNum_likes()+1);
-				else
+				} else {
 					comentario.setNum_dislikes(comentario.getNum_dislikes()+1);
+				}
 				ComentarioDAO.save(comentario);
+				UsuarioDAO.save(usuario);
 			}
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();

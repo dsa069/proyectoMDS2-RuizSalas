@@ -248,12 +248,10 @@ public class Bd_Noticias {
 			throws PersistentException {
 		Noticia noticia = null;
 		Usuario usuario = null;
-		Valoracion valoracion = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
-			valoracion = ValoracionDAO.getValoracionByORMID(aId_noticia);
 			Notification.show("me quedo en el try que me gusta mas");
 			
 			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
@@ -264,12 +262,10 @@ public class Bd_Noticias {
 				Notification.show("he realizado los pasos previstos");
 				if(aValoracion) {
 					noticia.setNum_likes(noticia.getNum_likes()+1);
-					valoracion.setNum_likes(valoracion.getNum_likes()+1);
-				Notification.show("he dado like");
+					Notification.show("he dado like");
 				}
 				else {
 					noticia.setNum_dislikes(noticia.getNum_dislikes()+1);
-				valoracion.setNum_dislikes(valoracion.getNum_dislikes()+1);
 				}
 				NoticiaDAO.save(noticia);
 				UsuarioDAO.save(usuario);
