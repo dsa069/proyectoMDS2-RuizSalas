@@ -1,5 +1,7 @@
 package interfaz;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import basededatos.BD_Principal;
 import basededatos.iEditor;
 
@@ -15,8 +17,20 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 		super(padre, us, comentario);
 		this._lista_comentarios_Vista_Editor_ = padre;
 		this.comentar = comentario;
+		
 		this.getBorrarComentario().setVisible(true);
 		
-		this.getBorrarComentario().addClickListener(event->iEdito.borrar_comentario(this.comentar.getId_valoracion()));
+		this.getBorrarComentario().addClickListener(event->borrar_comentario());
+	}
+	
+	public void borrar_comentario() {
+		iEdito.borrar_comentario(this.comentar.getId_valoracion());
+		this._lista_comentarios_Vista_Editor_.ramadam();
+	}
+	
+	@Override
+	public void valorar_comentario(boolean valoracion) {
+		iregistrao.valorar_comentario(usuario.getIdUsuario(), comentar.getId_valoracion(), valoracion);
+		this._lista_comentarios_Vista_Editor_.ramadam();
 	}
 }

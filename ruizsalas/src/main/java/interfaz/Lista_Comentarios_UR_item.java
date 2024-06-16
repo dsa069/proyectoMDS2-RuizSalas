@@ -32,8 +32,7 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 	}
 	
 	public void valorar_comentario(boolean valoracion) {
-		//Operaciones de dar like y dislike a comentario
 		iregistrao.valorar_comentario(usuario.getIdUsuario(), comentar.getId_valoracion(), valoracion);
-		throw new UnsupportedOperationException();
+		this._lista_Comentarios_UR.ramadam();
 	}
 }

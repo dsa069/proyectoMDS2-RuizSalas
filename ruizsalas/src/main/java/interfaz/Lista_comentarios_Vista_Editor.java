@@ -39,6 +39,11 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	@Override
 	public void escribir_comentario() {
 		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
+		this.ramadam();
+	}
+	
+	@Override
+	public void ramadam() {
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
 		LCVE = new Lista_comentarios_Vista_Editor((Editor) this.usuario,(ocl_proyecto.Editor) this.user, this.notice, this.CNC);
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).add(LCVE);
