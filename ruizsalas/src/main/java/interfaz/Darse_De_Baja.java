@@ -1,21 +1,26 @@
 package interfaz;
 
+import basededatos.BD_Principal;
+import basededatos.iUsuario_Registardo;
 import vistas.VistaDarsedebaja;
 
 public class Darse_De_Baja extends VistaDarsedebaja{
 	public Usuario_Registardo usuarioRegistrado;
+	public iUsuario_Registardo iusureg = new BD_Principal();
+	ocl_proyecto.Usuario_suscrito_ suscrito;
 	
-	public Darse_De_Baja(Usuario_Registardo usuarioRegistrado) {
+	public Darse_De_Baja(Usuario_Registardo usuarioRegistrado, ocl_proyecto.Usuario_suscrito_ suscrito) {
 		super();
 		this.usuarioRegistrado = usuarioRegistrado;
+		this.suscrito = suscrito;
 
 		this.getBotonDarseDeBaja().addClickListener(event->darse_De_Baja());
 	}
 	
 	public void darse_De_Baja() {   
+		iusureg.cancelar_cobro_suscripcion(this.suscrito.getIdUsuario());
 		this.usuarioRegistrado.mainView.removeAll();
 		this.usuarioRegistrado.mainView.add(this.usuarioRegistrado.mainView.UNR);
-		//throw new UnsupportedOperationException();
 	}
 
 }

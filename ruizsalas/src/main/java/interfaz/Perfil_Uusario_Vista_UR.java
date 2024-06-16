@@ -17,7 +17,7 @@ public class Perfil_Uusario_Vista_UR extends Perfil_Usuario {
 		this.Boton_Baja();
 	}
 	public void Boton_Baja() {
-		this.Boton = new Darse_De_Baja(this._unnamed_Usuario_Registardo_);
+		this.Boton = new Darse_De_Baja(this._unnamed_Usuario_Registardo_, this.user);
 		this.getDarseDeBajaLayout().add(this.Boton);
 	}
 	public void dar_de_baja() {
