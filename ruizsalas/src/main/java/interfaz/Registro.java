@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Registro extends Banner_no_registrado {
@@ -36,7 +37,7 @@ public class Registro extends Banner_no_registrado {
 	}
 	
 	public void Confirmar() {
-		this.Boton = new Confirmar_Registro(this._unnamed_Usuario_No_Registrado_);
+		this.Boton = new Confirmar_Registro(this._unnamed_Usuario_No_Registrado_, this.Datos);
 		this.getBotonConfirmarRegistroEstaticoLayout().as(VerticalLayout.class).add(this.Boton);
 	}
 

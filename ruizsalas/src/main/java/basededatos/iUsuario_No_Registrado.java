@@ -1,6 +1,7 @@
 package basededatos;
 
 import ocl_proyecto.Usuario;
+import ocl_proyecto.Usuario_suscrito_;
 
 public interface iUsuario_No_Registrado extends iUsuario {
 
@@ -10,7 +11,7 @@ public interface iUsuario_No_Registrado extends iUsuario {
 
 	public void enviar_Correo_Confirmacion();
 
-	public Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito);
+	public Usuario_suscrito_ gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito);
 
 	public Usuario confirmar_Datos(String aCorreo, String aContrasena);
 }

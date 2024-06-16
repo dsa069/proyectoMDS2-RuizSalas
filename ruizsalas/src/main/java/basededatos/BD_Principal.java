@@ -368,7 +368,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		
 		}
 
-	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
+	public ocl_proyecto.Usuario_suscrito_ gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
 		try {
 			return _bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aFoto_de_perfil , aDni, aTarjeta_de_credito);
 		} catch (PersistentException e) {
