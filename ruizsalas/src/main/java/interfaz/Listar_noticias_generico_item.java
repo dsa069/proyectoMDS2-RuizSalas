@@ -30,6 +30,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	
 	Noticia_Vista_UNR NUNR;
 	Noticia_completa NUN;
+	Noticia_Vista_Editor NVE;
 	
 	ocl_proyecto.Noticia Notas;
 	ocl_proyecto.Usuario user;

@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
@@ -39,6 +40,10 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 	}
 	
+	@Override
+	public void Lista_De_ComentariosComp() {
+	}
+	
 	public void Seleccion_Tematica() {
 		this.seleccionarTematica = new Seleccionar_Tematica(this.editor);
 		this.getSeleccionarTematicas().as(VerticalLayout.class).add(this.seleccionarTematica);
@@ -58,6 +63,10 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	
 	public void eliminar_noticia() {
 		iEdito.eliminar_noticia(this.notice.getId_noticia());
+	}
+	
+	@Override
+	public void Listar_Tematicas() {
 	}
 
 }

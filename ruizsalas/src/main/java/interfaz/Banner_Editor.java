@@ -32,6 +32,11 @@ public class Banner_Editor extends Banner_registrado {
 		this.SSE = new Seleccion_de_secciones_Vista_Editor(this._editor, this.editor,this);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SSE);
 	}
+	
+	@Override
+	public void InicioPortada() {
+		
+	}
 
 	@Override
 	public void ConductorPortadaBanner() {

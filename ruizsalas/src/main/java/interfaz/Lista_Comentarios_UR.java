@@ -35,10 +35,10 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		super(_registrado, usuario, noticia);
 //		this._registrado = _registrado;
 //		this.user = usuario;
-//		Notification.show("el malo"+notisia.getId_valoracion());
-		Notification.show("el feo"+notice.getId_valoracion());
-		Notification.show("el feo"+user.getApodo());
-//		Notification.show("elpapa"+noticia.getId_valoracion());
+
+		Notification.show("el feo "+notice.getId_valoracion());
+		Notification.show("el feo "+user.getApodo());
+
 		
 		this.getEscribirComentario().setVisible(true);
 		this.imagen = new Image();
