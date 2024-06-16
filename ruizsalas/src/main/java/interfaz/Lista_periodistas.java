@@ -14,6 +14,7 @@ public class Lista_periodistas extends Banner_Editor {
 	public Lista_periodistas(Editor _editor, ocl_proyecto.Editor editor) {
 		super(_editor, editor);
 		this._accede = _editor;
+		this.editor = editor;
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getListarPeriodistaLayout().setVisible(true);
 
