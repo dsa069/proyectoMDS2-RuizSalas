@@ -51,6 +51,6 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 
 	public void no_agregar_noticia() {
 		//Operacion base de datos
-		iEdito.no_agregar_noticia(notice.getId_noticia());
+		iEdito.no_agregar_noticia(notice.getId_valoracion());
 	}
 }
