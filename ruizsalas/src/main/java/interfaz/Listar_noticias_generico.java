@@ -21,11 +21,7 @@ public class Listar_noticias_generico extends VistaListarnoticiasgenerico {
 	}
 	
 	public void Noticia_item() {
-		notice = this.cargar_noticias();
-		for (int i=0; i<notice.length; i++) {
-			Listar_noticias_generico_item _item = new Listar_noticias_generico_item(this, this.notice[i]);
-			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
-		}
+
 	}
 	
 	public Noticia[] cargar_noticias() {
