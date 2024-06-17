@@ -17,15 +17,18 @@ public class Seleccionar_Tematica extends VistaSeleccionartematica {
 	public Registrado registrado;
 	public Tematica[] tem;
 	
+	ocl_proyecto.Noticia notice;
+	
 	iUsuario_Registardo iUR = new BD_Principal();
 	
-	public Seleccionar_Tematica(Registrado registrado) {
+	public Seleccionar_Tematica(Registrado registrado, ocl_proyecto.Noticia noticia) {
 		super();
 		this.registrado = registrado;
+		this.notice = noticia;
 		
 		tem = cargar_tematicas_seleccion();
 		for (int i=0; i<tem.length; i++) {
-			Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this, tem[i]);
+			Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this, tem[i], this.notice);
 			this.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 		}
 	}

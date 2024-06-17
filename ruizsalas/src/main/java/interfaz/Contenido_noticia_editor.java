@@ -45,7 +45,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	}
 	
 	public void Seleccion_Tematica() {
-		this.seleccionarTematica = new Seleccionar_Tematica(this.editor);
+		this.seleccionarTematica = new Seleccionar_Tematica(this.editor, this.notice);
 		this.getSeleccionarTematicas().as(VerticalLayout.class).add(this.seleccionarTematica);
 	}
 
