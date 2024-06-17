@@ -2,28 +2,34 @@ package interfaz;
 
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
+import basededatos.iEditor;
 import basededatos.iPeriodista;
 import ocl_proyecto.Noticia;
+import ocl_proyecto.PeriodistaDAO;
 import vistas.*;
 
 public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Historial_noticias _unnamed_Historial_noticias_;
 	public Vector<Lista_mis_noticias_item> _item = new Vector<Lista_mis_noticias_item>();
 	public Noticia[] notice;
+	public Noticia[] not;
 	
 	ocl_proyecto.Periodista pe;
 	
-	iPeriodista iPeriodita = new BD_Principal();
+	iPeriodista yuseppe = new BD_Principal();
+
 	
 	public Periodista periodista;
 	public Lista_mis_noticias(Periodista usuario, ocl_proyecto.Periodista pe) {
 		super(usuario);
 		this.periodista = usuario;
-		this.pe = pe;
+		//this.pe = pe;
 		Notification.show("LMN " + this.pe.getApodo());
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
@@ -45,6 +51,13 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	
 	@Override
 	public Noticia[] cargar_noticias() {
-		return iPeriodita.cargar_listar_mis_noticias(this.pe.getIdUsuario());
+		try {
+			pe = PeriodistaDAO.getPeriodistaByORMID(4);
+			Notification.show("DIIIIIIIII"+ pe.getApodo() );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return yuseppe.cargar_listar_mis_noticias(pe.getIdUsuario());
 	}
 }

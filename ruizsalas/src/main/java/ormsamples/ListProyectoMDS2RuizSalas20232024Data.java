@@ -281,10 +281,6 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //				 System.out.println("Disi " + notice.getId_valoracion());
 //			 }
 			
-//			 for (Seccion notice: sec) {
-//			 System.out.println("===================================DISI==========================================");
-//			 System.out.println("Disi " + notice.getNombre());
-//		 }
 			
 //			_bd_principal.anadir_seccion("Mereketenge");
 //			_bd_principal.anadir_seccion("fornai");
@@ -295,7 +291,11 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(11, true).getNombre());
 //			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(11, false).getNombre());
 			
-			
+//			Noticia[] pepe = _bd_principal.cargar_listar_mis_noticias(4);
+//			 for (Noticia notice: pepe) {
+//			 System.out.println("===================================DISI==========================================");
+//			 System.out.println("Disi " + notice.getTitulo());
+//		 }
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();
 		} catch (Exception e) {

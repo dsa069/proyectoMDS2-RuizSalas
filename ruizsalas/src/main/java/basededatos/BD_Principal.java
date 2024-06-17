@@ -292,7 +292,6 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
-	//HOMEMADE
 	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) {
 		try {
 			return _bd_noticias.cargar_listar_mis_noticias(aIdUsuario);
