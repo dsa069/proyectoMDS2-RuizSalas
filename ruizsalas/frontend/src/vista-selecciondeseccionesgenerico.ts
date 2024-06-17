@@ -18,7 +18,7 @@ export class VistaSelecciondeseccionesgenerico extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 100%; justify-content: space-between;" id="layoutSeleccionSeccionesGenerico">
- <vaadin-horizontal-layout class="content" style="width: 100%; position: absolute; flex-shrink: 1; flex-grow: 0;" id="layoutBannerSeccionesBusqueda">
+ <vaadin-horizontal-layout class="content" style="width: 100%; position: absolute; flex-shrink: 0; flex-grow: 0;" id="layoutBannerSeccionesBusqueda">
   <vaadin-horizontal-layout style="flex-shrink: 0; flex-grow: 0; font-size: 28px; align-items: flex-start; justify-content: flex-start;">
    <vaadin-horizontal-layout style="flex-shrink: 0;" id="EditarTexto">
      EDITAR 
@@ -35,7 +35,7 @@ export class VistaSelecciondeseccionesgenerico extends LitElement {
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; align-items: flex-start;" id="BarraDeBusqueda"></vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout id="MsgError" style="flex-shrink: 0; width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
- <vaadin-horizontal-layout id="layoutGenericoSeccionesBanner" style="flex-shrink: 1; width: 100%;"></vaadin-horizontal-layout>
+ <vaadin-horizontal-layout id="layoutGenericoSeccionesBanner" style="flex-shrink: 1; width: 100%; flex-grow: 0;"></vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

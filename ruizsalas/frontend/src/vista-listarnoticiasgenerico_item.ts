@@ -17,11 +17,11 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutGenericoListarNoticiasGenerico">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="layoutGenericoListarNoticiasGenerico">
  <vaadin-horizontal-layout style="width: 100%; font-size: 32px; align-items: flex-start; flex-shrink: 1;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 1;">
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">
-   <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 0; width: 33%; align-items: flex-start; justify-content: flex-end;">
+   <vaadin-vertical-layout style="flex-grow: 1; font-size: 60px; flex-shrink: 0; align-items: flex-start; justify-content: flex-end;">
     <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; width: 100%; height: 80%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;" id="botonImagenListarNoticias">
      <vaadin-vertical-layout theme="spacing" id="LayoutImagenNoticiaCojonesPlaceholderRoggenrola"></vaadin-vertical-layout>
     </vaadin-button>
@@ -29,13 +29,13 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
       Titular 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; width: 33%; font-size: 25px; align-self: center;">
-    <vaadin-horizontal-layout theme="spacing-s" style="flex-grow: 0; width: 100%; align-items: flex-start;">
-     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 40px; width: 100%; height: 100%; color: black; flex-grow: 1; flex-shrink: 0; align-self: flex-start;" id="Titular2">
+   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; font-size: 25px; align-self: center;">
+    <vaadin-horizontal-layout style="flex-grow: 0; width: 100%; align-items: flex-start;">
+     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 40px; height: 100%; color: black; flex-grow: 1; flex-shrink: 0; align-self: flex-start;" id="Titular2">
        Titular2 
      </vaadin-button>
-     <vaadin-horizontal-layout style="align-items: flex-start; flex-shrink: 1; justify-content: flex-end; align-self: center; font-size: 50px;" id="VerValoracion"></vaadin-horizontal-layout>
-     <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 1; width: 10%; height: 60%; background-color: var(--lumo-contrast-0pct);" id="QuitarNoticiaDeSeccion">
+     <vaadin-horizontal-layout style="align-items: flex-start; flex-shrink: 0; justify-content: flex-end; align-self: center; font-size: 50px; flex-grow: 1;" id="VerValoracion"></vaadin-horizontal-layout>
+     <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 1; background-color: var(--lumo-contrast-0pct); flex-shrink: 0;" id="QuitarNoticiaDeSeccion">
       <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
      </vaadin-button>
     </vaadin-horizontal-layout>
@@ -44,7 +44,7 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="flex-grow: 0; flex-shrink: 1; align-self: center;">
+  <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; align-self: center;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 1; flex-shrink: 0; height: 12%; width: 7%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="EliminarNoticiaPropia">
     <iron-icon style="width: 100%; height: 100px;" src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png"></iron-icon>
    </vaadin-button>

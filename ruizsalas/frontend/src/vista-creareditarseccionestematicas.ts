@@ -19,11 +19,11 @@ export class VistaCreareditarseccionestematicas extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-horizontal-layout style="width: 100%; flex-shrink: 1; align-items: center; font-size: 40px; justify-content: center;" id="CrearTematicaCabecera">
+ <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; align-items: flex-end; font-size: 40px; justify-content: center; flex-grow: 1;" id="CrearTematicaCabecera">
    Crear temática 
-  <vaadin-text-field label="" placeholder="Introducir nombre temática" style="align-self: center; flex-shrink: 0; width: 60%;"></vaadin-text-field>
-  <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%; width: 20%;" id="botonCrearNuevaTematica">
-   <img src="https://cdn-icons-png.flaticon.com/512/117/117885.png" style="height: 15%; width: 15%;">
+  <vaadin-text-field label="" placeholder="Introducir nombre temática" style="align-self: flex-end; flex-shrink: 0; width: 60%;"></vaadin-text-field>
+  <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; width: 20%; height: 80%;" id="botonCrearNuevaTematica">
+   <img src="https://cdn-icons-png.flaticon.com/512/117/117885.png" style="height: 25%; width: 25%;">
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout style="width: 100%; height: 70%; flex-shrink: 1;" id="listaSeccionesEstaticas"></vaadin-vertical-layout>
