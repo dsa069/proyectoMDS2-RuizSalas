@@ -23,14 +23,18 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 		this._unnamed_Revisar_noticias_ = _unnamed_Revisar_noticias_;
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
-	}
-	
-	@Override
-	public void Noticia_item() {
+		
+		//ITEM
 		notice = iEdito.cargar_noticias_a_revisar();
 		for (int i=0; i<notice.length; i++) {
 			Noticias_a_Revisar_item _item = new Noticias_a_Revisar_item(this, this.notice[i]);
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 		}
+		
+	}
+	
+	@Override
+	public void Noticia_item() {
+		
 	}
 }
