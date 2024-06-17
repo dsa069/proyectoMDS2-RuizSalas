@@ -10,11 +10,12 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 	public Lista_comentarios_Vista_Editor _lista_comentarios_Vista_Editor_;
 	
 	ocl_proyecto.Comentario comentar;
+	ocl_proyecto.Editor ed;
 	
 	iEditor iEdito = new BD_Principal();
 
-	public Lista_comentarios_Vista_Editor_item(Lista_comentarios_Vista_Editor padre, ocl_proyecto.Usuario us, ocl_proyecto.Comentario comentario) {
-		super(padre, us, comentario);
+	public Lista_comentarios_Vista_Editor_item(Lista_comentarios_Vista_Editor padre, ocl_proyecto.Usuario us, ocl_proyecto.Editor ed, ocl_proyecto.Comentario comentario) {
+		super(padre, us, ed, comentario);
 		this._lista_comentarios_Vista_Editor_ = padre;
 		this.comentar = comentario;
 		
@@ -30,7 +31,7 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 	
 	@Override
 	public void valorar_comentario(boolean valoracion) {
-		iregistrao.valorar_comentario(usuario.getIdUsuario(), comentar.getId_valoracion(), valoracion);
+		iregistrao.valorar_comentario(ed.getIdUsuario(), comentar.getId_valoracion(), valoracion);
 		this._lista_comentarios_Vista_Editor_.ramadam();
 	}
 }

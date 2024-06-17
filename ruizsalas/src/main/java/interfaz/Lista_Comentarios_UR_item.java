@@ -13,11 +13,13 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 	
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Comentario comentar;
+	 ocl_proyecto.Usuario userSesion;
 	
-	public Lista_Comentarios_UR_item(Lista_Comentarios_UR padre, ocl_proyecto.Usuario user, ocl_proyecto.Comentario comentario) {
+	public Lista_Comentarios_UR_item(Lista_Comentarios_UR padre, ocl_proyecto.Usuario user, ocl_proyecto.Usuario userSesion, ocl_proyecto.Comentario comentario) {
 		super(padre, user, comentario);
 		this._lista_Comentarios_UR = padre;
 		this.usuario = user;
+		this.userSesion = userSesion;
 		this.comentar = comentario;
 		this.getValorarComentarioNegativamente().setVisible(true);
 		this.getValorarComentarioPositivamente().setVisible(true);
@@ -32,7 +34,7 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 	}
 	
 	public void valorar_comentario(boolean valoracion) {
-		iregistrao.valorar_comentario(usuario.getIdUsuario(), comentar.getId_valoracion(), valoracion);
+		iregistrao.valorar_comentario(userSesion.getIdUsuario(), comentar.getId_valoracion(), valoracion);
 		this._lista_Comentarios_UR.ramadam();
 	}
 }
