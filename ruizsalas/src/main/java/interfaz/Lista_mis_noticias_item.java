@@ -8,13 +8,10 @@ import basededatos.iPeriodista;
 import vistas.VistaListarnoticiasgenerico_item;
 
 public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
-//	private JButton _editar_noticia;
 	public Lista_mis_noticias _lista_mis_noticias;
 	public Crear_Editar_Noticia crearEditarNoticia;
-//	public Eliminar_noticia _contiene_la_opcion_de;
 	
 	ocl_proyecto.Periodista periodista;
-	//ocl_proyecto.Noticia notice;
 	
 	iPeriodista iPeriodita = new BD_Principal();
 	

@@ -20,10 +20,6 @@ import ocl_proyecto.Usuario_suscrito_DAO;
 import vistas.*;
 
 public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_item {
-//	private JButton _acceder_a_noticia;
-//	private JLabel _imagen_principal;
-//	private JLabel _titulo;
-//	private JLabel _resumen_corto;
 	public Listar_noticias_generico _listar_noticias_generico;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
@@ -70,18 +66,18 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
-	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
+	public void ConductorNoticia() {
 
 	}
 	
-	public void ConductorNoticiaUNR() {//Ir a noticia dependiendo del usuario
+	public void ConductorNoticiaUNR() {
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);
 	}
 	
 	
-	public void ConductorNoticiaUR() {//Ir a noticia dependiendo del usuario
+	public void ConductorNoticiaUR() {
 		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this.user, this.Notas);
 		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);

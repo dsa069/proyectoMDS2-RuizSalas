@@ -11,11 +11,6 @@ import ocl_proyecto.UsuarioDAO;
 import vistas.*;
 
 public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
-//	private JButton _agregar_noticia;
-//	private JButton _no_agregar_noticia;
-//	private JLabel _autor;
-//	private JLabel _foto;
-//	private JLabel _version;
 	public Noticias_a_Revisar _noticias_a_Revisar;
 	
 	ocl_proyecto.Noticia notice;
@@ -28,7 +23,6 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this._noticias_a_Revisar = padre;
 		this.per = Notas.getAutor();
 		this.notice = Notas;
-		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
 		this.getTitular2().setVisible(false);
@@ -59,12 +53,10 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 	}
 	
 	public void agregar_noticia(boolean agregar) {
-		//Operación base de datos
 		iEdito.agregar_noticia(notice.getId_valoracion(), agregar);
 	}
 
 	public void no_agregar_noticia() {
-		//Operacion base de datos
 		iEdito.no_agregar_noticia(notice.getId_valoracion());
 	}
 }

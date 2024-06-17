@@ -13,7 +13,6 @@ import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class Editar_Perfil extends Banner_suscrito {
-	//private JButton _guardar_cambios;
 	public Registrado _unnamed_Registrado_;
 	public Editar_datos _unnamed_Editar_datos_;
 	public Perfil_Usuario perfil;
@@ -45,8 +44,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
 	}
 
-	public void guardar_cambios() {//CUANDO TENGAMOS LA BASE DE DATOS PONER DISTINCION ENTRE UR Y DEMAS
-		//Operacion de guardar
+	public void guardar_cambios() {
 		String apodo; 
 		String dni; 
 		String email; 

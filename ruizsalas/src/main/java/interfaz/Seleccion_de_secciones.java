@@ -8,8 +8,6 @@ import ocl_proyecto.Seccion;
 import vistas.*;
 
 public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
-	//private JTextField _barra_de_busqueda;
-	//public Listar_noticias _puede_contener;
 	public Vector<Seleccion_de_secciones_item> _item = new Vector<Seleccion_de_secciones_item>();
 	
 	ocl_proyecto.Seccion seccion;
@@ -58,6 +56,5 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	
 	@Override
 	public void CEseccionesEstatico() {
-		//no hace lo del super
 	}
 }

@@ -4,7 +4,6 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Banner_Periodista extends Banner_registrado {
-	//private JButton _boton_Mis_noticias;
 	public Banner_suscrito _puede_contener;
 	public Historial_noticias historialNoticias;
 	public Periodista _periodista;

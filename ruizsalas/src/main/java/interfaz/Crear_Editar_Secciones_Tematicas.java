@@ -7,11 +7,6 @@ import basededatos.iEditor;
 import vistas.VistaCreareditarseccionestematicas;
 
 public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionestematicas{
-	//	private JButton _anadir_seccionB;
-	//	private JTextField _anadir_seccionTF;
-	//	private JLabel _anadir_seccionL;
-	//	private Jbutton _next_page;
-	//	private JScrollPanel _scroll;
 	public Editor _unnamed_Editor_;
 	public Lista_secciones_Editor _contiene;
 	public Seleccion_de_secciones_generico SESG;
@@ -32,9 +27,7 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 		this.getCrearTematicasPatras().addClickListener(event->ConductorPagina(false));
 	}
 
-	//NS SI ES CORRECTO PQ ES CREAR
 	public void anadir_seccion() {
-		//Operacion base de datos anadir
 		iEdito.anadir_seccion(this.getLabelCrearEditarSeccionesTematicas().getValue());
 	}
 

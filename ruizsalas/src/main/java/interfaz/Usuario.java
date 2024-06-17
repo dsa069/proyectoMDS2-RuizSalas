@@ -4,12 +4,9 @@ import vistas.VistaUsuario;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import proyectoMDS.*;
-//import basededatos.iUsuario;
 import proyectoMDS.MainView;
 import proyectoMDS.MainView;
 public class Usuario extends VistaUsuario {
-//	public iUsuario _iUsuario;
-	//	public Busqueda _accede;
 	public Banner_generico banner;
 	public MainView mainView;
 	

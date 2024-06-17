@@ -6,9 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import vistas.*;
 
 public class Seleccion_de_secciones_generico_item extends VistaSelecciondeseccionesgenerico_item{
-	//private JButton _ir_a_seccion;
 	public Seleccion_de_secciones_generico _unnamed_Seleccion_de_secciones_generico_;
-	//public Seleccion_de_secciones_generico _seleccion_de_secciones_generico;
 	ocl_proyecto.Seccion secc;
 	
 	public Seleccion_de_secciones_generico_item(Seleccion_de_secciones_generico _seleccion_de_secciones_generico, ocl_proyecto.Seccion seccion) {

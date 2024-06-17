@@ -22,9 +22,6 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 		this._editor = _editor;
 		this.noti = noticia;
 		this.CNC = CNC;
-		//this.getOcultar().setVisible(false);
-		
-//		this.Comentarios_item_Estaticos_Editor();
 		}
 	@Override
 	public void Comentarios_item_Estaticos(){

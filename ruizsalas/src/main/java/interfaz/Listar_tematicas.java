@@ -10,8 +10,6 @@ import basededatos.iUsuario;
 import ocl_proyecto.Tematica;
 
 public class Listar_tematicas extends VistaListartematicas {
-//	private JLabel _tematicas;
-//	public Noticia _unnamed_Noticia_;
 	public Vector<Listar_tematicas_item> _item = new Vector<Listar_tematicas_item>();
 	public Usuario usuario;
 	public Tematica[] tem;

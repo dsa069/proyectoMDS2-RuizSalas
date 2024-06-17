@@ -10,12 +10,6 @@ import com.vaadin.flow.server.StreamResource;
 import vistas.*;
 
 public class Introducir_Datos extends VistaIntroducirdatos{
-	//	private JLabel _titulo;
-	//	private JButton _cancelar;
-	//	private JTextField _correoTF;
-	//	private JTextField _contrasenaTF;
-	//	private JLabel _correoL;
-	//	private JLabel _contrasenaL;
 	public Iniciar_Sesion _unnamed_Iniciar_Sesion_;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;

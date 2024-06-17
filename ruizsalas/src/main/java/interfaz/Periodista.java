@@ -15,8 +15,6 @@ public class Periodista extends Registrado {
 
 		this.Banner_P_Inico();
 	}
-	//	public Object _iPeriodista.;
-	//	public Historial_noticias _accede;
 
 	public Banner_Periodista BP;
 

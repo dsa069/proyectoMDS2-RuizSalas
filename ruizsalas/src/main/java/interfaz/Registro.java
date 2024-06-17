@@ -3,9 +3,6 @@ package interfaz;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Registro extends Banner_no_registrado {
-	//	private JButton _ir_a_iniciar_sesion;
-	//	private JButton _confirmar_registro;
-	//	private JLabel _tienes_cuenta;
 	public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
 	public Iniciar_Sesion Ses;
 	

@@ -10,13 +10,6 @@ import com.vaadin.flow.server.StreamResource;
 
 import vistas.*;
 public class Noticia extends VistaNoticia{
-	//private JScrollPanel _scroll;
-	//private JLabel _imagen_principal;
-	//private JLabel _fecha;
-	//private JLabel _autor;
-	//private JLabel _ubicacion;
-	//private JLabel _titulo;
-	//private JLabel _valoracion;
 	public Lista_Comentarios _contiene;
 
 	public Usuario usuario;
@@ -35,7 +28,6 @@ public class Noticia extends VistaNoticia{
 		this.usuario = usuario;
 		this.valoracionBD = noticia;
 		this.notice = noticia;
-	//	this.Lista_De_Comentarios();
 		this.Listar_Tematicas();
 		this.Ver_Valoraciones();
 		
@@ -72,11 +64,6 @@ public class Noticia extends VistaNoticia{
 		this.listarTematicas = new Listar_tematicas(this.usuario, this.notice);
 		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
-	
-//	public void Lista_De_Comentarios() {
-//		this.comentarios = new Lista_Comentarios(this.usuario, this.periodista, this.notice);
-//		this.getComentariosEstaticos().as(VerticalLayout.class).add(comentarios);
-//	}
 
 	public void Ver_Valoraciones() {
 		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);

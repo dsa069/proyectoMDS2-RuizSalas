@@ -13,7 +13,6 @@ import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class Iniciar_Sesion extends Banner_no_registrado{
-	//private Button _confirmar_Datos;
 	public Usuario_No_Registrado _unnamed_Usuario_No_Registrado_;
 	public Introducir_Datos _contiene;
 	public Usuario_Registardo usreg;
@@ -52,17 +51,17 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 				Notification.show("suscrito");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				usreg = new Usuario_Registardo(this._unnamed_Usuario_No_Registrado_.mainView, (Usuario_suscrito_) user);
-			    this._unnamed_Usuario_No_Registrado_.mainView.add(usreg);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
+			    this._unnamed_Usuario_No_Registrado_.mainView.add(usreg);
 			} else if (PeriodistaDAO.getPeriodistaByORMID(user.getIdUsuario())!=null) {
 				Notification.show("periodista");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				uspe = new Periodista(this._unnamed_Usuario_No_Registrado_.mainView, (ocl_proyecto.Periodista) user);
-			    this._unnamed_Usuario_No_Registrado_.mainView.add(uspe);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
+			    this._unnamed_Usuario_No_Registrado_.mainView.add(uspe);
 			} else if (EditorDAO.getEditorByORMID(user.getIdUsuario())!=null) {
 				Notification.show("editor");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				used = new Editor(this._unnamed_Usuario_No_Registrado_.mainView,  (ocl_proyecto.Editor) user);
-			    this._unnamed_Usuario_No_Registrado_.mainView.add(used);//Para no crear otro usuario y usar el del mainview que ya esta creado al registrarse
+			    this._unnamed_Usuario_No_Registrado_.mainView.add(used);
 			}
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

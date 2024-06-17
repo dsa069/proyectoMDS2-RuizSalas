@@ -26,9 +26,6 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 		this.usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 		busquedaFallida = new Busqueda_fallida(this.usuario, null);
 		this.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.busquedaFallida);
-//		this.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-//		busquedaFallida = new Busqueda_fallida(this.usuario, null);
-//		this.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.busquedaFallida);
 	}
 
 	public void ConductorBuscarNoticia() {
@@ -41,13 +38,12 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	}
 
 	public Noticia[] Buscar() {
-		//if(error)this.ConductorBusquedafallida else conductorBuscar noticas
 		notice = iUsu.Buscar(this.getBarraBuscarNoticia().getValue());
 		if (notice.length == 0) {
 			this.ConductorBusquedaFallida();
 		} else {
 			this.ConductorBuscarNoticia();
 		}
-		return notice; //Imaginemos cosas chingonas
+		return notice;
 	}
 }

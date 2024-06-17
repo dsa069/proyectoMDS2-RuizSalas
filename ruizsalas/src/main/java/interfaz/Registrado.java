@@ -15,19 +15,10 @@ public class Registrado extends Usuario {
 	
 		this.Banner_R_Inico();
 	}
-//	public iRegistrado _iRegistrado;
-//	public Editar_Perfil _accede;
 	
 	public Banner_registrado BR;
 	
 	public void Banner_R_Inico() {
-		
-//		try {
-//			Notification.show(usuario.getApodo());
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		this.BR = new Banner_registrado(this, this.usuario);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.BR);	

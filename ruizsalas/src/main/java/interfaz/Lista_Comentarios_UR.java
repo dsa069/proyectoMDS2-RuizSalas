@@ -16,10 +16,6 @@ import basededatos.iUsuario_Registardo;
 import ocl_proyecto.Comentario;
 
 public class Lista_Comentarios_UR extends Lista_Comentarios {
-	//	private JButton _escribir_comentario;
-	//	private JLabel _foto;
-	//	private JLabel _mi_apodo;
-	//	public Noticia_completa _unnamed_Noticia_completa_;
 	public Vector<Lista_Comentarios_UR_item> _item = new Vector<Lista_Comentarios_UR_item>();
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
@@ -27,16 +23,12 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public Contenido_noticia_completo CNC;
 	public Lista_Comentarios_UR LCUR;
 
-	//ocl_proyecto.Usuario user;
 	ocl_proyecto.Comentario comentario;
-	//ocl_proyecto.Noticia notisia;
 
 	iRegistrado iRegitrao = new BD_Principal();
 
 	public Lista_Comentarios_UR(Registrado _registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia,Contenido_noticia_completo CNC) {
 		super(_registrado, usuario, noticia);
-//		this._registrado = _registrado;
-//		this.user = usuario;
 		this.CNC = CNC;
 
 		Notification.show("el feo "+notice.getId_valoracion());
@@ -69,7 +61,6 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
-		//this.Comentarios_item_Estaticos_UR();
 		this.getBotonAnadirComentarioNoticia().addClickListener(event->escribir_comentario()); //ESCRIBIR COMENTARIOO CLICK LISTENER???
 	}
 	

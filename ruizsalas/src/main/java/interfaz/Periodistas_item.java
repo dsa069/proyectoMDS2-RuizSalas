@@ -12,9 +12,6 @@ import basededatos.iEditor;
 import vistas.*;
 
 public class Periodistas_item extends VistaPeriodistas_item {
-//	private JButton _baja_periodista;
-//	private JLabel _foto_periodista;
-//	private JLabel _apodo_periodista;
 	public Periodistas _periodistas;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;

@@ -28,7 +28,6 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	}
 	
 	public void enviar_Correo_Confirmacion() {
-//		throw new UnsupportedOperationException();
 	}
 
 	public void gestionar_Transaccion() {

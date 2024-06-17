@@ -54,7 +54,6 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	}
 	
 	public void BorrarNoticia() {
-		//OperacionBorrarnoticia
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		banner_Editor = new Banner_Editor(this.editor, this.editorBD);
 		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner_Editor);

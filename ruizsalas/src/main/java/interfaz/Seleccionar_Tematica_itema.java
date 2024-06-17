@@ -5,8 +5,6 @@ import basededatos.iEditor;
 import vistas.*;
 
 public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
-//	private JCheckBox _marcar_tematica;
-//	private JLabel _nombre_tematica;
 	public Seleccionar_Tematica _seleccionar_Tematica;
 	iEditor ieditor = new BD_Principal();
 	ocl_proyecto.Tematica tematica;
@@ -17,13 +15,6 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		this.tematica = tematica;
 		this.noticia = noticia;
 		this.getSeleccionTamaticaNoticia().setText("" + tematica.getNombre());
-//		if (this.tematica.esta_en.contains(noticia)) {
-//			this.getBotonCheckboxVacio().setVisible(false);
-//			this.getBotonCheckboxRelleno().addClickListener(event->marcar_tematica());
-//		} else {
-//			this.getBotonCheckboxRelleno().setVisible(false);
-//			this.getBotonCheckboxVacio().addClickListener(event->marcar_tematica());
-//		}
 		this.getBotonCheckboxRelleno().addClickListener(event->marcar_tematica());
 		this.getBotonCheckboxVacio().addClickListener(event->marcar_tematica());
 	}

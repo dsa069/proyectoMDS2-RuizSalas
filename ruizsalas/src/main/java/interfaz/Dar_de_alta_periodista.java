@@ -6,7 +6,6 @@ import basededatos.BD_Principal;
 import basededatos.iEditor;
 
 public class Dar_de_alta_periodista extends Banner_Editor {
-	//private JButton _registrar_periodista;
 	public Editor _unnamed_Editor_;
 	public Zona_registrar_periodista _contiene;
 	public Lista_periodistas LP;
@@ -41,8 +40,6 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 	}
 
 	public void registrar_periodista() {
-		//GUardar cambios y añador
-//		iEdito.registrar_periodista(this._contiene.getCampoApodo().setLabel(this.periodista.getApodo()), null, null, null, null);
 		iEdito.registrar_periodista(this._contiene.getCampoApodo().getValue(), this._contiene.getCampoDNI().getValue(), this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoFoto().getValue());
 		this.ConductorListaPeriodistas();
 	}
