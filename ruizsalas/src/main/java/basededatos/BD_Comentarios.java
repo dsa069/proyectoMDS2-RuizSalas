@@ -6,6 +6,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Usuario;
@@ -29,8 +31,8 @@ public class BD_Comentarios {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			comentario = ComentarioDAO.getComentarioByORMID(aIdValoracion);
-			ratio = comentario.getNum_likes()/(comentario.getNum_dislikes() + comentario.getNum_likes());
-			ratio = ratio * 100;
+			double media = (double) comentario.getNum_likes()/(comentario.getNum_likes() + comentario.getNum_dislikes());
+			ratio = (int) (media * 100);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -78,7 +80,7 @@ public class BD_Comentarios {
 		try {
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
 			comentario = ComentarioDAO.getComentarioByORMID(aIdComentario);
-			
+			Notification.show("idUsuario " + usuario.getIdUsuario());
 			if(!comentario.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				usuario.realiza.add(comentario);
 				comentario.es_valorado_por.add(usuario);

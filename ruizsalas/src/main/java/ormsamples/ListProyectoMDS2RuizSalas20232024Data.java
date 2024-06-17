@@ -227,6 +227,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_comentarios.valorar_comentario(5, 63, true);
 //			_bd_comentarios.cargar_usuario_comentario(62);
 //			_bd_comentarios.borrar_comentario(37);
+			_bd_comentarios.cargar_valoracion(40);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();

@@ -41,8 +41,8 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aIdValoracion);
-			ratio = noticia.getNum_likes()/(noticia.getNum_dislikes() + noticia.getNum_likes());
-			ratio = ratio * 100;
+			double media = (double) noticia.getNum_likes()/(noticia.getNum_dislikes() + noticia.getNum_likes());
+			ratio = (int) (media * 100);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
