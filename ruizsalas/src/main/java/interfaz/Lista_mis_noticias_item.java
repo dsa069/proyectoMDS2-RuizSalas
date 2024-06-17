@@ -40,12 +40,14 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 		this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).add(crearEditarNoticia);
 	}
 	
-//	@Override
-//	public void ConductorNoticia() {
-//		this._lista_mis_noticias._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-//		NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias.usuarioocl, this.Notas);
-//		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
-//	}
+	@Override
+	public void ConductorNoticia() {
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().setVisible(true);
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasLayout().setVisible(false);
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista, this.Notas);
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+	}
 	
 	public void eliminar_noticia_propia() {
 		iPeriodita.eliminar_noticia_propia(this.notice.getId_noticia());

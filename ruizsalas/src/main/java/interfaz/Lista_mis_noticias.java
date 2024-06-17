@@ -20,13 +20,15 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Noticia[] notice;
 	public Noticia[] not;
 	
+
 	iPeriodista yuseppe = new BD_Principal();
 
 	
 	public Periodista periodista;
-	public Lista_mis_noticias(Periodista usuario, ocl_proyecto.Periodista pe) {
+	public Lista_mis_noticias(Periodista usuario, Historial_noticias _unnamed_Historial_noticias_) {
 		super(usuario);
 		this.periodista = usuario;
+		this._unnamed_Historial_noticias_ =_unnamed_Historial_noticias_;
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
