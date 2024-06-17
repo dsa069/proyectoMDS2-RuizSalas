@@ -23,7 +23,7 @@ public class Listar_Secciones_item extends VistaListarsecciones_item {
 	}
 
 	public void Listar_Noticia() {
-		this._contiene = new Listar_noticias(this._listar_Secciones.usuario, _listar_Secciones.usuario.usuario);
+		this._contiene = new Listar_noticias(this._listar_Secciones.usuario, _listar_Secciones.usuario.usuario, this);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
 		this._contiene.Noticia_item( seccion.getIdSeccion());
 	}

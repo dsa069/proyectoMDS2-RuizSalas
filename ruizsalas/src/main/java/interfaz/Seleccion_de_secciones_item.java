@@ -19,7 +19,7 @@ public class Seleccion_de_secciones_item extends Seleccion_de_secciones_generico
 	public void ConductorSeccion() {
 		//if estas en pagina de inicio te lleva a secciones pariodico
 		this._seleccion_de_secciones.getLayoutGenericoSeccionesBanner().removeAll();
-		SesPP = new Secciones_periodico(this._seleccion_de_secciones._usuario, this.seccion);
+		SesPP = new Secciones_periodico(this._seleccion_de_secciones._usuario, this.seccion, this);
 		this._seleccion_de_secciones.getLayoutGenericoSeccionesBanner().add(SesPP);
 		
 		

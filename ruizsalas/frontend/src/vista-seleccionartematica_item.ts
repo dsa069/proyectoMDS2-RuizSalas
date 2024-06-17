@@ -1,6 +1,7 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-checkbox/src/vaadin-checkbox.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-seleccionartematica_item')
 export class VistaSeleccionartematica_item extends LitElement {
@@ -17,9 +18,15 @@ export class VistaSeleccionartematica_item extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 25px;">
  <hr style="width: 90%; flex-shrink: 0;">
- <vaadin-checkbox style="align-self: center; width: 80%; flex-shrink: 0;" id="SeleccionarTematica">
-   Text 
- </vaadin-checkbox>
+ <vaadin-horizontal-layout theme="spacing" style="align-self: stretch;">
+  <vaadin-button>
+    Button 
+  </vaadin-button>
+  <vaadin-button>
+    Button 
+  </vaadin-button>
+  <label>Tematica</label>
+ </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
   }

@@ -13,12 +13,15 @@ public class Listar_Secciones extends VistaListarsecciones{
 	//public Seccion[] sec;
 	public Usuario usuario;
 	
+	public Secciones_periodico SecccccP;
+	
 	ocl_proyecto.Seccion seccion;
 	
-	public Listar_Secciones(Usuario usuario, ocl_proyecto.Seccion secc) {
+	public Listar_Secciones(Usuario usuario, ocl_proyecto.Seccion secc, Secciones_periodico SecccccP) {
 		super();
 		this.usuario = usuario;
 		this.seccion = secc;
+		this.SecccccP = SecccccP;
 		this.Secciones_item_Estatico();
 		}
 	

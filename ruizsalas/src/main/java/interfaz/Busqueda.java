@@ -7,7 +7,7 @@ public class Busqueda extends Listar_noticias {
 	public Usuario _unnamed_Usuario_;
 	
 	public Busqueda(Usuario _usuario, ocl_proyecto.Noticia notice) {
-		super(_usuario, null);
+		super(_usuario, null, null);
 		this._unnamed_Usuario_ = _usuario;
 		
 //		this._usuario.mainView.U.banner.SS.buscar.getBotonRealizadorBusqueda().addClickListener(event->this._usuario.mainView.U.banner.SS.buscar.notice = this._usuario.mainView.U.banner.SS.buscar.Buscar());

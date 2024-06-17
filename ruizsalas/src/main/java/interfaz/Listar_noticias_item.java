@@ -44,18 +44,18 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 	
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
 		try {
-			if (this._listar_noticias.usuarioocl != null) {
+			if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
 				if(UsuarioDAO.getUsuarioByORMID(this._listar_noticias.usuarioocl.getIdUsuario())!=null) {
 					if(EditorDAO.getEditorByORMID(this._listar_noticias.usuarioocl.getIdUsuario())!=null) {
 						Notification.show("editorrrr dnahdfaibd");	
-						this._listar_noticias._usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._listar_noticias.usuarioocl, (Noticia) this.valoracion); 
-						this._listar_noticias._usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
+						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 					}else {
 						Notification.show("suscrito dnahdfaibd");				
-						this._listar_noticias._usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 						NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._listar_noticias.usuarioocl, (Noticia) this.valoracion); 
-						this._listar_noticias._usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
 					}
 				}
 			} else {

@@ -20,15 +20,12 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 		
 		this.getTitular2().setText(""+Notas.getTitulo());
 		
-		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());
-		this.getTitular1().addClickListener(event->ConductorNoticia());
-		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
-	//@Override
+	@Override
 	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
 		try {
-			if (this._noticias_en_Portada.usuarioocl != null) {
+			if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
 				if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
 					if(EditorDAO.getEditorByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
 						Notification.show("editorrrr dnahdfaibd");	

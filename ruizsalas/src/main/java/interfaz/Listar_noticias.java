@@ -17,10 +17,11 @@ public class Listar_noticias extends Listar_noticias_generico {
 	
     public Usuario _usuario;
 	
-	public Listar_noticias(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl) {
+	public Listar_noticias(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl, Listar_Secciones_item _unnamed_Listar_Secciones_item_) {
 		super(_usuario);
 		this._usuario = _usuario;
 		this.usuarioocl = usuarioocl;
+		this._unnamed_Listar_Secciones_item_ = _unnamed_Listar_Secciones_item_;
 		this.getPortada().setVisible(false);
 		this.getListaSimpleNoticias().setVisible(false);
 	}
