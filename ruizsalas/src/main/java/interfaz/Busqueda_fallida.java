@@ -10,6 +10,7 @@ public class Busqueda_fallida extends Seleccion_de_secciones {
 		this._unnamed_Usuario_ = _usuario;
 		this.getMsgError().setVisible(true);
 		this.getLayoutGenericoSeccionesBanner().setVisible(false);
+		this.getLayoutBannerSeccionesBusqueda().setVisible(false);
 		
 		this.Msg_De_Error();
 	}
