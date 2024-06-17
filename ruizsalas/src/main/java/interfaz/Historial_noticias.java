@@ -33,7 +33,7 @@ public class Historial_noticias extends Banner_Periodista {
 	
 	public void ConductorCrearNoticia() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista);
+		CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista, null);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
 	}
 }
