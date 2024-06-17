@@ -209,6 +209,7 @@ public class Bd_Noticias {
 			periodista = PeriodistaDAO.getPeriodistaByORMID(aId_Usuario);
 			System.out.println("Prueba1");
 			if(noticia== null) {
+				System.out.println("null");
 				noticia = NoticiaDAO.createNoticia();
 			}
 
