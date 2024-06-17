@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
@@ -36,7 +35,6 @@ public class Periodistas_item extends VistaPeriodistas_item {
                 try {
                     return new FileInputStream(file);
                 } catch (FileNotFoundException e) {
-                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
                     return null;
                 }
             });
@@ -44,8 +42,6 @@ public class Periodistas_item extends VistaPeriodistas_item {
             Image image = new Image(resource, "Image not found");
             image.setMaxWidth("500px");
             this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.periodista.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
         }
 
         this.imagen.getStyle().set("align-self", "center");
@@ -61,23 +57,4 @@ public class Periodistas_item extends VistaPeriodistas_item {
 		ieditor.baja_periodista(periodista.getIdUsuario());
 	}
 	
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
 }

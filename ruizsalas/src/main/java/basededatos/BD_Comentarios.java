@@ -6,8 +6,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import com.vaadin.flow.component.notification.Notification;
-
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Usuario;
@@ -80,7 +78,6 @@ public class BD_Comentarios {
 		try {
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
 			comentario = ComentarioDAO.getComentarioByORMID(aIdComentario);
-			Notification.show("idUsuario " + usuario.getIdUsuario());
 			if(!comentario.es_valorado_por.contains(usuario)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				usuario.realiza.add(comentario);
 				comentario.es_valorado_por.add(usuario);
@@ -106,30 +103,22 @@ public class BD_Comentarios {
 			Noticia noticia = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			System.out.println("Prueba1");
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			comentario = ComentarioDAO.createComentario();
 			
-			System.out.println("Prueba2");
 			comentario.setAutor(usuario);
-			System.out.println("Pruebac");
 			usuario.escribe.add(comentario);
-			System.out.println("Pruebad");
 			comentario.setComenta(noticia);
-			System.out.println("Pruebae");
 			noticia.tiene.add(comentario);
-			System.out.println("Prueba3");
 			comentario.setTexto(aTexto);
 			comentario.setNum_likes(0);
 			comentario.setNum_dislikes(0);
 			comentario.setId_comentario(1);
-			System.out.println("Prueba4");
 			ComentarioDAO.save(comentario);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
-			System.out.println("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 			t.rollback();
 		}
 		return comentario;

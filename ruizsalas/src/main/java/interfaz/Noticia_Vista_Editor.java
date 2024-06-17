@@ -1,8 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
-
-//import UCL Proyecto.Eliminar_noticia;
 
 public class Noticia_Vista_Editor extends Noticia_completa {
 	public Editor _unnamed_Editor_;
@@ -10,7 +7,6 @@ public class Noticia_Vista_Editor extends Noticia_completa {
 	//public Eliminar_noticia _contiene_la_opcion_de;
 	public Contenido_noticia_editor NoticiaVE;
 	
-	//ocl_proyecto.Noticia noticia;
 	ocl_proyecto.Editor editorBD;
 	
 	public Noticia_Vista_Editor(Editor _editor, ocl_proyecto.Usuario suscrito, ocl_proyecto.Noticia notice) {

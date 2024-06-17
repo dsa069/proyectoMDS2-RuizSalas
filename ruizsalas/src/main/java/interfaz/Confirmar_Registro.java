@@ -32,7 +32,6 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	}
 
 	public void gestionar_Transaccion() {
-		Notification.show("AAAA "+this._contiene.getCampoEmail().getValue());
 		if (this._contiene.getCampoEmail().getValue().isEmpty()) {
 			Notification.show("Email Vacío");
 		}else if ( this._contiene.getCampoContrasena().isEmpty()) {

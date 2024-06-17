@@ -47,8 +47,6 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 		user = iUsuario_No_Registrado.confirmar_Datos(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue());
 		try {
 			if(user == null) {
-				Notification.show(this._contiene.getCampoEmail().getValue());
-				Notification.show(this._contiene.getCampoContrasena().getValue());
 				Notification.show("Usuario incorrecrto");
 			} else if (Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario())!=null) {
 				Notification.show("suscrito");

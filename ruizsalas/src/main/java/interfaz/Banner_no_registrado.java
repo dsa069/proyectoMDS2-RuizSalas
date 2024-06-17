@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Banner_no_registrado extends Banner_generico {
@@ -32,7 +33,7 @@ public class Banner_no_registrado extends Banner_generico {
 	}
 	
 	public void InicioPortada() {
-		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, null, null);
+		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, this.usuario, null);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 	
@@ -51,6 +52,7 @@ public class Banner_no_registrado extends Banner_generico {
 	}
 	
 	public void ConductorRegistro() {
+		Notification.show("boton pulsado");
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		registro = new Registro(this._usuarioNoRegistrado, this.usuario);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(registro);

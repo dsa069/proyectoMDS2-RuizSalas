@@ -1,6 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
@@ -23,12 +22,6 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 		this.comentar = comentario;
 		this.getValorarComentarioNegativamente().setVisible(true);
 		this.getValorarComentarioPositivamente().setVisible(true);
-		try {
-		Notification.show("CUm "+this.valoracionBD.getId_valoracion());
-	} catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 		this.getValorarComentarioNegativamente().addClickListener(event->valorar_comentario(false));
 		this.getValorarComentarioPositivamente().addClickListener(event->valorar_comentario(true));
 	}

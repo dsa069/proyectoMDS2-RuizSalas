@@ -1,7 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Seleccion_de_secciones_item extends Seleccion_de_secciones_generico_item {
 	public Seleccion_de_secciones _seleccion_de_secciones;

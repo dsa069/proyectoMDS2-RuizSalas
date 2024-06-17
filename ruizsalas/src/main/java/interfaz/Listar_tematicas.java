@@ -3,7 +3,6 @@ import vistas.*;
 
 import java.util.Vector;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;

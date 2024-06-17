@@ -1,5 +1,4 @@
 package interfaz;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ocl_proyecto.EditorDAO;
@@ -17,7 +16,6 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		super(padre, Notas);
 		this._listar_noticias = padre;
 		this.valoracion = Notas;
-		//this.getMarcar().setVisible(false);
 		this.getEliminarNoticiaPropia().setVisible(false);
 		this.getEditarNoticia().setVisible(false);
 		this.getAgregarNoticia().setVisible(false);
@@ -38,7 +36,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 	}
 	
 	@Override
-	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
+	public void ConductorNoticia() {
 		try {
 			if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
 				if(UsuarioDAO.getUsuarioByORMID(this._listar_noticias.usuarioocl.getIdUsuario())!=null) {
@@ -59,7 +57,6 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 			}
 			
 		} catch (Exception e) {
-			Notification.show("cacheado");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

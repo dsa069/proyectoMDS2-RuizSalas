@@ -2,7 +2,6 @@ package interfaz;
 
 import java.util.Vector;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ocl_proyecto.Seccion;
@@ -23,7 +22,6 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 		this._editor = _editor;
 		this.banerReg = banerReg;
 		
-		Notification.show("SE PREPARO "+ this.banerReg);
 		this.getBotonEditarSecciones().setVisible(true);
 		
 		this.getBotonEditarSecciones().addClickListener(event->ConductorEditarSecciones());

@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
@@ -26,8 +25,6 @@ public class Banner_registrado extends Banner_generico {
 	public Image imagen;
 
 	ocl_proyecto.Usuario user;
-	//ocl_proyecto.Usuario_suscrito_ suscrito;
-	//ocl_proyecto.Noticia noticia;
 
 	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
@@ -49,7 +46,6 @@ public class Banner_registrado extends Banner_generico {
                 try {
                     return new FileInputStream(file);
                 } catch (FileNotFoundException e) {
-                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
                     return null;
                 }
             });
@@ -57,67 +53,27 @@ public class Banner_registrado extends Banner_generico {
             Image image = new Image(resource, "Image not found");
             image.setMaxWidth("500px");
             this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.user.getFoto_de_perfil(), 5000, Notification.Position.MIDDLE);
-        }
+        } 
 
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
         this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
-		
-       // this.InicioPortada();
         
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
-
-//	private Image createImageFromFile(String filePath) {
-//		File file = new File(filePath);
-//		if (file.exists()) {
-//			StreamResource resource = new StreamResource(file.getName(), () -> {
-//				try {
-//					return new FileInputStream(file);
-//				} catch (FileNotFoundException e) {
-//					Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-//					return null;
-//				}
-//			});
-//			Image image = new Image(resource, "Image not found");
-//			image.setMaxWidth("500px");
-//			return image;
-//		} else {
-//			Notification.show("File not found: " + filePath, 5000, Notification.Position.MIDDLE);
-//			return new Image();
-//		}
-//	}
-
-//	public Noticia carlos;
-//	public void hola() {
-//		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-//		carlos = new Noticia(this._registrado, this.noticia);
-//		this.getBannergenericolayout().as(VerticalLayout.class).add(carlos);
-//	}
 	
 	public void InicioPortada() {
-//		try {
-//			Notification.show("banner "+this.user.getApodo());
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 		this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 	}
 
-	//PODEMOS CARGAR EN VISTA USUARIO Y CARGAR EL BANNER DE RESGITRADO PA QUE NO  SE MUEVO Y ME BAILE
 	@Override
 	public void ConductorPortadaBanner() {
 		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
 		BananaRegistardo = new Banner_registrado(this._registrado, this.user);
 		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
 	}
-
-	//NOSE QUE SE PONE EN VEZ DE NULL SON LAS 1:20AM
 
 	public void ConductorPerfil() {
 		try {

@@ -54,7 +54,6 @@ public class Editar_Perfil extends Banner_suscrito {
 		String foto;
 		int tarjeta = 0;
 		boolean error = false;
-		Notification.show("AMBATUKAM "+ this._unnamed_Editar_datos_.getCampoApodo().getValue());
 		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
 			email = this.registrado.getCorreo();
 		else 
