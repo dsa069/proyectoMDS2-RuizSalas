@@ -5,8 +5,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import com.vaadin.flow.component.notification.Notification;
-
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Noticia;
@@ -180,21 +178,16 @@ public class Bd_Noticias {
 		Noticia noticia = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			System.out.println("prueba1");
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-			System.out.println("prueba2");
 			Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
 			for (Comentario comentarios1 : comentarios) {
 				ComentarioDAO.deleteAndDissociate(comentarios1);
 			}
-			System.out.println("prueba3");
 			NoticiaDAO.deleteAndDissociate(noticia);
-			System.out.println("prueba4");
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
-			System.out.println("AYYYYYYYYYYYYYYYYYYYYYY CASIIIIIIIIIIIIIIIIIIIIIIIIII");
 		}
 	}
 
@@ -207,9 +200,7 @@ public class Bd_Noticias {
 
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			periodista = PeriodistaDAO.getPeriodistaByORMID(aId_Usuario);
-			System.out.println("Prueba1");
 			if(noticia== null) {
-				System.out.println("null");
 				noticia = NoticiaDAO.createNoticia();
 			}
 
@@ -218,29 +209,18 @@ public class Bd_Noticias {
 			periodista.publica.add(noticia);
 			noticia.setAutor(periodista);
 			noticia.setVersion(noticia.getVersion()+1);
-			System.out.println("Prueba2");
 			noticia.setId_noticia(1);
-			System.out.println("Pruebaa");
 			noticia.setTexto_corto(aTexto_corto);
-			System.out.println("Pruebab");
 			noticia.setTexto_largo(aTexto_largo);
-			System.out.println("Pruebac");
 			noticia.setTitulo(aTitulo);
-			System.out.println("Pruebad");
 			noticia.setImagen_principal(aImagen_principal);
-			System.out.println("Pruebae");
 			noticia.setUbicacion(aUbicacion);
-			System.out.println("Prueba3");
 			noticia.setFecha(aFecha);
-			System.out.println("Prueba4");
 
-			//Tematicas marcartematicas?????
 			NoticiaDAO.save(noticia);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
-			System.out.println("Prueba5");
 		} catch (Exception e) {
-			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAA");
 			t.rollback();
 		}
 	}
