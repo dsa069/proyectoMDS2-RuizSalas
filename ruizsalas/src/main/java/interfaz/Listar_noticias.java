@@ -1,6 +1,8 @@
 package interfaz;
 
 import java.util.Vector;
+
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ocl_proyecto.Noticia;

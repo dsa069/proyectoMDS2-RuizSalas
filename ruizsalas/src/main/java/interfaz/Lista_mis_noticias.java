@@ -20,8 +20,6 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Noticia[] notice;
 	public Noticia[] not;
 	
-	ocl_proyecto.Periodista pe;
-	
 	iPeriodista yuseppe = new BD_Principal();
 
 	
@@ -29,35 +27,31 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Lista_mis_noticias(Periodista usuario, ocl_proyecto.Periodista pe) {
 		super(usuario);
 		this.periodista = usuario;
-		//this.pe = pe;
-		Notification.show("LMN " + this.pe.getApodo());
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
 	}
 	
-	@Override
-	public void Noticia_item() {
-		notice = this.cargar_noticias();
+
+	public void Noticia_item(int IdPeriodista) {
+		notice = this.cargar_noticias(IdPeriodista);
 		for (int i=0; i<notice.length; i++) {
 			Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.notice[i]);
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 		}
 	}
 	
-//	public Noticia[] cargar_listar_mis_noticias() {
-//		return iPeriodita.cargar_listar_mis_noticias(this.usuarioocl.getIdUsuario());
-//	}
+	@Override
+	public void Noticia_item() {
+
+	}
 	
 	@Override
 	public Noticia[] cargar_noticias() {
-		try {
-			pe = PeriodistaDAO.getPeriodistaByORMID(4);
-			Notification.show("DIIIIIIIII"+ pe.getApodo() );
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return yuseppe.cargar_listar_mis_noticias(pe.getIdUsuario());
+		return null;
+	}
+	
+	public Noticia[] cargar_noticias(int IdPeriodista) {
+		return yuseppe.cargar_listar_mis_noticias(IdPeriodista);
 	}
 }
