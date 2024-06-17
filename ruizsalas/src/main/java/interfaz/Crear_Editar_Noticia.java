@@ -50,31 +50,31 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		String contrasena; 
 		String foto;
 		int tarjeta = 0;
-		Notification.show("AMBATUKAM "+ this);
-		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
-			email = this.registrado.getCorreo();
-		else 
-			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
-		
-		if ( this._unnamed_Editar_datos_.getCampoContrasena().isEmpty()) 
-			contrasena = this.registrado.getContrasena();
-		else 
-			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
-		
-		if ( this._unnamed_Editar_datos_.getCampoApodo().getValue().isEmpty()) 
-			apodo = this.registrado.getApodo();
-		else 
-			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
-				
-		if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
-			foto = this.registrado.getFoto_de_perfil();
-		else 
-			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
-		
-		if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
-			dni = this.registrado.getDni();
-		else 
-			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
+		Notification.show("AMBATUKAM "+ this.CENoticia.getModificarTitulo());
+//		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
+//			email = this.registrado.getCorreo();
+//		else 
+//			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
+//		
+//		if ( this._unnamed_Editar_datos_.getCampoContrasena().isEmpty()) 
+//			contrasena = this.registrado.getContrasena();
+//		else 
+//			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
+//		
+//		if ( this._unnamed_Editar_datos_.getCampoApodo().getValue().isEmpty()) 
+//			apodo = this.registrado.getApodo();
+//		else 
+//			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
+//				
+//		if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
+//			foto = this.registrado.getFoto_de_perfil();
+//		else 
+//			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
+//		
+//		if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
+//			dni = this.registrado.getDni();
+//		else 
+//			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
 		
 		
 		iPeriodita.guardar_cambios_noticia(this.notice.getId_noticia(), this.notice.getTexto_corto(), this.notice.getTexto_largo(), this.notice.getTitulo(), this.notice.getImagen_principal(), this.notice.getUbicacion(), this.notice.getFecha(), null, periodista.getIdUsuario());
