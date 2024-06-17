@@ -29,6 +29,6 @@ public class Listar_noticias_generico extends VistaListarnoticiasgenerico {
 	}
 	
 	public Noticia[] cargar_noticias() {
-		return iUsuario.cargar_noticias();
+		return null;
 	}
 }

@@ -85,7 +85,7 @@ public class Bd_Noticias {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"SeccionIdSeccion = '"+aIdSeccion+"'", null);
+					"SeccionIdSeccion = '"+aIdSeccion+"'AND Agregada  ='"+true+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -103,21 +103,7 @@ public class Bd_Noticias {
 			porta = SeccionDAO.loadSeccionByQuery(
 					"Portada ='"+1+"'", null);
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'", null);
-			t.commit();
-			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
-		} catch (Exception e) {
-			t.rollback();
-		}
-		return noticias;
-	}
-	
-	public Noticia[] cargar_noticias() 
-			throws PersistentException {
-		Noticia[] noticias = null;
-		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
-		try {
-			noticias = NoticiaDAO.listNoticiaByQuery(null, null);
+					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'AND Agregada  ='"+true+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -203,8 +189,6 @@ public class Bd_Noticias {
 			if(noticia== null) {
 				noticia = NoticiaDAO.createNoticia();
 			}
-
-
 
 			periodista.publica.add(noticia);
 			noticia.setAutor(periodista);

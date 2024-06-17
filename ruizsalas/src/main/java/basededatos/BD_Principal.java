@@ -117,16 +117,6 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 	
-	public Noticia[] cargar_noticias() {
-		try {
-			return _bd_noticias.cargar_noticias();
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
 	public Seccion[] cargar_secciones_generico() {
 		try {
 			return _bd_secciones.cargar_secciones_generico();
