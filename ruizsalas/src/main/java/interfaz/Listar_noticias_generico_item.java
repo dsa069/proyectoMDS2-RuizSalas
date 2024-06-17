@@ -65,41 +65,14 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
         this.getLayoutImagenNoticiaCojonesPlaceholderRoggenrola().as(VerticalLayout.class).add(this.imagen);
 		this.getResumenNoticia().setText("" + Notas.getTexto_corto());
 		
-//		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());
-//		this.getTitular1().addClickListener(event->ConductorNoticia());
-//		this.getTitular2().addClickListener(event->ConductorNoticia());
+		this.getBotonImagenListarNoticias().addClickListener(event->ConductorNoticia());
+		this.getTitular1().addClickListener(event->ConductorNoticia());
+		this.getTitular2().addClickListener(event->ConductorNoticia());
 	}
 	
-//	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
-//		try {
-//			if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
-//				Notification.show("suscrito");
-//				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._listar_noticias_generico.usuario.mainView.UR.BR.suscrito, this.Notas);
-//				this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-//			}
-//			else if(PeriodistaDAO.getPeriodistaByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
-//				Notification.show("periodista");
-//				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.P, null, this.Notas);
-//				this._listar_noticias_generico.usuario.mainView.P.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-//			} 
-//			else if(EditorDAO.getEditorByORMID(this._noticias_en_Portada._usuario.usuario.getIdUsuario())!=null) {
-//				Notification.show("editor");
-//				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-//				NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, null, this.Notas);
-//				this._listar_noticias_generico.usuario.mainView.E.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-//			}else {
-//				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-//				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
-//				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
-//			}
-//		} catch (Exception e) {
-//			Notification.show("cacheado");
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
+	public void ConductorNoticia() {//Ir a noticia dependiendo del usuario
+
+	}
 	
 	public void ConductorNoticiaUNR() {//Ir a noticia dependiendo del usuario
 		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();

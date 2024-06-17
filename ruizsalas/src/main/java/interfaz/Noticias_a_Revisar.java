@@ -16,12 +16,16 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 	public Noticia[] notice;
 	
 	ocl_proyecto.Noticia not;
+	ocl_proyecto.Editor usuarioocl;
+
 	
 	iEditor iEdito = new BD_Principal();
 
-	public Noticias_a_Revisar(Editor editor) {
+	public Noticias_a_Revisar(Editor editor, ocl_proyecto.Editor usuarioocl, Revisar_noticias _unnamed_Revisar_noticias_) {
 		super(editor);
 		this.editor = editor;
+		this.usuarioocl = usuarioocl;
+		this._unnamed_Revisar_noticias_ = _unnamed_Revisar_noticias_;
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 	}
