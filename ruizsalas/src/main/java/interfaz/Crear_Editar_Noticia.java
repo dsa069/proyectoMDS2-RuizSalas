@@ -79,39 +79,6 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 			ubi =  this.notice.getUbicacion();
 		else 
 			ubi =  this.CENoticia.getModificarUbicacion().getValue();
-=======
-		String apodo; 
-		String dni; 
-		String email; 
-		String contrasena; 
-		String foto;
-		int tarjeta = 0;
-//		Notification.show("AMBATUKAM "+ this);
-//		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
-//			email = this.registrado.getCorreo();
-//		else 
-//			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
-//		
-//		if ( this._unnamed_Editar_datos_.getCampoContrasena().isEmpty()) 
-//			contrasena = this.registrado.getContrasena();
-//		else 
-//			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
-//		
-//		if ( this._unnamed_Editar_datos_.getCampoApodo().getValue().isEmpty()) 
-//			apodo = this.registrado.getApodo();
-//		else 
-//			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
-//				
-//		if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
-//			foto = this.registrado.getFoto_de_perfil();
-//		else 
-//			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
-//		
-//		if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
-//			dni = this.registrado.getDni();
-//		else 
-//			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
->>>>>>> branch 'CMelmanBranch' of git@github.com:dsa069/proyectoMDS2-RuizSalas.git
 		
 		
 		if ( this.CENoticia.getModificarFecha().getValue().isEmpty())
