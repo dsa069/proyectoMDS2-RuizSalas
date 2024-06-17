@@ -18,7 +18,7 @@ import ocl_proyecto.ComentarioDAO;
 import java.util.Date;
 
 import org.orm.PersistentException;
-// import ocl_proyecto.Usuario;
+
 
 public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, iRegistrado, iUsuario_No_Registrado, iUsuario {
 	public BD_Editores _bd_editores = new BD_Editores();
@@ -242,7 +242,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion) {
 		try {
-			_bd_comentarios.valorar_comentario(aIdUsuario, aIdComentario, aValoracion);;
+			_bd_comentarios.valorar_comentario(aIdUsuario, aIdComentario, aValoracion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -289,7 +289,6 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
-	//HOMEMADE
 	public Noticia[] cargar_listar_mis_noticias(int aIdUsuario) {
 		try {
 			return _bd_noticias.cargar_listar_mis_noticias(aIdUsuario);
@@ -365,7 +364,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		
 		}
 
-	public ocl_proyecto.Usuario gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
+	public ocl_proyecto.Usuario_suscrito_ gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
 		try {
 			return _bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aFoto_de_perfil , aDni, aTarjeta_de_credito);
 		} catch (PersistentException e) {
@@ -386,6 +385,65 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
+		return null;
+	}
+
+	public Usuario cargar_usuario_comentario(int aId_comentario) {
+		try {
+			return _bd_comentarios.cargar_usuario_comentario(aId_comentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
+	public Seccion cargar_seccion_palanteypatras(int aId_seccion, boolean aPalanteopatras) {
+		try {
+			return _bd_secciones.cargar_seccion_palanteypatras(aId_seccion, aPalanteopatras);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
+	public Seccion cargar_seccion_primero() {
+		try {
+			return _bd_secciones.cargar_seccion_primero();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
+	public void borrar_comentario(int aId_comentario) {
+		try {
+			_bd_comentarios.borrar_comentario(aId_comentario);
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public Seccion cargar_portada() {
+		try {
+			return _bd_secciones.cargar_portada();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Seccion cargar_seccion_palanteypatras_portada(int aId_seccion, boolean Palanteopatras) { 
+		try {
+			return _bd_secciones.cargar_seccion_palanteypatras_portada( aId_seccion,  Palanteopatras); 
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

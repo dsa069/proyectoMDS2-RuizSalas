@@ -22,7 +22,20 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private Element fotoTextamen;
 	@Id("imagenPerfilIntroducirDatos")
 	private Image imagenPerfilIntroducirDatos;
-	
+	@Id("layoutImagenPerfilIntroducirDatos")
+	private Element layoutImagenPerfilIntroducirDatos;
+	@Id("campoEmail")
+	private TextField campoEmail;
+	@Id("campoContrasena")
+	private TextField campoContrasena;
+	@Id("campoApodo")
+	private TextField campoApodo;
+	@Id("campoDNI")
+	private TextField campoDNI;
+	@Id("campoFoto")
+	private TextField campoFoto;
+	@Id("tarjetaDeCrédito")
+	private TextField tarjetaDeCrédito;
 	public VistaIntroducirdatos() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -65,6 +78,62 @@ public class VistaIntroducirdatos extends LitTemplate {
 
 	public void setImagenPerfilIntroducirDatos(Image imagenPerfilIntroducirDatos) {
 		this.imagenPerfilIntroducirDatos = imagenPerfilIntroducirDatos;
+	}
+
+	public Element getLayoutImagenPerfilIntroducirDatos() {
+		return layoutImagenPerfilIntroducirDatos;
+	}
+
+	public void setLayoutImagenPerfilIntroducirDatos(Element layoutImagenPerfilIntroducirDatos) {
+		this.layoutImagenPerfilIntroducirDatos = layoutImagenPerfilIntroducirDatos;
+	}
+
+	public TextField getCampoEmail() {
+		return campoEmail;
+	}
+
+	public void setCampoEmail(TextField campoEmail) {
+		this.campoEmail = campoEmail;
+	}
+
+	public TextField getCampoContrasena() {
+		return campoContrasena;
+	}
+
+	public void setCampoContrasena(TextField campoContrasena) {
+		this.campoContrasena = campoContrasena;
+	}
+
+	public TextField getCampoApodo() {
+		return campoApodo;
+	}
+
+	public void setCampoApodo(TextField campoApodo) {
+		this.campoApodo = campoApodo;
+	}
+
+	public TextField getCampoDNI() {
+		return campoDNI;
+	}
+
+	public void setCampoDNI(TextField campoDNI) {
+		this.campoDNI = campoDNI;
+	}
+
+	public TextField getCampoFoto() {
+		return campoFoto;
+	}
+
+	public void setCampoFoto(TextField campoFoto) {
+		this.campoFoto = campoFoto;
+	}
+
+	public TextField getTarjetaDeCrédito() {
+		return tarjetaDeCrédito;
+	}
+
+	public void setTarjetaDeCrédito(TextField tarjetaDeCrédito) {
+		this.tarjetaDeCrédito = tarjetaDeCrédito;
 	}
 
 }

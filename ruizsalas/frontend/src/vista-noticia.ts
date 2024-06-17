@@ -21,7 +21,9 @@ export class VistaNoticia extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; align-items: center; justify-content: flex-start; flex-grow: 1;">
   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 25%; background-color: var(--lumo-contrast-0pct); overflow: hidden; flex-shrink: 0;">
-   <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;" id="imagenPrincipalNoticia">
+   <vaadin-vertical-layout id="layoutImagenPrincipalNoticia">
+    <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;" id="imagenPrincipalNoticia">
+   </vaadin-vertical-layout>
   </vaadin-button>
   <vaadin-vertical-layout style="height: 60%; flex-shrink: 1; align-items: flex-start; align-self: flex-start;" id="tematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 1; height: 60%; flex-grow: 0; align-items: flex-start; align-self: flex-start;" id="seleccionarTematicas"></vaadin-vertical-layout>

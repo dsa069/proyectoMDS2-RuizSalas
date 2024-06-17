@@ -33,7 +33,7 @@ public class BD_Usuarios_suscritos {
 		}
 	}
 
-	public Usuario crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) 
+	public Usuario_suscrito_ crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) 
 		throws PersistentException {
 			Usuario_suscrito_ us_sus = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
@@ -43,7 +43,6 @@ public class BD_Usuarios_suscritos {
 			us_sus.setDni(aDni);
 			us_sus.setCorreo(aCorreo);
 			us_sus.setContrasena(aContrasena);
-			us_sus.setFoto_de_perfil(aFoto_de_perfil);
 			us_sus.setTarjeta_de_credito(aTarjeta_de_credito);
 			us_sus.setBaja(true);
 			Usuario_suscrito_DAO.save(us_sus);
@@ -61,7 +60,7 @@ public class BD_Usuarios_suscritos {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			us_sus = Usuario_suscrito_DAO.loadUsuario_suscrito_ByQuery(
-					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
+					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"' AND Baja ='"+1+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {

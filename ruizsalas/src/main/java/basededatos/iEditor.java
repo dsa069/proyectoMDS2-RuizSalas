@@ -31,4 +31,10 @@ public interface iEditor extends iRegistrado {
 	public Periodista registrar_periodista(String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil);
 
 	public void marcar_tematica(int aIdTematica, int aId_noticia);
+
+	public void borrar_comentario(int id_valoracion);
+	
+	public Seccion cargar_seccion_palanteypatras_portada(int aId_seccion, boolean Palanteopatras);
+	
+	public Seccion cargar_portada();
 }

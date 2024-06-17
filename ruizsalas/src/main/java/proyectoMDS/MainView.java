@@ -1,6 +1,12 @@
 package proyectoMDS;
 
 import interfaz.*;
+import ocl_proyecto.Comentario;
+import ocl_proyecto.Noticia;
+import ocl_proyecto.Seccion;
+import ocl_proyecto.Tematica;
+import ocl_proyecto.Usuario_suscrito_;
+import ocl_proyecto.Valoracion;
 import vistas.VistaBannersuscrito;
 import vistas.VistaNoticia;
 
@@ -50,7 +56,7 @@ public class MainView extends VerticalLayout {
 	ocl_proyecto.Seccion S;
 	ocl_proyecto.Tematica T;
 	ocl_proyecto.Comentario C;
-	ocl_proyecto.Usuario_suscrito_ US;
+	ocl_proyecto.Usuario_suscrito_ UROCL;
 	ocl_proyecto.Valoracion V;
 	ocl_proyecto.Editor EOCL;
 
@@ -62,16 +68,27 @@ public class MainView extends VerticalLayout {
      * @param service The message service. Automatically injected Spring managed bean.
      */
 	public MainView() {
+		V = new Valoracion();
+		UOCL = new ocl_proyecto.Usuario();
+		N = new Noticia();
+		POCL = new ocl_proyecto.Periodista();
+		S = new Seccion();
+		T = new Tematica();
+		C = new Comentario();
+		EOCL = new ocl_proyecto.Editor();
+		UROCL = new ocl_proyecto.Usuario_suscrito_();
+
+		
 		U = new Usuario(this, UOCL);
 		UNR = new Usuario_No_Registrado(this, UOCL);
-		R = new Registrado(this, US);
-		UR = new Usuario_Registardo(this, US);
+		R = new Registrado(this, UOCL);
+		UR = new Usuario_Registardo(this, UROCL);
 		P = new Periodista(this, POCL);
 		E = new Editor(this, EOCL);
 		
-		add(UR);
+		add(UNR);
 		
-//		Secciones_periodico prueba = new Secciones_periodico(UR);
+//		Contenido_noticia_completo prueba = new Contenido_noticia_completo(UR, N);
 //        add(prueba);
 		
 //		VistaBannersuscrito prueba = new VistaBannersuscrito();

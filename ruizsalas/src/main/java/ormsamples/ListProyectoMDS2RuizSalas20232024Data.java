@@ -13,6 +13,7 @@ import ocl_proyecto.Noticia;
 import ocl_proyecto.Periodista;
 import ocl_proyecto.Seccion;
 import ocl_proyecto.Tematica;
+import ocl_proyecto.Usuario;
 import basededatos.BD_Comentarios;
 import basededatos.BD_Editores;
 import basededatos.BD_Periodistas;
@@ -221,9 +222,12 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 			BD_Tematicas _bd_tematicas = new BD_Tematicas();
 			BD_Principal _bd_principal = new BD_Principal();
 
-//			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(1);
-//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 1, 2);
-//			_bd_comentarios.valorar_comentario(1, 1, false);
+//			Comentario[] comentarios =_bd_comentarios.cargar_listar_comenatrios(60);
+//			Comentario comentario =_bd_comentarios.escribir_comentario("cum", 5, 60);
+//			_bd_comentarios.valorar_comentario(5, 63, true);
+//			_bd_comentarios.cargar_usuario_comentario(62);
+//			_bd_comentarios.borrar_comentario(37);
+//			_bd_comentarios.cargar_valoracion(40);
 
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
@@ -232,7 +236,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_noticias.eliminar_noticia_propia(34);
 //			_bd_noticias.agregar_noticia(1, true);
 //			_bd_noticias.no_agregar_noticia(9);
-//			_bd_noticias.guardar_cambios_noticia(890, "hola", "Taylor Swift ha decidido cancelar su concierto en el estadio Camp Nou de Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", "Carboneras", Date.valueOf("2024-08-09"), null, 2);
+			_bd_noticias.guardar_cambios_noticia(890, "DIOS DI", "Barcelona debido a que las obras no están terminadas", "Taylor Swift no quiere a sus fans de Barcelona", "Arco.jpg", "Carboneras", Date.valueOf("2024-08-09"), null, 4);
 //			_bd_noticias.valorar_noticia(2, 5, false);
 //			_bd_noticias.eliminar_noticia(55);
 //			_bd_noticias.guardar_cambios_noticia(3, "Fernando volvió a traernos la magia y la ilusión a nuestro corazón", "Esta pasada madrugada hemos podido ver otro espectaculo de nuestro mago favorito, otra vuelta mágica bajo la lluvia de Montreal (Canadá) que nos permite volver a soñar con un buen resultado este fin de semana, tras una primera posición en los libres2", "Otra más de Magic Alonso", "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/06/08/17177979059305.jpg", "Montreal", Date.valueOf("2024-06-08"), null, 3);
@@ -257,7 +261,7 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_secciones.borrar_seccion(2);
 //			_bd_secciones.quitar_noticia_de_seccion(25, 3);
 
-//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(25);
+//			Tematica[] tematic =  _bd_tematicas.cargar_tematicas(60);
 //			Tematica[] tematics =  _bd_tematicas.cargar_tematicas_seleccion();
 //			_bd_tematicas.anadir_seccion("Jueguillos", 3);
 //			_bd_tematicas.marcar_tematica(1, 34);
@@ -267,11 +271,31 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			_bd_us_suscritos.confirmar_Datos_US("paco@chocolatero.es", "PaquitoElChocolatero");
 //			_bd_us_suscritos.guardar_cambios_US(2, "Paco", "78451289", "paco@chocolatero.es", "PaquitoElChocolatero", "https://static.eldiario.es/clip/068c589d-5afd-4201-84ac-7ae66372d3a8_16-9-discover-aspect-ratio_default_1090295.jpg", 1234567890);
 //			_bd_us_suscritos.cancelar_cobro_suscripcion(1);
+//			_bd_us_suscritos.crear_Usuario("us@gmail.com", "cock", "Aleandro", "images/sadam.jpg", "23342423424R", 564657568);
 
 //			_bd_principal.borrar_seccion(3, 3);
-			_bd_principal.cargar_valoracion(55);
+//			_bd_principal.cargar_valoracion(55);
+//			Noticia[] notis =_bd_noticias.cargar_noticias_portada();
+//			 for (Noticia notice: notis) {
+//				 System.out.println("===================================DISI==========================================");
+//				 System.out.println("Disi " + notice.getId_valoracion());
+//			 }
 			
 			
+//			_bd_principal.anadir_seccion("Mereketenge");
+//			_bd_principal.anadir_seccion("fornai");
+//			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(10, true).getNombre());
+//			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(10, false).getNombre());
+//			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(9, true).getNombre());
+//			System.out.println("SE ESPECTA ROMUALDO"+_bd_secciones.cargar_seccion_palanteypatras(9, false).getNombre());
+//			System.out.println("SE ESPECTA MEREKETENGE"+_bd_secciones.cargar_seccion_palanteypatras(11, true).getNombre());
+//			System.out.println("SE ESPECTA FORNAI"+_bd_secciones.cargar_seccion_palanteypatras(11, false).getNombre());
+			
+//			Noticia[] pepe = _bd_principal.cargar_listar_mis_noticias(4);
+//			 for (Noticia notice: pepe) {
+//			 System.out.println("===================================DISI==========================================");
+//			 System.out.println("Disi " + notice.getTitulo());
+//		 }
 			//listProyectoMDS2RuizSalas20232024Data.listTestData();
 			//listProyectoMDS2RuizSalas20232024Data.listByCriteria();
 		} catch (Exception e) {

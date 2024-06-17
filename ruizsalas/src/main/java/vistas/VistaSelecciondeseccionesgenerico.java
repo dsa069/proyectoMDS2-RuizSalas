@@ -33,6 +33,8 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	private HorizontalLayout layoutGenericoSeccionesBanner;
 	@Id("layoutSeccionesContenidasPeriodico")
 	private HorizontalLayout layoutSeccionesContenidasPeriodico;
+	@Id("layoutBannerSeccionesBusqueda")
+	private HorizontalLayout layoutBannerSeccionesBusqueda;
 
 	public HorizontalLayout getLayoutSeccionesContenidasPeriodico() {
 		return layoutSeccionesContenidasPeriodico;
@@ -73,5 +75,11 @@ public class VistaSelecciondeseccionesgenerico extends LitTemplate {
 	public VistaSelecciondeseccionesgenerico() {
         // You can initialise any data required for the connected UI components here.
     }
+	public HorizontalLayout getLayoutBannerSeccionesBusqueda() {
+		return layoutBannerSeccionesBusqueda;
+	}
+	public void setLayoutBannerSeccionesBusqueda(HorizontalLayout layoutBannerSeccionesBusqueda) {
+		this.layoutBannerSeccionesBusqueda = layoutBannerSeccionesBusqueda;
+	}
 
 }

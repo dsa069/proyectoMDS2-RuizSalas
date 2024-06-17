@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.button.Button;
 
 @Tag("vista-listacomentarios")
 @JsModule("./src/vista-listacomentarios.ts")
@@ -22,6 +23,10 @@ public class VistaListacomentarios extends LitTemplate {
 	private Image imagenFotoPerfilComentar;
 	@Id("layoutTextoNombreUsuario")
 	private Element layoutTextoNombreUsuario;
+	@Id("layoutImagenFotoPerfilComentar")
+	private Element layoutImagenFotoPerfilComentar;
+	@Id("botonAnadirComentarioNoticia")
+	private Button botonAnadirComentarioNoticia;
 
 	public VistaListacomentarios() {
         // You can initialise any data required for the connected UI components here.
@@ -65,6 +70,22 @@ public class VistaListacomentarios extends LitTemplate {
 
 	public void setLayoutTextoNombreUsuario(Element layoutTextoNombreUsuario) {
 		this.layoutTextoNombreUsuario = layoutTextoNombreUsuario;
+	}
+
+	public Element getLayoutImagenFotoPerfilComentar() {
+		return layoutImagenFotoPerfilComentar;
+	}
+
+	public void setLayoutImagenFotoPerfilComentar(Element layoutImagenFotoPerfilComentar) {
+		this.layoutImagenFotoPerfilComentar = layoutImagenFotoPerfilComentar;
+	}
+
+	public Button getBotonAnadirComentarioNoticia() {
+		return botonAnadirComentarioNoticia;
+	}
+
+	public void setBotonAnadirComentarioNoticia(Button botonAnadirComentarioNoticia) {
+		this.botonAnadirComentarioNoticia = botonAnadirComentarioNoticia;
 	}
 
 }
