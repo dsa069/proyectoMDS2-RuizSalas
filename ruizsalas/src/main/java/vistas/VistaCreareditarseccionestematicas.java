@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 
 @Tag("vista-creareditarseccionestematicas")
 @JsModule("./src/vista-creareditarseccionestematicas.ts")
@@ -22,6 +23,8 @@ public class VistaCreareditarseccionestematicas extends LitTemplate {
 	private Button crearTematicasPatras;
 	@Id("CrearTematicasPalante")
 	private Button crearTematicasPalante;
+	@Id("labelCrearEditarSeccionesTematicas")
+	private TextField labelCrearEditarSeccionesTematicas;
 	public Button getBotonCrearNuevaTematica() {
 		return botonCrearNuevaTematica;
 	}
@@ -64,5 +67,13 @@ public class VistaCreareditarseccionestematicas extends LitTemplate {
 	public VistaCreareditarseccionestematicas() {
         // You can initialise any data required for the connected UI components here.
     }
+
+	public TextField getLabelCrearEditarSeccionesTematicas() {
+		return labelCrearEditarSeccionesTematicas;
+	}
+
+	public void setLabelCrearEditarSeccionesTematicas(TextField labelCrearEditarSeccionesTematicas) {
+		this.labelCrearEditarSeccionesTematicas = labelCrearEditarSeccionesTematicas;
+	}
 
 }
