@@ -6,9 +6,9 @@ public class Historial_noticias extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
 	public Lista_mis_noticias _contiene;
 	public Crear_Editar_Noticia CENoticia;
-	
+
 	ocl_proyecto.Periodista periodista;
-	
+
 	public Historial_noticias(Periodista _periodista, ocl_proyecto.Periodista periodista) {
 		super(_periodista, periodista);
 		this._unnamed_Periodista_ = _periodista;
@@ -17,19 +17,18 @@ public class Historial_noticias extends Banner_Periodista {
 		this.getHistorialNoticiasLayout().setVisible(true);
 
 		this.Mis_Noticias();
-		
-		this.getBotonCrearNoticia().addClickListener(event->ConductorCrearNoticia());
+
+		//CREAR NOTICIA DINAMICO
+		this.getBotonCrearNoticia().addClickListener(event->{
+			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista, null);
+			this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
+		});
 	}
 
 	public void Mis_Noticias() {
 		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
 		this._contiene.Noticia_item(this.periodista.getIdUsuario());
 		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
-	}
-	
-	public void ConductorCrearNoticia() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista, null);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
 	}
 }

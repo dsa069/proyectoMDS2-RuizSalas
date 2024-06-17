@@ -9,7 +9,6 @@ import basededatos.iPeriodista;
 
 public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
-	public Seleccionar_Tematica _contiene;
 	public Zona_insertar_contenido_noticia CENoticia;
 
 	iPeriodista iPeriodita = new BD_Principal();
@@ -23,15 +22,12 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getCrearEditarNoticiaLayout().setVisible(true);
 
-		this.C_E_Noticia();
+		//ESTATICO ZONA DATOS
+		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
+		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
 
 		this.getBotonEliminarNoticiaPropia().addClickListener(event->ConductorMisNoticias());
 		this.getBotonConfirmarModificacionNoticia().addClickListener(event->guardar_cambios_noticia());
-	}
-
-	public void C_E_Noticia() {
-		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
-		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
 	}
 
 	public void guardar_cambios_noticia() {

@@ -12,21 +12,21 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 
 	public Introducir_datos_registro _contiene;
 	public Enviar_Correo_Confirmacion _procede_a;
-	
+
 	ocl_proyecto.Usuario_suscrito_ usuario;
-	
+
 	public iUsuario_No_Registrado iUNR = new BD_Principal();
-	
+
 	public Usuario_Registardo usuarioRegistrado;
 	public Usuario_No_Registrado usuarioNoRegistrado;
 	public Confirmar_Registro(Usuario_No_Registrado usuarioNoRegistrado, Introducir_datos_registro _contiene) {
 		super();
 		this.usuarioNoRegistrado = usuarioNoRegistrado;
 		this._contiene =_contiene;
-		
+
 		this.getBotonConfirmarRegistro().addClickListener(event->gestionar_Transaccion());
 	}
-	
+
 	public void enviar_Correo_Confirmacion() {
 	}
 

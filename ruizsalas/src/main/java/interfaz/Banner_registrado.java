@@ -15,12 +15,10 @@ import ocl_proyecto.Usuario_suscrito_DAO;
 
 public class Banner_registrado extends Banner_generico {
 	//private JButton _visitar_Perfil;
-	public Banner_suscrito _puede_contener;
 	public Registrado _registrado;
 	public Perfil_Uusario_Vista_UR PerfilUR;
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
-	public Usuario_No_Registrado Usus_no_reg;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
 
@@ -38,31 +36,31 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 
 		this.InicioPortada();
-		
+
 		this.imagen = new Image();
-        File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
-        if (file.exists()) {
-            StreamResource resource = new StreamResource(file.getName(), () -> {
-                try {
-                    return new FileInputStream(file);
-                } catch (FileNotFoundException e) {
-                    return null;
-                }
-            });
+		File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
+		if (file.exists()) {
+			StreamResource resource = new StreamResource(file.getName(), () -> {
+				try {
+					return new FileInputStream(file);
+				} catch (FileNotFoundException e) {
+					return null;
+				}
+			});
 
-            Image image = new Image(resource, "Image not found");
-            image.setMaxWidth("500px");
-            this.imagen = image;
-        } 
+			Image image = new Image(resource, "Image not found");
+			image.setMaxWidth("500px");
+			this.imagen = image;
+		} 
 
-        this.imagen.getStyle().set("align-self", "center");
-        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
-        this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
-        
+		this.imagen.getStyle().set("align-self", "center");
+		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
+		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
+
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
-	
+
 	public void InicioPortada() {
 		this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
@@ -87,7 +85,6 @@ public class Banner_registrado extends Banner_generico {
 				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
 			}
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -12,12 +12,9 @@ public class Editor extends Registrado {
 		super(mainView, editor);
 		this.editor = editor;
 
-		this.Banner_E_Inico();
-	} 
-	
-	public void Banner_E_Inico() {
+		//MAINVIEW A BANNER
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		this.BE = new Banner_Editor(this, this.editor);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.BE);	
-	}
+	} 
 }

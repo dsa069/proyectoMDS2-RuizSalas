@@ -17,9 +17,8 @@ public class Lista_Comentarios extends VistaListacomentarios {
 	ocl_proyecto.Usuario Us_coment;
 
 	ocl_proyecto.Usuario user;
-	ocl_proyecto.Comentario comentario;
 	ocl_proyecto.Noticia notice;
-	
+
 	iUsuario iUsu = new BD_Principal();
 
 	public Lista_Comentarios(Usuario usuario, ocl_proyecto.Usuario user, ocl_proyecto.Noticia notic) {
@@ -39,11 +38,11 @@ public class Lista_Comentarios extends VistaListacomentarios {
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
 		}
 	}
-	
+
 	public Comentario[] cargar_listar_comenatrios() {
 		return iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
 	}
-	
+
 	public ocl_proyecto.Usuario cargar_usuario_comenatrio(int Id_comenatrio) {
 		return iUsu.cargar_usuario_comentario(Id_comenatrio);
 	}

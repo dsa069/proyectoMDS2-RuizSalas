@@ -7,12 +7,12 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	public Vector<Lista_noticas_Editor_item> _item = new Vector<Lista_noticas_Editor_item>();
 	public Editor _editor;
 	public Lista_secciones_Editor_item LSE;
-    
+
 	public Lista_noticas_Editor(Editor _editor,  Lista_secciones_Editor_item LSE) {
 		super(_editor, null, null);
 		this._editor = _editor;
 		this.LSE=LSE;
-		
+
 	}
 	@Override
 	public void Noticia_item(int seccion) {

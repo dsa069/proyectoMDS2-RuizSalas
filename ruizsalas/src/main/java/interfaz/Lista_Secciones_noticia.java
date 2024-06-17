@@ -20,15 +20,10 @@ public class Lista_Secciones_noticia extends VistaListaseccionesnoticia {
 		super();
 		this.editor = editor;		
 		
-		sesion = cargar_secciones_seleccion();
+		sesion = iedit.cargar_secciones_seleccion();
 		for (int i=0; i<sesion.length; i++) {
 			Lista_Secciones_noticia_item _item = new Lista_Secciones_noticia_item(this, sesion[i]);
 			this.getSeccionesSelecionablesItem().as(VerticalLayout.class).add(_item);
 		}
-	}
-		
-
-	public Seccion[] cargar_secciones_seleccion() {
-		return iedit.cargar_secciones_seleccion();
 	}
 }

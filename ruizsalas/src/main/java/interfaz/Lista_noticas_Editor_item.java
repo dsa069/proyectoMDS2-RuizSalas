@@ -7,7 +7,7 @@ import vistas.*;
 
 public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	public Lista_noticas_Editor _lista_noticas_Editor;
-	
+
 	int seecionId;
 	iEditor iEdito = new BD_Principal();
 
@@ -16,17 +16,17 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 		this._lista_noticas_Editor = padre;
 		this.seecionId=seccionId;
 		this.getQuitarNoticiaDeSeccion().setVisible(true);
-		
+
 		this.getQuitarNoticiaDeSeccion().addClickListener(event->quitar_noticia_de_seccion());
 	}
-	
+
 	public void quitar_noticia_de_seccion() {
 		iEdito.quitar_noticia_de_seccion(this.Notas.getId_valoracion(), seecionId);
 		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().removeAll();
 		this._lista_noticas_Editor.LSE._contiene = new Lista_noticas_Editor(this._lista_noticas_Editor.LSE._editor, this._lista_noticas_Editor.LSE);
 		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().add(this._lista_noticas_Editor.LSE._contiene);
 	}
-	
+
 	public void ConductorNoticia() {
 		this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 		NVE = new Noticia_Vista_Editor (this._lista_noticas_Editor._editor, this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.usuarioocl, this.Notas);

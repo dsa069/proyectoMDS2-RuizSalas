@@ -2,18 +2,15 @@ package interfaz;
 
 public class Busqueda_fallida extends Seleccion_de_secciones {
 	public Usuario _unnamed_Usuario_;
-	
+
 	public Busqueda_fallida(Usuario _usuario, ocl_proyecto.Usuario usuarioocl ) {
 		super(_usuario, usuarioocl, null );
 		this._unnamed_Usuario_ = _usuario;
 		this.getMsgError().setVisible(true);
 		this.getLayoutGenericoSeccionesBanner().setVisible(false);
 		this.getLayoutBannerSeccionesBusqueda().setVisible(false);
-		
-		this.Msg_De_Error();
-	}
-	
-	public void Msg_De_Error() {
+
+		//ESTATICO MSG ERROR
 		this.msgError = new Mensaje_de_error(this._unnamed_Usuario_);
 		this.getMsgError().add(this.msgError);
 	}

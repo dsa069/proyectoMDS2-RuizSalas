@@ -2,7 +2,6 @@ package interfaz;
 import vistas.*;
 
 public class Introducir_datos_registro extends Zona_registrar_periodista {
-	public Registro _unnamed_Registro_;
 	public  Usuario usuario;
 	ocl_proyecto.Usuario usu;
 	public Introducir_datos_registro(Usuario usuario, ocl_proyecto.Usuario user) {
@@ -10,6 +9,5 @@ public class Introducir_datos_registro extends Zona_registrar_periodista {
 		this.usuario = usuario;
 		this.usu = user;
 		this.getDatosRegistro().setVisible(true);
-	}
-	
+	}	
 }

@@ -16,19 +16,15 @@ public class Lista_periodistas extends Banner_Editor {
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getListarPeriodistaLayout().setVisible(true);
 
-		this.Dar_Baja_Periodistas();
-		
-		this.getBotonAnadirPeriodista().addClickListener(event->ConductorDarAltaPeriodista());
-	}
-	
-	public void Dar_Baja_Periodistas() {
+		//ESTATICO DE LA LISTA DE NOTICIAS
 		this._unnamed_Periodistas_ = new Periodistas(this._accede);
 		this.getListaPeriodistaEstatico().as(VerticalLayout.class).add(this._unnamed_Periodistas_);
-	}
-	
-	public void ConductorDarAltaPeriodista() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
-		Ananin = new Dar_de_alta_periodista(this._accede, this.editor);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(Ananin);
+		
+		//DINAMICO REGISTAR PERIODISTA
+		this.getBotonAnadirPeriodista().addClickListener(event->{
+			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			Ananin = new Dar_de_alta_periodista(this._accede, this.editor);
+			this.getBannergenericolayout().as(VerticalLayout.class).add(Ananin);
+		});
 	}
 }

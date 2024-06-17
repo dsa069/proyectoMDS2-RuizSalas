@@ -10,9 +10,9 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	public Editor _unnamed_Editor_;
 	public Lista_secciones_Editor _contiene;
 	public Seleccion_de_secciones_generico SESG;
-	
+
 	ocl_proyecto.Seccion seccionBD;
-	
+
 	iEditor iEdito = new BD_Principal();
 
 	public Crear_Editar_Secciones_Tematicas(Editor editor, ocl_proyecto.Seccion seccionBD,  Seleccion_de_secciones_generico SESG) {
@@ -20,25 +20,28 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 		this._unnamed_Editor_ = editor;
 		this.seccionBD = seccionBD;
 		this.SESG=SESG;
-		this.Lista_Secciones_Vista_Editor();
-		
+
+		//ESTATICO LISTA SECCIONES VISTA EDITOR
+		this._contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD, this);
+		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._contiene);
+
+	
 		this.getBotonCrearNuevaTematica().addClickListener(event->anadir_seccion());
-		this.getCrearTematicasPalante().addClickListener(event->ConductorPagina(true));
-		this.getCrearTematicasPatras().addClickListener(event->ConductorPagina(false));
+		
+		//Flechas 
+		this.getCrearTematicasPalante().addClickListener(event->{
+			this.getListaSeccionesEstaticas().as(VerticalLayout.class).removeAll();
+			_contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD =  iEdito.cargar_seccion_palanteypatras_portada(this.seccionBD.getIdSeccion(), true), this);
+			this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(_contiene);
+		});
+		this.getCrearTematicasPatras().addClickListener(event->{
+			this.getListaSeccionesEstaticas().as(VerticalLayout.class).removeAll();
+			_contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD =  iEdito.cargar_seccion_palanteypatras_portada(this.seccionBD.getIdSeccion(), false), this);
+			this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(_contiene);
+		});
 	}
 
 	public void anadir_seccion() {
 		iEdito.anadir_seccion(this.getLabelCrearEditarSeccionesTematicas().getValue());
-	}
-
-	public void Lista_Secciones_Vista_Editor() {
-		this._contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD, this);
-		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._contiene);
-	}
-	
-	public void ConductorPagina(boolean Palanteopatras) {
-		this.getListaSeccionesEstaticas().as(VerticalLayout.class).removeAll();
-		_contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD =  iEdito.cargar_seccion_palanteypatras_portada(this.seccionBD.getIdSeccion(), Palanteopatras), this);
-		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(_contiene);
 	}
 }

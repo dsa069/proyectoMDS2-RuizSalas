@@ -17,7 +17,6 @@ public class Banner_generico extends VistaBannergenerico{
 	public Usuario usuario;
 	public Seleccion_de_secciones SS;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
-	public Image imagen;
 	ocl_proyecto.Usuario usuarioBD;
 	
 	public Banner_generico(Usuario usuario, ocl_proyecto.Usuario usuarioBD) {

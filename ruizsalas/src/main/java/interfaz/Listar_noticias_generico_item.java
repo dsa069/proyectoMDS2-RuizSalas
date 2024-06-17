@@ -69,17 +69,4 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
 	public void ConductorNoticia() {
 
 	}
-	
-	public void ConductorNoticiaUNR() {
-		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.Notas);
-		this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);
-	}
-	
-	
-	public void ConductorNoticiaUR() {
-		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this.user, this.Notas);
-		this._listar_noticias_generico.usuario.mainView.UR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
-	}
 }
