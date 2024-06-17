@@ -14,14 +14,16 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	public Vector<Lista_secciones_Editor_item> _item = new Vector<Lista_secciones_Editor_item>();
 
     public Editor _editor;
+    public Crear_Editar_Secciones_Tematicas CBT;
     
     ocl_proyecto.Seccion sec;
     
     iEditor iEdito = new BD_Principal();
     
-	public Lista_secciones_Editor(Editor _editor, ocl_proyecto.Seccion seccion ) {
+	public Lista_secciones_Editor(Editor _editor, ocl_proyecto.Seccion seccion, Crear_Editar_Secciones_Tematicas CBT ) {
 		super(_editor, seccion, null);
 		this._editor = _editor;
+		this.CBT=CBT;
 	}
 	
 	@Override

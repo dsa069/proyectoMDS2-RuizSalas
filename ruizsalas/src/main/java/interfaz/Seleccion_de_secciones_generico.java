@@ -22,6 +22,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Mensaje_de_error msgError;
 	public Pagina_de_inicio pagInicio;
 	public Crear_Editar_Secciones_Tematicas _crearEditarSeccionesTematicas;
+	public Seleccion_de_secciones_Vista_Editor SESVE;
 	public Seccion[] sec;
 	public Noticia[] not;
 	
@@ -31,9 +32,10 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	iEditor iUsuario = new BD_Principal();
 	
 	
-	public Seleccion_de_secciones_generico(Usuario usuario) {
+	public Seleccion_de_secciones_generico(Usuario usuario, Seleccion_de_secciones_Vista_Editor SESVE) {
 		super();
 		this.usuario = usuario;
+		this.SESVE=SESVE;
 		this.getBarraDeBusqueda().setVisible(false);
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
@@ -53,7 +55,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void CEseccionesEstatico() {
-		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada());
+		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada(), this);
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 	

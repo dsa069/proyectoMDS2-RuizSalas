@@ -40,7 +40,7 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	
 	public void ConductorEditarSecciones() {
 		this.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		SESG = new Seleccion_de_secciones_generico(this._editor);
+		SESG = new Seleccion_de_secciones_generico(this._editor, this);
 		this.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SESG);
 	}
 }

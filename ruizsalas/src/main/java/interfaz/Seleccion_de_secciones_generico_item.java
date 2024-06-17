@@ -22,7 +22,7 @@ public class Seleccion_de_secciones_generico_item extends VistaSelecciondeseccio
 	
 	public void ConductorSeccion() {
 		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas.getListaSeccionesEstaticas().as(VerticalLayout.class).removeAll();
-		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas._contiene = new Lista_secciones_Editor((Editor) this._unnamed_Seleccion_de_secciones_generico_.usuario, this.secc);
+		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas._contiene = new Lista_secciones_Editor((Editor) this._unnamed_Seleccion_de_secciones_generico_.usuario, this.secc, this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas );
 		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas.seccionBD = this.secc;
 		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas._contiene);
 	}

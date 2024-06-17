@@ -15,14 +15,14 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		super();
 		this._seleccionar_Tematica = _seleccionar_Tematica;
 		this.tematica = tematica;
-		if (noticia.contiene.contains(this.tematica)) {
-			this.getBotonCheckboxVacio().setVisible(false);
-			this.getBotonCheckboxRelleno().addClickListener(event->marcar_tematica());
-		} else {
-			this.getBotonCheckboxRelleno().setVisible(false);
-			this.getBotonCheckboxVacio().addClickListener(event->marcar_tematica());
-		}
-		this.getSeleccionTamaticaNoticia().setText("" + tematica.getNombre());
+//		if (noticia.contiene.contains(this.tematica)) {
+//			this.getBotonCheckboxVacio().setVisible(false);
+//			this.getBotonCheckboxRelleno().addClickListener(event->marcar_tematica());
+//		} else {
+//			this.getBotonCheckboxRelleno().setVisible(false);
+//			this.getBotonCheckboxVacio().addClickListener(event->marcar_tematica());
+//		}
+//		this.getSeleccionTamaticaNoticia().setText("" + tematica.getNombre());
 	}
 
 	public void marcar_tematica() {

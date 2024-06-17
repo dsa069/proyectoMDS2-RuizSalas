@@ -1,5 +1,6 @@
 package interfaz;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iEditor;
@@ -30,5 +31,11 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().removeAll();
 		this._lista_noticas_Editor.LSE._contiene = new Lista_noticas_Editor(this._lista_noticas_Editor.LSE._editor, this._lista_noticas_Editor.LSE);
 		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().add(this._lista_noticas_Editor.LSE._contiene);
+	}
+	
+	public void ConductorNoticia() {
+		this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+		NVE = new Noticia_Vista_Editor (this._lista_noticas_Editor._editor, this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.usuarioocl, this.Notas);
+		this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 	}
 }

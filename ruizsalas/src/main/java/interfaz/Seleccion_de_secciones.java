@@ -19,7 +19,7 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	public Banner_registrado Banana;
 	
 	public Seleccion_de_secciones(Usuario _usuario, ocl_proyecto.Usuario usuariocl, Banner_registrado Banana) {
-		super(_usuario);
+		super(_usuario, null);
 		this._usuario = _usuario;
 		this.usuarioocl =  usuariocl;
 		this.Banana = Banana;
