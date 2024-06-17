@@ -34,8 +34,7 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	//NS SI ES CORRECTO PQ ES CREAR
 	public void anadir_seccion() {
 		//Operacion base de datos anadir
-		iEdito.anadir_seccion(this.seccionBD.getNombre());
-		throw new UnsupportedOperationException();
+		iEdito.anadir_seccion(this.getLabelCrearEditarSeccionesTematicas().getValue());
 	}
 
 	public void Lista_Secciones_Vista_Editor() {
