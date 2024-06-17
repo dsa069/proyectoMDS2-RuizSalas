@@ -1,8 +1,7 @@
 package interfaz;
+
 import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import vistas.*;
 
 public class Seleccion_de_secciones_generico_item extends VistaSelecciondeseccionesgenerico_item{

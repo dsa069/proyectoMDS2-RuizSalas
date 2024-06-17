@@ -1,9 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import basededatos.BD_Principal;
 import basededatos.iEditor;
 import basededatos.iUsuario;
@@ -12,8 +10,6 @@ import ocl_proyecto.Seccion;
 import vistas.VistaSelecciondeseccionesgenerico;
 
 public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesgenerico{
-	public Vector<Seleccion_de_secciones_generico_item> _item = new Vector<Seleccion_de_secciones_generico_item>();
-	public Banner_suscrito _puede_contener;
 	public Usuario usuario;
 	public Barra_de_busqueda buscar;
 	public Mensaje_de_error msgError;
@@ -21,13 +17,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Crear_Editar_Secciones_Tematicas _crearEditarSeccionesTematicas;
 	public Seleccion_de_secciones_Vista_Editor SESVE;
 	public Seccion[] sec;
-	public Noticia[] not;
-	
-		
-	ocl_proyecto.Seccion seccion;
-	
 	iEditor iUsuario = new BD_Principal();
-	
 	
 	public Seleccion_de_secciones_generico(Usuario usuario, Seleccion_de_secciones_Vista_Editor SESVE) {
 		super();
@@ -36,9 +26,6 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		this.getBarraDeBusqueda().setVisible(false);
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
-		
-		
-		
 		this.Seleccion_de_secciones_item_Estatico();
 		this.CEseccionesEstatico();
 	}
@@ -58,10 +45,5 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	
 	public Seccion[] cargar_secciones() {
 		return iUsuario.cargar_secciones_seleccion();
-	}
-	
-	
-	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
-		return iUsuario.cargar_noticias_secciones(IdSeccion);
 	}
 }

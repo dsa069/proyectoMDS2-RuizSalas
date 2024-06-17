@@ -6,6 +6,6 @@ public class Mensaje_de_error extends VistaMensajedeerror {
 	public Usuario usuario;
 	public Mensaje_de_error(Usuario usuario) {
 		super();
-	this.usuario = usuario;
+		this.usuario = usuario;
 	}	
 }

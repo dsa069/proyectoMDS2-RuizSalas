@@ -1,18 +1,14 @@
 package interfaz;
 
 import java.util.Vector;
-
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Seccion;
 import vistas.*;
 
 public class Noticias_en_Portada extends Listar_noticias {
 	public Pagina_de_inicio _unnamed_Pagina_de_inicio_;
-	public Vector<Noticias_en_Portada_item> _item = new Vector<Noticias_en_Portada_item>();
     public Usuario _usuario;
-    
 	ocl_proyecto.Usuario usuarioocl;
     
 	public Noticias_en_Portada(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl, Pagina_de_inicio _unnamed_Pagina_de_inicio_ ) {

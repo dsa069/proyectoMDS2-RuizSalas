@@ -3,13 +3,10 @@ package interfaz;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import org.orm.PersistentException;
-
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
-
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
@@ -20,7 +17,6 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 	public Registrado registrado;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
-	
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
 	
@@ -40,7 +36,6 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 			e1.printStackTrace();
 		}
 		
-		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.usuario.getFoto_de_perfil());
         if (file.exists()) {
@@ -56,12 +51,11 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
             image.setMaxWidth("500px");
             this.imagen = image;
         }
-
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutImagenUsuarioVerDatos().as(VerticalLayout.class).removeAll();
         this.getLayoutImagenUsuarioVerDatos().as(VerticalLayout.class).add(this.imagen);
 		
-		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
+        this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
 		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
 		this.getLayoutNombreUsuario1().setText("" + usuario.getApodo());
 		this.getLayoutContrasena().setText("" + usuario.getContrasena());

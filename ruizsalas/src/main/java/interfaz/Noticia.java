@@ -11,16 +11,12 @@ import com.vaadin.flow.server.StreamResource;
 import vistas.*;
 public class Noticia extends VistaNoticia{
 	public Lista_Comentarios _contiene;
-
 	public Usuario usuario;
 	public Listar_tematicas listarTematicas;
 	public ver_valoracion valoracion;
-	public Lista_Comentarios comentarios;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
-	
 	ocl_proyecto.Valoracion valoracionBD;
-	ocl_proyecto.Periodista periodista;
 	ocl_proyecto.Noticia notice;
 	
 	public Noticia(Usuario usuario, ocl_proyecto.Noticia noticia) {
@@ -29,7 +25,9 @@ public class Noticia extends VistaNoticia{
 		this.valoracionBD = noticia;
 		this.notice = noticia;
 		this.Listar_Tematicas();
-		this.Ver_Valoraciones();
+		//ver valoraciones
+		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);
+		this.getVerValoracionEstatico().add(this.valoracion);
 		
 		this.imagen = new Image();
         File file = new File(IMAGE_PATH + this.notice.getImagen_principal());
@@ -38,7 +36,6 @@ public class Noticia extends VistaNoticia{
                 try {
                     return new FileInputStream(file);
                 } catch (FileNotFoundException e) {
-                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
                     return null;
                 }
             });
@@ -46,8 +43,6 @@ public class Noticia extends VistaNoticia{
             Image image = new Image(resource, "Image not found");
             image.setMaxWidth("500px");
             this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.notice.getImagen_principal(), 5000, Notification.Position.MIDDLE);
         }
 
         this.imagen.getStyle().set("align-self", "center");
@@ -64,9 +59,4 @@ public class Noticia extends VistaNoticia{
 		this.listarTematicas = new Listar_tematicas(this.usuario, this.notice);
 		this.getTematicas().as(VerticalLayout.class).add(this.listarTematicas);
 	}
-
-	public void Ver_Valoraciones() {
-		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);
-		this.getVerValoracionEstatico().add(this.valoracion);
-	}	
 }

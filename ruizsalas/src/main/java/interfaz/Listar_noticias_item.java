@@ -1,6 +1,6 @@
 package interfaz;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import ocl_proyecto.EditorDAO;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.UsuarioDAO;
@@ -8,7 +8,7 @@ import vistas.*;
 
 public class Listar_noticias_item extends Listar_noticias_generico_item {
 	public Listar_noticias _listar_noticias;
-	
+	public ver_valoracion verValoracion;
 	ocl_proyecto.Valoracion valoracion;
 	
 	public Listar_noticias_item(Listar_noticias padre, ocl_proyecto.Noticia Notas) {
@@ -23,15 +23,11 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		this.getTitular1().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
 		
-		this.Ver_Valoracion();
-		
-		this.getTitular2().setText("" + Notas.getTitulo());		
-	}
-	
-	public ver_valoracion verValoracion;
-	public void Ver_Valoracion() {
+		//ver valoracion
 		this.verValoracion = new ver_valoracion(this._listar_noticias._usuario, this.valoracion);
 		this.getVerValoracion().add(this.verValoracion);
+		
+		this.getTitular2().setText("" + Notas.getTitulo());		
 	}
 	
 	@Override
@@ -60,5 +56,4 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 			e.printStackTrace();
 		}
 	}
-	
 }

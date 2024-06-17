@@ -44,7 +44,7 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).removeAll();
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).add(this.imagen);
 		this.getNombreAutorNoticia().setText("" + periodista.getApodo());
-		this.getVersionNoticia().setText("" + String.valueOf(this.noticia.getVersion())); //Ns si es correcto pq convierte el float a String
+		this.getVersionNoticia().setText("" + String.valueOf(this.noticia.getVersion()));
 	}
 
 }

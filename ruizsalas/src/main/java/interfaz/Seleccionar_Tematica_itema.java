@@ -15,11 +15,7 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		this.tematica = tematica;
 		this.noticia = noticia;
 		this.getSeleccionTamaticaNoticia().setText("" + tematica.getNombre());
-		this.getBotonCheckboxRelleno().addClickListener(event->marcar_tematica());
-		this.getBotonCheckboxVacio().addClickListener(event->marcar_tematica());
-	}
-
-	public void marcar_tematica() {
-		ieditor.marcar_tematica(this.tematica.getIdTematica(), this.noticia.getId_valoracion());
+		this.getBotonCheckboxRelleno().addClickListener(event->{ieditor.marcar_tematica(this.tematica.getIdTematica(), this.noticia.getId_valoracion());});
+		this.getBotonCheckboxVacio().addClickListener(event->{ieditor.marcar_tematica(this.tematica.getIdTematica(), this.noticia.getId_valoracion());});
 	}
 }

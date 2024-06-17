@@ -1,12 +1,10 @@
 package interfaz;
 
-
 import ocl_proyecto.Usuario;
 
 public class Noticia_completa extends Banner_suscrito {
 	public Registrado _unnamed_Registrado_;
 	public Contenido_noticia_completo Noticia;
-	
 	ocl_proyecto.Noticia noticia;
 	ocl_proyecto.Usuario sus;
 	
