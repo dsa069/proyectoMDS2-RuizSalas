@@ -19,13 +19,13 @@ export class VistaSeleccionartematica_item extends LitElement {
 <vaadin-vertical-layout style="width: 100%; height: 100%; font-size: 25px;">
  <hr style="width: 90%; flex-shrink: 0;">
  <vaadin-horizontal-layout theme="spacing" style="align-self: stretch;">
-  <vaadin-button>
-    Button 
+  <vaadin-button style="align-self: center; width: 5%; background-color: var(--lumo-contrast-0pct);" id="botonCheckboxVacio">
+   <img src="https://cdn.icon-icons.com/icons2/2249/PNG/512/checkbox_blank_circle_outline_icon_139816.png" style="width: 40%;">
   </vaadin-button>
-  <vaadin-button>
-    Button 
+  <vaadin-button style="align-self: center; width: 5%; background-color: var(--lumo-contrast-0pct);" id="botonCheckboxRelleno">
+   <img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/checkbox_marked_circle_icon_137772.png" style="width: 40%;">
   </vaadin-button>
-  <label>Tematica</label>
+  <label id="seleccionTamaticaNoticia">Tematica</label>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
