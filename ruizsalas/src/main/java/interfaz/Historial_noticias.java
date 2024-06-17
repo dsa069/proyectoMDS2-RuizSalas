@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Historial_noticias extends Banner_Periodista {
@@ -25,7 +26,8 @@ public class Historial_noticias extends Banner_Periodista {
 	}
 
 	public void Mis_Noticias() {
-		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_);
+		Notification.show("Hist " + this.periodista.getApodo());
+		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this.periodista);
 		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
 	}
 	

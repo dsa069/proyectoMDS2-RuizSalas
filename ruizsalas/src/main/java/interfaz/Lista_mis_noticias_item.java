@@ -40,6 +40,13 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 		this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).add(crearEditarNoticia);
 	}
 	
+//	@Override
+//	public void ConductorNoticia() {
+//		this._lista_mis_noticias._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+//		NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias.usuarioocl, this.Notas);
+//		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
+//	}
+	
 	public void eliminar_noticia_propia() {
 		iPeriodita.eliminar_noticia_propia(this.notice.getId_noticia());
 	}

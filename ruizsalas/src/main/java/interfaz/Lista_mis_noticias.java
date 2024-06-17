@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
@@ -14,14 +15,16 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Vector<Lista_mis_noticias_item> _item = new Vector<Lista_mis_noticias_item>();
 	public Noticia[] notice;
 	
-	ocl_proyecto.Usuario user;
+	ocl_proyecto.Periodista pe;
 	
 	iPeriodista iPeriodita = new BD_Principal();
 	
 	public Periodista periodista;
-	public Lista_mis_noticias(Periodista usuario) {
+	public Lista_mis_noticias(Periodista usuario, ocl_proyecto.Periodista pe) {
 		super(usuario);
 		this.periodista = usuario;
+		this.pe = pe;
+		Notification.show("LMN " + this.pe.getApodo());
 		this.getPortada().setVisible(false);
 		this.getColumnasNoticias().setVisible(false);
 		
@@ -36,12 +39,12 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		}
 	}
 	
-	public Noticia[] cargar_listar_mis_noticias() {
-		return iPeriodita.cargar_listar_mis_noticias(user.getIdUsuario());
-	}
+//	public Noticia[] cargar_listar_mis_noticias() {
+//		return iPeriodita.cargar_listar_mis_noticias(this.usuarioocl.getIdUsuario());
+//	}
 	
 	@Override
 	public Noticia[] cargar_noticias() {
-		return iPeriodita.cargar_listar_mis_noticias(this.user.getIdUsuario());
+		return iPeriodita.cargar_listar_mis_noticias(this.pe.getIdUsuario());
 	}
 }
