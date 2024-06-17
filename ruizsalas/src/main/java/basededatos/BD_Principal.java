@@ -244,7 +244,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void valorar_comentario(int aIdUsuario, int aIdComentario, boolean aValoracion) {
 		try {
-			_bd_comentarios.valorar_comentario(aIdUsuario, aIdComentario, aValoracion);;
+			_bd_comentarios.valorar_comentario(aIdUsuario, aIdComentario, aValoracion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
