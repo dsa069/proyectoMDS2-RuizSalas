@@ -28,7 +28,8 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 		
 	ocl_proyecto.Seccion seccion;
 	
-	iUsuario iUsuario = new BD_Principal();
+	iEditor iUsuario = new BD_Principal();
+	
 	
 	public Seleccion_de_secciones_generico(Usuario usuario) {
 		super();
@@ -44,7 +45,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void Seleccion_de_secciones_item_Estatico() {
-		sec = this.cargar_secciones_generico();
+		sec = this.cargar_secciones();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
 			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
@@ -52,13 +53,20 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void CEseccionesEstatico() {
-		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario);
+		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada());
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 	
-	public Seccion[] cargar_secciones_generico() {
-		return iUsuario.cargar_secciones_generico();
+//	public void CEseccionesEstatico() {
+//		this._unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this._unnamed_Seleccion_de_secciones_generico_.usuario, this.secc);
+//		this._unnamed_Seleccion_de_secciones_generico_.getLayoutGenericoSeccionesBanner().add(_unnamed_Seleccion_de_secciones_generico_._crearEditarSeccionesTematicas);
+//	}
+	
+	
+	public Seccion[] cargar_secciones() {
+		return iUsuario.cargar_secciones_seleccion();
 	}
+	
 	
 	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
 		return iUsuario.cargar_noticias_secciones(IdSeccion);

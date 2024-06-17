@@ -9,7 +9,6 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public Lista_noticas_Editor _contiene;
 	public Editor _editor;
 	
-	ocl_proyecto.Seccion seccionBD;
 	ocl_proyecto.Tematica tematicaBD;
 	
 	iEditor iEdito = new BD_Principal();
@@ -32,6 +31,6 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	
 	public void borrar_seccion() {
 		//Operación eliminar sección base de datos
-		iEdito.borrar_seccion(seccionBD.getIdSeccion(), tematicaBD.getIdTematica());
+		iEdito.borrar_seccion(seccion.getIdSeccion(), tematicaBD.getIdTematica());
 	}
 }

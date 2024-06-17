@@ -2,6 +2,7 @@ package interfaz;
 
 import java.util.Vector;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
@@ -13,27 +14,25 @@ public class Lista_secciones_Editor extends Listar_Secciones {
 	public Vector<Lista_secciones_Editor_item> _item = new Vector<Lista_secciones_Editor_item>();
 
     public Editor _editor;
-    public Seccion[] sec;
     
-    ocl_proyecto.Seccion seccion;
+    ocl_proyecto.Seccion sec;
     
     iEditor iEdito = new BD_Principal();
     
-	public Lista_secciones_Editor(Editor _editor) {
-		super(_editor, null, null);
+	public Lista_secciones_Editor(Editor _editor, ocl_proyecto.Seccion seccion ) {
+		super(_editor, seccion, null);
 		this._editor = _editor;
 	}
 	
 	@Override
 	public void Secciones_item_Estatico(){
-		sec = this.usuario.banner.SS.sec;
-		for (int i=0; i<sec.length; i++) {
-			Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this,this._editor,sec[i]);
+			Lista_secciones_Editor_item _item = new Lista_secciones_Editor_item(this,this._editor, seccion);
 			this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
-		}
 	}
 	
-	public Seccion[] cargar_secciones_seleccion() {
-		return iEdito.cargar_secciones_seleccion();
-	}
+	
+	
+//	public Seccion[] cargar_secciones_seleccion() {
+//		return iEdito.cargar_secciones_seleccion();
+//	}
 }
