@@ -14,7 +14,7 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 //	public Eliminar_noticia _contiene_la_opcion_de;
 	
 	ocl_proyecto.Periodista periodista;
-	ocl_proyecto.Noticia notice;
+	//ocl_proyecto.Noticia notice;
 	
 	iPeriodista iPeriodita = new BD_Principal();
 	
@@ -50,6 +50,8 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	}
 	
 	public void eliminar_noticia_propia() {
-		iPeriodita.eliminar_noticia_propia(this.notice.getId_noticia());
+		iPeriodita.eliminar_noticia_propia(this.Notas.getId_valoracion());
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasEstatico().as(VerticalLayout.class).removeAll();
+		this._lista_mis_noticias._unnamed_Historial_noticias_.Mis_Noticias();
 	}
 }

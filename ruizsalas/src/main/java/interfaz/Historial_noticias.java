@@ -26,7 +26,6 @@ public class Historial_noticias extends Banner_Periodista {
 	}
 
 	public void Mis_Noticias() {
-		Notification.show("Hist " + this.periodista.getApodo());
 		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
 		this._contiene.Noticia_item(this.periodista.getIdUsuario());
 		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
