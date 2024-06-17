@@ -1,5 +1,6 @@
 package interfaz;
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
@@ -19,12 +20,15 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	
 	iEditor iEdito = new BD_Principal();
 
-	public Crear_Editar_Secciones_Tematicas(Editor editor) {
+	public Crear_Editar_Secciones_Tematicas(Editor editor, ocl_proyecto.Seccion seccionBD) {
 		super();
 		this._unnamed_Editor_ = editor;
+		this.seccionBD = seccionBD;
 		this.Lista_Secciones_Vista_Editor();
 		
 		this.getBotonCrearNuevaTematica().addClickListener(event->anadir_seccion());
+		this.getCrearTematicasPalante().addClickListener(event->ConductorPagina(true));
+		this.getCrearTematicasPatras().addClickListener(event->ConductorPagina(false));
 	}
 
 	//NS SI ES CORRECTO PQ ES CREAR
@@ -35,7 +39,13 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 	}
 
 	public void Lista_Secciones_Vista_Editor() {
-		this._contiene = new Lista_secciones_Editor(this._unnamed_Editor_);
+		this._contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD);
 		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(this._contiene);
+	}
+	
+	public void ConductorPagina(boolean Palanteopatras) {
+		this.getListaSeccionesEstaticas().as(VerticalLayout.class).removeAll();
+		_contiene = new Lista_secciones_Editor(this._unnamed_Editor_, this.seccionBD =  iEdito.cargar_seccion_palanteypatras_portada(this.seccionBD.getIdSeccion(), Palanteopatras));
+		this.getListaSeccionesEstaticas().as(VerticalLayout.class).add(_contiene);
 	}
 }

@@ -18,6 +18,10 @@ public class VistaCreareditarseccionestematicas extends LitTemplate {
 	private Button botonCrearNuevaTematica;
 	@Id("CrearTematicaCabecera")
 	private HorizontalLayout crearTematicaCabecera;
+	@Id("CrearTematicasPatras")
+	private Button crearTematicasPatras;
+	@Id("CrearTematicasPalante")
+	private Button crearTematicasPalante;
 	public Button getBotonCrearNuevaTematica() {
 		return botonCrearNuevaTematica;
 	}
@@ -42,6 +46,21 @@ public class VistaCreareditarseccionestematicas extends LitTemplate {
 		this.crearTematicaCabecera = crearTematicaCabecera;
 	}
 
+	public Button getCrearTematicasPatras() {
+		return crearTematicasPatras;
+	}
+
+	public void setCrearTematicasPatras(Button crearTematicasPatras) {
+		this.crearTematicasPatras = crearTematicasPatras;
+	}
+
+	public Button getCrearTematicasPalante() {
+		return crearTematicasPalante;
+	}
+
+	public void setCrearTematicasPalante(Button crearTematicasPalante) {
+		this.crearTematicasPalante = crearTematicasPalante;
+	}
 	public VistaCreareditarseccionestematicas() {
         // You can initialise any data required for the connected UI components here.
     }

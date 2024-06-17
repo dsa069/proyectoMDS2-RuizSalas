@@ -21,6 +21,9 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	public Seleccion_de_secciones_Vista_Editor(Editor _editor, ocl_proyecto.Editor usuarioocl, Banner_registrado banerReg ) {
 		super(_editor, usuarioocl, banerReg );
 		this._editor = _editor;
+		this.banerReg = banerReg;
+		
+		Notification.show("SE PREPARO "+ this.banerReg);
 		this.getBotonEditarSecciones().setVisible(true);
 		
 		this.getBotonEditarSecciones().addClickListener(event->ConductorEditarSecciones());
@@ -28,7 +31,7 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	
 	@Override
 	public void Seleccion_de_secciones_item_Estatico() {
-		sec = cargar_secciones_generico();
+		sec = cargar_secciones();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_Vista_Editor_item SSVE = new Seleccion_de_secciones_Vista_Editor_item(this, sec[i]);
 			this.getLayoutSeccionesContenidasPeriodico().add(SSVE);
@@ -36,8 +39,8 @@ public class Seleccion_de_secciones_Vista_Editor extends Seleccion_de_secciones 
 	}
 	
 	public void ConductorEditarSecciones() {
-		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).removeAll();
+		this.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 		SESG = new Seleccion_de_secciones_generico(this._editor);
-		this.getLayoutSeleccionSeccionesGenerico().as(VerticalLayout.class).add(this.SESG);
+		this.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SESG);
 	}
 }

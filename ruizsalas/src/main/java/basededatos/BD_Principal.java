@@ -430,4 +430,25 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 			e.printStackTrace();
 		}
 	}
+	
+	public Seccion cargar_portada() {
+		try {
+			return _bd_secciones.cargar_portada();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Seccion cargar_seccion_palanteypatras_portada(int aId_seccion, boolean Palanteopatras) { 
+		try {
+			return _bd_secciones.cargar_seccion_palanteypatras_portada( aId_seccion,  Palanteopatras); 
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }
