@@ -27,6 +27,7 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
   <vaadin-vertical-layout style="height: 100%; justify-content: center; flex-shrink: 1; flex-grow: 1; width: 100%;">
    <vaadin-text-field label="Fecha" placeholder="Insertar Fecha" style="width: 100%;"></vaadin-text-field>
    <vaadin-text-field label="Ubicación" placeholder="Insertar Ubicación" style="width: 100%;"></vaadin-text-field>
+   <vaadin-text-field style="width: 100%;" placeholder="Imagen" label="Imagen"></vaadin-text-field>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="height: 100%; flex-grow: 1; flex-shrink: 1; width: 100%;" id="seleccionarTematicasEstatico"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
