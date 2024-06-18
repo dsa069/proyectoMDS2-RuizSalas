@@ -47,7 +47,6 @@ public class Banner_registrado extends Banner_generico {
 					return null;
 				}
 			});
-			
 
 			Image image = new Image(resource, "Image not found");
 			image.setMaxWidth("500px");
