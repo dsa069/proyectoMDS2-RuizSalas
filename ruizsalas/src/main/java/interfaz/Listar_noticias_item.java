@@ -37,7 +37,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 				if(UsuarioDAO.getUsuarioByORMID(this._listar_noticias.usuarioocl.getIdUsuario())!=null) {
 					if(EditorDAO.getEditorByORMID(this._listar_noticias.usuarioocl.getIdUsuario())!=null) {
 						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._listar_noticias.usuarioocl, (Noticia) this.valoracion); 
+						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._listar_noticias.usuarioocl, (Noticia) this.valoracion, this); 
 						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 					}else {			
 						this._listar_noticias._unnamed_Listar_Secciones_item_._listar_Secciones.SecccccP.SSI._seleccion_de_secciones.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();

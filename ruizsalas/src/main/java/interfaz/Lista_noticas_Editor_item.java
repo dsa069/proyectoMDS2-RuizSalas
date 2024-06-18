@@ -29,7 +29,7 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 
 	public void ConductorNoticia() {
 		this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		NVE = new Noticia_Vista_Editor (this._lista_noticas_Editor._editor, this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.usuarioocl, this.Notas);
+		NVE = new Noticia_Vista_Editor (this._lista_noticas_Editor._editor, this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.usuarioocl, this.Notas, this);
 		this._lista_noticas_Editor.LSE._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 	}
 }

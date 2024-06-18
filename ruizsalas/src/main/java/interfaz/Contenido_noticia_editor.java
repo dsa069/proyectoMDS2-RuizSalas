@@ -7,20 +7,22 @@ import basededatos.iEditor;
 
 public class Contenido_noticia_editor extends Contenido_noticia_completo{
 	public Editor editor;
-	public Banner_Editor banner_Editor;
+	public Editor banner_Editor;
 	public Seleccionar_Tematica seleccionarTematica;
 	public Lista_Secciones_noticia listaSeccionesNoticia;
+	public Noticia_Vista_Editor NVE;
 
 	ocl_proyecto.Editor editorBD;
 	ocl_proyecto.Noticia notice;
 
 	iEditor iEdito = new BD_Principal();
 
-	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Editor editorBD, ocl_proyecto.Noticia noticia) {
+	public Contenido_noticia_editor(Editor editor, ocl_proyecto.Editor editorBD, ocl_proyecto.Noticia noticia, Noticia_Vista_Editor NVE) {
 		super(editor,editorBD, noticia);
 		this.editor = editor;
 		this.notice = noticia;
 		this.editorBD = editorBD;
+		this.NVE = NVE;
 		this.getSeleccionarSecciones().setVisible(true);
 		this.getSeleccionarTematicas().setVisible(true);
 		this.getEliminarNoticia().setVisible(true);
@@ -47,9 +49,15 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 
 	public void eliminar_noticia() {
 		iEdito.eliminar_noticia(this.notice.getId_valoracion());
-		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		banner_Editor = new Banner_Editor(this.editor, this.editorBD);
-		this.editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(banner_Editor);
+		try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+		this.editor.mainView.removeAll();
+		banner_Editor = new Editor(this.editor.mainView,  (ocl_proyecto.Editor) editorBD);
+		this.editor.mainView.add(banner_Editor);
 	}
 
 	@Override

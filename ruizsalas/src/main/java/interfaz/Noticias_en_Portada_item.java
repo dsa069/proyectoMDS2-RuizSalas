@@ -27,7 +27,7 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 				if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
 					if(EditorDAO.getEditorByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
 						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_en_Portada.usuarioocl, this.notitas); 
+						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_en_Portada.usuarioocl, this.notitas, this); 
 						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 					}else {			
 						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();

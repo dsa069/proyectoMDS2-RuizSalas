@@ -41,7 +41,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().setVisible(true);
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasLayout().setVisible(false);
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_a_Revisar.usuarioocl, this.Notas);
+		NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_a_Revisar.usuarioocl, this.Notas, this);
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 	}
 	
