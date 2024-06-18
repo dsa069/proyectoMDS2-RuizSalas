@@ -29,7 +29,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.getTematicas().setVisible(false);
 
 		//ESTATICO LISTA SECCIONES NOTICIA
-		this.listaSeccionesNoticia = new Lista_Secciones_noticia(this.editor);
+		this.listaSeccionesNoticia = new Lista_Secciones_noticia(this.editor, this.notice, this);
 		this.getSeleccionarSecciones().as(VerticalLayout.class).add(this.listaSeccionesNoticia);
 
 		//ESTATICO SELECIONAR TEMATICA

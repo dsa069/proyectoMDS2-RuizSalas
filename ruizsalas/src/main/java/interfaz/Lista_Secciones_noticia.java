@@ -13,16 +13,18 @@ public class Lista_Secciones_noticia extends VistaListaseccionesnoticia {
 	public Vector<Lista_Secciones_noticia_item> _item = new Vector<Lista_Secciones_noticia_item>();
 	public Editor editor;
 	public Seccion[] sesion;
-	
+	Contenido_noticia_editor CNE;
+	ocl_proyecto.Noticia noticia;
 	public iEditor iedit = new BD_Principal();
 	
-	public Lista_Secciones_noticia(Editor editor) {
+	public Lista_Secciones_noticia(Editor editor, ocl_proyecto.Noticia noticia, Contenido_noticia_editor CNE) {
 		super();
 		this.editor = editor;		
-		
+		this.noticia = noticia;
+		this.CNE = CNE;
 		sesion = iedit.cargar_secciones_seleccion();
 		for (int i=0; i<sesion.length; i++) {
-			Lista_Secciones_noticia_item _item = new Lista_Secciones_noticia_item(this, sesion[i]);
+			Lista_Secciones_noticia_item _item = new Lista_Secciones_noticia_item(this, sesion[i], this.noticia, this.CNE);
 			this.getSeccionesSelecionablesItem().as(VerticalLayout.class).add(_item);
 		}
 	}
