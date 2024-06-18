@@ -13,25 +13,26 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	public Busqueda_fallida busquedaFallida;
 	public Busqueda search;
 	public Noticia[] notice;
+	public Seleccion_de_secciones Selec;
 	iUsuario iUsu = new BD_Principal();
 
-	public Barra_de_busqueda(Usuario usuario) {
+	public Barra_de_busqueda(Usuario usuario, Seleccion_de_secciones Selec) {
 		super();
 		this.usuario = usuario;
+		this.Selec=Selec;
 
 		this.getBotonRealizadorBusqueda().addClickListener(event->{
 			notice = iUsu.Buscar(this.getBarraBuscarNoticia().getValue());
-			if (notice.length == 0) {
-				this.usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				busquedaFallida = new Busqueda_fallida(this.usuario, null);
-				this.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.busquedaFallida);
+			Notification.show("bebesita: " + notice.length);
+			Notification.show("mama: " + this.getBarraBuscarNoticia().getValue());
+			if (notice.length == 0 || this.getBarraBuscarNoticia().getValue().isEmpty()) {
+				this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
+				busquedaFallida = new Busqueda_fallida(this.usuario);
+				this.Selec.getLayoutGenericoSeccionesBanner().add(this.busquedaFallida);
 			} else {
-				this.usuario.banner.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				Notification.show("bebesita: " + notice.length);
-				for (int i=0; i<notice.length; i++) {
-					search = new Busqueda (this.usuario, notice[i]);
-				}
-				this.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(search);
+				this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
+				search = new Busqueda (this.usuario, notice);
+				this.Selec.getLayoutGenericoSeccionesBanner().add(search);
 			}
 		});
 	}

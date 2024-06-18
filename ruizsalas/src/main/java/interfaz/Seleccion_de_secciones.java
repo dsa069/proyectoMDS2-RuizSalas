@@ -20,9 +20,11 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 		this.getMsgError().setVisible(true);
 		
 		this.CEseccionesEstatico();
+		
 		//Barra de busqueda
-		buscar = new Barra_de_busqueda(this.usuario);
+		buscar = new Barra_de_busqueda(this.usuario, this);
 		this.getBarraDeBusqueda().add(this.buscar);
+		
 		//Inicio portada
 		this.pagInicio = new Pagina_de_inicio(this.usuario, this.usuarioocl, this);
 		this.getLayoutGenericoSeccionesBanner().add(pagInicio);

@@ -28,6 +28,14 @@ public class Listar_noticias extends Listar_noticias_generico {
 		}
 	}
 	
+	public void Noticia_item(Noticia [] noticia) {
+		notice = noticia;
+		for (int i=0; i<notice.length; i++) {
+			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i]);
+			this.getColumnasNoticias().add(_item);	
+		}
+	}
+	
 	@Override
 	public void Noticia_item() {
 

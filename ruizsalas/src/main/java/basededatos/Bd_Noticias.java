@@ -243,7 +243,7 @@ public class Bd_Noticias {
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"titulo LIKE '%"+aBusqueda+"%'", null);
+					"titulo LIKE '%"+aBusqueda+"%'AND Agregada  ='"+1+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
