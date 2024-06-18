@@ -156,9 +156,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void agregar_noticia(int aId_noticia, boolean aAgregada) {
+	public void agregar_noticia(int aId_noticia) {
 		try {
-			_bd_noticias.agregar_noticia(aId_noticia, aAgregada);
+			_bd_noticias.agregar_noticia(aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

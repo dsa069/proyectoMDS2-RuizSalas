@@ -31,12 +31,12 @@ import ocl_proyecto.ValoracionDAO;
 public class Bd_Noticias {
 	public BD_Principal _bd_cont_noticias;
 	public ArrayList<Noticia> _contiene_noticias = new ArrayList<Noticia>();
-	
+
 	public int cargar_valoracion(int aIdValoracion) 
-		throws PersistentException {
-			Noticia noticia = null;
-			int ratio = 0;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia noticia = null;
+		int ratio = 0;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aIdValoracion);
 			double media = (double) noticia.getNum_likes()/(noticia.getNum_dislikes() + noticia.getNum_likes());
@@ -80,9 +80,9 @@ public class Bd_Noticias {
 	}
 
 	public Noticia[] cargar_noticias_secciones(int aIdSeccion) 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticias = NoticiaDAO.listNoticiaByQuery(
 					"SeccionIdSeccion = '"+aIdSeccion+"'AND Agregada  ='"+1+"'", null);
@@ -93,12 +93,12 @@ public class Bd_Noticias {
 		}
 		return noticias;
 	}
-	
+
 	public Noticia[] cargar_noticias_portada() 
-		throws PersistentException {
-			Noticia[] noticias = null;
-			Seccion porta = null;
-			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+			throws PersistentException {
+		Noticia[] noticias = null;
+		Seccion porta = null;
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			porta = SeccionDAO.loadSeccionByQuery(
 					"Portada ='"+1+"'", null);
@@ -130,7 +130,7 @@ public class Bd_Noticias {
 		}
 	}
 
-	public void agregar_noticia(int aId_noticia, boolean aAgregada)
+	public void agregar_noticia(int aId_noticia)
 			throws PersistentException {
 		Noticia noticia = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
@@ -148,10 +148,15 @@ public class Bd_Noticias {
 	public void no_agregar_noticia(int aId_noticia) 
 			throws PersistentException {
 		Noticia noticia = null;
+		Comentario[] comentarios = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-			noticia.setAgregada(false);
+			comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
+			for (Comentario comentarios1 : comentarios) {
+				ComentarioDAO.deleteAndDissociate(comentarios1);
+			}
+			NoticiaDAO.deleteAndDissociate(noticia);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -162,10 +167,11 @@ public class Bd_Noticias {
 	public void eliminar_noticia(int aId_noticia) 		
 			throws PersistentException {
 		Noticia noticia = null;
+		Comentario[] comentarios = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
-			Comentario[] comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
+			comentarios = ComentarioDAO.listComentarioByQuery("comenta.id = " + aId_noticia, null);
 			for (Comentario comentarios1 : comentarios) {
 				ComentarioDAO.deleteAndDissociate(comentarios1);
 			}
@@ -217,7 +223,7 @@ public class Bd_Noticias {
 		try {
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			usuario = UsuarioDAO.getUsuarioByORMID(aIdUsuario);
-			
+
 			if(!usuario.realiza.contains(noticia)) {//SI YA HA VALORADO, NO PUEDE VOLVER A VALORAR
 				noticia.es_valorado_por.add(usuario);
 				usuario.realiza.add(noticia);

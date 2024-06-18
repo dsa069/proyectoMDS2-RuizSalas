@@ -26,13 +26,14 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this.getTitular2().setVisible(false);
 		this.getVerValoracion().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
+		
 		//Zona de autor y version de noticia
 		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor, this.per, this.notice);
 		this.getZonaDeAutorYVersionDeNoticia().add(this.zonaAutorYVersionDeNoticia);
 		
 		this.getTitular1().setText("" + Notas.getTitulo());
-		this.getAgregarNoticia().addClickListener(event->iEdito.agregar_noticia(notice.getId_valoracion(), true));
-		this.getNoAgregarNoticia().addClickListener(event->iEdito.no_agregar_noticia(notice.getId_valoracion()));
+		this.getAgregarNoticia().addClickListener(event->agregar_noticia());
+		this.getNoAgregarNoticia().addClickListener(event->no_agregar_noticia());
 	}
 	
 	@Override
@@ -43,4 +44,19 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_a_Revisar.usuarioocl, this.Notas);
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
 	}
+	
+	public void agregar_noticia() {
+		iEdito.agregar_noticia(notice.getId_valoracion());
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasEstatico().as(VerticalLayout.class).removeAll();
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene = new Noticias_a_Revisar(this._noticias_a_Revisar._unnamed_Revisar_noticias_._unnamed_Editor_, this._noticias_a_Revisar._unnamed_Revisar_noticias_.editor, this._noticias_a_Revisar._unnamed_Revisar_noticias_);
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasEstatico().as(VerticalLayout.class).add(this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene);
+	}
+	
+	public void no_agregar_noticia() {
+		iEdito.no_agregar_noticia(notice.getId_valoracion());
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasEstatico().as(VerticalLayout.class).removeAll();
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene = new Noticias_a_Revisar(this._noticias_a_Revisar._unnamed_Revisar_noticias_._unnamed_Editor_, this._noticias_a_Revisar._unnamed_Revisar_noticias_.editor, this._noticias_a_Revisar._unnamed_Revisar_noticias_);
+		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasEstatico().as(VerticalLayout.class).add(this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene);
+	}
+	
 }
