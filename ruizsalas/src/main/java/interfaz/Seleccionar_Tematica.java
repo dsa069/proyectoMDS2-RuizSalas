@@ -20,7 +20,7 @@ public class Seleccionar_Tematica extends VistaSeleccionartematica {
 		
 		tem = iUR.cargar_tematicas_seleccion();
 		for (int i=0; i<tem.length; i++) {
-			Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this, tem[i], this.notice);
+			Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this, tem[i], this.notice, false);
 			this.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 		}
 	}

@@ -10,7 +10,8 @@ import basededatos.iPeriodista;
 public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
 	public Zona_insertar_contenido_noticia CENoticia;
-
+	public ocl_proyecto.Tematica [] tem;
+	
 	iPeriodista iPeriodita = new BD_Principal();
 
 	ocl_proyecto.Noticia notice;
@@ -38,6 +39,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		Date fecha = null; 
 		String ubi= null;
 		int idNoticia = 0;
+		
 		boolean error = false;
 
 		if(this.notice == null||this.notice.getId_noticia() == 0) {
