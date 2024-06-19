@@ -55,9 +55,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		throw new UnsupportedOperationException();
 	}
 
-	public Seccion[] cargar_secciones_seleccion() {
+	public Seccion[] cargar_secciones_seleccion(int aId_noticia) {
 		try {
-			return _bd_secciones.cargar_secciones_seleccion();
+			return _bd_secciones.cargar_secciones_seleccion(aId_noticia);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -436,6 +436,17 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	public Seccion cargar_seccion_palanteypatras_portada(int aId_seccion, boolean Palanteopatras) { 
 		try {
 			return _bd_secciones.cargar_seccion_palanteypatras_portada( aId_seccion,  Palanteopatras); 
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Seccion[] cargar_secciones_vista_editor() {
+		try {
+			return _bd_secciones.cargar_secciones_vista_editor(); 
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -23,18 +23,31 @@ public class BD_Secciones {
 	public BD_Tematicas _bd_tematicas = new BD_Tematicas();
 	public ArrayList<Seccion> _contiene_secciones = new ArrayList<Seccion>();
 
-	public Seccion[] cargar_secciones_seleccion() 
+	public Seccion[] cargar_secciones_seleccion(int aId_noticia) 
 		throws PersistentException {
-			Seccion[] seccion = null;
+			Seccion seccion = null;
+			Noticia noticia = null;
+			Tematica[] tematicas = null;
+			ArrayList<Seccion> secciones = new ArrayList<Seccion>();
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			seccion = SeccionDAO.listSeccionByQuery(null, null);
+			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			tematicas = TematicaDAO.listTematicaByQuery(null, null);
+			seccion = SeccionDAO.loadSeccionByQuery("Portada  ='"+1+"'", null);
+			secciones.add(seccion);
+			for(Tematica tematica : tematicas) {
+				if(noticia.contiene.contains(tematica)) {
+					seccion = SeccionDAO.loadSeccionByQuery("Nombre ='"+tematica.getNombre()+"'", null);
+					secciones.add(seccion);
+				}	
+			}
+			
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return seccion;
+		return secciones.toArray(new Seccion[0]);
 	}
 	
 	public Seccion cargar_seccion_primero() 

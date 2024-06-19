@@ -6,7 +6,7 @@ import ocl_proyecto.Noticia;
 
 public interface iEditor extends iRegistrado {
 
-	public Seccion[] cargar_secciones_seleccion();
+	public Seccion[] cargar_secciones_seleccion(int aId_noticia);
 
 	public Periodista[] cargar_periodistas();
 
@@ -37,4 +37,6 @@ public interface iEditor extends iRegistrado {
 	public Seccion cargar_seccion_palanteypatras_portada(int aId_seccion, boolean Palanteopatras);
 	
 	public Seccion cargar_portada();
+	
+	public Seccion[] cargar_secciones_vista_editor(); 
 }

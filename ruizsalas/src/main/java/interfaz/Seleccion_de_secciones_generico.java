@@ -44,6 +44,6 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public Seccion[] cargar_secciones() {
-		return iUsuario.cargar_secciones_seleccion();
+		return iUsuario.cargar_secciones_vista_editor();
 	}
 }

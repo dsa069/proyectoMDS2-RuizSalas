@@ -22,7 +22,7 @@ public class Lista_Secciones_noticia extends VistaListaseccionesnoticia {
 		this.editor = editor;		
 		this.noticia = noticia;
 		this.CNE = CNE;
-		sesion = iedit.cargar_secciones_seleccion();
+		sesion = iedit.cargar_secciones_seleccion(this.noticia.getId_valoracion());
 		for (int i=0; i<sesion.length; i++) {
 			Lista_Secciones_noticia_item _item = new Lista_Secciones_noticia_item(this, sesion[i], this.noticia, this.CNE);
 			this.getSeccionesSelecionablesItem().as(VerticalLayout.class).add(_item);
