@@ -1,9 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-bannergenerico')
 export class VistaBannergenerico extends LitElement {
@@ -35,9 +35,11 @@ export class VistaBannergenerico extends LitElement {
    <vaadin-button theme="icon" aria-label="Add new" id="botonMisNoticiasGenerico" style="align-self: center; flex-grow: 0; flex-shrink: 0; height: 100%; background-color: var(--lumo-contrast-0pct);">
     <img src="https://cdn-icons-png.flaticon.com/512/9964/9964353.png" width="64" height="64">
    </vaadin-button>
-   <vaadin-button aria-label="Add new" id="botonIniciarSesionGenerico" style="flex-grow: 0; flex-shrink: 0; background-color: var(--lumo-contrast-0pct); height: 100%; align-self: center; overflow: hidden;">
-    <vaadin-vertical-layout id="LayoutFotoPerfilBanner"></vaadin-vertical-layout>
-   </vaadin-button>
+   <vaadin-horizontal-layout theme="spacing-s">
+    <vaadin-button aria-label="Add new" id="botonIniciarSesionGenerico" style="flex-grow: 0; flex-shrink: 0; background-color: var(--lumo-contrast-0pct); overflow: hidden; border-radius: 50%; width: 25%; height: 25%; align-self: center;">
+     <vaadin-vertical-layout id="LayoutFotoPerfilBanner" style="overflow: hidden;"></vaadin-vertical-layout>
+    </vaadin-button>
+   </vaadin-horizontal-layout>
    <vaadin-button style="color: black; flex-shrink: 1; flex-grow: 0; align-self: center;" id="botonSuscribirseGenerico">
      SUSCRIBIRSE 
    </vaadin-button>
