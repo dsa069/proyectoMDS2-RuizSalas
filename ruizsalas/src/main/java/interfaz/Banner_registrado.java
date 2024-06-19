@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
@@ -80,6 +81,12 @@ public class Banner_registrado extends Banner_generico {
 				PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, (Usuario_suscrito_) this.user);
 				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 			}else {
+				this.getCrearEditarNoticiaLayout().setVisible(false);
+				this.getAltaPeriodistaLayout().setVisible(false);
+				this.getHistorialNoticiasLayout().setVisible(false);
+				this.getListarPeriodistaLayout().setVisible(false);
+				this.getRevisarNoticiasLayout().setVisible(false);
+				this.getLayoutGenericoVistaGenerica().setVisible(true);
 				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 				Perfil = new Perfil_Usuario(this._registrado, this.user);
 				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
