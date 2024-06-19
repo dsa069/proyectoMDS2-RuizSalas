@@ -26,7 +26,7 @@ public class Listar_noticias extends Listar_noticias_generico {
 		notice = this.cargar_noticias_secciones(seccion);
 		for (int i=0; i<notice.length; i++) {
 			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false);
-			this.getColumnasNoticias().add(_item);	
+			this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
 	}
 	
@@ -35,7 +35,7 @@ public class Listar_noticias extends Listar_noticias_generico {
 		notice = noticia;
 		for (int i=0; i<notice.length; i++) {
 			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true);
-			this.getColumnasNoticias().add(_item);	
+			this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
 	}
 	

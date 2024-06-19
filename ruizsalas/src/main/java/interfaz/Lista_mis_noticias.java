@@ -26,7 +26,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.periodista = usuario;
 		this._unnamed_Historial_noticias_ =_unnamed_Historial_noticias_;
 		this.getPortada().setVisible(false);
-		this.getColumnasNoticias().setVisible(false);
+		this.getColumnas().setVisible(false);
 
 	}
 

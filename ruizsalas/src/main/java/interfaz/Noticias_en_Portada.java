@@ -28,7 +28,7 @@ public class Noticias_en_Portada extends Listar_noticias {
 		}
 		for (int i=1; i<notice.length; i++) {
 			Noticias_en_Portada_item ambatukam = new Noticias_en_Portada_item(this, this.notice[i]);
-			this.getColumnasNoticias().add(ambatukam);
+			this.getColumnas().as(VerticalLayout.class).add(ambatukam);
 		}
 	}
 	@Override

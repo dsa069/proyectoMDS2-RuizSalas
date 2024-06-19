@@ -22,7 +22,7 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 		this.usuarioocl = usuarioocl;
 		this._unnamed_Revisar_noticias_ = _unnamed_Revisar_noticias_;
 		this.getPortada().setVisible(false);
-		this.getColumnasNoticias().setVisible(false);
+		this.getColumnas().as(VerticalLayout.class).setVisible(false);
 		
 		//ITEM
 		notice = iEdito.cargar_noticias_a_revisar();

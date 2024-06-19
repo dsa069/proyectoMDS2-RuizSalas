@@ -13,8 +13,6 @@ public class VistaListarnoticiasgenerico extends LitTemplate {
 
     @Id("Portada")
 	private HorizontalLayout portada;
-	@Id("ColumnasNoticias")
-	private HorizontalLayout columnasNoticias;
 	public HorizontalLayout getPortada() {
 		return portada;
 	}
@@ -23,12 +21,12 @@ public class VistaListarnoticiasgenerico extends LitTemplate {
 		this.portada = portada;
 	}
 
-	public HorizontalLayout getColumnasNoticias() {
-		return columnasNoticias;
+	public Element getColumnas() {
+		return columnas;
 	}
 
-	public void setColumnasNoticias(HorizontalLayout columnasNoticias) {
-		this.columnasNoticias = columnasNoticias;
+	public void setColumnas(Element columnas) {
+		this.columnas = columnas;
 	}
 
 	public Element getListaSimpleNoticias() {
@@ -41,6 +39,8 @@ public class VistaListarnoticiasgenerico extends LitTemplate {
 
 	@Id("ListaSimpleNoticias")
 	private Element listaSimpleNoticias;
+	@Id("Columnas")
+	private Element columnas;
 
 	public VistaListarnoticiasgenerico() {
         // You can initialise any data required for the connected UI components here.
