@@ -43,5 +43,8 @@ public class Crear_Editar_Secciones_Tematicas extends VistaCreareditarseccionest
 
 	public void anadir_seccion() {
 		iEdito.anadir_seccion(this.getLabelCrearEditarSeccionesTematicas().getValue());
+		this.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+		SESG = new Seleccion_de_secciones_generico(this._unnamed_Editor_, this.SESG.SESVE);
+		this.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SESG);
 	}
 }
