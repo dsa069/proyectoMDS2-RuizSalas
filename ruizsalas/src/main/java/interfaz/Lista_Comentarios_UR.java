@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.util.Vector;
 
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 

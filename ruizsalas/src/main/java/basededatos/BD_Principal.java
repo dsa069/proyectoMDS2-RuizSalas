@@ -21,8 +21,6 @@ import java.util.Date;
 
 import org.orm.PersistentException;
 
-import com.vaadin.flow.component.notification.Notification;
-
 
 public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, iRegistrado, iUsuario_No_Registrado, iUsuario {
 	public BD_Editores _bd_editores = new BD_Editores();

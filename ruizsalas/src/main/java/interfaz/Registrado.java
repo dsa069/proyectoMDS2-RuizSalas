@@ -1,7 +1,6 @@
 package interfaz;
 
 import proyectoMDS.MainView;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Registrado extends Usuario {

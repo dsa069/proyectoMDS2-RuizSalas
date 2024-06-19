@@ -1,7 +1,6 @@
 package interfaz;
 
 import java.util.Vector;
-import com.vaadin.flow.component.notification.Notification;
 import ocl_proyecto.Seccion;
 import vistas.*;
 

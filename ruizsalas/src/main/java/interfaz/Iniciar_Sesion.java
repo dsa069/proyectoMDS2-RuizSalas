@@ -45,17 +45,14 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 			if(user == null) {
 				Notification.show("Usuario incorrecrto");
 			} else if (Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario())!=null) {
-				Notification.show("suscrito");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				usreg = new Usuario_Registardo(this._unnamed_Usuario_No_Registrado_.mainView, (Usuario_suscrito_) user);
 				this._unnamed_Usuario_No_Registrado_.mainView.add(usreg);
 			} else if (PeriodistaDAO.getPeriodistaByORMID(user.getIdUsuario())!=null) {
-				Notification.show("periodista");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				uspe = new Periodista(this._unnamed_Usuario_No_Registrado_.mainView, (ocl_proyecto.Periodista) user);
 				this._unnamed_Usuario_No_Registrado_.mainView.add(uspe);
 			} else if (EditorDAO.getEditorByORMID(user.getIdUsuario())!=null) {
-				Notification.show("editor");
 				this._unnamed_Usuario_No_Registrado_.mainView.removeAll();
 				used = new Editor(this._unnamed_Usuario_No_Registrado_.mainView,  (ocl_proyecto.Editor) user);
 				this._unnamed_Usuario_No_Registrado_.mainView.add(used);

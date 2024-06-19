@@ -108,18 +108,8 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 					e.printStackTrace();
 				}
 		}
-		if(!error) {
-			
-			for (Tematica amai : this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0])) 
-				Notification.show("AMAIIIIIIIIIIIII"+ amai.getNombre());
-			
-			Tematica[] aux =  this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]);
-			for (Tematica tematica : aux) {
-				Notification.show("AMAIIIIIIIIIIIII"+ tematica.getNombre());
-			}
-
-			
-			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, aux, periodista.getIdUsuario());
+		if(!error) {			
+			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]), periodista.getIdUsuario());
 			this.ConductorMisNoticias();
 		}
 	}

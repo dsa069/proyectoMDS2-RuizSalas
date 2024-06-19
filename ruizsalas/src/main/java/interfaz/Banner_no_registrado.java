@@ -1,6 +1,5 @@
 package interfaz;
 
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class Banner_no_registrado extends Banner_generico {

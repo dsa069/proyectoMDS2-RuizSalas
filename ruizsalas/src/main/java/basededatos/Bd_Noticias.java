@@ -5,7 +5,6 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
-import com.vaadin.flow.component.notification.Notification;
 
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;

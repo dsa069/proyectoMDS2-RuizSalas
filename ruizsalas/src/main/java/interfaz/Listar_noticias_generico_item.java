@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
@@ -44,7 +43,6 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
                 try {
                     return new FileInputStream(file);
                 } catch (FileNotFoundException e) {
-                    Notification.show("Error: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
                     return null;
                 }
             });
@@ -52,9 +50,7 @@ public class Listar_noticias_generico_item extends VistaListarnoticiasgenerico_i
             Image image = new Image(resource, "Image not found");
             image.setMaxWidth("500px");
             this.imagen = image;
-        } else {
-            Notification.show("File not found: " + IMAGE_PATH + this.Notas.getImagen_principal(), 5000, Notification.Position.MIDDLE);
-        }
+        } 
 
         this.imagen.getStyle().set("align-self", "center");
         this.getLayoutImagenNoticiaCojonesPlaceholderRoggenrola().as(VerticalLayout.class).removeAll();
