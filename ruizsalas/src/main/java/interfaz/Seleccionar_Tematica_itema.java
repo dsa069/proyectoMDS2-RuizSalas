@@ -1,5 +1,7 @@
 package interfaz;
 
+import java.util.ArrayList;
+
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.notification.Notification;
@@ -8,13 +10,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BD_Principal;
 import basededatos.iEditor;
 import ocl_proyecto.NoticiaDAO;
+import ocl_proyecto.Tematica;
 import ocl_proyecto.TematicaDAO;
 import vistas.*;
 
 public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 	public Seleccionar_Tematica _seleccionar_Tematica;
 	public boolean temp;
-	public ocl_proyecto.Tematica[] tematicasNoticia;
 	iEditor ieditor = new BD_Principal();
 	ocl_proyecto.Tematica tematica;
 	ocl_proyecto.Noticia noticia;
@@ -54,6 +56,10 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		this.getBotonCheckboxRelleno().addClickListener(event->{
 			if (this.noticia == null || this.noticia.getId_valoracion() == 0 ) {
 				//NO GUARDAR TEMATICA
+				_seleccionar_Tematica.tematicasNoticia.remove(this.tematica);
+				for (Tematica tematica2 : _seleccionar_Tematica.tematicasNoticia) {
+					Notification.show("EN ARRAY " + tematica2.getNombre());
+				}
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).remove(this);
 				Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this._seleccionar_Tematica, this.tematica, null, false);
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
@@ -68,6 +74,11 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 		this.getBotonCheckboxVacio().addClickListener(event->{
 			if (this.noticia == null || this.noticia.getId_valoracion() == 0 ) {
 				//GUARDAR TEMATICA
+				
+				_seleccionar_Tematica.tematicasNoticia.add(this.tematica);
+				for (Tematica tematica2 : _seleccionar_Tematica.tematicasNoticia) {
+					Notification.show("EN ARRAY " + tematica2.getNombre());
+				}
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).remove(this);
 				Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this._seleccionar_Tematica, this.tematica, null, true);
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);

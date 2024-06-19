@@ -19,6 +19,8 @@ import java.util.Date;
 
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.notification.Notification;
+
 
 public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, iRegistrado, iUsuario_No_Registrado, iUsuario {
 	public BD_Editores _bd_editores = new BD_Editores();
@@ -322,6 +324,10 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) {
 		try {
+//			for (Tematica tem : aTematicas) {
+//				Notification.show("Prinvipal "+ tem.getNombre());
+//			}
+			
 			_bd_noticias.guardar_cambios_noticia(aId_noticia, aTexto_corto, aTexto_largo, aTitulo, aImagen_principal, aUbicacion, aFecha, aTematicas, aId_Usuario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block

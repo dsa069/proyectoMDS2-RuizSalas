@@ -5,6 +5,8 @@ import java.util.Vector;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
+import com.vaadin.flow.component.notification.Notification;
+
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
 import ocl_proyecto.Noticia;
@@ -185,6 +187,7 @@ public class Bd_Noticias {
 
 	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) 
 			throws PersistentException {
+		Tematica tematics = null;
 		Noticia noticia = null;
 		Periodista periodista = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
@@ -208,10 +211,27 @@ public class Bd_Noticias {
 			noticia.setFecha(aFecha);
 
 			NoticiaDAO.save(noticia);
+			
 			t.commit();
-			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
+			e.printStackTrace(); 
+		} 
+		
+		PersistentTransaction a = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			for (Tematica tem : aTematicas) {
+				tematics = TematicaDAO.getTematicaByORMID(tem.getIdTematica());
+				tematics.esta_en.add(noticia);
+				noticia.contiene.add(tematics);
+				TematicaDAO.save(tematics);
+				NoticiaDAO.save(noticia);
+			}
+			a.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

@@ -1,17 +1,17 @@
 package interfaz;
 import java.sql.Date;
+import java.util.*;
 
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iPeriodista;
+import ocl_proyecto.Tematica;
 
 public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
-	public Zona_insertar_contenido_noticia CENoticia;
-	public ocl_proyecto.Tematica [] tem;
-	
+	public Zona_insertar_contenido_noticia CENoticia;	
 	iPeriodista iPeriodita = new BD_Principal();
 
 	ocl_proyecto.Noticia notice;
@@ -109,7 +109,17 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 				}
 		}
 		if(!error) {
-			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, null, periodista.getIdUsuario());
+			
+			for (Tematica amai : this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0])) 
+				Notification.show("AMAIIIIIIIIIIIII"+ amai.getNombre());
+			
+			Tematica[] aux =  this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]);
+			for (Tematica tematica : aux) {
+				Notification.show("AMAIIIIIIIIIIIII"+ tematica.getNombre());
+			}
+
+			
+			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, aux, periodista.getIdUsuario());
 			this.ConductorMisNoticias();
 		}
 	}
