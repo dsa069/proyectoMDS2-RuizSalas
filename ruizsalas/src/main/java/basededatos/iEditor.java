@@ -16,7 +16,7 @@ public interface iEditor extends iRegistrado {
 
 	public void anadir_seccion(String aNombre);
 
-	public void borrar_seccion(int aIdSeccion, int aIdTematica);
+	public void borrar_seccion(int aIdSeccion);
 
 	public void agregar_noticia(int aId_noticia);
 

@@ -160,9 +160,9 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void borrar_seccion(int aIdSeccion, int aIdTematica) {
+	public void borrar_seccion(int aIdSeccion) {
 		try {
-			_bd_tematicas.borrar_seccion(aIdTematica);
+			_bd_tematicas.borrar_seccion(TematicaDAO.loadTematicaByQuery("Nombre ='"+SeccionDAO.getSeccionByORMID(aIdSeccion).getNombre()+"'", null).getIdTematica());
 			_bd_secciones.borrar_seccion(aIdSeccion);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
