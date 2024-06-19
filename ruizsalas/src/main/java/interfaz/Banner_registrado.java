@@ -68,9 +68,9 @@ public class Banner_registrado extends Banner_generico {
 
 	@Override
 	public void ConductorPortadaBanner() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		BananaRegistardo = new Banner_registrado(this._registrado, this.user);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaRegistardo);
+		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 
 	public void ConductorPerfil() {

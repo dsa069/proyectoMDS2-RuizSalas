@@ -28,16 +28,16 @@ public class Banner_Editor extends Banner_registrado {
 
 		//CONDUCTOR PERIODISTAS
 		this.getBotonVerPeriodistasGenerico().addClickListener(event-> {
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			ListaPeriodistica = new Lista_periodistas(this._editor, this.editor);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(ListaPeriodistica);
+			this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(ListaPeriodistica);
 		});
 
 		//CONDUCTOR REVISAR NOTICIAS
 		this.getBotonRevisarNoticiaGenerico().addClickListener(event->{
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			Revision = new Revisar_noticias(this._editor, this.editor);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(Revision);
+			this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(Revision);
 		});	
 	}
 
@@ -48,9 +48,9 @@ public class Banner_Editor extends Banner_registrado {
 
 	@Override
 	public void ConductorPortadaBanner() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		BananaEditor = new Banner_Editor(this._editor, this.editor);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaEditor);
+		this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaEditor);
 	}
 
 }

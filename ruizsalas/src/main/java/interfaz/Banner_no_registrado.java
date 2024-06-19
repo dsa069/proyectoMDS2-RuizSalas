@@ -39,15 +39,15 @@ public class Banner_no_registrado extends Banner_generico {
 
 	@Override
 	public void ConductorPortadaBanner() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado, this.usuario);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(noRegistro);	
+		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(noRegistro);	
 	}
 
 	public void ConductorRegistro() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		registro = new Registro(this._usuarioNoRegistrado, this.usuario);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(registro);
+		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(registro);
 	}
 
 }

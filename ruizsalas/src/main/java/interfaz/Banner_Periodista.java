@@ -24,14 +24,14 @@ public class Banner_Periodista extends Banner_registrado {
 
 	@Override
 	public void ConductorPortadaBanner() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		BananaPeriodista = new Banner_Periodista(this._periodista, this.periodista);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(BananaPeriodista);
+		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaPeriodista);
 	}
 
 	public void ConductorMisNoticias() {
-		this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		historialNoticias = new Historial_noticias(this._periodista, this.periodista);
-		this.getBannergenericolayout().as(VerticalLayout.class).add(historialNoticias);
+		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
 	}
 }
