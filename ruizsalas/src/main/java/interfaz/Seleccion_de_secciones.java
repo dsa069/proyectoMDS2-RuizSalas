@@ -22,7 +22,7 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 		this.CEseccionesEstatico();
 		
 		//Barra de busqueda
-		buscar = new Barra_de_busqueda(this.usuario, this);
+		buscar = new Barra_de_busqueda(this.usuario, this, this.usuarioocl);
 		this.getBarraDeBusqueda().add(this.buscar);
 		
 		//Inicio portada

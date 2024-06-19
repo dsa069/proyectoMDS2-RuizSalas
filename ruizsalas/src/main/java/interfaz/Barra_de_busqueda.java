@@ -14,11 +14,13 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 	public Busqueda search;
 	public Noticia[] notice;
 	public Seleccion_de_secciones Selec;
+	ocl_proyecto.Usuario user;
 	iUsuario iUsu = new BD_Principal();
 
-	public Barra_de_busqueda(Usuario usuario, Seleccion_de_secciones Selec) {
+	public Barra_de_busqueda(Usuario usuario, Seleccion_de_secciones Selec, ocl_proyecto.Usuario user) {
 		super();
 		this.usuario = usuario;
+		this.user = user;
 		this.Selec=Selec;
 
 		this.getBotonRealizadorBusqueda().addClickListener(event->{
@@ -31,7 +33,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 				this.Selec.getLayoutGenericoSeccionesBanner().add(this.busquedaFallida);
 			} else {
 				this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
-				search = new Busqueda (this.usuario, notice);
+				search = new Busqueda (this.usuario, notice, this.user);
 				this.Selec.getLayoutGenericoSeccionesBanner().add(search);
 			}
 		});
