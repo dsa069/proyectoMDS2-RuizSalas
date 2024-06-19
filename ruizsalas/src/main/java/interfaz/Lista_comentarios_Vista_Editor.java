@@ -19,6 +19,7 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	public Lista_comentarios_Vista_Editor(Editor _editor, ocl_proyecto.Editor editor, ocl_proyecto.Noticia noticia,Contenido_noticia_editor CNC) {
 		super(_editor, editor, noticia, CNC);
 		this._editor = _editor;
+		this.editor=editor;
 		this.noti = noticia;
 		this.CNC = CNC;
 	}

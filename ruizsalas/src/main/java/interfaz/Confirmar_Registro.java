@@ -41,6 +41,8 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("Ruta de foto Vacía");
 		}else if ( this._contiene.getCampoDNI().getValue().isEmpty()) {
 			Notification.show("DNI Vacío");
+		}else if ( this._contiene.getCampoFoto().getValue().isEmpty()) {
+			Notification.show("Foto Vacío");
 		}else if ( this._contiene.getTarjetaDeCrédito().getValue().isEmpty()) {
 			Notification.show("Tarjeta de credito Vacía");
 		}else {

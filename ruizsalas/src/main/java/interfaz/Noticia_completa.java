@@ -23,7 +23,7 @@ public class Noticia_completa extends Banner_suscrito {
 	}
 	
 	public void Ver_Noticia() {
-		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_,this.sus, this.noticia);
+		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_,this.sus, this.noticia, this);
 		this.getNoticiaLayout().add(this.Noticia);
 	}
 

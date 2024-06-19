@@ -9,16 +9,19 @@ import basededatos.iUsuario_Registardo;
 public class Contenido_noticia_completo extends Noticia {
 	public Registrado _registrado;
 	public iRegistrado iregistrado = new BD_Principal();
+	public Noticia_completa CC;
+	public Contenido_noticia_completo CCC;
 
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Noticia noticia;
 
 
-	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia) {
+	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia, Noticia_completa CC) {
 		super(registrado, noticia);
 		this._registrado = registrado;
 		this.noticia = noticia;
 		this.usuario = usuario;
+		this.CC = CC;
 		this.getNoticiaCortada().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
@@ -39,5 +42,8 @@ public class Contenido_noticia_completo extends Noticia {
 
 	public void valorar_noticia(boolean valoracion) {
 		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_valoracion(), valoracion);
+		this.CC.getNoticiaLayout().removeAll();
+		CCC = new Contenido_noticia_completo(this._registrado,this.usuario, this.noticia, this.CC);
+		this.CC.getNoticiaLayout().add(this.CCC);
 	}
 }
