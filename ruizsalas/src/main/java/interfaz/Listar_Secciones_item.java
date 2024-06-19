@@ -14,13 +14,12 @@ public class Listar_Secciones_item extends VistaListarsecciones_item {
 		this.seccion = seccion;
 		this.getBorrarSeccion().setVisible(false);
 		
-		this.getLayoutTextoSeccionX().setText("" + seccion.getNombre());
+		this.Listar_Noticia();
 		
-		this._contiene = new Listar_noticias(this._listar_Secciones.usuario, _listar_Secciones.usuario.usuario, this);
-		this.getListaDeNoticiasEstatico().add(this._contiene);
-		this._contiene.Noticia_item(seccion.getIdSeccion());
+		this.getLayoutTextoSeccionX().setText("" + seccion.getNombre());
 	}
 
+	
 	public void Listar_Noticia() {
 		this._contiene = new Listar_noticias(this._listar_Secciones.usuario, _listar_Secciones.usuario.usuario, this);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
