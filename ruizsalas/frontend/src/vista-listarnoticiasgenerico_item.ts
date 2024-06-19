@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 @customElement('vista-listarnoticiasgenerico_item')
 export class VistaListarnoticiasgenerico_item extends LitElement {
@@ -29,15 +29,17 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
       Titular 
     </vaadin-button>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; font-size: 25px; align-self: center;">
-    <vaadin-horizontal-layout style="flex-grow: 0; width: 100%; align-items: flex-start;">
-     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 40px; height: 100%; color: black; flex-grow: 1; flex-shrink: 0; align-self: flex-start;" id="Titular2">
+   <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; font-size: 25px; align-self: center; align-items: flex-start;">
+    <vaadin-horizontal-layout style="flex-grow: 0; align-items: flex-start; width: 100%; justify-content: flex-start;">
+     <vaadin-button style="background-color: var(--lumo-contrast-0pct); font-size: 40px; height: 100%; color: black; flex-grow: 0; flex-shrink: 0; align-self: flex-start; width: 33%;" id="Titular2">
        Titular2 
      </vaadin-button>
-     <vaadin-horizontal-layout style="align-items: flex-start; flex-shrink: 0; justify-content: flex-end; align-self: center; font-size: 50px; flex-grow: 1;" id="VerValoracion"></vaadin-horizontal-layout>
-     <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 1; background-color: var(--lumo-contrast-0pct); flex-shrink: 0;" id="QuitarNoticiaDeSeccion">
-      <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
-     </vaadin-button>
+     <vaadin-horizontal-layout style="align-items: flex-start; flex-shrink: 0; align-self: center; font-size: 50px; flex-grow: 0; width: 33%;" id="VerValoracion"></vaadin-horizontal-layout>
+     <vaadin-horizontal-layout style="flex-shrink: 0;">
+      <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 0; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; width: 100%;" id="QuitarNoticiaDeSeccion">
+       <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
+      </vaadin-button>
+     </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
     <vaadin-vertical-layout theme="spacing">
      <label id="resumenNoticia">El efecto Coriolis, descrito en 1836 por el científico francés Gaspard-Gustave Coriolis, es el efecto que se observa en un sistema de referencia en rotación cuando un cuerpo se encuentra en movimiento respecto de dicho sistema de referencia. Este efecto consiste en la existencia de una aceleración relativa del cuerpo en dicho sistema en rotación. Esta aceleración es siempre perpendicular al eje de rotación del sistema y a las componentes radial y tangencial de la velocidad del cuerpo. El efecto Coriolis hace que un objeto que se mueve sobre el radio de un disco en rotación tienda a acelerarse con respecto a ese disco según si el movimiento es hacia el eje de giro o alejándose de este. . Debido a que el objeto sufre una aceleración desde el punto de vista del observador en rotación, es como si para este existiera una fuerza sobre el objeto que lo acelera. A esta fuerza se le llama fuerza de Coriolis, y no es una fuerza real en el sentido de que no hay nada que la produzca. Se trata pues de una fuerza inercial o ficticia, que se introduce para explicar, desde el punto de vista del sistema en rotación.</label>
