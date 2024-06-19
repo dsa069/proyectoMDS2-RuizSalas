@@ -29,9 +29,9 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 
 		//DINAMICO IR A EDITAR NOTICIA
 		this.getEditarNoticia().addClickListener(event->{
-			this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._lista_mis_noticias.periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			crearEditarNoticia = new Crear_Editar_Noticia(this._lista_mis_noticias.periodista, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista,this.Notas);
-			this._lista_mis_noticias.periodista.BP.getBannergenericolayout().as(VerticalLayout.class).add(crearEditarNoticia);
+			this._lista_mis_noticias.periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(crearEditarNoticia);
 		});
 	}
 

@@ -27,15 +27,15 @@ public class Dar_de_alta_periodista extends Banner_Editor {
 		this.getDatosPeriodistaAnadirEstatico().as(VerticalLayout.class).add(this._contiene);
 
 		this.getBotonCancelarAnadirPeriodista().addClickListener(event-> {
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._unnamed_Editor_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			LP = new Lista_periodistas(this._unnamed_Editor_, this.editor);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(LP);
+			this._unnamed_Editor_.getBannerGenericoEstatico().as(VerticalLayout.class).add(LP);
 		});
 		this.getBotonConfirmarAnadirPeriodista().addClickListener(event-> {
 			this.registrar_periodista();
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._unnamed_Editor_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			LP = new Lista_periodistas(this._unnamed_Editor_, this.editor);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(LP);
+			this._unnamed_Editor_.getBannerGenericoEstatico().as(VerticalLayout.class).add(LP);
 		});
 	}
 

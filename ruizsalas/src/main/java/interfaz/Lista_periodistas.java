@@ -22,9 +22,9 @@ public class Lista_periodistas extends Banner_Editor {
 		
 		//DINAMICO REGISTAR PERIODISTA
 		this.getBotonAnadirPeriodista().addClickListener(event->{
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._accede.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			Ananin = new Dar_de_alta_periodista(this._accede, this.editor);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(Ananin);
+			this._accede.getBannerGenericoEstatico().as(VerticalLayout.class).add(Ananin);
 		});
 	}
 }

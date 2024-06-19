@@ -20,9 +20,9 @@ public class Historial_noticias extends Banner_Periodista {
 
 		//CREAR NOTICIA DINAMICO
 		this.getBotonCrearNoticia().addClickListener(event->{
-			this.getBannergenericolayout().as(VerticalLayout.class).removeAll();
+			this._unnamed_Periodista_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista, null);
-			this.getBannergenericolayout().as(VerticalLayout.class).add(CENoticia);
+			this._unnamed_Periodista_.getBannerGenericoEstatico().as(VerticalLayout.class).add(CENoticia);
 		});
 	}
 
