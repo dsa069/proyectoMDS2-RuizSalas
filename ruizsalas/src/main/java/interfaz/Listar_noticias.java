@@ -1,6 +1,7 @@
 package interfaz;
 
 import java.util.Vector;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.Seccion;
@@ -10,6 +11,7 @@ public class Listar_noticias extends Listar_noticias_generico {
 	public Listar_Secciones_item _unnamed_Listar_Secciones_item_;
 	ocl_proyecto.Usuario usuarioocl;
     public Usuario _usuario;
+    public Busqueda busquets;
 	
 	public Listar_noticias(Usuario _usuario,  ocl_proyecto.Usuario usuarioocl, Listar_Secciones_item _unnamed_Listar_Secciones_item_) {
 		super(_usuario);
@@ -23,15 +25,16 @@ public class Listar_noticias extends Listar_noticias_generico {
 	public void Noticia_item(int seccion) {
 		notice = this.cargar_noticias_secciones(seccion);
 		for (int i=0; i<notice.length; i++) {
-			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i]);
+			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false);
 			this.getColumnasNoticias().add(_item);	
 		}
 	}
 	
-	public void Noticia_item(Noticia [] noticia) {
+	public void Noticia_item(Noticia [] noticia, Busqueda busi) {
+		busquets = busi;
 		notice = noticia;
 		for (int i=0; i<notice.length; i++) {
-			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i]);
+			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true);
 			this.getColumnasNoticias().add(_item);	
 		}
 	}

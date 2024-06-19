@@ -12,7 +12,7 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 	ocl_proyecto.Noticia notitas;
 	
 	public Noticias_en_Portada_item(Noticias_en_Portada padre, 	ocl_proyecto.Noticia Notas) {
-		super(padre, Notas);
+		super(padre, Notas, false);
 		this._noticias_en_Portada = padre;
 		this.notitas = Notas;
 		

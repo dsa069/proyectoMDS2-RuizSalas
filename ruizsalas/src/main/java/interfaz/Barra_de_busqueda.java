@@ -30,7 +30,7 @@ public class Barra_de_busqueda extends VistaBarradebusqueda {
 				this.Selec.getLayoutGenericoSeccionesBanner().add(this.busquedaFallida);
 			} else {
 				this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
-				search = new Busqueda (this.usuario, notice, this.user);
+				search = new Busqueda (this.usuario, notice, this, this.user);
 				this.Selec.getLayoutGenericoSeccionesBanner().add(search);
 			}
 		});

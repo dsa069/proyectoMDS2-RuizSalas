@@ -12,7 +12,7 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 	iEditor iEdito = new BD_Principal();
 
 	public Lista_noticas_Editor_item(Lista_noticas_Editor padre, ocl_proyecto.Noticia Notas, int seccionId) {
-		super(padre, Notas);
+		super(padre, Notas, false);
 		this._lista_noticas_Editor = padre;
 		this.seecionId=seccionId;
 		this.getQuitarNoticiaDeSeccion().setVisible(true);
