@@ -37,7 +37,7 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 				}
 			} else {
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, null, this.notitas);
+				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, this._noticias_en_Portada.usuarioocl, this.notitas);
 				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
 			}
 		} catch (Exception e) {

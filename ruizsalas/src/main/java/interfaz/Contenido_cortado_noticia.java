@@ -9,10 +9,11 @@ public class Contenido_cortado_noticia extends Noticia{
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Noticia noti;
 
-	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario, ocl_proyecto.Noticia noticia) {
+	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario, ocl_proyecto.Noticia noticia, ocl_proyecto.Usuario user) {
 		super(_usuario, noticia);
 		this._usuario = _usuario;
 		this.noti = noticia;
+		this.usuario = user;
 		this.getNoticiaCompleta().setVisible(false);
 		this.getSeleccionarSecciones().setVisible(false);
 		this.getSeleccionarTematicas().setVisible(false);
