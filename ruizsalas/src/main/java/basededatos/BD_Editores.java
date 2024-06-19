@@ -24,7 +24,7 @@ public class BD_Editores {
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
 			editor = EditorDAO.loadEditorByQuery(
-					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'", null);
+					"correo = '"+aCorreo+"' AND contrasena = '"+aContrasena+"'AND Baja ='"+1+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			return editor;

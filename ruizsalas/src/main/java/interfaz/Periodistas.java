@@ -10,11 +10,13 @@ import ocl_proyecto.Periodista;
 public class Periodistas extends VistaPeriodistas {
 	public Editor editor;
 	public Periodista[] per;
+	public Lista_periodistas LP;
 	iEditor iEdito = new BD_Principal();
 	
-	public Periodistas(Editor editor) {
+	public Periodistas(Editor editor, Lista_periodistas LP) {
 		super();
 		this.editor = editor;
+		this.LP=LP;
 		
 		per = iEdito.cargar_periodistas();
 		for (int i=0; i<per.length; i++) {

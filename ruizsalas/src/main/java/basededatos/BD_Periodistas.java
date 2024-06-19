@@ -26,7 +26,7 @@ public class BD_Periodistas {
 			Periodista[] periodistas = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			periodistas = PeriodistaDAO.listPeriodistaByQuery(null, null);
+			periodistas = PeriodistaDAO.listPeriodistaByQuery("Baja ='"+1+"'", null);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 			return periodistas;

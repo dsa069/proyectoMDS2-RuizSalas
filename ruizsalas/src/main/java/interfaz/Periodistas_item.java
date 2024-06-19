@@ -43,6 +43,13 @@ public class Periodistas_item extends VistaPeriodistas_item {
         this.getLayoutFotoPeriodistas().as(VerticalLayout.class).add(this.imagen);
 		
 		this.getApodoPeriodistas().setText("" + periodista.getApodo());	
-		this.getBotonEliminarPeriodista().addClickListener(event->ieditor.baja_periodista(periodista.getIdUsuario()));
+		this.getBotonEliminarPeriodista().addClickListener(event->baja_periodista());
 	}	
+	
+	public void baja_periodista() {
+		ieditor.baja_periodista(periodista.getIdUsuario());
+		this._periodistas.LP.getListaPeriodistaEstatico().as(VerticalLayout.class).removeAll();
+		this._periodistas.LP._unnamed_Periodistas_ = new Periodistas(this._periodistas.LP._accede, this._periodistas.LP);
+		this._periodistas.LP.getListaPeriodistaEstatico().as(VerticalLayout.class).add(this._periodistas.LP._unnamed_Periodistas_);
+	}
 }

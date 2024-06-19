@@ -17,7 +17,7 @@ public class Lista_periodistas extends Banner_Editor {
 		this.getListarPeriodistaLayout().setVisible(true);
 
 		//ESTATICO DE LA LISTA DE NOTICIAS
-		this._unnamed_Periodistas_ = new Periodistas(this._accede);
+		this._unnamed_Periodistas_ = new Periodistas(this._accede, this);
 		this.getListaPeriodistaEstatico().as(VerticalLayout.class).add(this._unnamed_Periodistas_);
 		
 		//DINAMICO REGISTAR PERIODISTA
