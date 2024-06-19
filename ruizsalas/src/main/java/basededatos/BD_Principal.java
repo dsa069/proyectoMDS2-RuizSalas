@@ -7,10 +7,12 @@ import interfaz.Registrado;
 import interfaz.Usuario_Registardo;
 import interfaz.Usuario_No_Registrado;
 import ocl_proyecto.Seccion;
+import ocl_proyecto.SeccionDAO;
 // import ocl_proyecto.Periodista;
 import ocl_proyecto.Noticia;
 import ocl_proyecto.NoticiaDAO;
 import ocl_proyecto.Tematica;
+import ocl_proyecto.TematicaDAO;
 import ocl_proyecto.Usuario;
 import ocl_proyecto.Comentario;
 import ocl_proyecto.ComentarioDAO;
@@ -137,6 +139,18 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 			e.printStackTrace();
 		}
 	}
+	
+	public void marcar_tematica(int aIdTematica, int aId_noticia) {
+		try {
+			_bd_tematicas.marcar_tematica(aIdTematica, aId_noticia);
+			if(!TematicaDAO.getTematicaByORMID(aIdTematica).esta_en.contains(NoticiaDAO.getNoticiaByORMID(aId_noticia)) &&
+				SeccionDAO.loadSeccionByQuery("Nombre ='"+TematicaDAO.getTematicaByORMID(aIdTematica).getNombre()+"'", null).contiene.contains(NoticiaDAO.getNoticiaByORMID(aId_noticia))) 
+					_bd_secciones.quitar_noticia_de_seccion(aId_noticia, SeccionDAO.loadSeccionByQuery("Nombre ='"+TematicaDAO.getTematicaByORMID(aIdTematica).getNombre()+"'", null).getIdSeccion() );
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public void anadir_seccion(String aNombre) {
 		try {
@@ -211,15 +225,6 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	public void marcar_tematica(int aIdTematica, int aId_noticia) {
-		try {
-			_bd_tematicas.marcar_tematica(aIdTematica, aId_noticia);
-		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 	public Tematica[] cargar_tematicas_seleccion() {
@@ -323,11 +328,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	}
 
 	public void guardar_cambios_noticia(int aId_noticia, String aTexto_corto, String aTexto_largo, String aTitulo, String aImagen_principal, String aUbicacion, Date aFecha, Tematica[] aTematicas, int aId_Usuario) {
-		try {
-//			for (Tematica tem : aTematicas) {
-//				Notification.show("Prinvipal "+ tem.getNombre());
-//			}
-			
+		try {			
 			_bd_noticias.guardar_cambios_noticia(aId_noticia, aTexto_corto, aTexto_largo, aTitulo, aImagen_principal, aUbicacion, aFecha, aTematicas, aId_Usuario);
 		} catch (PersistentException e) {
 			// TODO Auto-generated catch block
