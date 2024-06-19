@@ -22,8 +22,10 @@ public class Noticias_en_Portada extends Listar_noticias {
 	@Override
 	public void Noticia_item() {
 		notice = this.cargar_noticias();
-		Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this, this.notice[0]);
-		this.getPortada().add(_item);
+		if(notice.length != 0) {
+			Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this, this.notice[0]);
+			this.getPortada().add(_item);
+		}
 		for (int i=1; i<notice.length; i++) {
 			Noticias_en_Portada_item ambatukam = new Noticias_en_Portada_item(this, this.notice[i]);
 			this.getColumnasNoticias().add(ambatukam);

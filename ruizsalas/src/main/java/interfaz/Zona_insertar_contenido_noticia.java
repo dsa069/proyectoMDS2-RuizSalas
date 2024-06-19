@@ -14,7 +14,7 @@ public class Zona_insertar_contenido_noticia extends VistaZonainsertarcontenidon
 		this.periodista = periodista;
 		this.noticia = noticia;
 		//Seleccionar temática
-		this.ST = new Seleccionar_Tematica(this.periodista, this.noticia);
+		this.ST = new Seleccionar_Tematica(this.periodista, this.noticia, null);
 		this.getSeleccionarTematicasEstatico().as(VerticalLayout.class).add(this.ST);
 	}
 }

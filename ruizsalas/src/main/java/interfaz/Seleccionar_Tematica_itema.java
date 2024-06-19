@@ -17,6 +17,7 @@ import vistas.*;
 public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 	public Seleccionar_Tematica _seleccionar_Tematica;
 	public boolean temp;
+	public Lista_Secciones_noticia Secciones;
 	iEditor ieditor = new BD_Principal();
 	ocl_proyecto.Tematica tematica;
 	ocl_proyecto.Noticia noticia;
@@ -65,9 +66,6 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 			} else {
 				marcar_tematica();
-				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).remove(this);
-				Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this._seleccionar_Tematica, this.tematica, this.noticia, false);
-				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 			}
 				
 		});
@@ -84,9 +82,6 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 			} else {
 				marcar_tematica();
-				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).remove(this);
-				Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this._seleccionar_Tematica, this.tematica, this.noticia, false);
-				this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
 			}
 		});
 		
@@ -94,5 +89,14 @@ public class Seleccionar_Tematica_itema extends VistaSeleccionartematica_item {
 	
 	public void marcar_tematica() {
 		ieditor.marcar_tematica(this.tematica.getIdTematica(), this.noticia.getId_valoracion());
+		
+		this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).remove(this);
+		Seleccionar_Tematica_itema STI = new Seleccionar_Tematica_itema(this._seleccionar_Tematica, this.tematica, this.noticia, false);
+		this._seleccionar_Tematica.getTematicaSelecionableItem().as(VerticalLayout.class).add(STI);
+		
+		this._seleccionar_Tematica.Content.getSeleccionarSecciones().as(VerticalLayout.class).removeAll();
+		this.Secciones = new Lista_Secciones_noticia(this._seleccionar_Tematica.Content.editor, this.noticia, this._seleccionar_Tematica.Content);
+		this._seleccionar_Tematica.Content.getSeleccionarSecciones().as(VerticalLayout.class).add(Secciones);
+
 	}
 }
