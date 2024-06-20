@@ -19,7 +19,7 @@ export class VistaListacomentarios_item extends LitElement {
     return html`
 <vaadin-vertical-layout theme="spacing-xl" style="width: 100%; height: 100%; align-items: stretch;">
  <vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 20%;  align-items: center; justify-content: space-between;">
-  <vaadin-horizontal-layout style="height: 100%; width: 50%; align-items: center; font-size: 30px;">
+  <vaadin-horizontal-layout style="height: 100%; width: 50%; align-items: center; font-size: 30px; flex-shrink: 0; flex-grow: 1;">
    <vaadin-vertical-layout style="height: 100%; width: 22%; flex-shrink: 1;">
     <vaadin-button theme="icon" aria-label="Add new" style="width: 100%; height: 100%; flex-shrink: 0; overflow: hidden; background-color: var(--lumo-contrast-0pct); border-radius: 50%; ">
      <vaadin-vertical-layout id="layoutImagenUsuarioComento">
@@ -31,17 +31,18 @@ export class VistaListacomentarios_item extends LitElement {
     <label> Victor Vallejo </label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout theme="spacing" style="flex-shrink: 1; height: 100%; justify-content: flex-end; width: 50%; align-items: center; font-size: 40px;">
+  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1;"></vaadin-vertical-layout>
+  <vaadin-horizontal-layout style="flex-shrink: 0; height: 100%; width: 50%; align-items: center; font-size: 40px; flex-grow: 1;">
    <vaadin-horizontal-layout style="flex-shrink: 0; height: 100%; justify-content: center; align-items: center;">
-    <vaadin-vertical-layout theme="spacing" id="layoutVerValoracionComentario"></vaadin-vertical-layout>
+    <vaadin-vertical-layout id="layoutVerValoracionComentario" style="flex-shrink: 0; flex-grow: 1;"></vaadin-vertical-layout>
    </vaadin-horizontal-layout>
-   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 10%; overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0;" id="ValorarComentarioPositivamente">
+   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 10%; overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; flex-grow: 0;" id="ValorarComentarioPositivamente">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 100%;">
    </vaadin-button>
    <vaadin-button theme="icon" aria-label="Add new" style="width: 10%; flex-shrink: 0; height: 100%; overflow: hidden; background-color: var(--lumo-contrast-0pct);" id="ValorarComentarioNegativamente">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="height: 100%; width: 100%;">
    </vaadin-button>
-   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 12%; overflow: hidden; background-color: var(--lumo-contrast-0pct); font-weight: bold;" id="BorrarComentario">
+   <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; width: 12%; overflow: hidden; background-color: var(--lumo-contrast-0pct); font-weight: bold; flex-shrink: 0;" id="BorrarComentario">
     <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" style="height: 100%; width: 100%;">
    </vaadin-button>
   </vaadin-horizontal-layout>
