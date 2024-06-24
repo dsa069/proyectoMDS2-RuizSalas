@@ -40,10 +40,10 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
        <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
       </vaadin-button>
       <vaadin-horizontal-layout theme="spacing" id="anadirNoticiaPrincipal">
-       <vaadin-button theme="icon" aria-label="Add new" id="masPP" style="background-color: var(--lumo-contrast-0pct);">
+       <vaadin-button theme="icon" aria-label="Add new" id="masPP" style="background-color: var(--lumo-contrast-0pct); color: black;">
         <iron-icon icon="lumo:arrow-up"></iron-icon>
        </vaadin-button>
-       <vaadin-button theme="icon" aria-label="Add new" id="menosPP" style="background-color: var(--lumo-contrast-0pct);">
+       <vaadin-button theme="icon" aria-label="Add new" id="menosPP" style="background-color: var(--lumo-contrast-0pct); color: black;">
         <iron-icon icon="lumo:arrow-down"></iron-icon>
        </vaadin-button>
       </vaadin-horizontal-layout>
