@@ -25,6 +25,7 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this.getTitular2().setVisible(false);
 		this.getVerValoracion().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
+		this.getAnadirNoticiaPrincipal().setVisible(false);
 		
 		//Zona de autor y version de noticia
 		this.zonaAutorYVersionDeNoticia = new Zona_de_autor_y_version_de_noticia(this._noticias_a_Revisar.editor, this.per, this.notice);

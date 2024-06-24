@@ -2,8 +2,12 @@ package interfaz;
 
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
+import ocl_proyecto.Noticia;
+import ocl_proyecto.SeccionDAO;
 import vistas.*;
 
 public class Lista_noticas_Editor extends Listar_noticias {
@@ -19,10 +23,22 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	}
 	@Override
 	public void Noticia_item(int seccion) {
-		notice = this.cargar_noticias_secciones(seccion);
+		try {
+			if(SeccionDAO.getSeccionByORMID(seccion).getPortada() == true)
+				notice = this.cargar_noticias();
+			else
+				notice = this.cargar_noticias_secciones(seccion);
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
 		for (int i=0; i<notice.length; i++) {
 			Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.notice[i], seccion);
 			this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
+	}
+	
+	@Override
+	public Noticia[] cargar_noticias() {
+		return iUsuario.cargar_noticias_portada();
 	}
 }

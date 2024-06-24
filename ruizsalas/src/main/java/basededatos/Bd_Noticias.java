@@ -104,7 +104,7 @@ public class Bd_Noticias {
 			porta = SeccionDAO.loadSeccionByQuery(
 					"Portada ='"+1+"'", null);
 			noticias = NoticiaDAO.listNoticiaByQuery(
-					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'AND Agregada  ='"+1+"'", null);
+					"SeccionIdSeccion ='"+porta.getIdSeccion()+"'AND Agregada  ='"+1+"'", "Id_noticia");
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
@@ -113,6 +113,26 @@ public class Bd_Noticias {
 		return noticias;
 	}
 
+	public void ordenar_portada(int aId_noticia, boolean orden)
+			throws PersistentException {
+		Noticia noticia = null;
+
+		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
+		try {
+			
+			noticia= NoticiaDAO.getNoticiaByORMID(aId_noticia);
+			if(orden)
+				noticia.setId_noticia(noticia.getId_noticia()+1);
+			else if(noticia.getId_noticia()!= 0)
+				noticia.setId_noticia(noticia.getId_noticia()-1);
+
+			t.commit();
+			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
+		} catch (Exception e) {
+			t.rollback();
+		}
+	}
+	
 	public void eliminar_noticia_propia(int aId_noticia)
 			throws PersistentException {
 		Noticia noticia = null;

@@ -39,4 +39,6 @@ public interface iEditor extends iRegistrado {
 	public Seccion cargar_portada();
 	
 	public Seccion[] cargar_secciones_vista_editor(); 
+	
+	public void ordenar_portada(int aId_noticia, boolean orden);
 }

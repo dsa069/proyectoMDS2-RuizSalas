@@ -453,4 +453,15 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		return null;
 	}
 
+	@Override
+	public void ordenar_portada(int aId_noticia, boolean orden) {
+		try {
+			_bd_noticias.ordenar_portada(aId_noticia, orden); 
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 }

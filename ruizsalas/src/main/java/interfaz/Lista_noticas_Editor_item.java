@@ -16,8 +16,21 @@ public class Lista_noticas_Editor_item extends Listar_noticias_item {
 		this._lista_noticas_Editor = padre;
 		this.seecionId=seccionId;
 		this.getQuitarNoticiaDeSeccion().setVisible(true);
+		this.getAnadirNoticiaPrincipal().setVisible(true);
 
 		this.getQuitarNoticiaDeSeccion().addClickListener(event->quitar_noticia_de_seccion());
+		this.getMasPP().addClickListener(event ->{ iEdito.ordenar_portada(this.Notas.getId_valoracion(), false);
+		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().removeAll();
+		this._lista_noticas_Editor.LSE._contiene = new Lista_noticas_Editor(this._lista_noticas_Editor.LSE._editor, _lista_noticas_Editor.LSE);
+		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().add(this._lista_noticas_Editor.LSE._contiene);
+		this._lista_noticas_Editor.LSE._contiene.Noticia_item(seccionId);	
+		});
+		this.getMenosPP().addClickListener(event ->{ iEdito.ordenar_portada(this.Notas.getId_valoracion(), true);
+		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().removeAll();
+		this._lista_noticas_Editor.LSE._contiene = new Lista_noticas_Editor(this._lista_noticas_Editor.LSE._editor, _lista_noticas_Editor.LSE);
+		this._lista_noticas_Editor.LSE.getListaDeNoticiasEstatico().add(this._lista_noticas_Editor.LSE._contiene);
+		this._lista_noticas_Editor.LSE._contiene.Noticia_item(seccionId);	
+		});
 	}
 
 	public void quitar_noticia_de_seccion() {

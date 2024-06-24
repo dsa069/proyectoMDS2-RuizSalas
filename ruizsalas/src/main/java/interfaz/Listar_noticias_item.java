@@ -24,6 +24,7 @@ public class Listar_noticias_item extends Listar_noticias_generico_item {
 		this.getZonaDeAutorYVersionDeNoticia().setVisible(false);
 		this.getTitular1().setVisible(false);
 		this.getQuitarNoticiaDeSeccion().setVisible(false);
+		this.getAnadirNoticiaPrincipal().setVisible(false);
 		
 		//ver valoracion
 		this.verValoracion = new ver_valoracion(this._listar_noticias._usuario, this.valoracion);
