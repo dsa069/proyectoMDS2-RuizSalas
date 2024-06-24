@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.component.richtexteditor.RichTextEditor;
 
 @Tag("vista-zonainsertarcontenidonoticia")
 @JsModule("./src/vista-zonainsertarcontenidonoticia.ts")
@@ -25,8 +26,7 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
 	@Id("modificarTextoCorto")
 	private TextArea modificarTextoCorto;
 	@Id("modificarTextoLargo")
-	private TextArea modificarTextoLargo;
-
+	private RichTextEditor modificarTextoLargo;
 	public VistaZonainsertarcontenidonoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -79,11 +79,11 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
 		this.modificarTextoCorto = modificarTextoCorto;
 	}
 
-	public TextArea getModificarTextoLargo() {
+	public RichTextEditor getModificarTextoLargo() {
 		return modificarTextoLargo;
 	}
 
-	public void setModificarTextoLargo(TextArea modificarTextoLargo) {
+	public void setModificarTextoLargo(RichTextEditor modificarTextoLargo) {
 		this.modificarTextoLargo = modificarTextoLargo;
 	}
 

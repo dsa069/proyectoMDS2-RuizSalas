@@ -3,8 +3,9 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-rich-text-editor/src/vaadin-rich-text-editor.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
 
 @customElement('vista-zonainsertarcontenidonoticia')
 export class VistaZonainsertarcontenidonoticia extends LitElement {
@@ -38,7 +39,7 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
   <vaadin-text-area placeholder="Insertar contenido de notica corto" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);" id="modificarTextoCorto"></vaadin-text-area>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1;">
-  <vaadin-text-area placeholder="Insertar contenido de noticia completo" style="width: 100%; flex-shrink: 0; height: 69%; margin: var(--lumo-space-m);" id="modificarTextoLargo"></vaadin-text-area>
+  <vaadin-rich-text-editor id="modificarTextoLargo" style="flex-shrink: 0; height: 69%; width: 100%; margin: var(--lumo-space-m);" html-value="<p><br></p>"></vaadin-rich-text-editor>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
