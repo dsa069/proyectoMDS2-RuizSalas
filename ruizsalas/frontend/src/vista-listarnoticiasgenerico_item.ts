@@ -17,7 +17,7 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: center;" id="layoutGenericoListarNoticiasGenerico">
+<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: flex-start;" id="layoutGenericoListarNoticiasGenerico">
  <vaadin-horizontal-layout style="width: 100%; font-size: 32px; align-items: flex-start; flex-shrink: 1;" id="ZonaDeAutorYVersionDeNoticia"></vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 1;">
   <vaadin-horizontal-layout style="flex-shrink: 1; width: 80%; height: 100%;">

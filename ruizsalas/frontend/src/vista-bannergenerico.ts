@@ -18,7 +18,7 @@ export class VistaBannergenerico extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="height: 100%;" id="bannergenericolayout">
+<vaadin-vertical-layout style="height: 100%; width: 100%;" id="bannergenericolayout">
  <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-m);">
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100px; align-self: center;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct);" id="botonpaginainicio">
@@ -54,16 +54,16 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
        Registrarse 
      </vaadin-horizontal-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="datosRegistroEstatico"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; align-items: stretch;" id="datosRegistroEstatico"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 22px;">
        ¿Ya tienes cuenta? 
      </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between; flex-grow: 0; align-items: center;">
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 0; align-items: center; justify-content: space-between;">
       <vaadin-horizontal-layout theme="spacing">
        <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonCancelarRegistro">
          Cancelar 
        </vaadin-button>
-       <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0;"></vaadin-vertical-layout>
+       <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; margin: var(--lumo-space-xl);"></vaadin-vertical-layout>
        <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonIniciarSesion">
          Iniciar Sesión 
        </vaadin-button>
@@ -72,10 +72,10 @@ export class VistaBannergenerico extends LitElement {
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="iniciarSesionLayout">
-     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 32px;">
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 32px; justify-content: center;">
        Iniciar Sesión 
      </vaadin-horizontal-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="datosIniciarSesionEstaticos"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; align-items: stretch;" id="datosIniciarSesionEstaticos"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between;">
       <vaadin-button style="flex-shrink: 0; color: black;" id="BotonCancelarSesion">
         Cancelar 
