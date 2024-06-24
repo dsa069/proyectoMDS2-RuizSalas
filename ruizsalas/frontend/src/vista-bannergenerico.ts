@@ -46,9 +46,9 @@ export class VistaBannergenerico extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 1; height: 100%; width: 100%;">
-  <vaadin-vertical-layout style="height: 100%; align-self: flex-end; flex-shrink: 1; flex-grow: 0;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="flex-shrink: 1; flex-grow: 0;">
+ <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 0; height: 100%; width: 100%;">
+  <vaadin-vertical-layout style="height: 100%; flex-shrink: 1; flex-grow: 0; align-items: flex-start; align-self: flex-end;" id="ZonaAnunciosLayout1"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="flex-shrink: 1; flex-grow: 0; height: 100%; width: 100%;">
    <vaadin-vertical-layout style="width: 100%; flex-shrink: 0;" id="noRegistradoLayout">
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="registroLayout">
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 32px;">
@@ -121,8 +121,8 @@ export class VistaBannergenerico extends LitElement {
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="ListarPeriodistaLayout">
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="listaPeriodistaEstatico"></vaadin-vertical-layout>
      <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%;">
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 75%; width: 5%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="BotonAnadirPeriodista">
-       <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 100%; width: 100%;">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 30%; width: 15%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="BotonAnadirPeriodista">
+       <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 35%; width: 35%;">
       </vaadin-button>
      </vaadin-vertical-layout>
     </vaadin-vertical-layout>
@@ -141,9 +141,9 @@ export class VistaBannergenerico extends LitElement {
      </vaadin-horizontal-layout>
     </vaadin-vertical-layout>
    </vaadin-vertical-layout>
-   <vaadin-vertical-layout theme="spacing" id="LayoutGenericoVistaGenerica" style="flex-shrink: 0; align-self: stretch; flex-grow: 1;"></vaadin-vertical-layout>
+   <vaadin-vertical-layout id="LayoutGenericoVistaGenerica" style="flex-shrink: 0; flex-grow: 1; width: 100%;"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
-  <vaadin-vertical-layout style="flex-shrink: 1; height: 100%; align-self: flex-end; flex-grow: 0; align-items: flex-end;" id="ZonaAnunciosLayout2"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="height: 100%; flex-shrink: 1; flex-grow: 0; align-self: flex-end; align-items: flex-end;" id="ZonaAnunciosLayout2"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
 </vaadin-vertical-layout>
 `;
