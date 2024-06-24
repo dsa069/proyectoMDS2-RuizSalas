@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 
 @customElement('vista-listarnoticiasgenerico_item')
 export class VistaListarnoticiasgenerico_item extends LitElement {
@@ -39,6 +39,14 @@ export class VistaListarnoticiasgenerico_item extends LitElement {
       <vaadin-button theme="icon" aria-label="Add new" style="align-self: center; flex-grow: 0; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; width: 100%;" id="QuitarNoticiaDeSeccion">
        <iron-icon src="https://cdn.icon-icons.com/icons2/1776/PNG/512/cross_114275.png"></iron-icon>
       </vaadin-button>
+      <vaadin-horizontal-layout theme="spacing" id="anadirNoticiaPrincipal">
+       <vaadin-button theme="icon" aria-label="Add new" id="masPP" style="background-color: var(--lumo-contrast-0pct);">
+        <iron-icon icon="lumo:arrow-up"></iron-icon>
+       </vaadin-button>
+       <vaadin-button theme="icon" aria-label="Add new" id="menosPP" style="background-color: var(--lumo-contrast-0pct);">
+        <iron-icon icon="lumo:arrow-down"></iron-icon>
+       </vaadin-button>
+      </vaadin-horizontal-layout>
      </vaadin-horizontal-layout>
     </vaadin-horizontal-layout>
     <vaadin-vertical-layout theme="spacing">

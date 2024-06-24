@@ -41,6 +41,12 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	private Label resumenNoticia;
 	@Id("LayoutImagenNoticiaCojonesPlaceholderRoggenrola")
 	private Element layoutImagenNoticiaCojonesPlaceholderRoggenrola;
+	@Id("anadirNoticiaPrincipal")
+	private HorizontalLayout anadirNoticiaPrincipal;
+	@Id("masPP")
+	private Button masPP;
+	@Id("menosPP")
+	private Button menosPP;
 	public Button getBotonImagenListarNoticias() {
 		return botonImagenListarNoticias;
 	}
@@ -144,6 +150,31 @@ public class VistaListarnoticiasgenerico_item extends LitTemplate {
 	public void setLayoutImagenNoticiaCojonesPlaceholderRoggenrola(
 			Element layoutImagenNoticiaCojonesPlaceholderRoggenrola) {
 		this.layoutImagenNoticiaCojonesPlaceholderRoggenrola = layoutImagenNoticiaCojonesPlaceholderRoggenrola;
+	}
+
+	public HorizontalLayout getAnadirNoticiaPrincipal() {
+		return anadirNoticiaPrincipal;
+	}
+
+	public void setAnadirNoticiaPrincipal(HorizontalLayout anadirNoticiaPrincipal) {
+		this.anadirNoticiaPrincipal = anadirNoticiaPrincipal;
+	}
+	
+
+	public Button getMasPP() {
+		return masPP;
+	}
+
+	public void setMasPP(Button masPP) {
+		this.masPP = masPP;
+	}
+
+	public Button getMenosPP() {
+		return menosPP;
+	}
+
+	public void setMenosPP(Button menosPP) {
+		this.menosPP = menosPP;
 	}
 
 	public VistaListarnoticiasgenerico_item() {
