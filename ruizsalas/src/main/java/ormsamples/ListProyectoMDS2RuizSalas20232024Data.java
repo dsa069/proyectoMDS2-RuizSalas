@@ -1,5 +1,5 @@
 /**
- * Licensee: Daniel Salas(University of Almeria)
+f * Licensee: Daniel Salas(University of Almeria)
  * License Type: Academic
  */
 package ormsamples;
@@ -234,16 +234,16 @@ public class ListProyectoMDS2RuizSalas20232024Data {
 //			Noticia[] noticias = _bd_noticias.cargar_listar_mis_noticias(1);
 //			Noticia[] noticiass = _bd_noticias.cargar_noticias_a_revisar();
 //			Noticia[] noticiasss = _bd_noticias.cargar_secciones_generico(1);
-//			Noticia[] noticiassss = _bd_noticias.Buscar("Taylor Swift no quiere a sus fans de Barcelona");
+//			Noticia[] noticiassss = _bd_noticias.Buscar("sexo");
 //			Noticia[] noticiassssss = _bd_noticias.cargar_noticias_portada();
 //			_bd_noticias.eliminar_noticia_propia(34);
 //			_bd_noticias.agregar_noticia(1, true);
 //			_bd_noticias.no_agregar_noticia(9);
 //			
 //			ArrayList<Tematica> tet = new ArrayList<>();
-//			tet.add( TematicaDAO.getTematicaByORMID(7));
-//			tet.add( TematicaDAO.getTematicaByORMID(8));
-//			_bd_principal.guardar_cambios_noticia(890, "DIDID", "Barcelona debido a que las obras no están terminadas", "BORRAME", "diegazos.jpg", "Carboneras", Date.valueOf("2024-08-09"), tet.toArray(new Tematica[0]), 4);
+//			tet.add( TematicaDAO.getTematicaByORMID(14));
+//			tet.add( TematicaDAO.getTematicaByORMID(15));
+//			_bd_principal.guardar_cambios_noticia(890, "DIDID", "Barcelona debido a que las obras no están terminadas", "BORRAME", "diegazos.jpg", "Carboneras", Date.valueOf("2024-08-09"), tet.toArray(new Tematica[0]), 28);
 //			_bd_noticias.valorar_noticia(2, 5, false);
 //			_bd_noticias.eliminar_noticia(55);
 //			_bd_noticias.guardar_cambios_noticia(3, "Fernando volvió a traernos la magia y la ilusión a nuestro corazón", "Esta pasada madrugada hemos podido ver otro espectaculo de nuestro mago favorito, otra vuelta mágica bajo la lluvia de Montreal (Canadá) que nos permite volver a soñar con un buen resultado este fin de semana, tras una primera posición en los libres2", "Otra más de Magic Alonso", "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2024/06/08/17177979059305.jpg", "Montreal", Date.valueOf("2024-06-08"), null, 3);

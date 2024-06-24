@@ -265,15 +265,28 @@ public class Bd_Noticias {
 	public Noticia[] Buscar(String aBusqueda) 
 			throws PersistentException {
 		Noticia[] noticias = null;
+		ArrayList<Noticia> notisTematica = new ArrayList<>();
+		Tematica[] tematicas = null;
 		PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
 		try {
-			noticias = NoticiaDAO.listNoticiaByQuery(
-					"titulo LIKE '%"+aBusqueda+"%'AND Agregada  ='"+1+"'", null);
-			t.commit();
+			if (aBusqueda.charAt(0) == '#'&& aBusqueda.length()>1) {
+				noticias = NoticiaDAO.listNoticiaByQuery("Agregada  ='"+1+"'", null);
+				tematicas = TematicaDAO.listTematicaByQuery("Nombre LIKE '%"+aBusqueda.substring(1)+"%'", null);
+				for (Tematica tematica : tematicas) {
+					for (Noticia noticia : noticias) {
+							if(noticia.contiene.contains(tematica)&&!notisTematica.contains(noticia))
+								notisTematica.add(noticia);
+					}
+				}
+			}else {
+				noticias = NoticiaDAO.listNoticiaByQuery(
+						"titulo LIKE '%"+aBusqueda+"%' AND Agregada  ='"+1+"'", null);
+				return noticias;
+				}
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();
 		} catch (Exception e) {
 			t.rollback();
 		}
-		return noticias;
+		return notisTematica.toArray(new Noticia[0]);
 	}
 }
