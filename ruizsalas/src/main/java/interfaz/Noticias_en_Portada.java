@@ -18,11 +18,6 @@ public class Noticias_en_Portada extends Listar_noticias {
 		this._unnamed_Pagina_de_inicio_ = _unnamed_Pagina_de_inicio_;
 		this.getPortada().setVisible(true);
 		
-		this.Noticia_item();
-	}
-	
-
-	public void Noticia_item() {
 		notice = iUsuario.cargar_noticias_portada();
 		if(notice.length != 0) {
 			Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this, this.notice[0]);
