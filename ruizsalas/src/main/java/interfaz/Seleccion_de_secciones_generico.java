@@ -31,7 +31,7 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	}
 	
 	public void Seleccion_de_secciones_item_Estatico() {
-		sec = this.cargar_secciones();
+		sec = iUsuario.cargar_secciones_vista_editor();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
 			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
@@ -41,9 +41,5 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public void CEseccionesEstatico() {
 		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada(), this);
 		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
-	}
-	
-	public Seccion[] cargar_secciones() {
-		return iUsuario.cargar_secciones_vista_editor();
 	}
 }

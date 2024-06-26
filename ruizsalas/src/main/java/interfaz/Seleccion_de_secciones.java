@@ -31,16 +31,11 @@ public class Seleccion_de_secciones extends Seleccion_de_secciones_generico {
 	
 	@Override
 	public void Seleccion_de_secciones_item_Estatico() {
-		sec = cargar_secciones();
+		sec = iUsuario.cargar_secciones_generico();
 		for (int i=0; i<sec.length; i++) {
 			Seleccion_de_secciones_item SSI = new Seleccion_de_secciones_item(this, sec[i]);
 			this.getLayoutSeccionesContenidasPeriodico().add(SSI);
 		}
-	}
-	
-	@Override
-	public Seccion[] cargar_secciones() {
-		return iUsuario.cargar_secciones_generico();
 	}
 	
 	@Override
