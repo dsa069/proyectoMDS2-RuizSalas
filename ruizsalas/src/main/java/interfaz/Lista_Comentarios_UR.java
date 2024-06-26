@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
@@ -13,6 +15,8 @@ import basededatos.BD_Principal;
 import basededatos.iRegistrado;
 import basededatos.iUsuario_Registardo;
 import ocl_proyecto.Comentario;
+import ocl_proyecto.EditorDAO;
+import ocl_proyecto.UsuarioDAO;
 
 public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public Vector<Lista_Comentarios_UR_item> _item = new Vector<Lista_Comentarios_UR_item>();
@@ -30,6 +34,20 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this.CNC = CNC;
 
 		this.getEscribirComentario().setVisible(true);
+
+		try {
+			if(UsuarioDAO.getUsuarioByORMID(user.getIdUsuario()) != null && EditorDAO.getEditorByORMID(user.getIdUsuario()) == null ) {
+				comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
+				for (int i=0; i<comenta.length; i++) {
+					Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
+					Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, Us_coment, this.user, comenta[i]);
+					this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);
+				}
+			}
+		} catch (PersistentException e1) {
+			e1.printStackTrace();
+		}
+
 		this.imagen = new Image();
 		File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
 		if (file.exists()) {
@@ -53,16 +71,6 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 		this.getLayoutTextoNombreUsuario().setText("" + user.getApodo());
 
 		this.getBotonAnadirComentarioNoticia().addClickListener(event->escribir_comentario()); 
-	}
-
-	@Override
-	public void Comentarios_item_Estaticos(){
-		comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
-		for (int i=0; i<comenta.length; i++) {
-			Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
-			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, Us_coment, this.user, comenta[i]);
-			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);
-		}
 	}
 
 	public void escribir_comentario() {

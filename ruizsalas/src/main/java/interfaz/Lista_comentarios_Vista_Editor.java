@@ -2,9 +2,13 @@ package interfaz;
 
 import java.util.Vector;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import ocl_proyecto.Comentario;
+import ocl_proyecto.EditorDAO;
+import ocl_proyecto.UsuarioDAO;
 
 public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	public Vector<Lista_comentarios_Vista_Editor_item> _item = new Vector<Lista_comentarios_Vista_Editor_item>();
@@ -22,14 +26,18 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 		this.editor=editor;
 		this.noti = noticia;
 		this.CNC = CNC;
-	}
-	@Override
-	public void Comentarios_item_Estaticos(){
-		comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
-		for (int i=0; i<comenta.length; i++) {
-			Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
-			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, Us_coment, this.editor, comenta[i]);
-			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCVEI);
+
+		try {
+			if(EditorDAO.getEditorByORMID(user.getIdUsuario()) != null ) {
+				comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
+				for (int i=0; i<comenta.length; i++) {
+					Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
+					Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, Us_coment, this.editor, comenta[i]);
+					this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCVEI);
+				}
+			}
+		} catch (PersistentException e) {
+			e.printStackTrace();
 		}
 	}
 
