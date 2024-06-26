@@ -21,7 +21,7 @@ public class Lista_noticas_Editor extends Listar_noticias {
 		this.LSE=LSE;
 
 	}
-	@Override
+
 	public void Noticia_item(int seccion) {
 		try {
 			if(SeccionDAO.getSeccionByORMID(seccion).getPortada() == true)

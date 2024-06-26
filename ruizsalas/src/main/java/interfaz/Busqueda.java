@@ -9,6 +9,6 @@ public class Busqueda extends Listar_noticias {
 		this._unnamed_Usuario_ = _usuario;
 		this.BBQ = BBQ;
 
-		this.Noticia_item(notice, this);
+		this.Noticia_item(notice, this, 0);
 	}
 }

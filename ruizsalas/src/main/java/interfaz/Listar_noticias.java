@@ -22,20 +22,20 @@ public class Listar_noticias extends Listar_noticias_generico {
 		this.getListaSimpleNoticias().setVisible(false);
 	}
 	
-	public void Noticia_item(int seccion) {
-		notice = iUsuario.cargar_noticias_secciones(seccion);
-		for (int i=0; i<notice.length; i++) {
-			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false);
-			this.getColumnas().as(VerticalLayout.class).add(_item);	
-		}
-	}
-	
-	public void Noticia_item(Noticia [] noticia, Busqueda busi) {
+	public void Noticia_item(Noticia [] noticia, Busqueda busi, int seccion) {
 		busquets = busi;
-		notice = noticia;
-		for (int i=0; i<notice.length; i++) {
-			Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true);
-			this.getColumnas().as(VerticalLayout.class).add(_item);	
+		if(busquets == null && seccion != 0) {
+			notice = iUsuario.cargar_noticias_secciones(seccion);
+			for (int i=0; i<notice.length; i++) {
+				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false);
+				this.getColumnas().as(VerticalLayout.class).add(_item);	
+			}
+		}else {
+			notice = noticia;
+			for (int i=0; i<notice.length; i++) {
+				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true);
+				this.getColumnas().as(VerticalLayout.class).add(_item);	
+		}
 		}
 	}
 }
