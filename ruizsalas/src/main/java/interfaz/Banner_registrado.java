@@ -10,6 +10,8 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.server.StreamResource;
 
+import ocl_proyecto.EditorDAO;
+import ocl_proyecto.PeriodistaDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
 
@@ -19,17 +21,17 @@ public class Banner_registrado extends Banner_generico {
 	public Perfil_Uusario_Vista_UR PerfilUR;
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
-	public boolean herencia;
+	public Banner_Periodista BananaPeriodista;
+	public Banner_Editor BananaEditor;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
 
 	ocl_proyecto.Usuario user;
 
-	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario, boolean herencia) {
+	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
 		super(_registrado, usuario);
 		this._registrado = _registrado;
 		this.user = usuario;
-		this.herencia = herencia;
 		this.getBotonSuscribirseGenerico().setVisible(false);
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
@@ -37,10 +39,15 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 
-		if(herencia) {
-			//Estatico SS no editor
-			this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
-			this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
+		try {
+			if(EditorDAO.getEditorByORMID(user.getIdUsuario()) == null){
+				//Estatico SS no editor
+				this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
+				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
+			}
+		} catch (PersistentException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 
 		this.imagen = new Image();
@@ -64,14 +71,27 @@ public class Banner_registrado extends Banner_generico {
 		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
 
 		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
-	}
-
-	@Override
-	public void ConductorPortadaBanner() {
-		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		BananaRegistardo = new Banner_registrado(this._registrado, this.user, true);
-		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaRegistardo);
+		this.getBotonpaginainicio().addClickListener(event->{
+			//conductor portada banner
+			try {
+				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+					BananaRegistardo = new Banner_registrado(this._registrado, this.user);
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaRegistardo);;
+				}else if(PeriodistaDAO.getPeriodistaByORMID(user.getIdUsuario()) != null){
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+					BananaPeriodista = new Banner_Periodista((Periodista)this._registrado,(ocl_proyecto.Periodista) this.user);
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaPeriodista);
+				}else if(EditorDAO.getEditorByORMID(user.getIdUsuario()) != null){
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+					BananaEditor = new Banner_Editor((Editor)this._registrado, (ocl_proyecto.Editor)this.user);
+					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaEditor);
+				}
+			} catch (PersistentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 	}
 
 	public void ConductorPerfil() {

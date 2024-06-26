@@ -31,10 +31,5 @@ public class Banner_generico extends VistaBannergenerico{
 		this.getRevisarNoticiasLayout().setVisible(false);
 		this.getListarPeriodistaLayout().setVisible(false);
 		this.getAltaPeriodistaLayout().setVisible(false);
-		
-		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
-	}
-	
-	public void ConductorPortadaBanner() {
 	}
 }

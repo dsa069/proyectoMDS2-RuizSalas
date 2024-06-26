@@ -29,6 +29,11 @@ public class Registro extends Banner_no_registrado {
 			this._unnamed_Usuario_No_Registrado_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			Ses = new Iniciar_Sesion(this._unnamed_Usuario_No_Registrado_, this.usuario);
 			this._unnamed_Usuario_No_Registrado_.getBannerGenericoEstatico().as(VerticalLayout.class).add(Ses);});
-		this.getBotonCancelarRegistro().addClickListener(event->ConductorPortadaBanner());
+		
+		this.getBotonCancelarRegistro().addClickListener(event->{
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado, this.usuario);
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(noRegistro);	
+		});
 	}
 }
