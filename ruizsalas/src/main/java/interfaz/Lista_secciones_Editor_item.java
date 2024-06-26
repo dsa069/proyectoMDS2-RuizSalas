@@ -21,9 +21,8 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 		this.getBorrarSeccion().setVisible(true);
 
 		//ESTATICO LISTA NOTICIAS EDITOR
-		this._contiene = new Lista_noticas_Editor(this._editor, this);
+		this._contiene = new Lista_noticas_Editor(this._editor, this, seccion.getIdSeccion());
 		this.getListaDeNoticiasEstatico().add(this._contiene);
-		this._contiene.Noticia_item(seccion.getIdSeccion());
 
 		this.getBorrarSeccion().addClickListener(event->borrar_seccion());
 	}

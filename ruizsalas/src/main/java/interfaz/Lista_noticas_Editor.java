@@ -14,25 +14,24 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	public Vector<Lista_noticas_Editor_item> _item = new Vector<Lista_noticas_Editor_item>();
 	public Editor _editor;
 	public Lista_secciones_Editor_item LSE;
+	public int seccion;
 
-	public Lista_noticas_Editor(Editor _editor,  Lista_secciones_Editor_item LSE) {
+	public Lista_noticas_Editor(Editor _editor,  Lista_secciones_Editor_item LSE, int seccion) {
 		super(_editor, null, null);
 		this._editor = _editor;
 		this.LSE=LSE;
+		this.seccion=seccion;
 
-	}
-
-	public void Noticia_item(int seccion) {
 		try {
-			if(SeccionDAO.getSeccionByORMID(seccion).getPortada() == true)
+			if(SeccionDAO.getSeccionByORMID(this.seccion).getPortada() == true)
 				notice = iUsuario.cargar_noticias_portada();
 			else
-				notice = iUsuario.cargar_noticias_secciones(seccion);
+				notice = iUsuario.cargar_noticias_secciones(this.seccion);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
 		for (int i=0; i<notice.length; i++) {
-			Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.notice[i], seccion);
+			Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.notice[i], this.seccion);
 			this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
 	}
