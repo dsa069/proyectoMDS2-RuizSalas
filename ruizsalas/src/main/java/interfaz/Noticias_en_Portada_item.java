@@ -10,39 +10,61 @@ import vistas.*;
 public class Noticias_en_Portada_item extends Listar_noticias_item {
 	public Noticias_en_Portada _noticias_en_Portada;
 	ocl_proyecto.Noticia notitas;
-	
+
 	public Noticias_en_Portada_item(Noticias_en_Portada padre, 	ocl_proyecto.Noticia Notas) {
-		super(padre, Notas, false);
+		super(padre, Notas, false, false);
 		this._noticias_en_Portada = padre;
 		this.notitas = Notas;
-		
+
 		this.getTitular2().setText(""+Notas.getTitulo());
-		
-	}
-	
-	@Override
-	public void ConductorNoticia() {
-		try {
-			if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
-				if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
-					if(EditorDAO.getEditorByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
-						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_en_Portada.usuarioocl, this.notitas, this); 
-						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
-					}else {			
-						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas); 
-						this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+
+		//DINAMICO IR A NOTICIA
+		this.getBotonImagenListarNoticias().addClickListener(event->{
+			try {
+				if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
+					if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
+						if(EditorDAO.getEditorByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+							NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_en_Portada.usuarioocl, this.notitas, this); 
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
+						}else {			
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+							NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas); 
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+						}
 					}
+				} else {
+					this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+					NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, this._noticias_en_Portada.usuarioocl, this.notitas);
+					this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
 				}
-			} else {
-				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-				NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, this._noticias_en_Portada.usuarioocl, this.notitas);
-				this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		});
+		this.getTitular2().addClickListener(event->{
+			try {
+				if (this._listar_noticias.usuarioocl != null&&this._listar_noticias.usuarioocl.getIdUsuario() !=0) {
+					if(UsuarioDAO.getUsuarioByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
+						if(EditorDAO.getEditorByORMID(this._noticias_en_Portada.usuarioocl.getIdUsuario())!=null) {
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+							NVE = new Noticia_Vista_Editor (this._listar_noticias_generico.usuario.mainView.E, this._noticias_en_Portada.usuarioocl, this.notitas, this); 
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NVE);
+						}else {			
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+							NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.UR, this._noticias_en_Portada.usuarioocl, this.notitas); 
+							this._noticias_en_Portada._unnamed_Pagina_de_inicio_.Selec.Banana.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+						}
+					}
+				} else {
+					this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+					NUNR = new Noticia_Vista_UNR (this._listar_noticias_generico.usuario.mainView.UNR, this._noticias_en_Portada.usuarioocl, this.notitas);
+					this._listar_noticias_generico.usuario.getBannerGenericoEstatico().as(VerticalLayout.class).add(NUNR);	
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+
 	}
 }

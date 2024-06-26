@@ -27,13 +27,13 @@ public class Listar_noticias extends Listar_noticias_generico {
 		if(busquets == null && seccion != 0) {
 			notice = iUsuario.cargar_noticias_secciones(seccion);
 			for (int i=0; i<notice.length; i++) {
-				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false);
+				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], false, true);
 				this.getColumnas().as(VerticalLayout.class).add(_item);	
 			}
 		}else {
 			notice = noticia;
 			for (int i=0; i<notice.length; i++) {
-				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true);
+				Listar_noticias_item _item = new Listar_noticias_item(this, this.notice[i], true, true);
 				this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
 		}

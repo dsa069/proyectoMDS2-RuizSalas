@@ -28,21 +28,28 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 
 		this.getEliminarNoticiaPropia().addClickListener(event->eliminar_noticia_propia());
 
+		//DINAMICO IR A NOTICIA
+		this.getBotonImagenListarNoticias().addClickListener(event-> {
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().setVisible(true);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasLayout().setVisible(false);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+			NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista, this.Notas);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+		});
+		this.getTitular1().addClickListener(event-> {
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().setVisible(true);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasLayout().setVisible(false);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+			NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista, this.Notas);
+			this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
+		});
+
 		//DINAMICO IR A EDITAR NOTICIA
 		this.getEditarNoticia().addClickListener(event->{
 			this._lista_mis_noticias.periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			crearEditarNoticia = new Crear_Editar_Noticia(this._lista_mis_noticias.periodista, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista,this.Notas);
 			this._lista_mis_noticias.periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(crearEditarNoticia);
 		});
-	}
-
-	@Override
-	public void ConductorNoticia() {
-		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().setVisible(true);
-		this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasLayout().setVisible(false);
-		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		NUN = new Noticia_completa (this._listar_noticias_generico.usuario.mainView.E, this._lista_mis_noticias._unnamed_Historial_noticias_.periodista, this.Notas);
-		this._lista_mis_noticias._unnamed_Historial_noticias_.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(NUN);
 	}
 
 	public void eliminar_noticia_propia() {
