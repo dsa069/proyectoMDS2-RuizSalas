@@ -17,13 +17,13 @@ public class Seleccionar_Tematica extends VistaSeleccionartematica {
 	public Contenido_noticia_editor Content;
 	ocl_proyecto.Noticia notice;
 	iUsuario_Registardo iUR = new BD_Principal();
-	
+
 	public Seleccionar_Tematica(Registrado registrado, ocl_proyecto.Noticia noticia, Contenido_noticia_editor Content) {
 		super();
 		this.registrado = registrado;
 		this.notice = noticia;
 		this.Content = Content ;
-		
+
 		tem = iUR.cargar_tematicas_seleccion();
 		for (int i=0; i<tem.length; i++) {
 			STI = new Seleccionar_Tematica_itema(this, tem[i], this.notice, false);

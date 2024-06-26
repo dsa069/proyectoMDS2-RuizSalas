@@ -8,11 +8,12 @@ public class Zona_insertar_contenido_noticia extends VistaZonainsertarcontenidon
 	public Seleccionar_Tematica ST;
 	public Periodista periodista;
 	ocl_proyecto.Noticia noticia;
-	
+
 	public Zona_insertar_contenido_noticia(Periodista periodista, ocl_proyecto.Noticia noticia) {
 		super();
 		this.periodista = periodista;
 		this.noticia = noticia;
+
 		//Seleccionar temática
 		this.ST = new Seleccionar_Tematica(this.periodista, this.noticia, null);
 		this.getSeleccionarTematicasEstatico().as(VerticalLayout.class).add(this.ST);

@@ -9,6 +9,7 @@ public class Usuario_No_Registrado extends Usuario {
 	public Usuario_No_Registrado (MainView mainView, ocl_proyecto.Usuario usuario){
 		super(mainView, usuario);
 		this.usuario = usuario;
+
 		//Banner de inicio de Usuario No Registrado
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		this.BUNR = new Banner_no_registrado(this, this.usuario);

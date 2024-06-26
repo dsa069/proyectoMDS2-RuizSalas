@@ -11,20 +11,20 @@ import com.vaadin.flow.server.StreamResource;
 import vistas.VistaZonadeautoryversiondenoticia;
 
 public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversiondenoticia{
-	
+
 	public Editor editor;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
-	
+
 	ocl_proyecto.Periodista periodista;
 	ocl_proyecto.Noticia noticia;
-	
+
 	public Zona_de_autor_y_version_de_noticia(Editor editor, ocl_proyecto.Periodista periodista, ocl_proyecto.Noticia notice) {
 		super();
 		this.editor = editor;
 		this.periodista = periodista;
 		this.noticia = notice;
-		
+
 		imagen = new Image();
 		File file = new File(IMAGE_PATH + this.periodista.getFoto_de_perfil());
 		if (file.exists()) {
@@ -39,12 +39,11 @@ public class Zona_de_autor_y_version_de_noticia extends VistaZonadeautoryversion
 			image.setMaxWidth("500px");
 			this.imagen = image;
 		}
-		
+
 		this.imagen.getStyle().set("align-self", "center");
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).removeAll();
 		this.getLayoutFotoPeriodistaNoticia().as(VerticalLayout.class).add(this.imagen);
 		this.getNombreAutorNoticia().setText("" + periodista.getApodo());
 		this.getVersionNoticia().setText("" + String.valueOf(this.noticia.getVersion()));
 	}
-
 }

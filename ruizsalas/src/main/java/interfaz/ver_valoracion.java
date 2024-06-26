@@ -10,7 +10,7 @@ public class ver_valoracion extends VistaVervaloracion {
 	public Usuario usuario;
 	ocl_proyecto.Valoracion valorar;
 	iUsuario iUsu = new BD_Principal();
-	
+
 	public ver_valoracion(Usuario usuario, ocl_proyecto.Valoracion valoracion) {
 		super();
 		this.usuario = usuario;
