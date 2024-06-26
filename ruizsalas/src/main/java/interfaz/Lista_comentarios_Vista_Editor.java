@@ -25,9 +25,9 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 	}
 	@Override
 	public void Comentarios_item_Estaticos(){
-		comenta = this.cargar_listar_comenatrios();
+		comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
 		for (int i=0; i<comenta.length; i++) {
-			Us_coment = this.cargar_usuario_comenatrio(comenta[i].getId_valoracion());
+			Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
 			Lista_comentarios_Vista_Editor_item LCVEI = new Lista_comentarios_Vista_Editor_item(this, Us_coment, this.editor, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCVEI);
 		}

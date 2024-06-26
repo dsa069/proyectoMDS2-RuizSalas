@@ -59,7 +59,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public void Comentarios_item_Estaticos(){
 		comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
 		for (int i=0; i<comenta.length; i++) {
-			Us_coment = this.cargar_usuario_comenatrio(comenta[i].getId_valoracion());
+			Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
 			Lista_Comentarios_UR_item LCURI = new Lista_Comentarios_UR_item(this, Us_coment, this.user, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCURI);
 		}

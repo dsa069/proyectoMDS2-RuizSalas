@@ -31,19 +31,11 @@ public class Lista_Comentarios extends VistaListacomentarios {
 	}
 
 	public void Comentarios_item_Estaticos(){
-		comenta = this.cargar_listar_comenatrios();
+		comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
 		for (int i=0; i<comenta.length; i++) {
-			Us_coment = this.cargar_usuario_comenatrio(comenta[i].getId_valoracion());
+			Us_coment = iUsu.cargar_usuario_comentario(comenta[i].getId_valoracion());
 			Lista_Comentarios_item LCI = new Lista_Comentarios_item(this, this.Us_coment, comenta[i]);
 			this.getContenedorComentariosItem().as(VerticalLayout.class).add(LCI);
 		}
-	}
-
-	public Comentario[] cargar_listar_comenatrios() {
-		return iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
-	}
-
-	public ocl_proyecto.Usuario cargar_usuario_comenatrio(int Id_comenatrio) {
-		return iUsu.cargar_usuario_comentario(Id_comenatrio);
 	}
 }
