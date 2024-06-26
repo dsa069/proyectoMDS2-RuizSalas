@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-bannergenerico')
@@ -18,15 +18,15 @@ export class VistaBannergenerico extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="height: 100%; width: 100%;" id="bannergenericolayout">
- <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-m); justify-content: space-between;">
+<vaadin-vertical-layout style="height: 100%; width: 100%; position: absolute;" id="bannergenericolayout">
+ <vaadin-horizontal-layout class="header" style="width: 100%; flex-basis: var(--lumo-size-l); flex-shrink: 0; background-color: white var(--lumo-contrast-10pct); height: 100px; font-family: Lucida Calligraphy; font-size: 36px; align-items: flex-end; padding: var(--lumo-space-xl); justify-content: space-between;">
   <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100px; align-self: center;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct);" id="botonpaginainicio">
     <img src="https://i.imgflip.com/6q57vm.png?a473472" width="90" height="90">
    </vaadin-button>
   </vaadin-horizontal-layout>
   <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 0; flex-grow: 1; align-self: center; align-items: center;">
-   MOMAZOS DIEGO 
+    MOMAZOS DIEGO 
    <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100px; align-self: center; justify-content: flex-end;">
     <vaadin-button theme="icon" aria-label="Add new" id="botonRevisarNoticiaGenerico" style="align-self: center; flex-grow: 0; flex-shrink: 0; height: 100%; background-color: var(--lumo-contrast-0pct);">
      <img src="https://cdn-icons-png.flaticon.com/512/6848/6848160.png" width="63" height="63">
@@ -60,15 +60,18 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: center; font-size: 22px;">
        ¿Ya tienes cuenta? 
      </vaadin-horizontal-layout>
-     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 0; align-items: center; justify-content: space-between;">
-      <vaadin-horizontal-layout theme="spacing">
-       <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonCancelarRegistro">
-         Cancelar 
-       </vaadin-button>
-       <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0; margin: var(--lumo-space-xl);"></vaadin-vertical-layout>
-       <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonIniciarSesion">
-         Iniciar Sesión 
-       </vaadin-button>
+     <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 0; align-items: center; justify-content: space-between; padding: var(--lumo-space-m);">
+      <vaadin-horizontal-layout style="justify-content: space-between; flex-shrink: 0; align-items: center; width: 47%;">
+       <vaadin-horizontal-layout>
+        <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonCancelarRegistro">
+          Cancelar 
+        </vaadin-button>
+       </vaadin-horizontal-layout>
+       <vaadin-horizontal-layout>
+        <vaadin-button style="flex-shrink: 0; color: black; flex-grow: 1;" id="BotonIniciarSesion">
+          Iniciar Sesión 
+        </vaadin-button>
+       </vaadin-horizontal-layout>
       </vaadin-horizontal-layout>
       <vaadin-vertical-layout id="botonConfirmarRegistroEstaticoLayout" style="flex-shrink: 0; align-self: center; align-items: center; flex-grow: 0;"></vaadin-vertical-layout>
      </vaadin-horizontal-layout>
