@@ -25,7 +25,7 @@ public class Lista_noticas_Editor extends Listar_noticias {
 	public void Noticia_item(int seccion) {
 		try {
 			if(SeccionDAO.getSeccionByORMID(seccion).getPortada() == true)
-				notice = this.cargar_noticias();
+				notice = iUsuario.cargar_noticias_portada();
 			else
 				notice = this.cargar_noticias_secciones(seccion);
 		} catch (PersistentException e) {
@@ -35,10 +35,5 @@ public class Lista_noticas_Editor extends Listar_noticias {
 			Lista_noticas_Editor_item _item = new Lista_noticas_Editor_item(this, this.notice[i], seccion);
 			this.getColumnas().as(VerticalLayout.class).add(_item);	
 		}
-	}
-	
-	@Override
-	public Noticia[] cargar_noticias() {
-		return iUsuario.cargar_noticias_portada();
 	}
 }

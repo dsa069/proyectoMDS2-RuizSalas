@@ -39,11 +39,6 @@ public class Listar_noticias extends Listar_noticias_generico {
 		}
 	}
 	
-	@Override
-	public void Noticia_item() {
-
-	}
-	
 	public Noticia[] cargar_noticias_secciones(int IdSeccion) {
 		return iUsuario.cargar_noticias_secciones(IdSeccion);
 	}

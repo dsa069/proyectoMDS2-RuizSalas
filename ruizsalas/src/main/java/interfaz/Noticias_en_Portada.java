@@ -17,11 +17,13 @@ public class Noticias_en_Portada extends Listar_noticias {
 		this.usuarioocl =  usuarioocl;
 		this._unnamed_Pagina_de_inicio_ = _unnamed_Pagina_de_inicio_;
 		this.getPortada().setVisible(true);
+		
+		this.Noticia_item();
 	}
 	
-	@Override
+
 	public void Noticia_item() {
-		notice = this.cargar_noticias();
+		notice = iUsuario.cargar_noticias_portada();
 		if(notice.length != 0) {
 			Noticias_en_Portada_item _item = new Noticias_en_Portada_item(this, this.notice[0]);
 			this.getPortada().add(_item);
@@ -30,9 +32,5 @@ public class Noticias_en_Portada extends Listar_noticias {
 			Noticias_en_Portada_item ambatukam = new Noticias_en_Portada_item(this, this.notice[i]);
 			this.getColumnas().as(VerticalLayout.class).add(ambatukam);
 		}
-	}
-	@Override
-	public Noticia[] cargar_noticias() {
-		return iUsuario.cargar_noticias_portada();
 	}
 }

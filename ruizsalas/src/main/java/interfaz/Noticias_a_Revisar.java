@@ -32,9 +32,4 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 		}
 		
 	}
-	
-	@Override
-	public void Noticia_item() {
-		
-	}
 }

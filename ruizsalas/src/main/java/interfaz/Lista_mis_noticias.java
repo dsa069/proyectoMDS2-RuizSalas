@@ -38,14 +38,4 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 		}
 	}
-
-	@Override
-	public void Noticia_item() {
-
-	}
-
-	@Override
-	public Noticia[] cargar_noticias() {
-		return null;
-	}
 }
