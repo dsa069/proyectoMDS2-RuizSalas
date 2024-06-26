@@ -20,17 +20,14 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 		this._lista_secciones_Editor = padre;
 		this.getBorrarSeccion().setVisible(true);
 		
-		this.getBorrarSeccion().addClickListener(event->borrar_seccion());
-	}
-	
-	@Override
-	public void Listar_Noticia() {
+		//ESTATICO LISTA NOTICIAS EDITOR
 		this._contiene = new Lista_noticas_Editor(this._editor, this);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
 		this._contiene.Noticia_item(seccion.getIdSeccion());
+		
+		this.getBorrarSeccion().addClickListener(event->borrar_seccion());
 	}
 
-	
 	public void borrar_seccion() {
 		iEdito.borrar_seccion(seccion.getIdSeccion());
 		this._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
