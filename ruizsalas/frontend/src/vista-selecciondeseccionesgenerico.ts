@@ -19,6 +19,7 @@ export class VistaSelecciondeseccionesgenerico extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between;" id="layoutSeleccionSeccionesGenerico">
  <vaadin-horizontal-layout class="content" style="width: 100%; flex-shrink: 0; flex-grow: 0; position: absolute; align-self: center; justify-content: space-between;" id="layoutBannerSeccionesBusqueda">
+  <vaadin-vertical-layout style="flex-grow: 1; flex-shrink: 0;"></vaadin-vertical-layout>
   <vaadin-horizontal-layout style="flex-shrink: 0; flex-grow: 0; font-size: 28px; justify-content: space-between;">
    <vaadin-horizontal-layout style="flex-shrink: 0; justify-content: space-between;">
     <vaadin-horizontal-layout style="flex-shrink: 0; flex-grow: 0;" id="EditarTexto">
