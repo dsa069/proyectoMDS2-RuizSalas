@@ -1,5 +1,6 @@
 package interfaz;
 
+import interfaz.Enviar_Correo_Confirmacion;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
@@ -12,6 +13,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 
 	public Introducir_datos_registro _contiene;
 	public Enviar_Correo_Confirmacion _procede_a;
+	public Gestionar_Transaccion a_procede_a;
 
 	ocl_proyecto.Usuario_suscrito_ usuario;
 
@@ -28,6 +30,8 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	}
 
 	public void enviar_Correo_Confirmacion() {
+		iUNR.enviar_Correo_Confirmacion();
+		_procede_a.enviar_Correo_Confirmacion(this);
 	}
 
 	public void gestionar_Transaccion() {
@@ -52,6 +56,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 				this.usuarioNoRegistrado.mainView.removeAll();
 				usuarioRegistrado = new Usuario_Registardo(this.usuarioNoRegistrado.mainView, this.usuario);
 				this.usuarioNoRegistrado.mainView.add(usuarioRegistrado);
+				a_procede_a.gestionar_Transaccion(this);
 				this.enviar_Correo_Confirmacion();	
 			} catch (Exception e) {
 				Notification.show("Tarjeta de credito con caracteres invalidos");
