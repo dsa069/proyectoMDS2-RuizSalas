@@ -15,7 +15,7 @@ public class Listar_Secciones extends VistaListarsecciones{
 	public Secciones_periodico SecccccP;
 	ocl_proyecto.Seccion seccion;
 	public boolean ramadam;
-	
+
 	public Listar_Secciones(Usuario usuario, ocl_proyecto.Seccion secc, Secciones_periodico SecccccP, boolean ramadam) {
 		super();
 		this.usuario = usuario;

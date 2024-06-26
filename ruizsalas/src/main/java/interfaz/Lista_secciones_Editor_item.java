@@ -11,7 +11,7 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public Lista_noticas_Editor _contiene;
 	public Editor _editor;
 	public Seleccion_de_secciones_generico SES;
-	
+
 	iEditor iEdito = new BD_Principal();
 
 	public Lista_secciones_Editor_item(Lista_secciones_Editor padre,Editor _editor, ocl_proyecto.Seccion seccion) {
@@ -19,12 +19,12 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 		this._editor = _editor;
 		this._lista_secciones_Editor = padre;
 		this.getBorrarSeccion().setVisible(true);
-		
+
 		//ESTATICO LISTA NOTICIAS EDITOR
 		this._contiene = new Lista_noticas_Editor(this._editor, this);
 		this.getListaDeNoticiasEstatico().add(this._contiene);
 		this._contiene.Noticia_item(seccion.getIdSeccion());
-		
+
 		this.getBorrarSeccion().addClickListener(event->borrar_seccion());
 	}
 
@@ -33,6 +33,6 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 		this._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 		SES = new Seleccion_de_secciones_generico(this._lista_secciones_Editor._editor, this._lista_secciones_Editor.CBT.SESG.SESVE);
 		this._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SES);
-		
+
 	}
 }
