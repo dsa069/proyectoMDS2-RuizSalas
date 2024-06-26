@@ -59,9 +59,4 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		banner_Editor = new Editor(this.editor.mainView,  (ocl_proyecto.Editor) editorBD);
 		this.editor.mainView.add(banner_Editor);
 	}
-
-	@Override
-	public void Listar_Tematicas() {
-	}
-
 }

@@ -17,7 +17,7 @@ public class Contenido_noticia_completo extends Noticia {
 
 
 	public Contenido_noticia_completo(Registrado registrado, ocl_proyecto.Usuario usuario, ocl_proyecto.Noticia noticia, Noticia_completa CC) {
-		super(registrado, noticia);
+		super(registrado, noticia, usuario);
 		this._registrado = registrado;
 		this.noticia = noticia;
 		this.usuario = usuario;
@@ -42,6 +42,7 @@ public class Contenido_noticia_completo extends Noticia {
 
 	public void valorar_noticia(boolean valoracion) {
 		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_valoracion(), valoracion);
+		
 		this.CC.getNoticiaLayout().removeAll();
 		CCC = new Contenido_noticia_completo(this._registrado,this.usuario, this.noticia, this.CC);
 		this.CC.getNoticiaLayout().add(this.CCC);

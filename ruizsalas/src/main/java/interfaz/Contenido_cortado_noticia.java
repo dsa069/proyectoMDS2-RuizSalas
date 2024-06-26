@@ -10,7 +10,7 @@ public class Contenido_cortado_noticia extends Noticia{
 	ocl_proyecto.Noticia noti;
 
 	public Contenido_cortado_noticia(Usuario_No_Registrado _usuario, ocl_proyecto.Noticia noticia, ocl_proyecto.Usuario user) {
-		super(_usuario, noticia);
+		super(_usuario, noticia, user);
 		this._usuario = _usuario;
 		this.noti = noticia;
 		this.usuario = user;
