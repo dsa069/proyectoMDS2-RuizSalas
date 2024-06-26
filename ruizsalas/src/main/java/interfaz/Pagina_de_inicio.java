@@ -25,7 +25,7 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 		
 		this.getBotonContinuarPaginaInicio().addClickListener(event->{
 			this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
-			SeccP = new Secciones_periodico(this._unnamed_Usuario_, iusuario.cargar_seccion_primero(), null);
+			SeccP = new Secciones_periodico(this._unnamed_Usuario_, iusuario.cargar_seccion_primero(), null, this);
 			this.Selec.getLayoutGenericoSeccionesBanner().add(SeccP);
 		});
 	}

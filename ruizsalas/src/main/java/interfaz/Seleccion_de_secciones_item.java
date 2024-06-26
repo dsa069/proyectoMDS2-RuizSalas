@@ -14,7 +14,7 @@ public class Seleccion_de_secciones_item extends Seleccion_de_secciones_generico
 	@Override
 	public void ConductorSeccion() {
 		this._seleccion_de_secciones.getLayoutGenericoSeccionesBanner().removeAll();
-		SesPP = new Secciones_periodico(this._seleccion_de_secciones._usuario, this.seccion, this);
+		SesPP = new Secciones_periodico(this._seleccion_de_secciones._usuario, this.seccion, this, null);
 		this._seleccion_de_secciones.getLayoutGenericoSeccionesBanner().add(SesPP);
 	}
 }

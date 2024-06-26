@@ -11,12 +11,14 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 	public Seleccion_de_secciones_item SSI;
 	public iUsuario iusuario = new BD_Principal();
 	public ocl_proyecto.Seccion seccion;
+	public Pagina_de_inicio PDI;
 
-	public Secciones_periodico(Usuario usuario, ocl_proyecto.Seccion seccion,  Seleccion_de_secciones_item SSI) {
+	public Secciones_periodico(Usuario usuario, ocl_proyecto.Seccion seccion,  Seleccion_de_secciones_item SSI, Pagina_de_inicio PDI) {
 		super();
 		this._accede = usuario;
 		this.seccion = seccion;
 		this.SSI = SSI;
+		this.PDI =PDI;
 		//Lista de secciones
 		this._contiene = new Listar_Secciones(this._accede, this.seccion, this, true);
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).add(this._contiene);

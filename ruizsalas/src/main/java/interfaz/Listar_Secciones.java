@@ -28,6 +28,5 @@ public class Listar_Secciones extends VistaListarsecciones{
 			Listar_Secciones_item _item = new Listar_Secciones_item(this,seccion );
 			this.getListarSeccionesContenedorItems().as(VerticalLayout.class).add(_item);
 		}
-		
 	}
 }
