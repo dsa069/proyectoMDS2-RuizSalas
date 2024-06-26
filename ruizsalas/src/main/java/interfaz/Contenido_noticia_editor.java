@@ -43,17 +43,13 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		this.getEliminarNoticia().addClickListener(event->eliminar_noticia());
 	}
 
-	@Override
-	public void Lista_De_ComentariosComp() {
-	}
-
 	public void eliminar_noticia() {
 		iEdito.eliminar_noticia(this.notice.getId_valoracion());
 		try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
 		this.editor.mainView.removeAll();
 		banner_Editor = new Editor(this.editor.mainView,  (ocl_proyecto.Editor) editorBD);

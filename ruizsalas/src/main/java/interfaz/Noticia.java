@@ -39,8 +39,6 @@ public class Noticia extends VistaNoticia{
 			e1.printStackTrace();
 		}
 		
-		
-		
 		//ver valoraciones
 		this.valoracion = new ver_valoracion(this.usuario, this.valoracionBD);
 		this.getVerValoracionEstatico().add(this.valoracion);

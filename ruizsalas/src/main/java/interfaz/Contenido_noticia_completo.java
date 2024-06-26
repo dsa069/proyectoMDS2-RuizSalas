@@ -1,10 +1,13 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
 import basededatos.iUsuario_Registardo;
+import ocl_proyecto.EditorDAO;
 
 public class Contenido_noticia_completo extends Noticia {
 	public Registrado _registrado;
@@ -28,21 +31,26 @@ public class Contenido_noticia_completo extends Noticia {
 		this.getEliminarNoticia().setVisible(false);
 		this.getBotonSuscribirse().setVisible(false);
 
-		this.Lista_De_ComentariosComp();
+		//ESTATICO COMENTARIOS UR
+		try {
+			if(EditorDAO.getEditorByORMID(this.usuario.getIdUsuario()) == null) {
+				this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario, this.noticia,this);
+				this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
+			}
+		} catch (PersistentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		this.getNoticiaCompleta().setText("" + noticia.getTexto_largo());
 
 		this.getBotonLikeNoticia().addClickListener(event->valorar_noticia(true));
 		this.getBotonNotLikeNoticia().addClickListener(event->valorar_noticia(false));
 	}
 
-	public void Lista_De_ComentariosComp() {
-		this._contiene = new Lista_Comentarios_UR(this._registrado, this.usuario, this.noticia,this);
-		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
-	}
-
 	public void valorar_noticia(boolean valoracion) {
 		iregistrado.valorar_noticia(usuario.getIdUsuario(), noticia.getId_valoracion(), valoracion);
-		
+
 		this.CC.getNoticiaLayout().removeAll();
 		CCC = new Contenido_noticia_completo(this._registrado,this.usuario, this.noticia, this.CC);
 		this.CC.getNoticiaLayout().add(this.CCC);
