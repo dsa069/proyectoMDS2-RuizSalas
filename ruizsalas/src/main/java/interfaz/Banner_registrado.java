@@ -70,7 +70,27 @@ public class Banner_registrado extends Banner_generico {
 		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
 		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
 
-		this.getBotonIniciarSesionGenerico().addClickListener(event->ConductorPerfil());
+		this.getBotonIniciarSesionGenerico().addClickListener(event->{		
+			try {
+				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
+					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+					PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, (Usuario_suscrito_) this.user);
+					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
+				}else {
+					this.getCrearEditarNoticiaLayout().setVisible(false);
+					this.getAltaPeriodistaLayout().setVisible(false);
+					this.getHistorialNoticiasLayout().setVisible(false);
+					this.getListarPeriodistaLayout().setVisible(false);
+					this.getRevisarNoticiasLayout().setVisible(false);
+					this.getLayoutGenericoVistaGenerica().setVisible(true);
+					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+					Perfil = new Perfil_Usuario(this._registrado, this.user);
+					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
+				}
+			} catch (PersistentException e) {
+				e.printStackTrace();
+			}
+		});
 		this.getBotonpaginainicio().addClickListener(event->{
 			//conductor portada banner
 			try {
@@ -92,27 +112,5 @@ public class Banner_registrado extends Banner_generico {
 				e.printStackTrace();
 			}
 		});
-	}
-
-	public void ConductorPerfil() {
-		try {
-			if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
-				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, (Usuario_suscrito_) this.user);
-				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
-			}else {
-				this.getCrearEditarNoticiaLayout().setVisible(false);
-				this.getAltaPeriodistaLayout().setVisible(false);
-				this.getHistorialNoticiasLayout().setVisible(false);
-				this.getListarPeriodistaLayout().setVisible(false);
-				this.getRevisarNoticiasLayout().setVisible(false);
-				this.getLayoutGenericoVistaGenerica().setVisible(true);
-				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-				Perfil = new Perfil_Usuario(this._registrado, this.user);
-				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
-			}
-		} catch (PersistentException e) {
-			e.printStackTrace();
-		}
 	}
 }

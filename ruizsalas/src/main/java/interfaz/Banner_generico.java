@@ -1,9 +1,5 @@
 package interfaz;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -15,7 +11,6 @@ public class Banner_generico extends VistaBannergenerico{
 
 	public Usuario usuario;
 	public Seleccion_de_secciones SS;
-	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	ocl_proyecto.Usuario usuarioBD;
 	
 	public Banner_generico(Usuario usuario, ocl_proyecto.Usuario usuarioBD) {
