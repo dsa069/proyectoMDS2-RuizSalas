@@ -67,10 +67,8 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 	public void escribir_comentario() {
 		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
-		this.ramadam();
-	}
 
-	public void ramadam() {
+		//ramadam
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
 		LCUR = new Lista_Comentarios_UR((Registrado) this.usuario, this.user, this.notice, this.CNC);
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).add( LCUR);

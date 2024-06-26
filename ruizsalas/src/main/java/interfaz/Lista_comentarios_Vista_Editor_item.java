@@ -21,13 +21,19 @@ public class Lista_comentarios_Vista_Editor_item extends Lista_Comentarios_UR_it
 
 		this.getBorrarComentario().addClickListener(event->{
 			iEdito.borrar_comentario(this.comentar.getId_valoracion());
-			this._lista_comentarios_Vista_Editor_.ramadam();
+
+			this._lista_comentarios_Vista_Editor_.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
+			_lista_comentarios_Vista_Editor_.LCVE = new Lista_comentarios_Vista_Editor((Editor) this._lista_comentarios_Vista_Editor_.usuario,(ocl_proyecto.Editor) this._lista_comentarios_Vista_Editor_.user, this._lista_comentarios_Vista_Editor_.notice, this._lista_comentarios_Vista_Editor_.CNC);
+			this._lista_comentarios_Vista_Editor_.CNC.getComentariosEstaticos().as(VerticalLayout.class).add(_lista_comentarios_Vista_Editor_.LCVE);
 		});
 	}
 
 	@Override
 	public void valorar_comentario(boolean valoracion) {
 		iregistrao.valorar_comentario(this._lista_comentarios_Vista_Editor_.editor.getIdUsuario(), comentar.getId_valoracion(), valoracion);
-		this._lista_comentarios_Vista_Editor_.ramadam();
+
+		this._lista_comentarios_Vista_Editor_.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
+		_lista_comentarios_Vista_Editor_.LCVE = new Lista_comentarios_Vista_Editor((Editor) this._lista_comentarios_Vista_Editor_.usuario,(ocl_proyecto.Editor) this._lista_comentarios_Vista_Editor_.user, this._lista_comentarios_Vista_Editor_.notice, this._lista_comentarios_Vista_Editor_.CNC);
+		this._lista_comentarios_Vista_Editor_.CNC.getComentariosEstaticos().as(VerticalLayout.class).add(_lista_comentarios_Vista_Editor_.LCVE);
 	}
 }

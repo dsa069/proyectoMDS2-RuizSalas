@@ -1,4 +1,6 @@
 package interfaz;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
 
@@ -24,6 +26,9 @@ public class Lista_Comentarios_UR_item extends Lista_Comentarios_item {
 
 	public void valorar_comentario(boolean valoracion) {
 		iregistrao.valorar_comentario(userSesion.getIdUsuario(), comentar.getId_valoracion(), valoracion);
-		this._lista_Comentarios_UR.ramadam();
+
+		this._lista_Comentarios_UR.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
+		_lista_Comentarios_UR.LCUR = new Lista_Comentarios_UR((Registrado) this._lista_Comentarios_UR.usuario, this._lista_Comentarios_UR.user, this._lista_Comentarios_UR.notice, this._lista_Comentarios_UR.CNC);
+		this._lista_Comentarios_UR.CNC.getComentariosEstaticos().as(VerticalLayout.class).add( _lista_Comentarios_UR.LCUR);
 	}
 }

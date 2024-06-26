@@ -20,7 +20,7 @@ public class Historial_noticias extends Banner_Periodista {
 		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
 		this._contiene.Noticia_item(this.periodista.getIdUsuario());
 		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
-		
+
 		//CREAR NOTICIA DINAMICO
 		this.getBotonCrearNoticia().addClickListener(event->{
 			this._unnamed_Periodista_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
