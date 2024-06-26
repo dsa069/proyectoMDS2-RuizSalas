@@ -19,7 +19,6 @@ public class Editar_datos extends Introducir_datos_registro {
 			else
 				this.getTarjetaDeCrédito().setVisible(false);
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -48,6 +48,8 @@ public class Lista_mis_noticias_item extends Listar_noticias_generico_item {
 	public void eliminar_noticia_propia() {
 		iPeriodita.eliminar_noticia_propia(this.Notas.getId_valoracion());
 		this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasEstatico().as(VerticalLayout.class).removeAll();
-		this._lista_mis_noticias._unnamed_Historial_noticias_.Mis_Noticias();
+		this._lista_mis_noticias._unnamed_Historial_noticias_._contiene = new Lista_mis_noticias(this._lista_mis_noticias._unnamed_Historial_noticias_._unnamed_Periodista_, _lista_mis_noticias._unnamed_Historial_noticias_);
+		this._lista_mis_noticias._unnamed_Historial_noticias_._contiene.Noticia_item(this._lista_mis_noticias._unnamed_Historial_noticias_.periodista.getIdUsuario());
+		this._lista_mis_noticias._unnamed_Historial_noticias_.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._lista_mis_noticias._unnamed_Historial_noticias_._contiene);
 	}
 }

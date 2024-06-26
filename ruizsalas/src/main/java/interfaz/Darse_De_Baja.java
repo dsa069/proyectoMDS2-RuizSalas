@@ -16,11 +16,10 @@ public class Darse_De_Baja extends VistaDarsedebaja{
 
 		this.getBotonDarseDeBaja().addClickListener(event->this.cancelar_cobro_suscripcion());
 	}
-	
+
 	public void cancelar_cobro_suscripcion() {   
 		iusureg.cancelar_cobro_suscripcion(this.suscrito.getIdUsuario());
 		this.usuarioRegistrado.mainView.removeAll();
 		this.usuarioRegistrado.mainView.add(this.usuarioRegistrado.mainView.UNR);
 	}
-
 }

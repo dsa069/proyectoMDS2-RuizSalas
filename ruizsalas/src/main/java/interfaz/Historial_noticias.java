@@ -16,19 +16,16 @@ public class Historial_noticias extends Banner_Periodista {
 		this.getLayoutGenericoVistaGenerica().setVisible(false);
 		this.getHistorialNoticiasLayout().setVisible(true);
 
-		this.Mis_Noticias();
-
+		//ESTATICO LISTA MIS NOTICIAS
+		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
+		this._contiene.Noticia_item(this.periodista.getIdUsuario());
+		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
+		
 		//CREAR NOTICIA DINAMICO
 		this.getBotonCrearNoticia().addClickListener(event->{
 			this._unnamed_Periodista_.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			CENoticia = new Crear_Editar_Noticia(this._unnamed_Periodista_, this.periodista, null);
 			this._unnamed_Periodista_.getBannerGenericoEstatico().as(VerticalLayout.class).add(CENoticia);
 		});
-	}
-
-	public void Mis_Noticias() {
-		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
-		this._contiene.Noticia_item(this.periodista.getIdUsuario());
-		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
 	}
 }
