@@ -16,7 +16,11 @@ public class Banner_Periodista extends Banner_registrado {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 		this.getBotonMisNoticiasGenerico().setVisible(true);
 
-		this.getBotonMisNoticiasGenerico().addClickListener(event->ConductorMisNoticias());
+		this.getBotonMisNoticiasGenerico().addClickListener(event->{
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			historialNoticias = new Historial_noticias(this._periodista, this.periodista);
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
+		});
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 
@@ -25,11 +29,5 @@ public class Banner_Periodista extends Banner_registrado {
 		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		BananaPeriodista = new Banner_Periodista(this._periodista, this.periodista);
 		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaPeriodista);
-	}
-
-	public void ConductorMisNoticias() {
-		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		historialNoticias = new Historial_noticias(this._periodista, this.periodista);
-		this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
 	}
 }

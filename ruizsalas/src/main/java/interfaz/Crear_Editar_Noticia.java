@@ -27,7 +27,11 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
 		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
 
-		this.getBotonEliminarNoticiaPropia().addClickListener(event->ConductorMisNoticias());
+		this.getBotonEliminarNoticiaPropia().addClickListener(event->{
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			historialNoticias = new Historial_noticias(this._periodista, this.periodista);
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
+		});
 		this.getBotonConfirmarModificacionNoticia().addClickListener(event->guardar_cambios_noticia());
 	}
 
@@ -110,7 +114,10 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		}
 		if(!error) {			
 			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]), periodista.getIdUsuario());
-			this.ConductorMisNoticias();
+			
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			historialNoticias = new Historial_noticias(this._periodista, this.periodista);
+			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
 		}
 	}
 }
