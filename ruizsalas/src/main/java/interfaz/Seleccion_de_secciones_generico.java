@@ -17,29 +17,30 @@ public class Seleccion_de_secciones_generico extends VistaSelecciondeseccionesge
 	public Crear_Editar_Secciones_Tematicas _crearEditarSeccionesTematicas;
 	public Seleccion_de_secciones_Vista_Editor SESVE;
 	public Seccion[] sec;
+	boolean derechos;
 	iEditor iUsuario = new BD_Principal();
-	
-	public Seleccion_de_secciones_generico(Usuario usuario, Seleccion_de_secciones_Vista_Editor SESVE) {
+
+	public Seleccion_de_secciones_generico(Usuario usuario, Seleccion_de_secciones_Vista_Editor SESVE, boolean derechos) {
 		super();
 		this.usuario = usuario;
 		this.SESVE=SESVE;
+		this.derechos=derechos;
+
 		this.getBarraDeBusqueda().setVisible(false);
 		this.getBotonEditarSecciones().setVisible(false);
 		this.getMsgError().setVisible(false);
-		this.Seleccion_de_secciones_item_Estatico();
-		this.CEseccionesEstatico();
-	}
-	
-	public void Seleccion_de_secciones_item_Estatico() {
-		sec = iUsuario.cargar_secciones_vista_editor();
-		for (int i=0; i<sec.length; i++) {
-			Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
-			this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
+
+		if(derechos) {
+			//ITEM
+			sec = iUsuario.cargar_secciones_vista_editor();
+			for (int i=0; i<sec.length; i++) {
+				Seleccion_de_secciones_generico_item SSGI = new Seleccion_de_secciones_generico_item(this, sec[i]);
+				this.getLayoutSeccionesContenidasPeriodico().add(SSGI);
+			}
+
+			//ESTATICO CE SECCIONES
+			this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada(), this);
+			this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 		}
-	}
-	
-	public void CEseccionesEstatico() {
-		this._crearEditarSeccionesTematicas = new Crear_Editar_Secciones_Tematicas((Editor) this.usuario, iUsuario.cargar_portada(), this);
-		this.getLayoutGenericoSeccionesBanner().add(_crearEditarSeccionesTematicas);
 	}
 }

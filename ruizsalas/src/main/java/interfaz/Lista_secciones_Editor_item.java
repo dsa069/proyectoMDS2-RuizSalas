@@ -30,7 +30,7 @@ public class Lista_secciones_Editor_item extends Listar_Secciones_item {
 	public void borrar_seccion() {
 		iEdito.borrar_seccion(seccion.getIdSeccion());
 		this._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-		SES = new Seleccion_de_secciones_generico(this._lista_secciones_Editor._editor, this._lista_secciones_Editor.CBT.SESG.SESVE);
+		SES = new Seleccion_de_secciones_generico(this._lista_secciones_Editor._editor, this._lista_secciones_Editor.CBT.SESG.SESVE, true);
 		this._lista_secciones_Editor.CBT.SESG.SESVE.banerReg.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SES);
 
 	}
