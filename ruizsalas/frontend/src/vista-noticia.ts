@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -25,12 +25,12 @@ export class VistaNoticia extends LitElement {
     <img src="https://img.fcbayern.com/image/upload/t_cms-16x9/f_auto/w_1600,c_fill/q_auto/v1631430883/cms/public/images/fcbayern-com/homepage/saison-19-20/galerien/spiele/barcelona-fcb/34_fcbfcb_200814_ima.jpg" style="height: 100%; width: 100%;" id="imagenPrincipalNoticia">
    </vaadin-vertical-layout>
   </vaadin-button>
-  <vaadin-vertical-layout style="height: 60%; flex-shrink: 1; align-items: flex-start; align-self: flex-start;" id="tematicas"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="flex-shrink: 1; height: 60%; flex-grow: 0; align-items: flex-start; align-self: flex-start;" id="seleccionarTematicas"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="height: 60%; flex-shrink: 1; align-items: flex-start; align-self: flex-start; width: 25%;" id="tematicas"></vaadin-vertical-layout>
+  <vaadin-vertical-layout style="flex-shrink: 1; height: 60%; flex-grow: 0; align-items: flex-start; align-self: flex-start; width: 25%;" id="seleccionarTematicas"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="flex-shrink: 1; height: 60%; align-items: flex-start; align-self: flex-start;" id="SeleccionarSecciones"></vaadin-vertical-layout>
-  <vaadin-vertical-layout style="flex-shrink: 1; height: 60%; font-size: 30px; align-items: flex-start;">
+  <vaadin-vertical-layout style="flex-shrink: 0; height: 60%; font-size: 30px; flex-grow: 1; align-items: stretch; width: 25%;">
    <vaadin-vertical-layout style="flex-shrink: 1;" id="FechaNoticia">
-    <label style="align-self: flex-start; width: 100%;"> 28/03/2024 </label>
+    <label style="align-self: flex-start; width: 100%; flex-shrink: 1;"> 28/03/2024 </label>
    </vaadin-vertical-layout>
    <vaadin-vertical-layout id="AutorNoticia">
     <label style="align-self: flex-start; width: 100%;"> Pepe Martínez </label>
@@ -44,18 +44,20 @@ export class VistaNoticia extends LitElement {
   <vaadin-vertical-layout id="layoutTitularVistaNoticia" style="flex-shrink: 0; flex-grow: 1;">
    <label> Humillación sin precedentes al Barcelona </label>
   </vaadin-vertical-layout>
-  <vaadin-horizontal-layout style="height: 60%; flex-shrink: 1; align-self: flex-start; align-items: flex-start; flex-grow: 0;" id="verValoracionEstatico"></vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="height: 60%; width: 10%; flex-shrink: 1; flex-grow: 0;" id="valorarNoticia">
-   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="BotonLikeNoticia">
-    <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 60%;">
-   </vaadin-button>
-   <vaadin-button theme="icon" aria-label="Add new" id="BotonNotLikeNoticia" style="background-color: var(--lumo-contrast-0pct); overflow: hidden; height: 100%; width: 50%; flex-shrink: 0;">
-    <iron-icon src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="width: 60%; height: 100%;"></iron-icon>
+  <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; align-self: center; align-items: center;">
+   <vaadin-horizontal-layout style="height: 60%; flex-shrink: 1; align-items: center; flex-grow: 0; align-self: center; justify-content: center;" id="verValoracionEstatico"></vaadin-horizontal-layout>
+   <vaadin-horizontal-layout style="height: 60%; width: 10%; flex-shrink: 1; flex-grow: 0;" id="valorarNoticia">
+    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 25%; width: 50%; background-color: var(--lumo-contrast-0pct); overflow: hidden; align-self: center;" id="BotonLikeNoticia">
+     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 100%; width: 60%;">
+    </vaadin-button>
+    <vaadin-button theme="icon" aria-label="Add new" id="BotonNotLikeNoticia" style="background-color: var(--lumo-contrast-0pct); overflow: hidden; height: 25%; width: 50%; flex-shrink: 0;">
+     <iron-icon src="https://cdn-icons-png.flaticon.com/512/126/126504.png" style="width: 60%; height: 100%;"></iron-icon>
+    </vaadin-button>
+   </vaadin-horizontal-layout>
+   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 5%; width: 5%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="eliminarNoticia">
+    <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" style="height: 100%; width: 60%;">
    </vaadin-button>
   </vaadin-horizontal-layout>
-  <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 60%; width: 5%; background-color: var(--lumo-contrast-0pct); overflow: hidden;" id="eliminarNoticia">
-   <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" style="height: 100%; width: 60%;">
-  </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 20px; flex-grow: 1;">
   <vaadin-vertical-layout style="flex-shrink: 1; height: 100%;" id="noticiaCortada">
