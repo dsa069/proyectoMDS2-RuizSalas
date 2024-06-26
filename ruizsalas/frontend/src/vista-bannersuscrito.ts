@@ -17,17 +17,17 @@ export class VistaBannersuscrito extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%;" id="layoutBannerSuscrito">
+<vaadin-vertical-layout style="width: 100%; height: 100%; position: absolute;" id="layoutBannerSuscrito">
  <vaadin-horizontal-layout style="width: 100%; align-self: stretch; justify-content: center; font-size: 36px; flex-shrink: 0; flex-grow: 0;" id="textoPerfil">
    Perfil 
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout style="width: 100%; height: 30%; flex-shrink: 0;" id="noticiaLayoutGenerico">
-  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; height: 50%;" id="noticiaLayout"></vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0;" id="noticiaEditorLayout"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; height: 50%; justify-content: center; align-self: stretch; align-items: stretch;" id="noticiaLayout"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0; justify-content: center; align-items: stretch; align-self: stretch;" id="noticiaEditorLayout"></vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="height: 25%; width: 100%; flex-shrink: 0; align-self: stretch;" id="perfilUsuarioLayout">
-  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1; align-items: center; justify-content: center; align-self: stretch;" id="verDatosEstaticos"></vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-between; flex-grow: 0; align-items: flex-end; align-self: stretch;">
+  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1; justify-content: center; align-self: stretch; align-items: stretch;" id="verDatosEstaticos"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-around; flex-grow: 0; align-items: flex-end; align-self: stretch;">
    <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 1; height: 100%; background-color: var(--lumo-contrast-0pct);" id="botonCerrarSesion">
     <iron-icon style="width: 100%; height: 90px;" src="https://cdn-icons-png.flaticon.com/128/660/660350.png"></iron-icon>
    </vaadin-button>
@@ -38,8 +38,8 @@ export class VistaBannersuscrito extends LitElement {
   </vaadin-horizontal-layout>
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="width: 100%; height: 25%; flex-shrink: 0;" id="editarPerfilLayout">
-  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1;" id="editarDatosEstaticos"></vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0; justify-content: space-between; padding: var(--lumo-space-m);">
+  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; flex-grow: 1; align-self: stretch; align-items: stretch; justify-content: center;" id="editarDatosEstaticos"></vaadin-horizontal-layout>
+  <vaadin-horizontal-layout style="width: 100%; height: 50%; flex-shrink: 0; justify-content: space-around; padding: var(--lumo-space-m);">
    <vaadin-button style="color: black; flex-shrink: 1; flex-grow: 0; align-self: center; font-size: 25px;" id="botonCancelarEditarPerfil">
      Cancelar 
    </vaadin-button>
