@@ -12,7 +12,7 @@ public class Registrado extends Usuario {
 		this.usuario = usuario;
 		//Banner registrado inicio
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		this.BR = new Banner_registrado(this, this.usuario);
+		this.BR = new Banner_registrado(this, this.usuario, true);
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).add(this.BR);	
 	}
 }

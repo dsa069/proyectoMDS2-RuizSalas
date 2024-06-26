@@ -19,15 +19,17 @@ public class Banner_registrado extends Banner_generico {
 	public Perfil_Uusario_Vista_UR PerfilUR;
 	public Perfil_Usuario Perfil;
 	public Banner_registrado BananaRegistardo;
+	public boolean herencia;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
 
 	ocl_proyecto.Usuario user;
 
-	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario) {
+	public Banner_registrado(Registrado _registrado, ocl_proyecto.Usuario usuario, boolean herencia) {
 		super(_registrado, usuario);
 		this._registrado = _registrado;
 		this.user = usuario;
+		this.herencia = herencia;
 		this.getBotonSuscribirseGenerico().setVisible(false);
 		this.getZonaAnunciosLayout1().setVisible(false);
 		this.getZonaAnunciosLayout2().setVisible(false);
@@ -35,7 +37,11 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 
-		this.InicioPortada();
+		if(herencia) {
+			//Estatico SS no editor
+			this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
+			this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
+		}
 
 		this.imagen = new Image();
 		File file = new File(IMAGE_PATH + this.user.getFoto_de_perfil());
@@ -61,15 +67,10 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonpaginainicio().addClickListener(event->ConductorPortadaBanner());
 	}
 
-	public void InicioPortada() {
-		this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
-		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
-	}
-
 	@Override
 	public void ConductorPortadaBanner() {
 		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		BananaRegistardo = new Banner_registrado(this._registrado, this.user);
+		BananaRegistardo = new Banner_registrado(this._registrado, this.user, true);
 		this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaRegistardo);
 	}
 

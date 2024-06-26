@@ -9,7 +9,7 @@ public class Banner_Periodista extends Banner_registrado {
 	ocl_proyecto.Periodista periodista;
 
 	public Banner_Periodista(Periodista _periodista, ocl_proyecto.Periodista periodista) {
-		super(_periodista, periodista);
+		super(_periodista, periodista, true);
 		this._periodista = _periodista;
 		this.periodista = periodista;
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);

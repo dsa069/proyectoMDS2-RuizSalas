@@ -11,7 +11,7 @@ public class Banner_Editor extends Banner_registrado {
 	ocl_proyecto.Editor editor;
 
 	public Banner_Editor(Editor _editor, ocl_proyecto.Editor editor) {
-		super(_editor, editor);
+		super(_editor, editor, false);
 		this._editor = _editor;
 		this.editor = editor;
 		this.getBotonMisNoticiasGenerico().setVisible(false);
@@ -35,11 +35,6 @@ public class Banner_Editor extends Banner_registrado {
 			Revision = new Revisar_noticias(this._editor, this.editor);
 			this._editor.getBannerGenericoEstatico().as(VerticalLayout.class).add(Revision);
 		});	
-	}
-
-	@Override
-	public void InicioPortada() {
-
 	}
 
 	@Override
