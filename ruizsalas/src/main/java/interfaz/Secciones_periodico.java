@@ -19,10 +19,11 @@ public class Secciones_periodico extends VistaSeccionesperiodico{
 		this.seccion = seccion;
 		this.SSI = SSI;
 		this.PDI =PDI;
+		
 		//Lista de secciones
 		this._contiene = new Listar_Secciones(this._accede, this.seccion, this, true);
 		this.getListaNoticiasEstatica().as(VerticalLayout.class).add(this._contiene);
-		
+
 		this.getBotonAvazarPaginaPeriodico().addClickListener(event->{
 			this.getListaNoticiasEstatica().as(VerticalLayout.class).removeAll();
 			_contiene = new Listar_Secciones(this._accede, this.seccion =  iusuario.cargar_seccion_palanteypatras(this.seccion.getIdSeccion(), true), this, true);

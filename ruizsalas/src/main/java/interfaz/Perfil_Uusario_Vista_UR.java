@@ -10,11 +10,12 @@ public class Perfil_Uusario_Vista_UR extends Perfil_Usuario {
 		this._unnamed_Usuario_Registardo_ = _usuarioRegistrado;
 		this.user = suscrito;
 		this.getDarseDeBajaLayout().setVisible(true);
+		
 		//Darse de baja
 		this.Boton = new Darse_De_Baja(this._unnamed_Usuario_Registardo_, this.user);
 		this.getDarseDeBajaLayout().add(this.Boton);
 	}
-	
+
 	public void dar_de_baja() {
 		throw new UnsupportedOperationException();
 	}

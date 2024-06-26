@@ -19,10 +19,11 @@ public class Pagina_de_inicio extends VistaPaginadeinicio{
 		this._unnamed_Usuario_ = usuario;
 		this.usuarioocl =  usuarioocl;
 		this.Selec = Selec;
+
 		//Noticias portada
 		this._contiene = new Noticias_en_Portada(this._unnamed_Usuario_, this.usuarioocl, this);
 		this.getListaPortadaEstatica().as(VerticalLayout.class).add(this._contiene);
-		
+
 		this.getBotonContinuarPaginaInicio().addClickListener(event->{
 			this.Selec.getLayoutGenericoSeccionesBanner().removeAll();
 			SeccP = new Secciones_periodico(this._unnamed_Usuario_, iusuario.cargar_seccion_primero(), null, this);

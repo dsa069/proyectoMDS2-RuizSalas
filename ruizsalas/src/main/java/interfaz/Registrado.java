@@ -10,6 +10,7 @@ public class Registrado extends Usuario {
 	public Registrado (MainView mainView, ocl_proyecto.Usuario usuario){
 		super(mainView, usuario);
 		this.usuario = usuario;
+
 		//Banner registrado inicio
 		this.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 		this.BR = new Banner_registrado(this, this.usuario);
