@@ -43,7 +43,6 @@ public class Lista_Secciones_noticia_item extends VistaListaseccionesnoticia_ite
 	public void marcar_seccion() {
 		ieditor.marcar_seccion(this.seccion.getIdSeccion(), this.noticia.getId_valoracion());
 		this.CNE.getSeleccionarSecciones().as(VerticalLayout.class).removeAll();
-//		this._lista_Secciones_noticia.getSeccionesSelecionablesItem().as(VerticalLayout.class).removeAll();
 		Lista_Secciones_noticia LSN = new Lista_Secciones_noticia(this._lista_Secciones_noticia.editor, this.noticia, this.CNE);
 		this.CNE.getSeleccionarSecciones().as(VerticalLayout.class).add(LSN);
 	}

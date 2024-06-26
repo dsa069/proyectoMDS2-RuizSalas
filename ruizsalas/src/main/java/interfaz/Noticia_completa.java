@@ -1,5 +1,8 @@
 package interfaz;
 
+import org.orm.PersistentException;
+
+import ocl_proyecto.EditorDAO;
 import ocl_proyecto.Usuario;
 
 public class Noticia_completa extends Banner_suscrito {
@@ -7,7 +10,7 @@ public class Noticia_completa extends Banner_suscrito {
 	public Contenido_noticia_completo Noticia;
 	ocl_proyecto.Noticia noticia;
 	ocl_proyecto.Usuario sus;
-	
+
 	public Noticia_completa(Registrado _registrado, ocl_proyecto.Usuario suscrito, ocl_proyecto.Noticia notice) {
 		super(_registrado, suscrito);
 		this._unnamed_Registrado_ = _registrado;
@@ -18,13 +21,15 @@ public class Noticia_completa extends Banner_suscrito {
 		this.getPerfilUsuarioLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
 		this.getEditarPerfilLayout().setVisible(false);
-		
-		this.Ver_Noticia();
-	}
-	
-	public void Ver_Noticia() {
-		this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_,this.sus, this.noticia, this);
-		this.getNoticiaLayout().add(this.Noticia);
-	}
 
+		//ESTATICO CONTENIDO NOTICIA COMPLETO
+		try {
+			if(EditorDAO.getEditorByORMID(this.sus.getIdUsuario()) == null) {
+				this.Noticia = new Contenido_noticia_completo(this._unnamed_Registrado_,this.sus, this.noticia, this);
+				this.getNoticiaLayout().add(this.Noticia);
+			}
+		} catch (PersistentException e) {
+			e.printStackTrace();
+		}
+	}
 }
