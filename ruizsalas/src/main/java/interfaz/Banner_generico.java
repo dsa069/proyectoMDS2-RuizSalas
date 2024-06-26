@@ -12,12 +12,12 @@ public class Banner_generico extends VistaBannergenerico{
 	public Usuario usuario;
 	public Seleccion_de_secciones SS;
 	ocl_proyecto.Usuario usuarioBD;
-	
+
 	public Banner_generico(Usuario usuario, ocl_proyecto.Usuario usuarioBD) {
 		super();
 		this.usuario = usuario;
 		this.usuarioBD = usuarioBD;
-		
+
 		this.getRegistroLayout().setVisible(false);
 		this.getIniciarSesionLayout().setVisible(false);
 		this.getNoticiaUsuarioNoRegistradoLayout().setVisible(false);

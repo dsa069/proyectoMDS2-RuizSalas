@@ -6,7 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 public class Registrado extends Usuario {
 	public Banner_registrado BR;
 	ocl_proyecto.Usuario usuario;
-	
+
 	public Registrado (MainView mainView, ocl_proyecto.Usuario usuario){
 		super(mainView, usuario);
 		this.usuario = usuario;

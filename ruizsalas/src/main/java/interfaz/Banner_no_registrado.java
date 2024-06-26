@@ -6,7 +6,6 @@ public class Banner_no_registrado extends Banner_generico {
 	public Usuario_No_Registrado _usuarioNoRegistrado;
 	public Registro registro;
 	public Banner_no_registrado noRegistro;
-
 	public Zona_Anuncios Anuncio;
 	public Zona_Anuncios Anuncio2;
 
@@ -31,18 +30,18 @@ public class Banner_no_registrado extends Banner_generico {
 		this.SS = new Seleccion_de_secciones(this._usuarioNoRegistrado, this.usuario, null);
 		this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 
-		this.getBotonSuscribirseGenerico().addClickListener(event->ConductorRegistro());
+		//CONDUCTOR REGISTRO
+		this.getBotonSuscribirseGenerico().addClickListener(event->{
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			registro = new Registro(this._usuarioNoRegistrado, this.usuario);
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(registro);
+		});
+
+		//CONDCTOR PORTADA
 		this.getBotonpaginainicio().addClickListener(event->{
 			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			noRegistro = new Banner_no_registrado(this._usuarioNoRegistrado, this.usuario);
 			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(noRegistro);	
 		});
 	}
-
-	public void ConductorRegistro() {
-		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-		registro = new Registro(this._usuarioNoRegistrado, this.usuario);
-		this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(registro);
-	}
-
 }

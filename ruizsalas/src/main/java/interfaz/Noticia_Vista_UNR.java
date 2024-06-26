@@ -19,7 +19,10 @@ public class Noticia_Vista_UNR extends Banner_no_registrado {
 		this.Noticia = new Contenido_cortado_noticia(this._unnamed_Usuario_No_Registrado_,this.noticia, this.user);
 		this.getNoticiaUsuarioNoRegistradoLayout().as(VerticalLayout.class).add(this.Noticia);
 		
-		this.getBotonSuscribirseGenerico().addClickListener(event->this.ConductorRegistro());
-		this.getBotonSuscribirseGenerico().addClickListener(event->this.ConductorRegistro());
+		this.getBotonSuscribirseGenerico().addClickListener(event->{
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			registro = new Registro(this._usuarioNoRegistrado, this.usuario);
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(registro);
+		});
 	}
 }

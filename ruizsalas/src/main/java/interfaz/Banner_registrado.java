@@ -39,9 +39,9 @@ public class Banner_registrado extends Banner_generico {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 		this.getBotonRevisarNoticiaGenerico().setVisible(false);
 
+		//Estatico SS no editor
 		try {
 			if(EditorDAO.getEditorByORMID(user.getIdUsuario()) == null){
-				//Estatico SS no editor
 				this.SS = new Seleccion_de_secciones(this._registrado, this.user, this);
 				this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.SS);
 			}
@@ -70,6 +70,7 @@ public class Banner_registrado extends Banner_generico {
 		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).removeAll();
 		this.getLayoutFotoPerfilBanner().as(VerticalLayout.class).add(this.imagen);
 
+		//CONDUCTOR PERFIL USUARIO
 		this.getBotonIniciarSesionGenerico().addClickListener(event->{		
 			try {
 				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
@@ -91,8 +92,9 @@ public class Banner_registrado extends Banner_generico {
 				e.printStackTrace();
 			}
 		});
+		
+		//conductor portada banner
 		this.getBotonpaginainicio().addClickListener(event->{
-			//conductor portada banner
 			try {
 				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
 					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
@@ -108,7 +110,6 @@ public class Banner_registrado extends Banner_generico {
 					this._registrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(BananaEditor);
 				}
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});

@@ -15,6 +15,7 @@ public class Banner_Periodista extends Banner_registrado {
 		this.getBotonVerPeriodistasGenerico().setVisible(false);
 		this.getBotonMisNoticiasGenerico().setVisible(true);
 
+		//CONDUCTOR MIS NOTICIAS
 		this.getBotonMisNoticiasGenerico().addClickListener(event->{
 			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
 			historialNoticias = new Historial_noticias(this._periodista, this.periodista);

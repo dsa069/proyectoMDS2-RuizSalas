@@ -35,7 +35,11 @@ public class Iniciar_Sesion extends Banner_no_registrado{
 		this._contiene = new Introducir_Datos(this._unnamed_Usuario_No_Registrado_, this.user);
 		this.getDatosIniciarSesionEstaticos().as(VerticalLayout.class).add(this._contiene);
 
-		this.getBotonCancelarSesion().addClickListener(event->ConductorRegistro());
+		this.getBotonCancelarSesion().addClickListener(event->{
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+			registro = new Registro(this._usuarioNoRegistrado, this.usuario);
+			this._usuarioNoRegistrado.getBannerGenericoEstatico().as(VerticalLayout.class).add(registro);
+		});
 		this.getBotonConfirmarSesion().addClickListener(event->confirmar_Datos());
 	}
 
