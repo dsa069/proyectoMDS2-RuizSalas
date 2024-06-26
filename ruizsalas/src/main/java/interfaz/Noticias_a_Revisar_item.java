@@ -65,5 +65,4 @@ public class Noticias_a_Revisar_item extends Listar_noticias_generico_item {
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene = new Noticias_a_Revisar(this._noticias_a_Revisar._unnamed_Revisar_noticias_._unnamed_Editor_, this._noticias_a_Revisar._unnamed_Revisar_noticias_.editor, this._noticias_a_Revisar._unnamed_Revisar_noticias_);
 		this._noticias_a_Revisar._unnamed_Revisar_noticias_.getRevisarNoticiasEstatico().as(VerticalLayout.class).add(this._noticias_a_Revisar._unnamed_Revisar_noticias_._contiene);
 	}
-
 }

@@ -65,6 +65,5 @@ public class Noticias_en_Portada_item extends Listar_noticias_item {
 				e.printStackTrace();
 			}
 		});
-
 	}
 }
