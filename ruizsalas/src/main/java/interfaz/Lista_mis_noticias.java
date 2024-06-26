@@ -30,7 +30,7 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 		this.getPortada().setVisible(false);
 		this.getColumnas().setVisible(false);
 
-		//EMPIEZAN LOS PROBLEMS
+		//ESTATICO ITEM
 		notice = yuseppe.cargar_listar_mis_noticias(this.peri.getIdUsuario());
 		for (int i=0; i<notice.length; i++) {
 			Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.notice[i]);

@@ -30,6 +30,5 @@ public class Noticias_a_Revisar extends Listar_noticias_generico {
 			Noticias_a_Revisar_item _item = new Noticias_a_Revisar_item(this, this.notice[i]);
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);
 		}
-		
 	}
 }

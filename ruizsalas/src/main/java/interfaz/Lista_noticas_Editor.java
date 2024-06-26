@@ -27,7 +27,7 @@ public class Lista_noticas_Editor extends Listar_noticias {
 			if(SeccionDAO.getSeccionByORMID(seccion).getPortada() == true)
 				notice = iUsuario.cargar_noticias_portada();
 			else
-				notice = this.cargar_noticias_secciones(seccion);
+				notice = iUsuario.cargar_noticias_secciones(seccion);
 		} catch (PersistentException e) {
 			e.printStackTrace();
 		}
