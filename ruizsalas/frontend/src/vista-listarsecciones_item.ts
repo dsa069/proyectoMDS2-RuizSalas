@@ -16,7 +16,7 @@ export class VistaListarsecciones_item extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; align-items: stretch;">
+<vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout style="justify-content: space-around; width: 100%; height: 7%; font-size: 32px; align-items: center; margin: var(--lumo-space-xl);">
   <vaadin-vertical-layout id="layoutTextoSeccionX" style="flex-shrink: 0; align-items: center;">
    <label> Sección </label>
