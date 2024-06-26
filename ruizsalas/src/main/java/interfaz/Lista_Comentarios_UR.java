@@ -35,6 +35,7 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 
 		this.getEscribirComentario().setVisible(true);
 
+		//ESTATICO COMENTARIOS UR Y PERIODISTA
 		try {
 			if(UsuarioDAO.getUsuarioByORMID(user.getIdUsuario()) != null && EditorDAO.getEditorByORMID(user.getIdUsuario()) == null ) {
 				comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
@@ -76,7 +77,6 @@ public class Lista_Comentarios_UR extends Lista_Comentarios {
 	public void escribir_comentario() {
 		iRegitrao.escribir_comentario(this.getCampoEscribirComentario().getValue(), user.getIdUsuario(), notice.getId_valoracion());
 
-		//ramadam
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).removeAll();
 		LCUR = new Lista_Comentarios_UR((Registrado) this.usuario, this.user, this.notice, this.CNC);
 		this.CNC.getComentariosEstaticos().as(VerticalLayout.class).add( LCUR);

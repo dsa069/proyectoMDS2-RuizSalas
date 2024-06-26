@@ -27,6 +27,7 @@ public class Lista_comentarios_Vista_Editor extends Lista_Comentarios_UR {
 		this.noti = noticia;
 		this.CNC = CNC;
 
+		//ESTATICO COMENTARIOS EDITOR
 		try {
 			if(EditorDAO.getEditorByORMID(user.getIdUsuario()) != null ) {
 				comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());

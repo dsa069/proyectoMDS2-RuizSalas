@@ -31,6 +31,7 @@ public class Lista_Comentarios extends VistaListacomentarios {
 		this.notice = notic;
 		this.getEscribirComentario().setVisible(false);
 
+		//ESTATICO COMENTARIOS UNR
 		try {
 			if(UsuarioDAO.getUsuarioByORMID(user.getIdUsuario()) == null) {
 				comenta = iUsu.cargar_listar_comenatrios(notice.getId_valoracion());
