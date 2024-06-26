@@ -18,7 +18,7 @@ export class VistaPaginadeinicio extends LitElement {
   render() {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
- <vaadin-vertical-layout style="width: 100%; flex-shrink: 1;" id="listaPortadaEstatica"></vaadin-vertical-layout>
+ <vaadin-vertical-layout style="width: 100%; flex-shrink: 1; align-items: stretch; justify-content: center;" id="listaPortadaEstatica"></vaadin-vertical-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 1; align-items: center; justify-content: center;">
   <vaadin-button theme="icon" aria-label="Add new" style="overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; height: 60%;" id="botonContinuarPaginaInicio">
    <img src="https://cdn-icons-png.flaticon.com/512/109/109617.png" style="height: 20%; width: 20%;">

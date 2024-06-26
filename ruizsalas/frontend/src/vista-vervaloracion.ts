@@ -15,7 +15,7 @@ export class VistaVervaloracion extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout style="width: 100%; height: 100%;">
+<vaadin-horizontal-layout style="width: 20%; height: 20%;">
  <vaadin-vertical-layout style="height: 100%; flex-shrink: 1; flex-grow: 0; align-items: center; align-self: flex-start; justify-content: center;" id="layoutVisualizarValoracion">
   <label style="align-self: flex-start; flex-shrink: 0; width: 100%; height: 100%; font-size: 70px; flex-grow: 0;"> 20 </label>
  </vaadin-vertical-layout>

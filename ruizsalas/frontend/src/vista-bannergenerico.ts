@@ -80,7 +80,7 @@ export class VistaBannergenerico extends LitElement {
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 32px; justify-content: center;">
        Iniciar Sesión 
      </vaadin-horizontal-layout>
-     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; align-items: stretch; justify-content: center;" id="datosIniciarSesionEstaticos"></vaadin-vertical-layout>
+     <vaadin-vertical-layout style="width: 100%; flex-shrink: 0; justify-content: center; align-items: stretch;" id="datosIniciarSesionEstaticos"></vaadin-vertical-layout>
      <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; justify-content: space-around;">
       <vaadin-button style="flex-shrink: 0; color: black;" id="BotonCancelarSesion">
         Cancelar 
