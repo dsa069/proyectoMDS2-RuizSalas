@@ -31,9 +31,9 @@ export class VistaListacomentarios_item extends LitElement {
     <label> Victor Vallejo </label>
    </vaadin-vertical-layout>
   </vaadin-horizontal-layout>
-  <vaadin-horizontal-layout style="flex-shrink: 0; height: 100%; width: 75%; align-items: center; font-size: 40px; flex-grow: 1; justify-content: center;">
+  <vaadin-horizontal-layout style="flex-shrink: 0; height: 100%; width: 75%; align-items: center; font-size: 40px; flex-grow: 1; justify-content: flex-start;">
    <vaadin-horizontal-layout style="flex-shrink: 0; height: 100%; justify-content: center; align-items: center;">
-    <vaadin-vertical-layout id="layoutVerValoracionComentario" style="flex-shrink: 0; flex-grow: 0; align-items: flex-start;"></vaadin-vertical-layout>
+    <vaadin-vertical-layout id="layoutVerValoracionComentario" style="flex-shrink: 0; flex-grow: 0;"></vaadin-vertical-layout>
    </vaadin-horizontal-layout>
    <vaadin-button theme="icon" aria-label="Add new" style="width: 5%; overflow: hidden; background-color: var(--lumo-contrast-0pct); flex-shrink: 0; flex-grow: 0; height: 100%;" id="ValorarComentarioPositivamente">
     <img src="https://cdn-icons-png.flaticon.com/512/126/126473.png" style="height: 70%; width: 70%;">
