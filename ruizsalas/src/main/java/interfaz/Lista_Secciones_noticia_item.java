@@ -31,7 +31,6 @@ public class Lista_Secciones_noticia_item extends VistaListaseccionesnoticia_ite
 				this.getBotonSeccionNoticiaVacio().setVisible(false);
 			}
 		} catch (PersistentException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
