@@ -19,20 +19,19 @@ public class Lista_mis_noticias extends Listar_noticias_generico {
 	public Noticia[] notice;	
 
 	iPeriodista yuseppe = new BD_Principal();
-
+	ocl_proyecto.Periodista peri;
+	
 	public Periodista periodista;
-	public Lista_mis_noticias(Periodista usuario, Historial_noticias _unnamed_Historial_noticias_) {
+	public Lista_mis_noticias(Periodista usuario, Historial_noticias _unnamed_Historial_noticias_, 	ocl_proyecto.Periodista peri) {
 		super(usuario);
 		this.periodista = usuario;
 		this._unnamed_Historial_noticias_ =_unnamed_Historial_noticias_;
+		this.peri=peri;
 		this.getPortada().setVisible(false);
 		this.getColumnas().setVisible(false);
 
-	}
-
-
-	public void Noticia_item(int IdPeriodista) {
-		notice = yuseppe.cargar_listar_mis_noticias(IdPeriodista);
+		//EMPIEZAN LOS PROBLEMS
+		notice = yuseppe.cargar_listar_mis_noticias(this.peri.getIdUsuario());
 		for (int i=0; i<notice.length; i++) {
 			Lista_mis_noticias_item _item = new Lista_mis_noticias_item(this, this.notice[i]);
 			this.getListaSimpleNoticias().as(VerticalLayout.class).add(_item);

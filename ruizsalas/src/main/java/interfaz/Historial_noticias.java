@@ -17,8 +17,8 @@ public class Historial_noticias extends Banner_Periodista {
 		this.getHistorialNoticiasLayout().setVisible(true);
 
 		//ESTATICO LISTA MIS NOTICIAS
-		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this);
-		this._contiene.Noticia_item(this.periodista.getIdUsuario());
+		this._contiene = new Lista_mis_noticias(this._unnamed_Periodista_, this, this.periodista);
+//		this._contiene.Noticia_item(this.periodista.getIdUsuario());
 		this.getHistorialNoticiasEstatico().as(VerticalLayout.class).add(this._contiene);
 
 		//CREAR NOTICIA DINAMICO
