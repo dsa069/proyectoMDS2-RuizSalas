@@ -8,7 +8,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
 import ocl_proyecto.EditorDAO;
-import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
 import ocl_proyecto.Usuario_suscrito_DAO;
@@ -16,6 +15,7 @@ import ocl_proyecto.Usuario_suscrito_DAO;
 public class Editar_Perfil extends Banner_suscrito {
 	public Registrado _unnamed_Registrado_;
 	public Editar_datos _unnamed_Editar_datos_;
+	public Perfil_Usuario per;
 	public Perfil_Usuario perfil;
 	public Perfil_Uusario_Vista_UR perfil_ur;
 	public Usuario_Registardo auxUR;
@@ -27,10 +27,11 @@ public class Editar_Perfil extends Banner_suscrito {
 
 	iRegistrado iRegistrao = new BD_Principal();
 
-	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario registrado) {
+	public Editar_Perfil(Registrado _registrado, ocl_proyecto.Usuario registrado, Perfil_Usuario per ) {
 		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
 		this.registrado = registrado;
+		this.per = per;
 		
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
@@ -48,16 +49,15 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getBotonCancelarEditarPerfil().addClickListener(event-> {
 			try {
 				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {					
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-					perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado);
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil_ur);
+					this.per.banregis.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+					perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado, this.per.banregis);
+					this.per.banregis.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil_ur);
 				}else {
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-					perfil = new Perfil_Usuario(this._unnamed_Registrado_, this.registrado);
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil);
+					this.per.banregis.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+					perfil = new Perfil_Usuario(this._unnamed_Registrado_, this.registrado,this.per.banregis);
+					this.per.banregis.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
 				}
 			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		});
@@ -123,7 +123,7 @@ public class Editar_Perfil extends Banner_suscrito {
 						this._unnamed_Registrado_.mainView.add(auxUR);
 						
 						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						perfil_ur = new Perfil_Uusario_Vista_UR(auxUR, (Usuario_suscrito_)this.registrado);
+						perfil_ur = new Perfil_Uusario_Vista_UR(auxUR, (Usuario_suscrito_)this.registrado, this.auxUR.BR );
 						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil_ur);
 						
 					}else if(EditorDAO.getEditorByORMID(this.registrado.getIdUsuario()) != null){
@@ -132,7 +132,7 @@ public class Editar_Perfil extends Banner_suscrito {
 						this._unnamed_Registrado_.mainView.add(auxE);
 						
 						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						perfil = new Perfil_Usuario(auxE, this.registrado);
+						perfil = new Perfil_Usuario(auxE, this.registrado, this.auxE.BE);
 						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
 						
 					}else {
@@ -141,7 +141,7 @@ public class Editar_Perfil extends Banner_suscrito {
 						this._unnamed_Registrado_.mainView.add(auxP);
 						
 						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-						perfil = new Perfil_Usuario(auxP, this.registrado);
+						perfil = new Perfil_Usuario(auxP, this.registrado, this.auxP.BP);
 						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
 					}
 				} catch (PersistentException e) {

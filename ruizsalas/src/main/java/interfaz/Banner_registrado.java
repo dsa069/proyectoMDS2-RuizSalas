@@ -75,7 +75,7 @@ public class Banner_registrado extends Banner_generico {
 			try {
 				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario()) != null) {
 					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-					PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, (Usuario_suscrito_) this.user);
+					PerfilUR = new Perfil_Uusario_Vista_UR(this._registrado.mainView.UR, (Usuario_suscrito_) this.user, this);
 					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(PerfilUR);
 				}else {
 					this.getCrearEditarNoticiaLayout().setVisible(false);
@@ -85,7 +85,7 @@ public class Banner_registrado extends Banner_generico {
 					this.getRevisarNoticiasLayout().setVisible(false);
 					this.getLayoutGenericoVistaGenerica().setVisible(true);
 					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
-					Perfil = new Perfil_Usuario(this._registrado, this.user);
+					Perfil = new Perfil_Usuario(this._registrado, this.user, this);
 					this.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(Perfil);
 				}
 			} catch (PersistentException e) {
