@@ -35,6 +35,8 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	}
 
 	public void gestionar_Transaccion() {
+		String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
+		
 		if (this._contiene.getCampoEmail().getValue().isEmpty()) {
 			Notification.show("Email Vacío");
 		}else if ( this._contiene.getCampoContrasena().isEmpty()) {
@@ -49,7 +51,9 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("Foto Vacío");
 		}else if ( this._contiene.getTarjetaDeCrédito().getValue().isEmpty()) {
 			Notification.show("Tarjeta de credito Vacía");
-		}else {
+		}else if( !this._contiene.getCampoContrasena().getValue().matches(passwordPattern)){
+			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
+		}else{
 			try {
 				Integer.valueOf(this._contiene.getTarjetaDeCrédito().getValue());
 				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Integer.valueOf(this._contiene.getTarjetaDeCrédito().getValue()));

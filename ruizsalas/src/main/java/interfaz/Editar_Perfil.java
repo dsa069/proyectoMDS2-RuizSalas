@@ -69,6 +69,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		String email = null; 
 		String contrasena = null; 
 		String foto = null;
+		String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
 		int tarjeta = 0;
 		boolean error = false;
 
@@ -82,7 +83,9 @@ public class Editar_Perfil extends Banner_suscrito {
 			Notification.show("DNI Vacío");
 		else if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
 			Notification.show("Foto Vacía");
-		else {
+		else if( !this._unnamed_Editar_datos_.getCampoContrasena().getValue().matches(passwordPattern))
+			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
+		else{
 			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
 			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
 			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
