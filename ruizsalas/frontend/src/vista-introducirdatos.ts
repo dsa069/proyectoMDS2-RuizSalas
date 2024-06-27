@@ -27,7 +27,7 @@ export class VistaIntroducirdatos extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1; height: 100%; justify-content: center;">
+ <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1; height: 100%; justify-content: center; align-items: stretch; width: 100%;">
   <vaadin-text-field label="Email" placeholder="Email" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;" id="campoEmail"></vaadin-text-field>
   <vaadin-password-field label="Password" placeholder="Contraseña" id="campoContrasena" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;"></vaadin-password-field>
   <vaadin-vertical-layout id="zonaRegistrarPeriodista" style="flex-shrink: 0; width: 100%; flex-grow: 0;">
