@@ -125,8 +125,8 @@ export class VistaBannergenerico extends LitElement {
     </vaadin-vertical-layout>
     <vaadin-vertical-layout style="flex-shrink: 0; width: 100%;" id="ListarPeriodistaLayout">
      <vaadin-vertical-layout style="flex-shrink: 0; width: 100%; align-items: stretch; align-self: stretch; justify-content: center;" id="listaPeriodistaEstatico"></vaadin-vertical-layout>
-     <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%; justify-content: center;">
-      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 30%; width: 15%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="BotonAnadirPeriodista">
+     <vaadin-vertical-layout style="align-items: center; flex-shrink: 0; width: 100%; justify-content: center; margin: var(--lumo-space-xl);">
+      <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; height: 30%; width: 10%; background-color: var(--lumo-contrast-0pct); align-self: center;" id="BotonAnadirPeriodista">
        <img src="https://cdn.icon-icons.com/icons2/602/PNG/512/Add_User_icon-icons.com_55971.png" width="" height="" style="height: 35%; width: 35%;">
       </vaadin-button>
      </vaadin-vertical-layout>
