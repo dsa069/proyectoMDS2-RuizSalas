@@ -31,8 +31,6 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private TextField campoApodo;
 	@Id("campoDNI")
 	private TextField campoDNI;
-	@Id("campoFoto")
-	private TextField campoFoto;
 	@Id("tarjetaDeCrédito")
 	private TextField tarjetaDeCrédito;
 	@Id("campoContrasena")
@@ -119,14 +117,6 @@ public class VistaIntroducirdatos extends LitTemplate {
 
 	public void setCampoDNI(TextField campoDNI) {
 		this.campoDNI = campoDNI;
-	}
-
-	public TextField getCampoFoto() {
-		return campoFoto;
-	}
-
-	public void setCampoFoto(TextField campoFoto) {
-		this.campoFoto = campoFoto;
 	}
 
 	public TextField getTarjetaDeCrédito() {

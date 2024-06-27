@@ -1,10 +1,10 @@
 import { LitElement, html, css, customElement } from 'lit-element';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
+import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-introducirdatos')
 export class VistaIntroducirdatos extends LitElement {
@@ -33,13 +33,11 @@ export class VistaIntroducirdatos extends LitElement {
   <vaadin-vertical-layout id="zonaRegistrarPeriodista" style="flex-shrink: 0; width: 100%; flex-grow: 0;">
    <vaadin-text-field label="Apodo" placeholder="Apodo" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;" id="campoApodo"></vaadin-text-field>
    <vaadin-text-field label="DNI" placeholder="DNI" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;" id="campoDNI"></vaadin-text-field>
-   <vaadin-vertical-layout theme="spacing" id="FotoTextamen" style="align-self: stretch;">
-    <vaadin-text-field label="Foto" placeholder="Foto" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;" id="campoFoto"></vaadin-text-field>
-   </vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout id="datosRegistro" style="width: 100%; flex-shrink: 0;">
    <vaadin-text-field label="Tarjeta de crédito" placeholder="Tarjeta de crédito" style="width: 90%; flex-shrink: 0; margin: var(--lumo-space-m); align-self: center;" id="tarjetaDeCrédito" dir="campoDineros"></vaadin-text-field>
   </vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="FotoTextamen" style="align-self: stretch;"></vaadin-vertical-layout>
  </vaadin-vertical-layout>
 </vaadin-horizontal-layout>
 `;
