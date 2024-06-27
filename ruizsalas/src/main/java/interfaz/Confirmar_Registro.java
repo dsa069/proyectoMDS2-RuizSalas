@@ -12,8 +12,8 @@ import vistas.VistaConfirmarregistro;
 public class Confirmar_Registro extends VistaConfirmarregistro{
 
 	public Introducir_datos_registro _contiene;
-	public Enviar_Correo_Confirmacion _procede_a;
-	public Gestionar_Transaccion a_procede_a;
+	public Enviar_Correo_Confirmacion _procede_a = new Enviar_Correo_Confirmacion();
+	public Gestionar_Transaccion a_procede_a = new Gestionar_Transaccion();
 
 	ocl_proyecto.Usuario_suscrito_ usuario;
 
@@ -55,8 +55,8 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
 		}else{
 			try {
-				Integer.valueOf(this._contiene.getTarjetaDeCrédito().getValue());
-				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Integer.valueOf(this._contiene.getTarjetaDeCrédito().getValue()));
+				Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().trim());
+				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().trim()));
 				this.usuarioNoRegistrado.mainView.removeAll();
 				usuarioRegistrado = new Usuario_Registardo(this.usuarioNoRegistrado.mainView, this.usuario);
 				this.usuarioNoRegistrado.mainView.add(usuarioRegistrado);
@@ -64,6 +64,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 				this.enviar_Correo_Confirmacion();	
 			} catch (Exception e) {
 				Notification.show("Tarjeta de credito con caracteres invalidos");
+				e.printStackTrace();
 			}
 		}
 	}

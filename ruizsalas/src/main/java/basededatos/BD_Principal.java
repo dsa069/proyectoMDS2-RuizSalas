@@ -263,7 +263,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, int aTarjeta_de_credito) {
+	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, long aTarjeta_de_credito) {
 		try {
 			_bd_editores.guardar_cambios_Editor(aIdUsuario, aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil);
 			_bd_periodistas.guardar_cambios_Periodista(aIdUsuario, aApodo, aDni, aCorreo, aContrasena, aFoto_de_perfil);
@@ -334,7 +334,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		}
 	}
 
-	public void cancelar_cobro_suscripcion(String aApodo, String aDni, String aCorreo, int aTarjeta_de_credito) {
+	public void cancelar_cobro_suscripcion(String aApodo, String aDni, String aCorreo, long aTarjeta_de_credito) {
 
 	}
 
@@ -351,7 +351,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 
 	}
 
-	public void gestionar_Transaccion(String aApodo, String aDni, String aCorreo, int aTarjeta_de_credito) {
+	public void gestionar_Transaccion(String aApodo, String aDni, String aCorreo, long aTarjeta_de_credito) {
 
 	}
 
@@ -359,7 +359,7 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 		
 		}
 
-	public ocl_proyecto.Usuario_suscrito_ gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) {
+	public ocl_proyecto.Usuario_suscrito_ gestionar_Transaccion(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, long aTarjeta_de_credito) {
 		try {
 			return _bd_us_suscritos.crear_Usuario(aCorreo, aContrasena, aApodo, aFoto_de_perfil , aDni, aTarjeta_de_credito);
 		} catch (PersistentException e) {

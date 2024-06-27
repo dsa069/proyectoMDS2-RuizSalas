@@ -70,7 +70,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		String contrasena = null; 
 		String foto = null;
 		String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
-		int tarjeta = 0;
+		long tarjeta = 0;
 		boolean error = false;
 
 		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
@@ -100,7 +100,7 @@ public class Editar_Perfil extends Banner_suscrito {
 						error = true;
 					}else {
 						try {
-							tarjeta = Integer.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue());
+							tarjeta = Long.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().trim());
 						} catch (NumberFormatException e) {
 							Notification.show("Tarjeta de credito con caracteres invalidos");
 							error = true;

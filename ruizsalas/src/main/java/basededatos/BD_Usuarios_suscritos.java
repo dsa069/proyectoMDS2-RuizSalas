@@ -33,7 +33,7 @@ public class BD_Usuarios_suscritos {
 		}
 	}
 
-	public Usuario_suscrito_ crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, int aTarjeta_de_credito) 
+	public Usuario_suscrito_ crear_Usuario(String aCorreo, String aContrasena, String aApodo, String aFoto_de_perfil, String aDni, long aTarjeta_de_credito) 
 		throws PersistentException {
 			Usuario_suscrito_ us_sus = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();
@@ -70,7 +70,7 @@ public class BD_Usuarios_suscritos {
 		return us_sus;
 	}
 
-	public void guardar_cambios_US(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, int aTarjeta_de_credito) 
+	public void guardar_cambios_US(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, long aTarjeta_de_credito) 
 		throws PersistentException {
 			Usuario_suscrito_ us_sus = null;
 			PersistentTransaction t = ProyectoMDS2RuizSalas20232024PersistentManager.instance().getSession().beginTransaction();

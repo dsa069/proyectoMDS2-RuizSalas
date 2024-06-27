@@ -7,7 +7,7 @@ import vistas.VistaDarsedebaja;
 
 public class Darse_De_Baja extends VistaDarsedebaja{
 	public Usuario_Registardo usuarioRegistrado;
-	public Cancelar_cobro_suscripcion _procede_a;
+	public Cancelar_cobro_suscripcion _procede_a = new Cancelar_cobro_suscripcion();
 	public iUsuario_Registardo iusureg = new BD_Principal();
 	ocl_proyecto.Usuario_suscrito_ suscrito;
 

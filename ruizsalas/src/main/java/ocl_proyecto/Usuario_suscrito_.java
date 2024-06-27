@@ -24,14 +24,14 @@ public class Usuario_suscrito_ extends ocl_proyecto.Usuario implements Serializa
 	public Usuario_suscrito_() {
 	}
 	
-	@Column(name="Tarjeta_de_credito", nullable=true, length=10)	
-	private int tarjeta_de_credito;
+	@Column(name="Tarjeta_de_credito", nullable=true)	
+	private long tarjeta_de_credito;
 	
-	public void setTarjeta_de_credito(int value) {
+	public void setTarjeta_de_credito(long value) {
 		this.tarjeta_de_credito = value;
 	}
 	
-	public int getTarjeta_de_credito() {
+	public long getTarjeta_de_credito() {
 		return tarjeta_de_credito;
 	}
 	

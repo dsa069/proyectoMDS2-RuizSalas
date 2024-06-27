@@ -13,5 +13,5 @@ public interface iRegistrado extends iUsuario {
 
 	public void valorar_noticia(int aIdUsuario, int aId_noticia, boolean aValoracion);
 
-	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, int aTarjeta_de_credito);
+	public void guardar_cambios(int aIdUsuario, String aApodo, String aDni, String aCorreo, String aContrasena, String aFoto_de_perfil, long aTarjeta_de_credito);
 }
