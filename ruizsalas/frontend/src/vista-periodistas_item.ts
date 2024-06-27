@@ -28,7 +28,7 @@ export class VistaPeriodistas_item extends LitElement {
    </vaadin-vertical-layout>
   </vaadin-button>
   <vaadin-button theme="icon" aria-label="Add new" style="flex-grow: 0; flex-shrink: 0; width: 15%; height: 20%; align-self: flex-end; overflow: hidden; background-color: var(--lumo-contrast-0pct);" id="BotonEliminarPeriodista">
-   <img src="https://cdn-icons-png.flaticon.com/512/748/748138.png" width="70%" height="70%">
+   <img src="https://cdn-icons-png.flaticon.com/512/748/748138.png" width="50%" height="50%">
   </vaadin-button>
  </vaadin-horizontal-layout>
  <vaadin-vertical-layout style="width: 100%; height: 10%; align-items: center; flex-shrink: 1; flex-grow: 0; font-size: 50px; justify-content: space-between;" id="ApodoPeriodistas">
