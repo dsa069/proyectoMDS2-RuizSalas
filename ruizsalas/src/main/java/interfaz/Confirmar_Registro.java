@@ -47,7 +47,9 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("Ruta de foto Vacía");
 		}else if ( this._contiene.getCampoDNI().getValue().isEmpty()) {
 			Notification.show("DNI Vacío");
-		}else if ( this._contiene.getCampoFoto().getValue().isEmpty()) {
+		}else if ( this._contiene.getCampoDNI().getValue().length() != 9)
+			Notification.show("El DNI debe tener 9 caracteres");
+		else if ( this._contiene.getCampoFoto().getValue().isEmpty()) {
 			Notification.show("Foto Vacío");
 		}else if ( this._contiene.getTarjetaDeCrédito().getValue().isEmpty()) {
 			Notification.show("Tarjeta de credito Vacía");
@@ -55,7 +57,16 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("La tarjeta de credito debe tener 16 caracteres");
 		else if( !this._contiene.getCampoContrasena().getValue().matches(passwordPattern)){
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
-		}else{
+		}
+		else if (!Character.isLetter(this._contiene.getCampoDNI().getValue().charAt(8))) 
+			Notification.show("El DNI debe tener una letra al final");
+		
+		else if(!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(0))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(1))||
+				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(2))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(3))||
+				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(4))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(5))||
+				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(6))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(7)))
+					Notification.show("El DNI solo debe tener una letra al final");
+		else{
 			try {
 				Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().replace(" ", ""));
 				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().replace(" ", "")));

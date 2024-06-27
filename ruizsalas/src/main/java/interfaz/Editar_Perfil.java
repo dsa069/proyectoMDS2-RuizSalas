@@ -32,7 +32,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		this._unnamed_Registrado_ = _registrado;
 		this.registrado = registrado;
 		this.per = per;
-		
+
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
 		this.getNoticiaLayoutGenerico().setVisible(false);
@@ -44,7 +44,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
 
 		this.getBotonGuardarEditarPerfil().addClickListener(event->guardar_cambios());
-		
+
 		//CANCELAR
 		this.getBotonCancelarEditarPerfil().addClickListener(event-> {
 			try {
@@ -81,26 +81,45 @@ public class Editar_Perfil extends Banner_suscrito {
 			Notification.show("Apodo Vacío");
 		else if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
 			Notification.show("DNI Vacío");
+		else if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().length() != 9)
+			Notification.show("El DNI debe tener 9 caracteres");
 		else if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
 			Notification.show("Foto Vacía");
 		else if( !this._unnamed_Editar_datos_.getCampoContrasena().getValue().matches(passwordPattern))
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
-		else if ( this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().replace(" ", "").length() != 16)
-			Notification.show("La tarjeta de credito debe tener 16 caracteres");
 		else{
+
+			String numerosDNI = this._unnamed_Editar_datos_.getCampoDNI().getValue().substring(0, 8);
+			for (int i = 0; i < numerosDNI.length(); i++) {
+				if (!Character.isDigit(numerosDNI.charAt(i))) {
+					Notification.show("El DNI solo debe tener una letra al final");
+					error = true;
+				}
+			}
+
+			char letraDNI = this._unnamed_Editar_datos_.getCampoDNI().getValue().charAt(8);
+			if (!Character.isLetter(letraDNI)) {
+				Notification.show("El DNI debe tener una letra al final");
+				error = true;
+			}
+
 			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
 			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
 			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
 			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
 			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
-			
+
 			try {
 				suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(registrado.getIdUsuario());
 				if(suscrito != null) {
 					if (this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().isEmpty()) {
 						Notification.show("Tarjeta de credito Vacía");
 						error = true;
+					}else if ( this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().replace(" ", "").length() != 16) {
+						Notification.show("La tarjeta de credito debe tener 16 caracteres");
+						error = true;
 					}else {
+
 						try {
 							tarjeta = Long.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().replace(" ", ""));
 						} catch (NumberFormatException e) {
@@ -126,25 +145,25 @@ public class Editar_Perfil extends Banner_suscrito {
 						this._unnamed_Registrado_.mainView.removeAll();
 						auxUR = new Usuario_Registardo(this._unnamed_Registrado_.mainView, (Usuario_suscrito_) this.registrado);
 						this._unnamed_Registrado_.mainView.add(auxUR);
-						
+
 						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 						perfil_ur = new Perfil_Uusario_Vista_UR(auxUR, (Usuario_suscrito_)this.registrado, this.auxUR.BR );
 						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil_ur);
-						
+
 					}else if(EditorDAO.getEditorByORMID(this.registrado.getIdUsuario()) != null){
 						this._unnamed_Registrado_.mainView.removeAll();
 						auxE = new Editor(this._unnamed_Registrado_.mainView, (ocl_proyecto.Editor) this.registrado);
 						this._unnamed_Registrado_.mainView.add(auxE);
-						
+
 						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 						perfil = new Perfil_Usuario(auxE, this.registrado, this.auxE.BE);
 						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
-						
+
 					}else {
 						this._unnamed_Registrado_.mainView.removeAll();
 						auxP = new Periodista(this._unnamed_Registrado_.mainView, (ocl_proyecto.Periodista) this.registrado);
 						this._unnamed_Registrado_.mainView.add(auxP);
-						
+
 						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
 						perfil = new Perfil_Usuario(auxP, this.registrado, this.auxP.BP);
 						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
