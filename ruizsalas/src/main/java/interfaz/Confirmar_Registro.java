@@ -51,12 +51,14 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 			Notification.show("Foto Vacío");
 		}else if ( this._contiene.getTarjetaDeCrédito().getValue().isEmpty()) {
 			Notification.show("Tarjeta de credito Vacía");
-		}else if( !this._contiene.getCampoContrasena().getValue().matches(passwordPattern)){
+		}else if ( this._contiene.getTarjetaDeCrédito().getValue().replace(" ", "").length() != 16)
+			Notification.show("La tarjeta de credito debe tener 16 caracteres");
+		else if( !this._contiene.getCampoContrasena().getValue().matches(passwordPattern)){
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
 		}else{
 			try {
-				Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().trim());
-				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().trim()));
+				Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().replace(" ", ""));
+				this.usuario = iUNR.gestionar_Transaccion(this._contiene.getCampoEmail().getValue(), this._contiene.getCampoContrasena().getValue(), this._contiene.getCampoApodo().getValue(), this._contiene.getCampoFoto().getValue(), this._contiene.getCampoDNI().getValue(),Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().replace(" ", "")));
 				this.usuarioNoRegistrado.mainView.removeAll();
 				usuarioRegistrado = new Usuario_Registardo(this.usuarioNoRegistrado.mainView, this.usuario);
 				this.usuarioNoRegistrado.mainView.add(usuarioRegistrado);

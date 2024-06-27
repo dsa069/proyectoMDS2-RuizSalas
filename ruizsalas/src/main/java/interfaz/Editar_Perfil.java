@@ -85,6 +85,8 @@ public class Editar_Perfil extends Banner_suscrito {
 			Notification.show("Foto Vacía");
 		else if( !this._unnamed_Editar_datos_.getCampoContrasena().getValue().matches(passwordPattern))
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
+		else if ( this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().replace(" ", "").length() != 16)
+			Notification.show("La tarjeta de credito debe tener 16 caracteres");
 		else{
 			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
 			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
@@ -100,7 +102,7 @@ public class Editar_Perfil extends Banner_suscrito {
 						error = true;
 					}else {
 						try {
-							tarjeta = Long.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().trim());
+							tarjeta = Long.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().replace(" ", ""));
 						} catch (NumberFormatException e) {
 							Notification.show("Tarjeta de credito con caracteres invalidos");
 							error = true;
