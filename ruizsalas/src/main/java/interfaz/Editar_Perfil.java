@@ -57,81 +57,71 @@ public class Editar_Perfil extends Banner_suscrito {
 	}
 
 	public void guardar_cambios() {
-		String apodo; 
-		String dni; 
-		String email; 
-		String contrasena; 
-		String foto;
+		String apodo = null; 
+		String dni = null; 
+		String email = null; 
+		String contrasena = null; 
+		String foto = null;
 		int tarjeta = 0;
 		boolean error = false;
-		
+
 		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
-			email = this.registrado.getCorreo();
-		else 
+			Notification.show("Email Vacío");
+		else if ( this._unnamed_Editar_datos_.getCampoContrasena().isEmpty()) 
+			Notification.show("Contrasena Vacía");
+		else if ( this._unnamed_Editar_datos_.getCampoApodo().getValue().isEmpty()) 
+			Notification.show("Apodo Vacío");
+		else if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
+			Notification.show("DNI Vacío");
+		else if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
+			Notification.show("Foto Vacía");
+		else {
 			email = this._unnamed_Editar_datos_.getCampoEmail().getValue();
-
-		if ( this._unnamed_Editar_datos_.getCampoContrasena().isEmpty()) 
-			contrasena = this.registrado.getContrasena();
-		else 
 			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
-
-		if ( this._unnamed_Editar_datos_.getCampoApodo().getValue().isEmpty()) 
-			apodo = this.registrado.getApodo();
-		else 
 			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
-
-		if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
-			foto = this.registrado.getFoto_de_perfil();
-		else 
-			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
-
-		if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().isEmpty())
-			dni = this.registrado.getDni();
-		else 
 			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
-
-		try {
-
-			suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(registrado.getIdUsuario());
-			if(suscrito != null) {
-				if ( this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().isEmpty())
-					tarjeta = this.suscrito.getTarjeta_de_credito();
-				else {
-					try {
-						tarjeta = Integer.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue());
-					} catch (NumberFormatException e) {
-						Notification.show("Tarjeta de credito con caracteres invalidos");
+			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
+			
+			try {
+				suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(registrado.getIdUsuario());
+				if(suscrito != null) {
+					if (this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue().isEmpty()) {
+						Notification.show("Tarjeta de credito Vacía");
 						error = true;
-						e.printStackTrace();
+					}else {
+						try {
+							tarjeta = Integer.valueOf(this._unnamed_Editar_datos_.getTarjetaDeCrédito().getValue());
+						} catch (NumberFormatException e) {
+							Notification.show("Tarjeta de credito con caracteres invalidos");
+							error = true;
+							e.printStackTrace();
+						}
 					}
 				}
+			} catch (PersistentException e1) {
+				e1.printStackTrace();
 			}
-		} catch (PersistentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		if(!error) {
+			if(!error) {
 
-			iRegistrao.guardar_cambios(this.registrado.getIdUsuario(),apodo, dni, email, contrasena, foto, tarjeta);
-			try {
-				registrado = UsuarioDAO.getUsuarioByORMID(this.registrado.getIdUsuario());
-			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-					perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado);
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil_ur);
-				}else {
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-					perfil = new Perfil_Usuario(this._unnamed_Registrado_, this.registrado);
-					this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil);
+				iRegistrao.guardar_cambios(this.registrado.getIdUsuario(),apodo, dni, email, contrasena, foto, tarjeta);
+				try {
+					registrado = UsuarioDAO.getUsuarioByORMID(this.registrado.getIdUsuario());
+				} catch (PersistentException e) {
+					e.printStackTrace();
 				}
-			} catch (PersistentException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				try {
+					if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {
+						this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
+						perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado);
+						this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil_ur);
+					}else {
+						this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
+						perfil = new Perfil_Usuario(this._unnamed_Registrado_, this.registrado);
+						this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil);
+					}
+				} catch (PersistentException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
