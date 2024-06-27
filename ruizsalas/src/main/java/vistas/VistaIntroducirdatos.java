@@ -7,6 +7,7 @@ import com.vaadin.flow.dom.Element;
 import com.vaadin.flow.component.template.Id;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.textfield.PasswordField;
 
 @Tag("vista-introducirdatos")
 @JsModule("./src/vista-introducirdatos.ts")
@@ -26,8 +27,6 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private Element layoutImagenPerfilIntroducirDatos;
 	@Id("campoEmail")
 	private TextField campoEmail;
-	@Id("campoContrasena")
-	private TextField campoContrasena;
 	@Id("campoApodo")
 	private TextField campoApodo;
 	@Id("campoDNI")
@@ -36,6 +35,8 @@ public class VistaIntroducirdatos extends LitTemplate {
 	private TextField campoFoto;
 	@Id("tarjetaDeCrédito")
 	private TextField tarjetaDeCrédito;
+	@Id("campoContrasena")
+	private PasswordField campoContrasena;
 	public VistaIntroducirdatos() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -96,11 +97,11 @@ public class VistaIntroducirdatos extends LitTemplate {
 		this.campoEmail = campoEmail;
 	}
 
-	public TextField getCampoContrasena() {
+	public PasswordField getCampoContrasena() {
 		return campoContrasena;
 	}
 
-	public void setCampoContrasena(TextField campoContrasena) {
+	public void setCampoContrasena(PasswordField campoContrasena) {
 		this.campoContrasena = campoContrasena;
 	}
 

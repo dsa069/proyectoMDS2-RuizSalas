@@ -3,6 +3,7 @@ import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-text-field/src/vaadin-password-field.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 @customElement('vista-introducirdatos')
@@ -28,7 +29,7 @@ export class VistaIntroducirdatos extends LitElement {
  </vaadin-vertical-layout>
  <vaadin-vertical-layout style="flex-shrink: 0; flex-grow: 1; height: 100%; justify-content: center;">
   <vaadin-text-field label="Email" placeholder="Email" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);" id="campoEmail"></vaadin-text-field>
-  <vaadin-text-field label="Contraseña" placeholder="Contraseña" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);" id="campoContrasena" dir="campoContrasena"></vaadin-text-field>
+  <vaadin-password-field label="Password" placeholder="Contraseña" id="campoContrasena" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);"></vaadin-password-field>
   <vaadin-vertical-layout id="zonaRegistrarPeriodista" style="flex-shrink: 0; width: 100%; flex-grow: 0;">
    <vaadin-text-field label="Apodo" placeholder="Apodo" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);" id="campoApodo"></vaadin-text-field>
    <vaadin-text-field label="DNI" placeholder="DNI" style="width: 100%; flex-shrink: 0; margin: var(--lumo-space-m);" id="campoDNI"></vaadin-text-field>
