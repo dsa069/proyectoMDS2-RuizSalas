@@ -17,9 +17,9 @@ export class VistaZonadeautoryversiondenoticia extends LitElement {
 
   render() {
     return html`
-<vaadin-horizontal-layout theme="spacing" style="width: 100%; height: 100%;font-size: 32px;">
- <vaadin-button theme="icon" aria-label="Add new" style="width: 10%; height: 15%; flex-shrink: 0; background-color: var(--lumo-contrast-0pct);">
-  <vaadin-vertical-layout theme="spacing" id="layoutFotoPeriodistaNoticia">
+<vaadin-horizontal-layout style="width: 100%; height: 100%; font-size: 32px;">
+ <vaadin-button theme="icon" aria-label="Add new" style="width: 10%; height: 15%; flex-shrink: 0; background-color: var(--lumo-contrast-0pct); flex-grow: 1; align-self: center;">
+  <vaadin-vertical-layout id="layoutFotoPeriodistaNoticia">
    <img src="https://cdn-icons-png.flaticon.com/512/5987/5987462.png" style="width: 100%;" id="FotoPeriodistaNoticia">
   </vaadin-vertical-layout>
  </vaadin-button>
