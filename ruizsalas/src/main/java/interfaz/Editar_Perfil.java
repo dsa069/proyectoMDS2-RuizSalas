@@ -64,6 +64,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		String foto;
 		int tarjeta = 0;
 		boolean error = false;
+		
 		if (this._unnamed_Editar_datos_.getCampoEmail().getValue().isEmpty()) 
 			email = this.registrado.getCorreo();
 		else 
