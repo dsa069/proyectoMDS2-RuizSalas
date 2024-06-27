@@ -7,6 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
+import ocl_proyecto.EditorDAO;
 import ocl_proyecto.Usuario;
 import ocl_proyecto.UsuarioDAO;
 import ocl_proyecto.Usuario_suscrito_;
@@ -17,6 +18,9 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Editar_datos _unnamed_Editar_datos_;
 	public Perfil_Usuario perfil;
 	public Perfil_Uusario_Vista_UR perfil_ur;
+	public Usuario_Registardo auxUR;
+	public Editor auxE;
+	public Periodista auxP;
 
 	ocl_proyecto.Usuario registrado;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
@@ -27,6 +31,7 @@ public class Editar_Perfil extends Banner_suscrito {
 		super(_registrado, registrado);
 		this._unnamed_Registrado_ = _registrado;
 		this.registrado = registrado;
+		
 		this.getNoticiaEditorLayout().setVisible(false);
 		this.getNoticiaLayout().setVisible(false);
 		this.getNoticiaLayoutGenerico().setVisible(false);
@@ -38,9 +43,11 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
 
 		this.getBotonGuardarEditarPerfil().addClickListener(event->guardar_cambios());
+		
+		//CANCELAR
 		this.getBotonCancelarEditarPerfil().addClickListener(event-> {
 			try {
-				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {
+				if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {					
 					this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
 					perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado);
 					this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil_ur);
@@ -111,13 +118,31 @@ public class Editar_Perfil extends Banner_suscrito {
 				}
 				try {
 					if(Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(this.registrado.getIdUsuario()) != null) {
-						this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-						perfil_ur = new Perfil_Uusario_Vista_UR((Usuario_Registardo) this._unnamed_Registrado_, (Usuario_suscrito_)this.registrado);
-						this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil_ur);
+						this._unnamed_Registrado_.mainView.removeAll();
+						auxUR = new Usuario_Registardo(this._unnamed_Registrado_.mainView, (Usuario_suscrito_) this.registrado);
+						this._unnamed_Registrado_.mainView.add(auxUR);
+						
+						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+						perfil_ur = new Perfil_Uusario_Vista_UR(auxUR, (Usuario_suscrito_)this.registrado);
+						this.auxUR.BR.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil_ur);
+						
+					}else if(EditorDAO.getEditorByORMID(this.registrado.getIdUsuario()) != null){
+						this._unnamed_Registrado_.mainView.removeAll();
+						auxE = new Editor(this._unnamed_Registrado_.mainView, (ocl_proyecto.Editor) this.registrado);
+						this._unnamed_Registrado_.mainView.add(auxE);
+						
+						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+						perfil = new Perfil_Usuario(auxE, this.registrado);
+						this.auxE.BE.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
+						
 					}else {
-						this.getLayoutBannerSuscrito().as(VerticalLayout.class).removeAll();
-						perfil = new Perfil_Usuario(this._unnamed_Registrado_, this.registrado);
-						this.getLayoutBannerSuscrito().as(VerticalLayout.class).add(this.perfil);
+						this._unnamed_Registrado_.mainView.removeAll();
+						auxP = new Periodista(this._unnamed_Registrado_.mainView, (ocl_proyecto.Periodista) this.registrado);
+						this._unnamed_Registrado_.mainView.add(auxP);
+						
+						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).removeAll();
+						perfil = new Perfil_Usuario(auxP, this.registrado);
+						this.auxP.BP.getLayoutGenericoVistaGenerica().as(VerticalLayout.class).add(this.perfil);
 					}
 				} catch (PersistentException e) {
 					e.printStackTrace();
