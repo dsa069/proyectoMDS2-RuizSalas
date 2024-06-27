@@ -17,6 +17,7 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 	public Registrado registrado;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	public Image imagen;
+	StringBuilder contrasena = new StringBuilder();
 	ocl_proyecto.Usuario usuario;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
 
@@ -58,7 +59,11 @@ public class Ver_datos_perfil extends VistaVerdatosperfil{
 		this.getLayoutCorreoUsuario1().setText("" + usuario.getCorreo());
 		this.getLayoutDNIUsuario1().setText("" + usuario.getDni());
 		this.getLayoutNombreUsuario1().setText("" + usuario.getApodo());
-		this.getLayoutContrasena().setText("" + usuario.getContrasena());
+		
+		for (int i = 0; i < usuario.getContrasena().length(); i++)
+			 contrasena.append('*');
+		
+		this.getLayoutContrasena().setText("" +contrasena.toString());
 	}
 
 }
