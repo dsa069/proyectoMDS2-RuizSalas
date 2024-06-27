@@ -214,9 +214,9 @@ public class Bd_Noticias {
 
 			noticia = NoticiaDAO.getNoticiaByORMID(aId_noticia);
 			periodista = PeriodistaDAO.getPeriodistaByORMID(aId_Usuario);
-			if(noticia== null) {
+			if(noticia == null || aId_noticia == 0)
 				noticia = NoticiaDAO.createNoticia();
-			}
+	
 
 			periodista.publica.add(noticia);
 			noticia.setAutor(periodista);

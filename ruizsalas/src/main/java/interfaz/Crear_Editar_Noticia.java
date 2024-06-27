@@ -42,82 +42,45 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		String img= null;
 		Date fecha = null; 
 		String ubi= null;
-		int idNoticia = 0;
 		
+		int id = 0;
+		if(this.notice != null && this.notice.getId_noticia() != 0)
+			id= this.notice.getId_valoracion();
+
 		boolean error = false;
 
-		if(this.notice == null||this.notice.getId_noticia() == 0) {
-			error = true;
-			if (this.CENoticia.getModificarTextoCorto().getValue().isEmpty()) 
-				Notification.show("Texto Corto Vacío");
-			else if ( this.CENoticia.getModificarTextoLargo().isEmpty()) 
-				Notification.show("Texto Largo Vacío");
-			else if (this.CENoticia.getModificarTitulo().getValue().isEmpty()) 
-				Notification.show("Titulo Vacío");
-			else if (this.CENoticia.getModificarImagen().getValue().isEmpty()) 
-				Notification.show("Ruta de la imagen Vacío");
-			else if ( this.CENoticia.getModificarUbicacion().getValue().isEmpty()) 
-				Notification.show("Ubicacion Vacía");
-			else if ( this.CENoticia.getModificarFecha().getValue().isEmpty())
-				Notification.show("Fecha Vacía");
-			else {
-				txtL = this.CENoticia.getModificarTextoLargo().getValue();
-				ubi =  this.CENoticia.getModificarUbicacion().getValue();
-				txtC = this.CENoticia.getModificarTextoCorto().getValue();
-				img =  this.CENoticia.getModificarImagen().getValue();
-				titulo =  this.CENoticia.getModificarTitulo().getValue();
-				try {
-					fecha = Date.valueOf(this.CENoticia.getModificarFecha().getValue());
-					error = false;
-				} catch (Exception e) {
-					Notification.show("Formato incorrcto, debe ser AAAA-MM-DD");
-					e.printStackTrace();
-				}
+		if (this.CENoticia.getModificarTextoCorto().getValue().isEmpty()) 
+			Notification.show("Texto Corto Vacío");
+		else if ( this.CENoticia.getModificarTextoLargo().isEmpty()) 
+			Notification.show("Texto Largo Vacío");
+		else if (this.CENoticia.getModificarTitulo().getValue().isEmpty()) 
+			Notification.show("Titulo Vacío");
+		else if (this.CENoticia.getModificarImagen().getValue().isEmpty()) 
+			Notification.show("Ruta de la imagen Vacío");
+		else if ( this.CENoticia.getModificarUbicacion().getValue().isEmpty()) 
+			Notification.show("Ubicacion Vacía");
+		else if ( this.CENoticia.getModificarFecha().getValue().isEmpty())
+			Notification.show("Fecha Vacía");
+		else {
+			txtL = this.CENoticia.getModificarTextoLargo().getValue();
+			ubi =  this.CENoticia.getModificarUbicacion().getValue();
+			txtC = this.CENoticia.getModificarTextoCorto().getValue();
+			img =  this.CENoticia.getModificarImagen().getValue();
+			titulo =  this.CENoticia.getModificarTitulo().getValue();
+			try {
+				fecha = Date.valueOf(this.CENoticia.getModificarFecha().getValue());
+			} catch (Exception e) {
+				error = true;
+				Notification.show("Formato incorrcto, debe ser AAAA-MM-DD");
+				e.printStackTrace();
 			}
-		}else {
-			idNoticia =this.notice.getId_valoracion();
-			if (this.CENoticia.getModificarTextoCorto().getValue().isEmpty()) 
-				txtC = this.notice.getTexto_corto();
-			else 
-				txtC = this.CENoticia.getModificarTextoCorto().getValue();
+			if(!error) {			
+				iPeriodita.guardar_cambios_noticia(id, txtC, txtL, titulo, img, ubi, fecha, this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]), periodista.getIdUsuario());
 
-			if ( this.CENoticia.getModificarTextoLargo().isEmpty()) 
-				txtL =  this.notice.getTexto_largo();
-			else 
-				txtL = this.CENoticia.getModificarTextoLargo().getValue();
-
-			if (this.CENoticia.getModificarTitulo().getValue().isEmpty()) 
-				titulo =  this.notice.getTitulo();
-			else 
-				titulo =  this.CENoticia.getModificarTitulo().getValue();
-
-			if (this.CENoticia.getModificarImagen().getValue().isEmpty()) 
-				img = this.notice.getImagen_principal();
-			else 
-				img =  this.CENoticia.getModificarImagen().getValue();
-
-			if ( this.CENoticia.getModificarUbicacion().getValue().isEmpty()) 
-				ubi =  this.notice.getUbicacion();
-			else 
-				ubi =  this.CENoticia.getModificarUbicacion().getValue();
-
-			if ( this.CENoticia.getModificarFecha().getValue().isEmpty())
-				fecha = (Date) this.notice.getFecha();
-			else
-				try {
-					fecha = Date.valueOf(this.CENoticia.getModificarFecha().getValue());
-				} catch (Exception e) {
-					Notification.show("Formato incorrcto, debe ser AAAA-MM-DD");
-					error = true;
-					e.printStackTrace();
-				}
-		}
-		if(!error) {			
-			iPeriodita.guardar_cambios_noticia(idNoticia, txtC, txtL, titulo, img, ubi, fecha, this.CENoticia.ST.tematicasNoticia.toArray(new Tematica[0]), periodista.getIdUsuario());
-			
-			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
-			historialNoticias = new Historial_noticias(this._periodista, this.periodista);
-			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
+				this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
+				historialNoticias = new Historial_noticias(this._periodista, this.periodista);
+				this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).add(historialNoticias);
+			}
 		}
 	}
 }
