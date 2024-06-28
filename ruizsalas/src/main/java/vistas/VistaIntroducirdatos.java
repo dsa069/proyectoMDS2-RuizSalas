@@ -36,8 +36,8 @@ public class VistaIntroducirdatos extends LitTemplate {
 	@Id("campoContrasena")
 	private PasswordField campoContrasena;
 	public VistaIntroducirdatos() {
-        // You can initialise any data required for the connected UI components here.
-    }
+		// You can initialise any data required for the connected UI components here.
+	}
 
 	public Element getZonaRegistrarPeriodista() {
 		return zonaRegistrarPeriodista;

@@ -1,6 +1,8 @@
 package interfaz;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,10 +11,12 @@ import java.nio.file.Paths;
 import org.orm.PersistentException;
 
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
+import com.vaadin.flow.server.StreamResource;
 
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
@@ -30,8 +34,10 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Usuario_Registardo auxUR;
 	public Editor auxE;
 	public Periodista auxP;
-	
+
+	public Image imagen;
 	public String newFileName;
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/images/";
 
 	ocl_proyecto.Usuario registrado;
@@ -50,11 +56,11 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getNoticiaLayoutGenerico().setVisible(false);
 		this.getPerfilUsuarioLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
-		
+
 		//ESTATICO EDITAR DATOS
 		this. _unnamed_Editar_datos_ = new Editar_datos(this._unnamed_Registrado_, this.registrado);
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
-		
+
 		//UPLOAD
 		FileBuffer buffer = new FileBuffer();
 		Upload upload = new Upload(buffer);
@@ -77,7 +83,27 @@ public class Editar_Perfil extends Banner_suscrito {
 				this.newFileName = event.getFileName();
 				Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
 				Files.move(uploadedFile.toPath(), destinationPath);
-				
+
+				//DISPLAY
+				this.imagen = new Image();
+				File file = new File(IMAGE_PATH + this.newFileName);
+				if (file.exists()) {
+					StreamResource resource = new StreamResource(file.getName(), () -> {
+						try {
+							return new FileInputStream(file);
+						} catch (FileNotFoundException e) {
+							return null;
+						}
+					});
+
+					Image image = new Image(resource, "Image not found");
+					image.setMaxWidth("500px");
+					this.imagen = image;
+					this.imagen.getStyle().set("align-self", "center");
+					this._unnamed_Editar_datos_.getLayoutImagenPerfilIntroducirDatos().as(VerticalLayout.class).removeAll();
+					this._unnamed_Editar_datos_.getLayoutImagenPerfilIntroducirDatos().as(VerticalLayout.class).add(this.imagen);
+				} 
+
 				Notification.show("Se ha subido la imagen correctamente.");
 			} catch (IOException e) {
 				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);

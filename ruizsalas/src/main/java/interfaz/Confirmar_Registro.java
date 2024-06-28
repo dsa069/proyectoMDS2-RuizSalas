@@ -30,7 +30,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 	public Introducir_datos_registro _contiene;
 	public Enviar_Correo_Confirmacion _procede_a = new Enviar_Correo_Confirmacion();
 	public Gestionar_Transaccion a_procede_a = new Gestionar_Transaccion();
-	
+
 	public String newFileName;
 	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/images/";
 
@@ -67,7 +67,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 				this.newFileName = event.getFileName();
 				Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
 				Files.move(uploadedFile.toPath(), destinationPath);
-				
+
 				Notification.show("Se ha subido la imagen correctamente.");
 			} catch (IOException e) {
 				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
@@ -81,11 +81,11 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		upload.addFileRejectedListener(event -> {
 			Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
 		});
-		
-		
+
+
 		this.getBotonConfirmarRegistro().addClickListener(event->gestionar_Transaccion());
 	}
-	
+
 	public void enviar_Correo_Confirmacion() {
 		iUNR.enviar_Correo_Confirmacion();
 		_procede_a.enviar_Correo_Confirmacion(this);
@@ -93,7 +93,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 
 	public void gestionar_Transaccion() {
 		String passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$";
-		
+
 		if (this._contiene.getCampoEmail().getValue().isEmpty()) {
 			Notification.show("Email Vacío");
 		}else if ( this._contiene.getCampoContrasena().isEmpty()) {
@@ -115,12 +115,12 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		}
 		else if (!Character.isLetter(this._contiene.getCampoDNI().getValue().charAt(8))) 
 			Notification.show("El DNI debe tener una letra al final");
-		
+
 		else if(!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(0))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(1))||
 				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(2))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(3))||
 				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(4))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(5))||
 				!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(6))||!Character.isDigit(this._contiene.getCampoDNI().getValue().charAt(7)))
-					Notification.show("El DNI solo debe tener una letra al final");
+			Notification.show("El DNI solo debe tener una letra al final");
 		else{
 			try {
 				Long.valueOf(this._contiene.getTarjetaDeCrédito().getValue().replace(" ", ""));
