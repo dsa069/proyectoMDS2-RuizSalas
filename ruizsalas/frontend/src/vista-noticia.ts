@@ -72,7 +72,7 @@ export class VistaNoticia extends LitElement {
     SUSCRIBIRSE 
   </vaadin-button>
  </vaadin-vertical-layout>
- <vaadin-vertical-layout theme="spacing" style="width: 100%;" id="comentariosEstaticos"></vaadin-vertical-layout>
+ <vaadin-vertical-layout theme="spacing" style="width: 100%; align-items: stretch;" id="comentariosEstaticos"></vaadin-vertical-layout>
 </vaadin-vertical-layout>
 `;
   }
