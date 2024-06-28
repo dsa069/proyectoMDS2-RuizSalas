@@ -18,7 +18,7 @@ export class VistaListacomentarios extends LitElement {
 
   render() {
     return html`
-<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between;">
+<vaadin-vertical-layout style="width: 100%; height: 100%; justify-content: space-between; padding: var(--lumo-space-xl);">
  <vaadin-vertical-layout theme="spacing" style="width: 100%; height: 30%; align-self: stretch; align-items: stretch; justify-content: center;" id="EscribirComentario">
   <vaadin-horizontal-layout theme="spacing" style="width: 100%; flex-grow: 0; flex-shrink: 1; align-items: center; height: 27%; font-size: 25px; align-self: stretch;">
    <vaadin-vertical-layout style="height: 100%; width: 4%;">
