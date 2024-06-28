@@ -20,7 +20,9 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout theme="" style="width: 100%; flex-shrink: 0; justify-content: space-between;">
-  <vaadin-vertical-layout theme="spacing" id="visulizarImagenPrincipal" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;"></vaadin-vertical-layout>
+  <vaadin-vertical-layout theme="spacing" id="visulizarImagenPrincipal" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;">
+   <img src="https://i0.wp.com/www.dataphyte.com/wp-content/uploads/2020/05/Newspaper.png?fit=600%2C405&amp;ssl=1" style="width: 100%; height: 100%;">
+  </vaadin-vertical-layout>
   <vaadin-vertical-layout style="height: 100%; justify-content: center; flex-shrink: 1; flex-grow: 1; width: 100%;">
    <vaadin-text-field label="Fecha" placeholder="Insertar Fecha" style="width: 100%;" id="modificarFecha"></vaadin-text-field>
    <vaadin-text-field label="Ubicación" placeholder="Insertar Ubicación" style="width: 100%;" id="modificarUbicacion"></vaadin-text-field>

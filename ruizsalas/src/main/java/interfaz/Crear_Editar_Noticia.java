@@ -1,5 +1,7 @@
 package interfaz;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,6 +15,7 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.component.upload.receivers.FileBuffer;
+import com.vaadin.flow.server.StreamResource;
 
 import basededatos.BD_Principal;
 import basededatos.iPeriodista;
@@ -21,12 +24,12 @@ import ocl_proyecto.Tematica;
 public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
 	public Zona_insertar_contenido_noticia CENoticia;	
-	
+
 	public Image imagen;
 	public String newFileName;
 	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
 	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/images/";
-	
+
 	iPeriodista iPeriodita = new BD_Principal();
 
 	ocl_proyecto.Noticia notice;
@@ -41,47 +44,67 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		//ESTATICO ZONA DATOS
 		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
 		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
-		
-		
-		
-		
-		
+
+
+
+
+
 		//UPLOAD
-				FileBuffer buffer = new FileBuffer();
-				Upload upload = new Upload(buffer);
-				upload.setAcceptedFileTypes("image/jpeg", "image/jpg", "image/png", "image/gif");
+		FileBuffer buffer = new FileBuffer();
+		Upload upload = new Upload(buffer);
+		upload.setAcceptedFileTypes("image/jpeg", "image/jpg", "image/png", "image/gif");
 
-				Button uploadButton = new Button("Cargar Imagen");
-				upload.setUploadButton(uploadButton);
-				upload.getStyle().set("align-self", "center");
-				upload.getStyle().set("background-color", "#ffffff");
-				upload.getStyle().set("border-color", "#000000");
-				upload.getStyle().set("border-radius", "6.9px");
-				uploadButton.getStyle().set("color", "#000000");
+		Button uploadButton = new Button("Cargar Imagen");
+		upload.setUploadButton(uploadButton);
+		upload.getStyle().set("align-self", "center");
+		upload.getStyle().set("background-color", "#ffffff");
+		upload.getStyle().set("border-color", "#000000");
+		upload.getStyle().set("border-radius", "6.9px");
+		uploadButton.getStyle().set("color", "#000000");
 
-				this.CENoticia.getModificarImagen().setVisible(isVisible());
-				this.CENoticia.getModificarImagen().as(VerticalLayout.class).add(upload);
+		this.CENoticia.getModificarImagen().setVisible(isVisible());
+		this.CENoticia.getModificarImagen().as(VerticalLayout.class).add(upload);
 
-				upload.addSucceededListener(event -> {
-					File uploadedFile = buffer.getFileData().getFile();
-					try {
-						this.newFileName = event.getFileName();
-						Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
-						Files.move(uploadedFile.toPath(), destinationPath);
+		upload.addSucceededListener(event -> {
+			File uploadedFile = buffer.getFileData().getFile();
+			try {
+				this.newFileName = event.getFileName();
+				Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
+				Files.move(uploadedFile.toPath(), destinationPath);
 
-						Notification.show("Se ha subido la imagen correctamente.");
-					} catch (IOException e) {
-						Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
-					}
-				});
+				//DISPLAY
+				this.imagen = new Image();
+				File file = new File(IMAGE_PATH + this.newFileName);
+				if (file.exists()) {
+					StreamResource resource = new StreamResource(file.getName(), () -> {
+						try {
+							return new FileInputStream(file);
+						} catch (FileNotFoundException e) {
+							return null;
+						}
+					});
 
-				upload.addFailedListener(event -> {
-					Notification.show("Image upload failed: " + event.getReason().getMessage(), 5000,
-							Notification.Position.MIDDLE);
-				});
-				upload.addFileRejectedListener(event -> {
-					Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
-				});
+					Image image = new Image(resource, "Image not found");
+					image.setMaxWidth("500px");
+					this.imagen = image;
+					this.imagen.getStyle().set("align-self", "center");
+					this.CENoticia.getVisulizarImagenPrincipal().as(VerticalLayout.class).removeAll();
+					this.CENoticia.getVisulizarImagenPrincipal().as(VerticalLayout.class).add(this.imagen);
+				}
+
+				Notification.show("Se ha subido la imagen correctamente.");
+			} catch (IOException e) {
+				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+			}
+		});
+
+		upload.addFailedListener(event -> {
+			Notification.show("Image upload failed: " + event.getReason().getMessage(), 5000,
+					Notification.Position.MIDDLE);
+		});
+		upload.addFileRejectedListener(event -> {
+			Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
+		});
 
 		this.getBotonEliminarNoticiaPropia().addClickListener(event->{
 			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
@@ -98,7 +121,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		String img= null;
 		Date fecha = null; 
 		String ubi= null;
-		
+
 		int id = 0;
 		if(this.notice != null && this.notice.getId_noticia() != 0)
 			id= this.notice.getId_valoracion();
