@@ -19,14 +19,16 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
 	private TextField modificarFecha;
 	@Id("modificarUbicacion")
 	private TextField modificarUbicacion;
-	@Id("modificarImagen")
-	private TextField modificarImagen;
 	@Id("modificarTitulo")
 	private TextField modificarTitulo;
 	@Id("modificarTextoCorto")
 	private TextArea modificarTextoCorto;
 	@Id("modificarTextoLargo")
 	private RichTextEditor modificarTextoLargo;
+	@Id("modificarImagen")
+	private Element modificarImagen;
+	@Id("visulizarImagenPrincipal")
+	private Element visulizarImagenPrincipal;
 	public VistaZonainsertarcontenidonoticia() {
         // You can initialise any data required for the connected UI components here.
     }
@@ -55,11 +57,11 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
 		this.modificarUbicacion = modificarUbicacion;
 	}
 
-	public TextField getModificarImagen() {
+	public Element getModificarImagen() {
 		return modificarImagen;
 	}
 
-	public void setModificarImagen(TextField modificarImagen) {
+	public void setModificarImagen(Element modificarImagen) {
 		this.modificarImagen = modificarImagen;
 	}
 
@@ -85,6 +87,14 @@ public class VistaZonainsertarcontenidonoticia extends LitTemplate {
 
 	public void setModificarTextoLargo(RichTextEditor modificarTextoLargo) {
 		this.modificarTextoLargo = modificarTextoLargo;
+	}
+
+	public Element getVisulizarImagenPrincipal() {
+		return visulizarImagenPrincipal;
+	}
+
+	public void setVisulizarImagenPrincipal(Element visulizarImagenPrincipal) {
+		this.visulizarImagenPrincipal = visulizarImagenPrincipal;
 	}
 
 }

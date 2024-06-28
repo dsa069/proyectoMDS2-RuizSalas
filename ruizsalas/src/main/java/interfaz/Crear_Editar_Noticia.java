@@ -1,9 +1,18 @@
 package interfaz;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
 import java.util.*;
 
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.FileBuffer;
 
 import basededatos.BD_Principal;
 import basededatos.iPeriodista;
@@ -12,6 +21,12 @@ import ocl_proyecto.Tematica;
 public class Crear_Editar_Noticia extends Banner_Periodista {
 	public Periodista _unnamed_Periodista_;
 	public Zona_insertar_contenido_noticia CENoticia;	
+	
+	public Image imagen;
+	public String newFileName;
+	private static final String IMAGE_PATH = "src/main/resources/META-INF/resources/images/";
+	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/images/";
+	
 	iPeriodista iPeriodita = new BD_Principal();
 
 	ocl_proyecto.Noticia notice;
@@ -26,6 +41,47 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		//ESTATICO ZONA DATOS
 		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
 		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
+		
+		
+		
+		
+		
+		//UPLOAD
+				FileBuffer buffer = new FileBuffer();
+				Upload upload = new Upload(buffer);
+				upload.setAcceptedFileTypes("image/jpeg", "image/jpg", "image/png", "image/gif");
+
+				Button uploadButton = new Button("Cargar Imagen");
+				upload.setUploadButton(uploadButton);
+				upload.getStyle().set("align-self", "center");
+				upload.getStyle().set("background-color", "#ffffff");
+				upload.getStyle().set("border-color", "#000000");
+				upload.getStyle().set("border-radius", "6.9px");
+				uploadButton.getStyle().set("color", "#000000");
+
+				this.CENoticia.getModificarImagen().setVisible(isVisible());
+				this.CENoticia.getModificarImagen().as(VerticalLayout.class).add(upload);
+
+				upload.addSucceededListener(event -> {
+					File uploadedFile = buffer.getFileData().getFile();
+					try {
+						this.newFileName = event.getFileName();
+						Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
+						Files.move(uploadedFile.toPath(), destinationPath);
+
+						Notification.show("Se ha subido la imagen correctamente.");
+					} catch (IOException e) {
+						Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+					}
+				});
+
+				upload.addFailedListener(event -> {
+					Notification.show("Image upload failed: " + event.getReason().getMessage(), 5000,
+							Notification.Position.MIDDLE);
+				});
+				upload.addFileRejectedListener(event -> {
+					Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
+				});
 
 		this.getBotonEliminarNoticiaPropia().addClickListener(event->{
 			this._periodista.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();
@@ -55,7 +111,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 			Notification.show("Texto Largo Vacío");
 		else if (this.CENoticia.getModificarTitulo().getValue().isEmpty()) 
 			Notification.show("Titulo Vacío");
-		else if (this.CENoticia.getModificarImagen().getValue().isEmpty()) 
+		else if (this.newFileName == null) 
 			Notification.show("Ruta de la imagen Vacío");
 		else if ( this.CENoticia.getModificarUbicacion().getValue().isEmpty()) 
 			Notification.show("Ubicacion Vacía");
@@ -65,7 +121,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 			txtL = this.CENoticia.getModificarTextoLargo().getValue();
 			ubi =  this.CENoticia.getModificarUbicacion().getValue();
 			txtC = this.CENoticia.getModificarTextoCorto().getValue();
-			img =  this.CENoticia.getModificarImagen().getValue();
+			img =  this.newFileName;
 			titulo =  this.CENoticia.getModificarTitulo().getValue();
 			try {
 				fecha = Date.valueOf(this.CENoticia.getModificarFecha().getValue());

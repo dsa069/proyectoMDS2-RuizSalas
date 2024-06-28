@@ -1,11 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
-import '@vaadin/vaadin-button/src/vaadin-button.js';
-import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
-import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 import '@vaadin/vaadin-rich-text-editor/src/vaadin-rich-text-editor.js';
 import '@vaadin/vaadin-text-field/src/vaadin-text-area.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-text-field/src/vaadin-text-field.js';
 
 @customElement('vista-zonainsertarcontenidonoticia')
 export class VistaZonainsertarcontenidonoticia extends LitElement {
@@ -22,13 +20,11 @@ export class VistaZonainsertarcontenidonoticia extends LitElement {
     return html`
 <vaadin-vertical-layout style="width: 100%; height: 100%;">
  <vaadin-horizontal-layout theme="" style="width: 100%; flex-shrink: 0; justify-content: space-between;">
-  <vaadin-button theme="icon" aria-label="Add new" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;">
-   <iron-icon icon="lumo:plus"></iron-icon>
-  </vaadin-button>
+  <vaadin-vertical-layout theme="spacing" id="visulizarImagenPrincipal" style="height: 100%; flex-shrink: 1; flex-grow: 0; width: 100%;"></vaadin-vertical-layout>
   <vaadin-vertical-layout style="height: 100%; justify-content: center; flex-shrink: 1; flex-grow: 1; width: 100%;">
    <vaadin-text-field label="Fecha" placeholder="Insertar Fecha" style="width: 100%;" id="modificarFecha"></vaadin-text-field>
    <vaadin-text-field label="Ubicación" placeholder="Insertar Ubicación" style="width: 100%;" id="modificarUbicacion"></vaadin-text-field>
-   <vaadin-text-field style="width: 100%;" placeholder="Imagen" label="Imagen" id="modificarImagen"></vaadin-text-field>
+   <vaadin-vertical-layout theme="spacing" id="modificarImagen" style="width: 100%;"></vaadin-vertical-layout>
   </vaadin-vertical-layout>
   <vaadin-vertical-layout style="height: 100%; flex-grow: 1; flex-shrink: 1; width: 100%;" id="seleccionarTematicasEstatico"></vaadin-vertical-layout>
  </vaadin-horizontal-layout>
