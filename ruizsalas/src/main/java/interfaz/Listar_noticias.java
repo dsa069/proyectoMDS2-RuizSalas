@@ -22,7 +22,7 @@ public class Listar_noticias extends Listar_noticias_generico {
 		this.getListaSimpleNoticias().setVisible(false);
 	}
 
-	public void Noticia_item(Noticia [] noticia, Busqueda busi, int seccion) {
+	public void filtro_noticias(Noticia [] noticia, Busqueda busi, int seccion) {
 		busquets = busi;
 		if(busquets == null && seccion != 0) {
 			notice = iUsuario.cargar_noticias_secciones(seccion);
