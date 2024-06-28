@@ -1,9 +1,18 @@
 package interfaz;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.orm.PersistentException;
 
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.FileBuffer;
 
 import basededatos.BD_Principal;
 import basededatos.iRegistrado;
@@ -21,6 +30,9 @@ public class Editar_Perfil extends Banner_suscrito {
 	public Usuario_Registardo auxUR;
 	public Editor auxE;
 	public Periodista auxP;
+	
+	public String newFileName;
+	private static final String UPLOAD_DIR = "src/main/resources/META-INF/resources/images/";
 
 	ocl_proyecto.Usuario registrado;
 	ocl_proyecto.Usuario_suscrito_ suscrito;
@@ -38,10 +50,47 @@ public class Editar_Perfil extends Banner_suscrito {
 		this.getNoticiaLayoutGenerico().setVisible(false);
 		this.getPerfilUsuarioLayout().setVisible(false);
 		this.getDarseDeBajaLayout().setVisible(false);
-
+		
 		//ESTATICO EDITAR DATOS
 		this. _unnamed_Editar_datos_ = new Editar_datos(this._unnamed_Registrado_, this.registrado);
 		this.getEditarDatosEstaticos().add(this. _unnamed_Editar_datos_);
+		
+		//UPLOAD
+		FileBuffer buffer = new FileBuffer();
+		Upload upload = new Upload(buffer);
+		upload.setAcceptedFileTypes("image/jpeg", "image/jpg", "image/png", "image/gif");
+
+		Button uploadButton = new Button("Cargar Imagen");
+		upload.setUploadButton(uploadButton);
+		upload.getStyle().set("align-self", "center");
+		upload.getStyle().set("background-color", "#ffffff");
+		upload.getStyle().set("border-color", "#000000");
+		upload.getStyle().set("border-radius", "6.9px");
+		uploadButton.getStyle().set("color", "#000000");
+
+		this._unnamed_Editar_datos_.getFotoTextamen().setVisible(isVisible());
+		this._unnamed_Editar_datos_.getFotoTextamen().as(VerticalLayout.class).add(upload);
+
+		upload.addSucceededListener(event -> {
+			File uploadedFile = buffer.getFileData().getFile();
+			try {
+				this.newFileName = event.getFileName();
+				Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
+				Files.move(uploadedFile.toPath(), destinationPath);
+				
+				Notification.show("Se ha subido la imagen correctamente.");
+			} catch (IOException e) {
+				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
+			}
+		});
+
+		upload.addFailedListener(event -> {
+			Notification.show("Image upload failed: " + event.getReason().getMessage(), 5000,
+					Notification.Position.MIDDLE);
+		});
+		upload.addFileRejectedListener(event -> {
+			Notification.show("File rejected: " + event.getErrorMessage(), 5000, Notification.Position.MIDDLE);
+		});
 
 		this.getBotonGuardarEditarPerfil().addClickListener(event->guardar_cambios());
 
@@ -83,7 +132,7 @@ public class Editar_Perfil extends Banner_suscrito {
 			Notification.show("DNI Vacío");
 		else if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().length() != 9)
 			Notification.show("El DNI debe tener 9 caracteres");
-		else if ( this._unnamed_Editar_datos_.getCampoFoto().getValue().isEmpty()) 
+		else if (this.newFileName == null) 
 			Notification.show("Foto Vacía");
 		else if( !this._unnamed_Editar_datos_.getCampoContrasena().getValue().matches(passwordPattern))
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
@@ -107,7 +156,7 @@ public class Editar_Perfil extends Banner_suscrito {
 			contrasena = this._unnamed_Editar_datos_.getCampoContrasena().getValue();
 			apodo = this._unnamed_Editar_datos_.getCampoApodo().getValue();
 			dni = this._unnamed_Editar_datos_.getCampoDNI().getValue();
-			foto = this._unnamed_Editar_datos_.getCampoFoto().getValue();
+			foto = this.newFileName;
 
 			try {
 				suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(registrado.getIdUsuario());

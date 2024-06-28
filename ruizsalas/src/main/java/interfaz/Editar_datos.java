@@ -19,7 +19,6 @@ public class Editar_datos extends Introducir_datos_registro {
 		this.getCampoContrasena().setValue(this.user.getContrasena());
 		this.getCampoApodo().setValue(this.user.getApodo());
 		this.getCampoDNI().setValue(this.user.getDni());
-		this.getCampoFoto().setValue(this.user.getFoto_de_perfil());	
 
 		try {
 			suscrito = Usuario_suscrito_DAO.getUsuario_suscrito_ByORMID(user.getIdUsuario());

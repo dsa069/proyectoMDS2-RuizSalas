@@ -45,6 +45,7 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		this.usuarioNoRegistrado = usuarioNoRegistrado;
 		this._contiene =_contiene;
 
+		//UPLOAD
 		FileBuffer buffer = new FileBuffer();
 		Upload upload = new Upload(buffer);
 		upload.setAcceptedFileTypes("image/jpeg", "image/jpg", "image/png", "image/gif");
@@ -56,7 +57,6 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		upload.getStyle().set("border-color", "#000000");
 		upload.getStyle().set("border-radius", "6.9px");
 		uploadButton.getStyle().set("color", "#000000");
-		//uploadButton.getStyle().set("font-family", "georgia");
 
 		this._contiene.getFotoTextamen().setVisible(isVisible());
 		this._contiene.getFotoTextamen().as(VerticalLayout.class).add(upload);
@@ -64,18 +64,10 @@ public class Confirmar_Registro extends VistaConfirmarregistro{
 		upload.addSucceededListener(event -> {
 			File uploadedFile = buffer.getFileData().getFile();
 			try {
-//				Path destinationPath = Paths.get(UPLOAD_DIR + event.getFileName());
-//				Files.move(uploadedFile.toPath(), destinationPath);
-//				Notification.show("Se ha subido la imagen correctamente.");
-//				String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
 				this.newFileName = event.getFileName();
 				Path destinationPath = Paths.get(UPLOAD_DIR + newFileName);
 				Files.move(uploadedFile.toPath(), destinationPath);
 				
-//				this.imagen = createImageFromFile(IMAGE_PATH + event.getFileName());
-				//this.imagen.getStyle().set("align-self", "center");
-//				this.getHueciImagen().as(VerticalLayout.class).removeAll();
-//				this.getHueciImagen().as(VerticalLayout.class).add(this.imagen);
 				Notification.show("Se ha subido la imagen correctamente.");
 			} catch (IOException e) {
 				Notification.show("Error saving the image: " + e.getMessage(), 5000, Notification.Position.MIDDLE);
