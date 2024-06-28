@@ -225,9 +225,10 @@ public class Bd_Noticias {
 			noticia.setTexto_corto(aTexto_corto);
 			noticia.setTexto_largo(aTexto_largo);
 			noticia.setTitulo(aTitulo);
-			noticia.setImagen_principal(aImagen_principal);
 			noticia.setUbicacion(aUbicacion);
 			noticia.setFecha(aFecha);
+			if(aImagen_principal != null)
+				noticia.setImagen_principal(aImagen_principal);
 
 			NoticiaDAO.save(noticia);
 			

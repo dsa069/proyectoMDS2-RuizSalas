@@ -44,7 +44,9 @@ public class BD_Editores {
 			editor.setDni(aDni);
 			editor.setCorreo(aCorreo);
 			editor.setContrasena(aContrasena);
-			editor.setFoto_de_perfil(aFoto_de_perfil);
+			if(aFoto_de_perfil != null)
+				editor.setFoto_de_perfil(aFoto_de_perfil);
+			
 			EditorDAO.save(editor);
 			t.commit();
 			ProyectoMDS2RuizSalas20232024PersistentManager.instance().disposePersistentManager();

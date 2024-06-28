@@ -80,7 +80,8 @@ public class BD_Usuarios_suscritos {
 			us_sus.setDni(aDni);
 			us_sus.setCorreo(aCorreo);
 			us_sus.setContrasena(aContrasena);
-			us_sus.setFoto_de_perfil(aFoto_de_perfil);
+			if(aFoto_de_perfil != null)
+				us_sus.setFoto_de_perfil(aFoto_de_perfil);
 			us_sus.setTarjeta_de_credito(aTarjeta_de_credito);
 			Usuario_suscrito_DAO.save(us_sus);
 			t.commit();

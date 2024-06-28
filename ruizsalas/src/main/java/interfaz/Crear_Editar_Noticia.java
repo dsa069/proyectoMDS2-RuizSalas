@@ -45,10 +45,6 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		this.CENoticia = new Zona_insertar_contenido_noticia(this._periodista, this.notice);
 		this.getCrearEditarNoticiaEstatico().as(VerticalLayout.class).add(this.CENoticia);
 
-
-
-
-
 		//UPLOAD
 		FileBuffer buffer = new FileBuffer();
 		Upload upload = new Upload(buffer);
@@ -134,8 +130,8 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 			Notification.show("Texto Largo Vacío");
 		else if (this.CENoticia.getModificarTitulo().getValue().isEmpty()) 
 			Notification.show("Titulo Vacío");
-		else if (this.newFileName == null) 
-			Notification.show("Ruta de la imagen Vacío");
+		else if (this.newFileName == null&&(this.notice == null||this.notice.getId_noticia() == 0)) 
+			Notification.show("Ruta de la imagen Vacía");
 		else if ( this.CENoticia.getModificarUbicacion().getValue().isEmpty()) 
 			Notification.show("Ubicacion Vacía");
 		else if ( this.CENoticia.getModificarFecha().getValue().isEmpty())

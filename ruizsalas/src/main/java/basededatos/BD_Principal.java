@@ -31,30 +31,6 @@ public class BD_Principal implements iEditor, iPeriodista, iUsuario_Registardo, 
 	public BD_Secciones _bd_secciones = new BD_Secciones();
 	public BD_Tematicas _bd_tematicas = new BD_Tematicas();
 
-	public Editor get_Editor() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Registrado get_Registrado() {
-		throw new UnsupportedOperationException();
-	}
-
-	public interfaz.Usuario get_Usuario() {
-		throw new UnsupportedOperationException();
-	}
-
-	public interfaz.Periodista get_Periodista() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario_Registardo get_Usuario_Registardo() {
-		throw new UnsupportedOperationException();
-	}
-
-	public Usuario_No_Registrado get_Usuario_No_Registrado() {
-		throw new UnsupportedOperationException();
-	}
-
 	public Seccion[] cargar_secciones_seleccion(int aId_noticia) {
 		try {
 			return _bd_secciones.cargar_secciones_seleccion(aId_noticia);

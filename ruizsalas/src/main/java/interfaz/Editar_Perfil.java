@@ -158,8 +158,6 @@ public class Editar_Perfil extends Banner_suscrito {
 			Notification.show("DNI Vacío");
 		else if ( this._unnamed_Editar_datos_.getCampoDNI().getValue().length() != 9)
 			Notification.show("El DNI debe tener 9 caracteres");
-		else if (this.newFileName == null) 
-			Notification.show("Foto Vacía");
 		else if( !this._unnamed_Editar_datos_.getCampoContrasena().getValue().matches(passwordPattern))
 			Notification.show("La contrasña debe tener al menos ocho caracteres, un número, una mayúscula, y una minúscula");
 		else{
