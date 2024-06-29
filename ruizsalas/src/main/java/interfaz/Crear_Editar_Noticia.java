@@ -137,7 +137,7 @@ public class Crear_Editar_Noticia extends Banner_Periodista {
 		else if ( this.CENoticia.getModificarFecha().getValue().isEmpty())
 			Notification.show("Fecha Vacía");
 		else {
-			txtL = this.CENoticia.getModificarTextoLargo().getValue();
+			txtL = this.CENoticia.getModificarTextoLargo().getHtmlValue();
 			ubi =  this.CENoticia.getModificarUbicacion().getValue();
 			txtC = this.CENoticia.getModificarTextoCorto().getValue();
 			img =  this.newFileName;
