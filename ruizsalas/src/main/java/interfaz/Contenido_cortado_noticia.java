@@ -24,7 +24,11 @@ public class Contenido_cortado_noticia extends Noticia{
 		this._contiene = new Lista_Comentarios(this._usuario, this.usuario, this.noti);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
 
-		this.getNoticiaCortada().setText("" + noticia.getTexto_corto());
+		this.getLayoutTextoCorto().setText("" + noticia.getTexto_corto());
+
+		int noticiaTextlargo = (this.noti.getTexto_largo().length() / 2);
+		String textoLargo = this.noti.getTexto_largo().substring(0, noticiaTextlargo);
+		this.getNoticiaCortada().setText(textoLargo);
 
 		this.getBotonSuscribirseNoticia().addClickListener(event-> {
 			this._usuario.getBannerGenericoEstatico().as(VerticalLayout.class).removeAll();

@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -59,7 +59,12 @@ export class VistaNoticia extends LitElement {
    </vaadin-button>
   </vaadin-horizontal-layout>
  </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 20px; flex-grow: 1;">
+ <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100%; font-size: 18px; margin: var(--lumo-space-s);">
+  <vaadin-vertical-layout id="layoutTextoCorto" style="height: 100%; width: 100%; flex-shrink: 0;">
+   <label style="flex-shrink: 1; flex-grow: 0;">Label</label>
+  </vaadin-vertical-layout>
+ </vaadin-horizontal-layout>
+ <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 20px; flex-grow: 1; margin: var(--lumo-space-s);">
   <vaadin-vertical-layout style="flex-shrink: 1; height: 100%;" id="noticiaCortada">
    <label> Temporada en blanco del Barça y recibiendo la mayor goleada de su historia en Europa. Hora de reflexionar, mirar la cartera y ver qué se puede hacer. Una plantilla entrada en años, no acomodada pero sí con vicios, que necesita un cambio urgente. Y puede que en todos los frentes porque la gestión del último año es para analizarla. Un cambio de entrenador difícil de explicar, muchos nombres de fichajes para intentar desviar la atención, pero media plantilla en venta para poder hacer frente a alguna contratación dado que el efectivo actual parece que no llega para mucho. </label>
   </vaadin-vertical-layout>

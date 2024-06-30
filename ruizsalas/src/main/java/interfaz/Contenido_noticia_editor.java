@@ -39,7 +39,7 @@ public class Contenido_noticia_editor extends Contenido_noticia_completo{
 		//ESTATICO COMENATRIOS EDITOR
 		this._contiene = new Lista_comentarios_Vista_Editor(this.editor, this.editorBD, this.notice, this);
 		this.getComentariosEstaticos().as(VerticalLayout.class).add(this._contiene);
-
+		
 		this.getEliminarNoticia().addClickListener(event->eliminar_noticia());
 	}
 

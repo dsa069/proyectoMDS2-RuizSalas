@@ -42,6 +42,7 @@ public class Contenido_noticia_completo extends Noticia {
 			e.printStackTrace();
 		}
 
+		this.getLayoutTextoCorto().setText(this.noticia.getTexto_corto());
 		this.getNoticiaCompleta().setProperty("innerHTML",noticia.getTexto_largo()); 
 		
 		this.getBotonLikeNoticia().addClickListener(event->valorar_noticia(true));
