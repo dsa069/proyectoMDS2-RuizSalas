@@ -1,8 +1,8 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 import '@polymer/iron-icon/iron-icon.js';
 import '@vaadin/vaadin-button/src/vaadin-button.js';
 import '@vaadin/vaadin-ordered-layout/src/vaadin-vertical-layout.js';
+import '@vaadin/vaadin-ordered-layout/src/vaadin-horizontal-layout.js';
 
 @customElement('vista-noticia')
 export class VistaNoticia extends LitElement {
@@ -58,11 +58,6 @@ export class VistaNoticia extends LitElement {
     <img src="https://cdn-icons-png.flaticon.com/512/1345/1345823.png" style="height: 100%; width: 60%;">
    </vaadin-button>
   </vaadin-horizontal-layout>
- </vaadin-horizontal-layout>
- <vaadin-horizontal-layout style="flex-grow: 1; flex-shrink: 0; width: 100%; font-size: 18px; margin: var(--lumo-space-s);">
-  <vaadin-vertical-layout id="layoutTextoCorto" style="height: 100%; width: 100%; flex-shrink: 0;">
-   <label style="flex-shrink: 1; flex-grow: 0;">Label</label>
-  </vaadin-vertical-layout>
  </vaadin-horizontal-layout>
  <vaadin-horizontal-layout style="width: 100%; flex-shrink: 0; font-size: 20px; flex-grow: 1; margin: var(--lumo-space-s);">
   <vaadin-vertical-layout style="flex-shrink: 1; height: 100%;" id="noticiaCortada">
