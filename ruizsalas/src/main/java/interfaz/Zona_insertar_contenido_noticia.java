@@ -29,7 +29,7 @@ public class Zona_insertar_contenido_noticia extends VistaZonainsertarcontenidon
 
 		if(this.noticia != null&&this.noticia.getId_noticia() != 0) {
 			this.getModificarTextoCorto().setValue(this.noticia.getTexto_corto());
-			this.getModificarTextoLargo().setValue(this.noticia.getTexto_largo());
+			this.getModificarTextoLargo().asHtml().setValue(this.noticia.getTexto_largo());
 			this.getModificarTitulo().setValue(this.noticia.getTitulo());
 			this.getModificarUbicacion().setValue(this.noticia.getUbicacion());
 			this.getModificarFecha().setValue(String.valueOf(this.noticia.getFecha()));
